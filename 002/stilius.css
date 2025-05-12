@@ -1,0 +1,19 @@
+h1 {
+color: #4b5d88;
+letter-spacing: 3px;
+background-color: aquamarine;
+}
+.briedzio-spalva {
+color: skyblue;
+font-size: 50px;
+border: 1px solid #4b5d88;
+padding: 10px;
+margin: 100px;
+width: 300px;
+height: 300px;
+border-radius: 20px;
+text-align: center;
+}
+body {
+background-color: #6b1616;
+}
