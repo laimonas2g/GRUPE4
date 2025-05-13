@@ -5,6 +5,9 @@
   background-color: #213448;
 }
 
+.name1 {
+  color:#0C356A;
+}
 .klase1 {
   color: #213448;
   border: 2px solid black;
@@ -104,7 +107,7 @@ img {
   background-color: #0C356A;
   color: #FFF0CE;
   border: 2px solid black;
-  font-size: 27px;
+  font-size: 35px;
   text-shadow: 3px 3px 7px #ECEFCA;
   letter-spacing: 7px;
   font-family: Arial, sans-serif;
