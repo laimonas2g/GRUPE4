@@ -1,0 +1,75 @@
+* {
+margin: 0;
+background-color: #213448;
+box-sizing: border-box;
+}
+
+h1 {
+    margin: 30px;
+  padding: 30px;
+}
+
+nav {
+  margin: 30px;
+  padding: 30px;
+}
+
+main div.box1 {
+border: 2px solid yellow;
+display: inline-block;
+font-size: 40px;
+min-width: 280px;
+max-width: 400px;
+margin: 10px;
+padding: 10px;
+width: 19.8%;
+height: 370px;
+}
+
+div.box2 {
+border: 2px solid green;
+display: inline-block;
+font-size: 40px;
+min-width: 280px;
+max-width: 400px;
+margin: 10px;
+padding: 10px;
+width: 19.8%;;
+height: 370px;
+}
+
+div.box3 {
+border: 2px solid red;
+display: inline-block;
+font-size: 40px;
+min-width: 280px;
+max-width: 400px;
+margin: 10px;
+padding: 10px;
+width: 19.8%;
+height: 370px;
+}
+
+div.box4 {
+border: 2px solid blue;
+display: inline-block;
+font-size: 40px;
+min-width: 280px;
+max-width: 400px;
+margin: 10px;
+padding: 10px;
+width: 19.8%;
+height: 370px;
+}
+
+div.box5 {
+border: 2px solid violet;
+display: inline-block;
+font-size: 40px;
+min-width: 280px;
+max-width: 400px;
+margin: 10px;
+padding: 10px;
+width: 19.8%;
+height: 370px;
+}
