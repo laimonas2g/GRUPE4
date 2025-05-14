@@ -2,7 +2,11 @@ body {
   background-color: black;
   color: white;
   margin: 0;
-  font-size: 0;
+  font-size: 20px;
+}
+
+#tomas {
+  background-color: darkolivegreen;
 }
 
 .kvadratas {
@@ -18,7 +22,34 @@ body {
   display: inline-block;
 }
 
+[data-my-digit="521"] {
+  background-color: violet;
+}
+
 .bin {
   width: 100%;
   text-align: center;
+  font-size: 0;
+}
+
+section p {
+  color: skyblue;
+}
+
+section > p {
+  color: coral;
+}
+
+section ~ p {
+  color: rgb(90, 25, 211);
+}
+
+section + p {
+  color: lawngreen;
+}
+
+i, u {
+  padding: 20px;
+  font-size: 30px;
+  /* komentaras */
 }
