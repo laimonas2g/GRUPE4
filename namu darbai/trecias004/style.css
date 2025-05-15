@@ -19,8 +19,16 @@ text-align: center;
 letter-spacing: 20px;
 }
 
-.dezute {
+a.button {
+padding: 1px 6px;
+border: 1px outset buttonborder;
+border-radius: 3px;
+color: #213448;
+background-color: #ECEFCA;
+text-decoration: none;
+}
 
+.dezute {
 background-color: #ECEFCA;
 line-height: 25px;
 display: inline-block;
@@ -39,7 +47,6 @@ letter-spacing: 2px;
 }
 
 .box0 {
-
 background-color:#547792;
 font-size: 30px;
 margin: 10px;
@@ -113,8 +120,7 @@ height: 370px;
 display: inline-block;
 }
 
-footer.footeris {
-border: 2px solid  #547792;
+span.footeris {
 background-color: #213448;
 color: black;
 display: inline-block;
