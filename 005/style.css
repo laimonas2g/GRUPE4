@@ -1,0 +1,89 @@
+section {
+  margin: 100px;
+  display: inline-block;
+  border: 10px solid green;
+  position: relative;
+}
+
+
+html {
+  border: 2px solid green;
+}
+
+section div {
+  width: 200px;
+  height: 200px;
+  font-size: 50px;
+}
+
+.one {
+background-color: #a52a2a70;
+position: relative;
+bottom: -30x;
+left: 100px;
+display: none;
+}
+
+.two {
+background-color: #2aa52d70;
+position: relative;
+bottom: 120px;
+left: 50px;
+}
+
+.three {
+background-color: #a52a2a70;
+position: absolute;
+top: 50px;
+left: 80px;
+display: none;
+}
+
+.four {
+background-color: #2aa52d70;
+position: absolute;
+top: 50px;
+left: 80px;
+}
+
+.base {
+  background-color: #9068cf70;
+}
+
+section:hover .three {
+  display: block;
+}
+
+section:hover .one {
+  display: block;
+}
+
+h1 {
+  font-size: 80px;
+  position: relative;
+  display: inline-block;
+}
+
+svg {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  bottom: 40px;
+  right: 55px;
+}
+
+h1 span {
+  font-size: 20px;
+  padding: 20px;
+  background-color: crimson;
+  color: white;
+  position: absolute;
+  display: none;
+  right: 0;
+  right: -100px;
+  bottom: 70px;
+}
+
+h1:hover span {
+  display: block;
+}

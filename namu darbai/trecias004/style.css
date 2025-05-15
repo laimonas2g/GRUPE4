@@ -5,24 +5,25 @@ box-sizing: border-box;
 }
 
 h1 {
-
 display: inline-block;
 background-color: #547792;
 color: #213448;
 margin: 10px;
 padding: 10px;
 width: 99%;
-font-size: 70px;
 height: 100px;
+font-size: 70px;
 text-align: center;
- text-shadow: 3px 3px 5px #ECEFCA;
+text-shadow: 3px 3px 5px #ECEFCA;
 letter-spacing: 20px;
 }
 
 a.button {
-padding: 1px 6px;
-border: 1px outset buttonborder;
-border-radius: 3px;
+padding: 3px 6px;
+border: 2px outset #213448;
+box-shadow: 3px 3px 3px #213448;
+font-weight: bold;
+border-radius: 30px;
 color: #213448;
 background-color: #ECEFCA;
 text-decoration: none;
@@ -39,7 +40,7 @@ width: 99%;
 height: 50px;
 }
 
-.name1, a {
+a {
 color:#213448;
 background-color: #ECEFCA; 
 font-size: 20px;
@@ -65,8 +66,25 @@ main {
   text-align: center;
 }
 
+div.box1 p {
+  font-style: italic;
+}
+div.box2 p {
+  font-style: italic;
+}
+div.box3 p {
+  font-style: italic;
+}
+div.box4 p {
+  font-style: italic;
+}
+div.box5 p {
+  font-style: italic;
+}
+
 div.box1 {
 display: inline-block;
+border-radius: 30px;
 font-size: 40px;
 min-width: 280px;
 max-width: 400px;
@@ -78,6 +96,7 @@ height: 370px;
 
 div.box2 {
 display: inline-block;
+border-radius: 30px;
 font-size: 40px;
 min-width: 280px;
 max-width: 400px;
@@ -89,6 +108,7 @@ height: 370px;
 
 div.box3 {
 display: inline-block;
+border-radius: 30px;
 font-size: 40px;
 min-width: 280px;
 max-width: 400px;
@@ -101,6 +121,7 @@ height: 370px;
 div.box4 {
 display: inline-block;
 font-size: 40px;
+border-radius: 30px;
 min-width: 280px;
 max-width: 400px;
 margin: 10px;
@@ -112,6 +133,7 @@ height: 370px;
 div.box5 {
 display: inline-block;
 font-size: 40px;
+border-radius: 30px;
 min-width: 280px;
 max-width: 400px;
 margin: 10px;
@@ -120,17 +142,18 @@ width: 19.8%;
 height: 370px;
 }
 
-.mygtukas {
-display: inline-block;
-}
-
-span.footeris {
+body footer.footeris {
 background-color: #213448;
-color: black;
+border: 5px solid #547792;
+box-shadow: 3px 3px 3px #213448;
+font-weight: bolder;
+font-size: larger;
+text-align: left;
+color: #ECEFCA;
 display: inline-block;
 margin: 10px;
 padding: 10px;
 width: 99%;
-height: 150px;
-text-align: left;
+height: 220px;
 }
+
