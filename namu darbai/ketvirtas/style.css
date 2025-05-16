@@ -1,117 +1,120 @@
 
 body {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/*--parent--*/
+/*-- body --*/
 
-.box1 {
+header.box1 {
+  display: inline-block;
+  border: 1px solid red;
+  background-color: rgb(200, 121, 224);
+  height: 10vh;
+  width: 99%;
+  margin: 1px;
+  padding: 1px;
+}
+
+main.box2 {
+  display: inline-block;
+  border: 1px solid red;
+  background-color: rgb(164, 233, 167);
+  height: 75vh;
+  width: 99%;
+  margin: 1px;
+  padding: 1px;
+}
+
+footer.box3 {
+  display: inline-block;
   border: 1px solid red;
   height: 10vh;
+  width: 99%;
   margin: 2px;
 }
 
-.box2 {
-  border: 1px solid red;
-  height: 65vh;
-  margin: 2px;
-}
-
-.box3 {
-  border: 1px solid red;
-  height: 20vh;
-  margin: 3px;
-}
-/*-- child1--*/
+/*-- header --*/
 
 div.logo {
+  display: inline-block;
   border: 1px solid red;
   height: 107px;
-  width: 107px;
-  margin: 2px;
-  display: inline-block;
+  width: 5%;
+  margin: 1px;
 }
 
 div.menu {
+  display: inline-block;
   border: 1px solid red;
   height: 107px;
-  width: 107px;
-  margin: 2px;
-  display: inline-block;
+  width: 5%;
+  margin: 1px;
 }
 
 div.headeris {
+  display: inline-block;
   border: 1px solid red;
+  background-color: yellow;
   height: 107px;
-  width: 107px;
-  margin: 2px;
-  display: inline-block;
+  width: 88.5%;
+  min-width: 30%;
+  margin: 1px;
+
+
 }
 
-.button-container {
-  border: 1px solid red;
-  height: 736px;
-  width: 107px;
-  margin: 2px;
-  display: inline-block;
-}
-
-/*-- child2--*/
-
-div.straipsnis {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
-  display: inline-block;
-}
+/*-- main--*/
 
 div.movie1 {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
   display: inline-block;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  margin: 1px;
 }
 
 div.movie2 {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
   display: inline-block;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  margin: 1px;
 }
 
 div.movie3 {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
   display: inline-block;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  margin: 1px;
 }
 
 div.movie4 {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
   display: inline-block;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  margin: 1px;
 }
 
 div.movie5 {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
   display: inline-block;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  margin: 1px;
+}
+
+div.movie6 {
+  display: inline-block;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+  margin: 1px;
 }
 
 /*--footeris--*/
 
-nav {
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-  margin: 2px;
-  display: inline-block;  
-}
+
