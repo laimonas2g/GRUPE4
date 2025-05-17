@@ -1,9 +1,6 @@
 body {
   background-image: url("hehhee_PPPP.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+background-attachment: fixed;
   height: 900px;
 
   position: relative;
@@ -21,9 +18,7 @@ nav {
   align-content: center;
   display: block;
   border-bottom: 1px solid black;
-
   text-align: center;
-  vertical-align: middle;
   min-width: 800px;
 }
 

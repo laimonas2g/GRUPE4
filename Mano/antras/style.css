@@ -1,0 +1,58 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header div div {
+  display: inline-block;
+}
+
+div div div {
+  border: 1px solid red;
+}
+
+.left {
+  text-align: center;
+  border: 1px solid red;
+  width: 10vw;
+  height: 10vh;
+  margin: 1px;
+  padding: 1px;
+}
+
+.middle {
+  text-align: center;
+  border: 1px solid red;
+  width: 75vw;
+  height: 10vh;
+  margin: 1px;
+  padding: 1px;
+}
+
+.right {
+  text-align: center;
+  border: 1px solid red;
+  width: 10vw;
+  height: 10vh;
+  margin: 1px;
+  padding: 1px;
+}
+
+.hero {
+  text-align: center;
+  border: 1px solid red;
+  height: 50vh;
+  width: 96vw;
+  margin: 1px;
+  padding: 1px;
+}
+
+footer {
+  text-align: left;
+  border: 1px solid red;
+  height: 15vh;
+  width: 96vw;
+  margin: 1px;
+  padding: 1px;
+}
