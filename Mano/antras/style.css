@@ -8,8 +8,8 @@ header div div {
   display: inline-block;
 }
 
-div div div {
-  border: 1px solid red;
+.right  button  {
+  color: red;
 }
 
 .left {
