@@ -1,0 +1,75 @@
+body {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+nav {
+border: 1px solid red;
+display: block;
+}
+
+div.logo {
+  border: 1px solid green;
+  display: inline-block;
+  width: 30vw;
+}
+
+div.middle {
+  border: 1px solid green;
+  display: inline-block;
+  width: 65vw;
+text-align: center;
+}
+
+.ahref {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

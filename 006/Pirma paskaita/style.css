@@ -1,0 +1,171 @@
+body {
+  background-color: #dbdbdb;
+  color: #000000;
+  margin: 0;
+  font-size: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  justify-content: top;
+  align-items: top;
+}
+
+main {
+  z-index: 1;
+  position: relative;
+}
+
+.box {
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid white;
+  width: 80%;
+  height: auto;
+  position: relative;
+  align-content: center;
+  top: 60px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+
+h2 {
+  font-size: 60px;
+}
+
+img {
+  display: inline-block;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  max-width: 360px;
+  vertical-align: center;
+  padding: auto;
+}
+
+.box>* {
+  vertical-align: top;
+  line-height: normal;
+}
+
+.right {
+  width: 60%;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+}
+
+.right span {
+  background-color: #141B41;
+  color: aliceblue;
+  width: 33.3333%;
+  max-height: 200px;
+  font-size: 20px;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid white;
+  position: relative;
+  transition: 550ms;
+  border-radius: 20px;
+}
+
+
+.left {
+  background-color: rgb(255, 255, 255);
+  color: aliceblue;
+  width: 40%;
+  height: 400px;
+  font-size: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid white;
+  position: relative;
+  min-width: 400px;
+}
+
+.expl {
+  display: none;
+  font-size: 16px;
+  text-align: left;
+  width: auto;
+  height: auto;
+  position: absolute;
+  z-index: 9999;
+  padding: 20px;
+  background: white;
+  color: none;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: 2px solid #009218;
+  margin: 20px;
+}
+
+nav {
+  font-size: medium;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  
+
+}
+
+div span:hover {
+  background-color: #009218;
+  color: white;
+  border-radius: 20px;
+}
+
+/* faktiskai nereikalingas kodas, kuris dubliuojasi, uztenka pritaikyti vienoda klase visiem hoveriam, ir kodas veiks
+
+.str:hover+div.str.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+}
+
+.dex:hover+div.dex.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+}
+
+.con:hover+div.con.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+}
+.int:hover+div.int.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+}
+.wis:hover+div.wis.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+}
+.cha:hover+div.cha.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+} */
+.stat:hover+div.stat.expl {
+  display: block;
+  background-color: white;
+  color: #000000;
+  transition: 950ms;
+}
