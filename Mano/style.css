@@ -41,3 +41,38 @@ section div.big {
   left: 0;
 }
 
+.test-hover {
+  width: 200px;
+  height: 200px;
+  background-color: #ff450075;
+  border: 3px solid #ff4500;
+   transition: left 0.7s  cubic-bezier(.32,.92,.28,-1.38), background-color 2s;
+   position: relative;
+   left: 0;
+  
+}
+
+.test-hover:hover {
+  background-color: #ff4500;
+ left: 150px;
+}
+
+p {
+  font-size: 50px;
+  width: 100px;
+  padding-bottom: 30px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.test-first-class p:first-child {
+  color: skyblue;
+
+}
+
+.test-first-class p:last-child {
+  color: crimson;
+  border-bottom: none;
+
+}
+
