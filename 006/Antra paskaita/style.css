@@ -1,0 +1,35 @@
+body {
+  background-color: gray;
+  margin: 50px;
+}
+
+section {
+display: flex;
+border: 3px solid white;
+justify-content: center;
+align-items: center;
+column-gap: 10px;
+flex-wrap: wrap;
+row-gap: 40px;
+}
+
+section div {
+  width: 200px;
+  /* height: 200px; */
+  background-color: #ff450070;
+  border: 3px solid #ff4500;
+  color: black;
+  font-size: 40px;
+  font-family: monospace;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+section div.big {
+  width: 300px;
+  /* height: auto; */
+}
+

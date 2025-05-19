@@ -41,23 +41,23 @@ width: 99%;
 height: 50px;
 }
 
-.show:hover ol.list-categories{
-  max-height: inherit;
-  opacity: 1;
+.show:hover ol.list {
+max-height: inherit;
+opacity: 1;
 }
 
-.list-categories{
-  position: absolute;
-  left: 380px;
-  list-style-type: none;
-  color: white;
-  max-height: 0px;
-  text-decoration: underline;
-  text-align: left;
-  width: 200px;
-  opacity: 0;
-  overflow: hidden;
-  transition: opacity 300ms ease;
+.list{
+position: absolute;
+left: 380px;
+list-style-type: none;
+color: #ECEFCA;
+max-height: 0px;
+text-decoration: underline;
+text-align: left;
+width: 165px;
+opacity: 0;
+overflow: hidden;
+transition: opacity 300ms ease;
 }
 
 a {
