@@ -1,7 +1,12 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("/fonts/Mulish/Mulish-VariableFont_wght.ttf");
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
-   
+  font-family: "Mulish", sans-serif;
 }
 
 .navbar {
@@ -16,6 +21,7 @@ height: 41px;
 width: 160px;
 }
 
+
 /* .dezute .vienas {
 
 }
@@ -26,4 +32,4 @@ ul li {
 
 ul li a {
 
-} */ */
+} */
