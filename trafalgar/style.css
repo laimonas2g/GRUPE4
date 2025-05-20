@@ -1,0 +1,29 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+   
+}
+
+.navbar {
+display: flex;
+
+}
+
+.logo {
+display: flex;
+background-size: cover;
+height: 41px;
+width: 160px;
+}
+
+/* .dezute .vienas {
+
+}
+
+ul li {
+
+}
+
+ul li a {
+
+} */ */
