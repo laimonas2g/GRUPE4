@@ -38,15 +38,15 @@ padding: 10px;
 
 .show {
   text-decoration: none;
-  color: #213448
+  color: #213448;
+  list-style: none;
 }
 
 .box2 {
 display: flex;
 justify-content: flex-start;
-align-items: flex-start;
-margin: 10px;
-border: 1px solid green;
+align-items: first baseline;
+flex-direction: column;
 }
 
 .box3 {
