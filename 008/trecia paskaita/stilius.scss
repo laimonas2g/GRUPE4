@@ -1,0 +1,38 @@
+// .pirmas .antras .kitas {
+//   color: crimson;
+// }
+
+// .pirmas .antras  {
+//   color: darkgreen;
+// }
+
+.pirmas {
+  .antras {
+    color: darkgreen;
+    .kitas {
+      color: crimson;
+    }
+  }
+}
+
+.kitas {
+  color: skyblue;
+}
+
+.antras {
+  color: darkgoldenrod;
+}
+
+.didelis {
+  &__gvyuliai {
+    font-family: monospace;
+
+    &__bebrai {
+      color: crimson;
+    }
+
+    &__barsukai {
+      color: darkgreen;
+    }
+  }
+}

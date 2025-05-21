@@ -54,7 +54,25 @@ body {
 }
 
 #mob-menu {
-  display: none;
+    display: none;
+    &:checked {
+        & + header {
+            &+ .menu {
+                right: 0;
+            }
+            .burger {
+                background-color: transparent;
+                &::before {
+                    transform: rotate(45deg);
+                    bottom: unset;
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                    top: unset;
+                }
+            }
+        }
+    }
 }
 
 header {

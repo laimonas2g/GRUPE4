@@ -1,56 +1,60 @@
-:root {
-    --burger-width: 191px;
+h1 {
+  color: crimson;
 }
 
-span.raudonas {
-    color: crimson;
+body {
+  background-color: black;
 }
 
-span:not(.raudonas) {
-    color: darkgoldenrod;
-    font-size: 30px;
+@media (min-width: 320px) {
+  body {
+    background-color: lightgreen;
+  }
 }
 
-section i {
-    color: skyblue;
+@media (min-width: 700px) {
+  body {
+    background-color: lightblue;
+  }
 }
 
-section:has(.nieko) i {
-    color: darkgoldenrod;
+@media (min-width: 900px) {
+  body {
+    background-color: lightcoral;
+  }
 }
 
-.burger {
-    height: 10px;
-    width: var(--burger-width);
-    background-color: black;
-    margin: 13px 0;
-    position: relative;
+h1 {
+  font-size: 300px;
 }
 
-.burger::before {
-    content: '';
-    display: block;
-    height: 10px;
-    width: var(--burger-width);
-    position: absolute;
-    bottom: 13px;
-    background-color: black;
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 200px;
+  }
 }
 
-.burger::after {
-    content: '';
-    display: block;
-    height: 10px;
-    width: var(--burger-width);
-    position: absolute;
-    top: 13px;
-    background-color: black;
+@media (max-width: 500px) {
+  h1 {
+    font-size: 100px;
+  }
 }
 
-h1::before {
-    content: ' B ';
+@media (max-width: 400px) {
+  h1 {
+    font-size: 50px;
+  }
 }
 
-h1::after {
-    content: ' A ';
-}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  height: 100vh;
+  font-family: "Mulish", sans-serif;
+}
+
+.navbar {
+  display: flex;
+}
+
+.logo {
+width: 160px;
+height: 41px;
+margin: 56px 512px 0 191px;
+}
+
+.dezute1 {
+  width: 545px;
+  height: 23px;
+  font-size: 18px;
+  font-weight: 400;
+  Opacity: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 70px 192px 84px 512px;
+}
+
+.tekstas {
+  width: 445px;
+  height: 338px;
+  margin: 191px 109px 0px 190px;
+}
+
+.nuotrauka {
+  width: 693px;
+  height: 598px;
+  margin: 84px 163px 0 109px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 48px;
+  color: #000000;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0%;
+}
+
+.tekstas p {
+  font-size: 21px;
+  color: #7D7987;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.butonas {
+    height: 56px;
+    padding: 0;
+    border: 0;
+  width: 200px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  border-radius: 55px;
+    background-color: #458FF6;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+}
+
+li a {
+  display: flex;
+  word-spacing: 1px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #1F1534;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: 0%;
+}
+
+ul li {
+  list-style: none;
+}
+
