@@ -1,0 +1,56 @@
+:root {
+    --burger-width: 191px;
+}
+
+span.raudonas {
+    color: crimson;
+}
+
+span:not(.raudonas) {
+    color: darkgoldenrod;
+    font-size: 30px;
+}
+
+section i {
+    color: skyblue;
+}
+
+section:has(.nieko) i {
+    color: darkgoldenrod;
+}
+
+.burger {
+    height: 10px;
+    width: var(--burger-width);
+    background-color: black;
+    margin: 13px 0;
+    position: relative;
+}
+
+.burger::before {
+    content: '';
+    display: block;
+    height: 10px;
+    width: var(--burger-width);
+    position: absolute;
+    bottom: 13px;
+    background-color: black;
+}
+
+.burger::after {
+    content: '';
+    display: block;
+    height: 10px;
+    width: var(--burger-width);
+    position: absolute;
+    top: 13px;
+    background-color: black;
+}
+
+h1::before {
+    content: ' B ';
+}
+
+h1::after {
+    content: ' A ';
+}
