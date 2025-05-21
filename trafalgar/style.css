@@ -6,30 +6,61 @@
 body {
   box-sizing: border-box;
   margin: 0;
+  height: 100vh;
   font-family: "Mulish", sans-serif;
 }
 
 .navbar {
-display: flex;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
 .logo {
-display: flex;
-background-size: cover;
-height: 41px;
-width: 160px;
+  display: flex;
+  background-size: cover;
+  height: 41px;
+  width: 160px;
 }
 
-
-/* .dezute .vienas {
-
+.dezute.vienas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 545px;
+  margin-right: 70px;
 }
 
 ul li {
-
+  list-style: none;
 }
 
 ul li a {
+  text-decoration: none;
+}
 
-} */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tekstas {
+  width: 445px;
+  margin-left: 70px;
+  height: 338px;
+}
+
+.nuotrauka {
+margin-right: 163px;
+margin-top: 192px;
+}
+
+.butonas {
+  background-color: rgb(0, 102, 255);
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+}
