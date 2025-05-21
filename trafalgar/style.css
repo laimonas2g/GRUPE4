@@ -5,71 +5,328 @@ body {
   font-family: "Mulish", sans-serif;
 }
 
-header {
-  Width: 1487px;
-Height: 719px;
-margin-top: 56px;
-margin-left: -50px;
-}
+/* BOX 1 */
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  
 }
 
-.logo {
+.logo1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-size: cover;
+  margin-left: 191px;
+  margin-top: 56px;
   margin: 62px 0 0 244px;
   height: 41px;
   width: 160px;
 }
 
-.dezute.vienas {
+.box1 {
+  width: 545px;
+  height: 23px;
+  font-size: 18px;
+  font-weight: 400;
+  Opacity: 50%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 545px;
-  margin: 192px 70px 0 0;
-   
+  margin: 70px 192px 84px 512px;
 }
 
-ul li {
+.tekstas1-1 {
+  width: 445px;
+  height: 338px;
+  margin: 191px 109px 0px 190px;
+}
+
+.nuotrauka1-1 {
+  width: 693px;
+  height: 598px;
+  margin: 84px 163px 0 109px;
+}
+
+.box1-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header1-1 {
+  font-size: 48px;
+  color: #000000;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0%;
+}
+
+.tekstas1-1 p {
+  font-size: 21px;
+  color: #7D7987;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.butonas1-1 {
+  height: 56px;
+  padding: 0;
+  border: 0;
+  width: 200px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  border-radius: 55px;
+  background-color: #458FF6;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li a {
+  display: flex;
+  word-spacing: 1px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #1F1534;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: 0%;
+}
+
+nav ul li {
   list-style: none;
 }
 
-ul li a {
-  text-decoration: none;
-    color: gray;
-}
+/* BOX 2 */
 
-.hero {
+.dezute2 {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 952px;
+  height: 177px;
+  margin: 192px 325px 80px 323px;
+  top: 967px;
+  left: 323px;
+  border-radius: 5px;
 }
 
-.tekstas {
-  width: 445px;
-  margin-left: 190px;
-  margin-top: 191px;
-  height: 338px;
-}
-
-.nuotrauka {
-margin-right: 163px;
-margin-top: 84px;
-}
-
-.butonas {
-  background-color: #458FF6;
-  color: white;
-  font-weight: 700;
-  border-radius: 30px;
+.dezute2 h1 {
+  width: 212px;
   height: 56px;
-  width: 200px;
+  font-weight: 700;
+  color: #000000;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: 0%;
 }
+
+.dezute2.bruksnis1 {
+width: 56;
+height: 2;
+top: 1049px;
+left: 772px;
+color: #000000;
+border-radius: 5px;
+}
+
+.dezute2 p {
+width: 952;
+height: 60;
+top: 1084px;
+left: 323px;
+color: #7D7987;
+font-family: Mulish;
+font-weight: 300;
+font-size: 18px;
+line-height: 30px;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.dezute2-1 {
+width: 350;
+height: 354;
+top: 1224px;
+left: 240px;
+border-radius: 20px;
+}
+
+.box2 {
+  display: flex;
+}
+
+.butonas2-1 {
+width: 200;
+height: 56;
+top: 2041px;
+left: 700px;
+border-radius: 55px;
+border-width: 1.4px;
+border: 1.4px solid #458FF6;
+}
+
+/* BOX 3 */
+
+.dezute3 {
+  display: flex;
+}
+
+.dezute3-1 {
+width: 650;
+height: 477;
+top: 2318px;
+left: 135px;
+}
+
+.dezute3-2 {
+width: 486;
+height: 388;
+top: 2375px;
+left: 922px;
+}
+
+.butonas3-1 {
+  width: 200;
+height: 56;
+top: 2706px;
+left: 922px;
+border-radius: 55px;
+border-width: 1.4px;
+border: 1.4px solid #458FF6;
+}
+
+/* BOX 4 */
+
+.dezute4 {
+  display: flex;
+}
+
+.dezute4-1 {
+  width: 420;
+height: 375;
+top: 3060px;
+left: 280px;
+}
+
+.dezute4-2 {
+width: 665;
+height: 434;
+top: 3024px;
+left: 771px;
+}
+
+/* BOX 5 */
+
+.dezute5 {
+  display: block
+}
+
+.dezute5-1 {
+width: 1219.5810546875;
+height: 440;
+top: 3709px;
+left: 190px;
+
+}
+
+.dezute5-2 {
+width: 336.4285888671875;
+height: 20.000001907348633;
+top: 4191px;
+left: 633px;
+}
+
+/* BOX 5 */
+
+.dezute6 {
+  display: flex
+}
+
+.foto1-1 {
+
+width: 369;
+height: 246;
+top: 4593px;
+left: 240px;
+}
+
+.foto1-2 {
+width: 409;
+height: 272;
+top: 4589px;
+left: 605px;
+
+}
+
+.foto1-3 {
+width: 367;
+height: 245;
+top: 4591px;
+left: 995px;
+}
+
+/* BOX 6 */
+
+.dezute7 {
+width: 1638;
+height: 523;
+top: 5366px;
+left: -19px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
