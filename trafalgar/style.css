@@ -7,14 +7,6 @@ body {
 
 /* BOX 1 */
 
-header {
-  width: 1487;
-  height: 719;
-  top: 56px;
-  left: -50px;
-
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -111,13 +103,6 @@ nav ul li {
 
 /* BOX 2 */
 
-.sekcija1 {
-  width: 1675.5810546875;
-  height: 1133;
-  top: 965px;
-  left: -266px;
-}
-
 .dezute2 {
   display: flex;
   align-items: center;
@@ -142,89 +127,48 @@ nav ul li {
 }
 
 .dezute2.bruksnis1 {
-  width: 56;
-  height: 2;
-  top: 1049px;
-  left: 772px;
-  color: #000000;
-  border-radius: 5px;
+width: 56;
+height: 2;
+top: 1049px;
+left: 772px;
+color: #000000;
+border-radius: 5px;
 }
 
 .dezute2 p {
-  width: 952;
-  height: 60;
-  top: 1084px;
-  left: 323px;
-  color: #7D7987;
-  font-family: Mulish;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 30px;
-  letter-spacing: 0%;
-  text-align: center;
+width: 952;
+height: 60;
+top: 1084px;
+left: 323px;
+color: #7D7987;
+font-family: Mulish;
+font-weight: 300;
+font-size: 18px;
+line-height: 30px;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.dezute2-1 {
+width: 350;
+height: 354;
+top: 1224px;
+left: 240px;
+border-radius: 20px;
 }
 
 .box2 {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-left: 50px;
-  /* istrinti UP */
-}
-
-.dezute2-1 {
-  width: 350px;
-  height: 354px;
-  top: 1224px;
-  left: 240px;
-  border-radius: 20px;
-}
-
-.dezute2-2 {
-width: 350px;
-height: 354px;
-top: 1224px;
-left: 624px;
-}
-
-.dezute2-3 {
-width: 350px;
-height: 354px;
-top: 1224px;
-left: 1010px;
-}
-
-.dezute2-4 {
-width: 350px;
-height: 354px;
-top: 1615px;
-left: 240px;
-}
-
-.dezute2-5 {
-width: 350px;
-height: 354px;
-top: 1615px;
-left: 624px;
-
-}
-
-.dezute2-6 {
-width: 350px;
-height: 354px;
-top: 1615px;
-left: 1010px;
-
 }
 
 .butonas2-1 {
-  width: 200;
-  height: 56;
-  top: 2041px;
-  left: 700px;
-  border-radius: 55px;
-  border-width: 1.4px;
-  border: 1.4px solid #458FF6;
+width: 200;
+height: 56;
+top: 2041px;
+left: 700px;
+border-radius: 55px;
+border-width: 1.4px;
+border: 1.4px solid #458FF6;
 }
 
 /* BOX 3 */
@@ -234,27 +178,27 @@ left: 1010px;
 }
 
 .dezute3-1 {
-  width: 650;
-  height: 477;
-  top: 2318px;
-  left: 135px;
+width: 650;
+height: 477;
+top: 2318px;
+left: 135px;
 }
 
 .dezute3-2 {
-  width: 486;
-  height: 388;
-  top: 2375px;
-  left: 922px;
+width: 486;
+height: 388;
+top: 2375px;
+left: 922px;
 }
 
 .butonas3-1 {
   width: 200;
-  height: 56;
-  top: 2706px;
-  left: 922px;
-  border-radius: 55px;
-  border-width: 1.4px;
-  border: 1.4px solid #458FF6;
+height: 56;
+top: 2706px;
+left: 922px;
+border-radius: 55px;
+border-width: 1.4px;
+border: 1.4px solid #458FF6;
 }
 
 /* BOX 4 */
@@ -265,16 +209,16 @@ left: 1010px;
 
 .dezute4-1 {
   width: 420;
-  height: 375;
-  top: 3060px;
-  left: 280px;
+height: 375;
+top: 3060px;
+left: 280px;
 }
 
 .dezute4-2 {
-  width: 665;
-  height: 434;
-  top: 3024px;
-  left: 771px;
+width: 665;
+height: 434;
+top: 3024px;
+left: 771px;
 }
 
 /* BOX 5 */
@@ -284,18 +228,18 @@ left: 1010px;
 }
 
 .dezute5-1 {
-  width: 1219.5810546875;
-  height: 440;
-  top: 3709px;
-  left: 190px;
+width: 1219.5810546875;
+height: 440;
+top: 3709px;
+left: 190px;
 
 }
 
 .dezute5-2 {
-  width: 336.4285888671875;
-  height: 20.000001907348633;
-  top: 4191px;
-  left: 633px;
+width: 336.4285888671875;
+height: 20.000001907348633;
+top: 4191px;
+left: 633px;
 }
 
 /* BOX 5 */
@@ -306,33 +250,33 @@ left: 1010px;
 
 .foto1-1 {
 
-  width: 369;
-  height: 246;
-  top: 4593px;
-  left: 240px;
+width: 369;
+height: 246;
+top: 4593px;
+left: 240px;
 }
 
 .foto1-2 {
-  width: 409;
-  height: 272;
-  top: 4589px;
-  left: 605px;
+width: 409;
+height: 272;
+top: 4589px;
+left: 605px;
 
 }
 
 .foto1-3 {
-  width: 367;
-  height: 245;
-  top: 4591px;
-  left: 995px;
+width: 367;
+height: 245;
+top: 4591px;
+left: 995px;
 }
 
 /* BOX 6 */
 
 .dezute7 {
-  width: 1638;
-  height: 523;
-  top: 5366px;
-  left: -19px;
+width: 1638;
+height: 523;
+top: 5366px;
+left: -19px;
 
 }

@@ -1,158 +1,151 @@
-body {
-  background: url("hummingbird.png") no-repeat center fixed;
-  background-size: cover;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+body{
+   background: url("hummingbird.png") no-repeat center fixed;
+   background-size: cover;
+   height: 100vh;
+   margin: 0;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.container {
-  height: 100%;
-  backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.5);
+.container{
+   height: 100%;
+   backdrop-filter: blur(4px);
+   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar {
-  height: 15%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar{
+   height: 15%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
+.navbar ul{
+   list-style: none;
+   display: flex;
+   gap: 2rem;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: rgb(22, 21, 21);
-  font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s;
+.navbar a{
+   text-decoration: none;
+   color: rgb(23, 23, 23);
+   font-weight: bold;
+   font-size: 18px;
+   transition: 0.3s;
+}
+.navbar a:hover{
+   color: rgb(106, 64, 126);
 }
 
-.navbar a:hover {
-  color: rgb(106, 82, 129);
+.actions{
+   display: flex;
+   gap: 1rem;
+   align-items: center;
 }
 
-.actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.action-button{
+   padding: 0.5rem 1rem;
+   border: none;
+   border-radius: 20px;
+   font-weight: bold;
+   cursor: pointer;
 }
 
-.action-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
+.email{
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
 }
 
-.email {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+.login{
+   background-color: rgb(186, 111, 188);
+   color: rgb(77, 39, 95);
+   margin-right: 2rem;
 }
 
-.login {
-  background-color: rgb(165, 136, 192);
-  color: rgb(106, 64, 192);
+.content{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 70vh;
+   text-align: center;
 }
 
-/* ZIURETI CIA */
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 70vh;
-  text-align: center;
+.headline{
+   font-size: 3rem;
+   letter-spacing: 2px;
+   color: rgb(106, 64, 126);
+   margin: 0 auto;
 }
 
-.headline {
-  font-size: 3rem;
-  letter-spacing: 2px;
-  color: rgb(106, 64, 126);
-  /* margin: 0 auto; svarbu UP */
+.subhead{
+   font-size: 1.2rem;
+   color: rgb(68, 68, 68);
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-.subhead {
-  font-size: 1.2rem;
-  color: rgb(68, 68, 68);
-  font-weight: 100;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+.cta-buttons{
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+   margin-bottom: 1rem;
 }
 
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 1rem;
+.btn{
+   padding: 0.75rem 1.5rem;
+   border-radius: 45px;
+   
+   font-weight: bold;
+   cursor: pointer;
+   font-size: 16px;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 45px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 14px;
+.primary{
+   background-color: rgb(106, 64, 126);
+   color: white;
+   border: none;
 }
 
-.primary {
-  background-color: rgb(106, 64, 126);
-  color: white;
+.primary:hover{
+   background-color: rgb(77, 39, 95);
 }
 
-.primary:hover {
-background-color: rgb(77, 39, 95), 39, 95;
+.secondary{
+   background-color: transparent;
+   border: 2px solid rgb(106, 64, 126);   
+   color: rgb(106, 64, 126);
 }
 
-.secondary {
-  background-color: transparent;
-  border: 2px solid rgb(106, 64, 126);
-  color: rgb(106, 64, 126);
+.secondary:hover{
+   background-color: rgb(106, 64, 126);
+   color: white;
 }
 
-.secondary:hover {
-  background-color: rgb(77, 39, 95), 39, 95;
-  color: white;
-}
-
-.subscribe-form {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+.subscribe-form{
+   display: flex;
+   justify-content: center;
+   gap: 0.5rem;
+   margin-top: 1rem;
 }
 
 .subscribe-form input[type="email"]{
-padding: 0.5rem 1rem;
-border: 1px solid rgb(178, 178, 178);
-border-radius: 20px;
-width: 20%;
+   padding: 0.7rem 1rem;
+   border: 1px solid rgb(178, 178, 178);
+   border-radius: 20px;
+   width: 20%;
 }
 
-.subscribe-form button {
-  padding: 0.7rem 1rem;
-  border: none;
-  border-radius: 20px;
-  background-color: rgb(106, 64, 126);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+.subscribe-form button{
+   padding: 0.7rem 1rem;
+   border: none;
+   border-radius: 20px;
+   background-color: rgb(106, 64, 126);
+   color: white;
+   font-weight: bold;
+   cursor: pointer;
 }
 
-.subscribe-form button:hover {
-  background-color: rgb(77, 39, 95);
+.subscribe-form button:hover{
+   background-color: rgb(77, 39, 95);
 }
-
-
-
-
-
-
-
-
