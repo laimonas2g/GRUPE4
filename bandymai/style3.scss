@@ -1,0 +1,152 @@
+$xl: 1600px;
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+$xxs: 480px;
+$xxxs: 320px;
+
+$blue: #458FF6;
+$gray: #7D7987;
+$black: #000000;
+$white: #FFFFFF;
+
+
+$main-font: "Mulish", sans-serif;
+
+// Bendriniai
+
+* {
+  box-sizing: border-box;
+
+}
+
+// Reset
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $main-font;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// (reset END)
+
+// Page 1 Top START
+
+.puslapis3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.apacia3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lowbar3 {
+  width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-text3 {
+  width: 486px;
+  height: 388px;
+  // top: 2375px;
+  // left: 922px;
+  margin: 57px 192px 32px 137px;
+  // pasitikrin Margin veliau UP
+}
+
+.header-text3 span {
+  width: 481px;
+  height: 112px;
+  // top: 2375px;
+  // left: 927px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: 0%;
+  color: $black;
+}
+
+.illustration3 {
+  width: 650px;
+  height: 477px;
+  // top: 2318px;
+  // left: 135px;
+  margin: 220px 142px 265px 135px;
+  // pasitikrin Margin veliau UP
+}
+
+.Rectangle11 {
+  //NEVEIKIA
+  width: 56px;
+  height: 2px;
+  // top: 2513px;
+  // left: 927px;
+  border-radius: 10px;
+  color: $black;
+  margin: 26px 617px 31px 327px;
+}
+
+.header-text3 p {
+  width: 450px;
+  height: 120px;
+  // top: 2546px;
+  // left: 927px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  color: $gray;
+}
+
+
+.button3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  // top: 2703px;
+  // left: 922px;
+  border: 0 none transparent;
+  font-family: $main-font;
+  border-radius: 55px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: $blue;
+  border: 1.4px solid $blue;
+  margin: 37px 478px 32px 137px;
+}
