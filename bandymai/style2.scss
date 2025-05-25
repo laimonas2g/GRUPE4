@@ -1,0 +1,219 @@
+$xl: 1600px;
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+$xxs: 480px;
+$xxxs: 320px;
+
+$blue: #458FF6;
+$gray: #7D7987;
+$black: #000000;
+$white: #FFFFFF;
+
+
+$main-font: "Mulish", sans-serif;
+
+// Bendriniai
+
+* {
+  box-sizing: border-box;
+
+}
+
+// Reset
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $main-font;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// (reset END)
+
+// Page 1 Top START
+
+
+.virsus2-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.headeris2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 212px;
+  height: 56px;
+  // top: 967px;
+  // left: 695px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: $black;
+}
+
+.Rectangle2 {
+  width: 56px;
+  height: 2px;
+  // top: 1049px;
+  // left: 772px;
+  border-radius: 5px;
+  margin: 26px 0 33px 0;
+}
+
+.virsus2-1 p {
+  width: 952px;
+  height: 60px;
+  // top: 1084px;
+  // left: 323px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: $gray;
+}
+
+.apacia2 {
+  display: flex;
+  justify-content: space-around;
+}
+.apacia2-1 {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1140px;
+  height: 765px;
+  // top: 1224px;
+  // left: 240px;
+}
+
+.box2-1 {
+  width: 350px;
+  height: 354px;
+  margin: 0 34px 37px 0;
+
+
+}
+
+.box2-2 {
+  width: 350px;
+  height: 354px;
+  margin: 0 36px 37px 0;
+}
+
+.box2-3 {
+  width: 350px;
+  height: 354px;
+  margin-bottom: 37px;
+}
+
+.box2-4 {
+  width: 350px;
+  height: 354px;
+  margin-right: 34px;
+}
+
+.box2-5 {
+  width: 350px;
+  height: 354px;
+  margin-right: 36px;
+}
+
+.box2-6 {
+  width: 350px;
+  height: 354px;
+}
+
+.frame {
+  width: 91.98px;
+  height: 90.01px;
+  margin: 54px 221.02px 22.4px 37px;
+}
+
+.box2-1 span {
+display: flex;
+width: 160px;
+height: 56px;
+// top: 1390.41px;
+// left: 279px;
+font-weight: 700;
+font-size: 24px;
+line-height: 56px;
+letter-spacing: 0%;
+color: $black;
+margin: 22.4px 191px 1px 39px;
+}
+
+.box2-1 p {
+width: 266px;
+height: 84px;
+// top: 1447.41px;
+// left: 279px;
+font-weight: 300;
+font-size: 16px;
+line-height: 28px;
+letter-spacing: 0%;
+color: $gray;
+margin: 0 45px 46.59px 39px;
+}
+
+.box2-2 p {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
