@@ -22,6 +22,7 @@ $fancy-font: "Fascinate", system-ui;
 $main-font: "Oswald", sans-serif;
 
 $heder-height: 96px;
+$burger-width: 60px;
 
 
 * {
@@ -71,6 +72,7 @@ header {
   display: flex;
   justify-content: center;
   background-color: $blue;
+  position: relative;
 
   .menu {
     display: flex;
@@ -122,23 +124,100 @@ header {
       }
     }
   }
+
+  .burger {
+    height: 10px;
+    width: $burger-width;
+    background-color: $white;
+    margin: 13px 0;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 10px;
+      width: $burger-width;
+      position: absolute;
+      bottom: 13px;
+      background-color: $white;
+      transition: all 0.4s;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 10px;
+      width: $burger-width;
+      position: absolute;
+      top: 13px;
+      background-color: $white;
+      transition: all 0.4s;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: $blue;
+    width: 100%;
+    left: 0;
+    top: $heder-height;
+    transform: translate(-100%, 0);
+    transition: all 0.4s ease-in-out;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: $gap-max;
+    }
+  }
+
+  input {
+    display: none;
+
+    &.checked+.mobile-menu {
+      transform: translate(0, 0);
+    }
+
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  @media (max-width: $sm) {
+    .desktop-menu {
+      display: none;
+    }
+
+    .menu__right {
+      display: none;
+    }
+
+    .burger {
+      display: block;
+    }
+  }
+
 }
 
 .hero {
   width: 100%;
   height: calc(100vh - #{$heder-height});
   display: flex;
-  position: relative;
-  // relative?
   justify-content: center;
   align-items: center;
+  position: relative;
   overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
+    filter: brightness(0.05);
     transform: scale(1);
     animation-name: fancy;
     animation-duration: 20s;
@@ -149,7 +228,7 @@ header {
   @keyframes fancy {
     0% {
       transform: scale(1);
-      filter: brightness(0.5);
+      filter: brightness(0.05);
     }
 
     5% {
@@ -162,7 +241,7 @@ header {
 
     100% {
       transform: scale(1.7);
-      filter: brightness(0.5);
+      filter: brightness(0.05);
     }
   }
 
@@ -181,6 +260,40 @@ header {
         font-size: 60px;
         margin-bottom: 30px;
         line-height: 1.2;
+      }
+    }
+  }
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  &__bin {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: $xl;
+    row-gap: $gap;
+    padding: 0 $gap;
+
+    &__box {
+      width: 100%;
+      max-width: calc(33.333% - 2 * $gap / 3);
+      padding: $gap-max;
+      border: 1px solid $gray;
+
+      @media (max-width: $sm) {
+        max-width: calc(50% - $gap / 2); // pereinam i tablet
+        // pereinam i mobile
+      }
+
+      @media (max-width: $xs) {
+        max-width: unset; // pereinam visikai i mobile
       }
     }
   }
