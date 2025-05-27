@@ -128,9 +128,6 @@ ul .li-5 {
   opacity: 0.5;
 }
 
-// Page 1 Top END
-
-
 // Page 1 Bottom START
 
 .apacia1 {
@@ -273,16 +270,20 @@ ul .li-5 {
 // line-height: 30px;
 // letter-spacing: 0%;
 // text-align: center;
-
 // }
 
+// Page 2
+
+.puslapis2 {
+  margin-top: 192px;
+}
 
 .virsus2-1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 80px;
+  margin: 192px 325px 80px 323px;
 }
 
 .headeris2 {
@@ -569,6 +570,27 @@ color: $gray;
 margin: 0 50px 75px 39px;
 }
 
+.button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  // top: 2703px;
+  // left: 922px;
+  border: 0 none transparent;
+  font-family: $main-font;
+  border-radius: 55px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: $blue;
+  border: 1.4px solid $blue;
+  background-color: $white;
+  margin: 37px 478px 32px 137px;
+}
+
 // Page 3
 
 
@@ -661,6 +683,7 @@ margin: 0 50px 75px 39px;
   line-height: 60px;
   letter-spacing: 0%;
   color: $blue;
+  background-color: $white;
   border: 1.4px solid $blue;
   margin: 37px 478px 32px 137px;
 }
@@ -757,11 +780,31 @@ margin: 0 50px 75px 39px;
   line-height: 60px;
   letter-spacing: 0%;
   color: $blue;
+  background-color: $white;
   border: 1.4px solid $blue;
   margin: 37px 478px 32px 137px;
 }
 
 // Page 5
+
+.puslapis5 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.boxas5 {
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.lowbar5 {
+  width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .image5-1 {
 // width: 1120px;
@@ -782,10 +825,25 @@ margin: 42px 630.57px 0 633px;
 // Page 6
 
 
-.lowbar6 {
-display: flex;
+.puslapis6 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 223.43px;
 }
 
+.apacia6 {
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.lowbar6 {
+  width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
 .lowbar6 a {
@@ -806,6 +864,7 @@ display: flex;
   line-height: 60px;
   letter-spacing: 0%;
   color: $blue;
+  background-color: $white;
   border: 1.4px solid $blue;
 }
 
@@ -840,6 +899,13 @@ display: flex;
 
 // Page 7
 
+
+.puslapis7 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 223.43px;
+}
 
 .apacia7 {
 display: flex;
