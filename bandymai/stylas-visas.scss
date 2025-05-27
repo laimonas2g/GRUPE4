@@ -139,6 +139,12 @@ ul .li-5 {
   width: 1600px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+.element1 {
+  margin: 63px 108.42px 0 0;
+  position: absolute;
 }
 
 .header-text1 {
