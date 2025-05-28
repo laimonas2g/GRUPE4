@@ -88,7 +88,7 @@ li {
 
 .header-text3 span {
   width: 481px;
-  height: 112px;
+  height: 388px;
   // top: 2375px;
   // left: 927px;
   font-weight: 700;
@@ -96,6 +96,7 @@ li {
   line-height: 56px;
   letter-spacing: 0%;
   color: $black;
+  margin: 277px 192px 261px 0;
 }
 
 .illustration3 {
@@ -115,7 +116,7 @@ li {
   // left: 927px;
   border-radius: 10px;
   color: $black;
-  margin: 26px 617px 31px 327px;
+  margin: 26px 617px 31px 0px;
 }
 
 .header-text3 p {
@@ -149,4 +150,5 @@ li {
   color: $blue;
   border: 1.4px solid $blue;
   margin: 37px 478px 32px 137px;
+  background-color:  $white;
 }

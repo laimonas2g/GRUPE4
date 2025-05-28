@@ -599,7 +599,6 @@ margin: 0 50px 75px 39px;
 
 // Page 3
 
-
 .puslapis3 {
   display: flex;
   justify-content: space-around;
@@ -630,7 +629,7 @@ margin: 0 50px 75px 39px;
 
 .header-text3 span {
   width: 481px;
-  height: 112px;
+  height: 388px;
   // top: 2375px;
   // left: 927px;
   font-weight: 700;
@@ -638,6 +637,7 @@ margin: 0 50px 75px 39px;
   line-height: 56px;
   letter-spacing: 0%;
   color: $black;
+  margin: 277px 192px 261px 0;
 }
 
 .illustration3 {
@@ -657,7 +657,7 @@ margin: 0 50px 75px 39px;
   // left: 927px;
   border-radius: 10px;
   color: $black;
-  margin: 26px 617px 31px 327px;
+  margin: 26px 617px 31px 0px;
 }
 
 .header-text3 p {
@@ -689,9 +689,9 @@ margin: 0 50px 75px 39px;
   line-height: 60px;
   letter-spacing: 0%;
   color: $blue;
-  background-color: $white;
   border: 1.4px solid $blue;
   margin: 37px 478px 32px 137px;
+  background-color:  $white;
 }
 
 // Page 4
@@ -717,11 +717,11 @@ margin: 0 50px 75px 39px;
 }
 
 .header-text4 {
-  width: 486px;
-  height: 388px;
+  width: 420px;
+  height: 375px;
   // top: 2375px;
   // left: 922px;
-  margin: 57px 192px 32px 137px;
+  margin: 265px 71px 289px 280px;
   // pasitikrin Margin veliau UP
 }
 
@@ -738,12 +738,11 @@ margin: 0 50px 75px 39px;
 }
 
 .illustration4 {
-  width: 650px;
-  height: 477px;
+  width: 665px;
+  height: 434px;
   // top: 2318px;
   // left: 135px;
-  margin: 220px 142px 265px 135px;
-  // pasitikrin Margin veliau UP
+  margin: 261px 164px 266px 71px;
 }
 
 .Rectangle12 {
@@ -754,7 +753,7 @@ margin: 0 50px 75px 39px;
   // left: 927px;
   border-radius: 10px;
   color: $black;
-  margin: 26px 617px 31px 327px;
+  margin: 30px 433px 31px 0px;
 }
 
 .header-text4 p {
@@ -786,9 +785,9 @@ margin: 0 50px 75px 39px;
   line-height: 60px;
   letter-spacing: 0%;
   color: $blue;
-  background-color: $white;
   border: 1.4px solid $blue;
-  margin: 37px 478px 32px 137px;
+  margin: 40px 291px 289px 0px;
+  background-color: $white;
 }
 
 // Page 5
@@ -831,29 +830,163 @@ margin: 42px 630.57px 0 633px;
 // Page 6
 
 
-.puslapis6 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 223.43px;
-}
-
 .apacia6 {
-display: flex;
-justify-content: space-around;
-align-items: center;
+  display: flex;
 }
 
 .lowbar6 {
-  width: 1600px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  margin-top: 50px;
+  margin-left: 50px;
+  // marginai belekokie
+}
+
+.box6-1 {
+  margin-left: 240px;
+}
+
+.imagebox6-1 {
+  width: 369px;
+  height: 246px;
+  // top: 4593px;
+  // left: 240px;
+}
+
+.imagebox6-2 {
+  width: 409px;
+  height: 272px;
+  // top: 4589px;
+  // left: 605px;
+}
+
+.imagebox6-3 {
+  width: 367px;
+  height: 245px;
+  // top: 4591px;
+  // left: 995px;
+  margin-left: -25px;
+  margin-bottom: 24px;
+}
+
+.box6-1 span {
+  display: block;
+  width: 251px;
+  height: 64px;
+  // top: 4860px;
+  // left: 273px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $black;
+  margin: 21px 66px 12px 33px;
+}
+
+.box6-1 p {
+  width: 266px;
+  height: 84px;
+  // top: 4936px;
+  // left: 273px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $gray;
+  margin: 21px 66px 12px 33px;
 }
 
 
-.lowbar6 a {
-  color: $blue;
+.box6-2 span {
+  display: block;
+  width: 265px;
+  height: 64px;
+  // top: 4860px;
+  // left: 657px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $black;
+  margin: -5px 52px 12px 33px;
+}
+
+.box6-2 p {
+  width: 266px;
+  height: 84px;
+  // top: 4936px;
+  // left: 657px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $gray;
+  margin: 12px 51px 25px 33px;
+}
+
+.box6-3 {
+  margin-right: 238px;
+}
+
+.box6-3 span {
+  display: block;
+  width: 245px;
+  height: 64px;
+  // top: 4860px;
+  // left: 1042px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $black;
+  margin-top: 10px;
+}
+
+.box6-3 p {
+  width: 266px;
+  height: 84px;
+  // top: 4936px;
+  // left: 1042px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $gray;
+  margin-bottom: 33px;
+  //margin bottom LEMPINIS!!!!!!!
+}
+
+
+.header-text6 {
+  width: 462px;
+  height: 84px;
+  // top: 4433px;
+  // left: 569px;
+  border-radius: 5px;
+  margin: 222px 569px 72px 569px;
+}
+
+.header-text6 span {
+  width: 462px;
+  height: 56px;
+  // top: 4433px;
+  // left: 569px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: 0%;
+  color: $black;
+}
+
+.Rectangle18 {
+  width: 56px;
+  height: 2px;
+  // top: 4515px;
+  // left: 772px;
+  border-radius: 5px;
+  color: $black;
+  margin-top: 26px;
+  margin-left: 250px;
 }
 
 .button6 {
@@ -872,45 +1005,27 @@ align-items: center;
   color: $blue;
   background-color: $white;
   border: 1.4px solid $blue;
+  margin: 72px 700px 201px 700px;
 }
 
-// .lowbar6 {
-// width: 1785.11474609375px;
-// height: 810.0001831054688px;
-// // top: 4427px;
-// // left: 191px;
-// }
-
-// .headeris6 {
-//   width: 462px;
-// height: 56px;
-// // top: 4433px;
-// // left: 569px;
-// font-weight: 700;
-// font-size: 36px;
-// line-height: 56px;
-// letter-spacing: 0%;
-// margin: 227px 569px 0 569px;
-// }
-
-// .Rectangle18 {
-// width: 56px;
-// height: 2px;
-// // top: 4515px;
-// // left: 772px;
-// border-radius: 5px;
-// color: $black;
-// margin: 26px 772px 72px 772px;
-// }
-
+.lowbar6 a {
+  width: 266px;
+  height: 28px;
+  // top: 5045px;
+  // left: 273px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $blue;
+  margin-left: 33px;
+}
 // Page 7
 
 
 .puslapis7 {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  margin-top: 223.43px;
 }
 
 .apacia7 {
@@ -925,33 +1040,88 @@ margin-top: 50px;
 // Margin TOP and LEFT pakeisti
 }
 
+.box7-0 {
+  margin: 336px 77.42px 7.12px 0px;
+}
+
 .box7-1 {
 width: 391px;
 height: 201px;
-border: 1px solid $black;
 // top: 5556px;
 // left: 190px;
+
 color: $white;
+margin: 118px 145px 113px 0px;
+}
+
+.eclipse7 {
+  margin: 0 12px 17px 0;
+}
+
+.trafalgar7 {
+  margin: 6px 225px 22px 0;
+}
+
+.box7-1 span {
+  
+width: 391px;
+height: 84px;
+// top: 5614px;
+// left: 190px;
+font-weight: 300;
+font-size: 18px;
+line-height: 28px;
+letter-spacing: 0%;
+}
+
+.box7-1 p {
+  display: block;
+width: 391px;
+height: 28px;
+// top: 5729px;
+// left: 190px;
+font-weight: 300;
+font-size: 16px;
+line-height: 28px;
+letter-spacing: 0%;
+margin-top: 31px;
+
 }
 
 .box7-2 {
-  display: flex;
+display: block;
 width: 391px;
-height: 201px;
+height: 214px;
+// top: 5547px;
+// left: 726px;
 border: 1px solid $black;
-// top: 5556px;
-// left: 190px;
-margin: 0 111px 0 145px;
 color: $white;
+margin: 109px 111px 109px 0;
+}
+
+.boxlist72-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sekcija7-1 {
+  margin-bottom: 2px;
+}
+.sekcija7-1 {
+  margin-bottom: 2px;
+  margin-right: 55px;
+  //kodel Margin Right neveikia???
 }
 
 .box7-3 {
 width: 391px;
-height: 201px;
+height: 214px;
 border: 1px solid $black;
-// top: 5556px;
-// left: 190px;
+// top: 5547px;
+// left: 1228px;
 color: $white;
+margin: 109px -19px 109px 0;
 }
 
 

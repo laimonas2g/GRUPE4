@@ -58,6 +58,10 @@ li {
 
 // Page 1 Top START
 
+.puslapis7 {
+  display: flex;
+  justify-content: space-around;
+}
 
 .apacia7 {
 display: flex;
@@ -71,33 +75,88 @@ margin-top: 50px;
 // Margin TOP and LEFT pakeisti
 }
 
+.box7-0 {
+  margin: 336px 77.42px 7.12px 0px;
+}
+
 .box7-1 {
 width: 391px;
 height: 201px;
-border: 1px solid $black;
 // top: 5556px;
 // left: 190px;
+
 color: $white;
+margin: 118px 145px 113px 0px;
+}
+
+.eclipse7 {
+  margin: 0 12px 17px 0;
+}
+
+.trafalgar7 {
+  margin: 6px 225px 22px 0;
+}
+
+.box7-1 span {
+  
+width: 391px;
+height: 84px;
+// top: 5614px;
+// left: 190px;
+font-weight: 300;
+font-size: 18px;
+line-height: 28px;
+letter-spacing: 0%;
+}
+
+.box7-1 p {
+  display: block;
+width: 391px;
+height: 28px;
+// top: 5729px;
+// left: 190px;
+font-weight: 300;
+font-size: 16px;
+line-height: 28px;
+letter-spacing: 0%;
+margin-top: 31px;
+
 }
 
 .box7-2 {
-  display: flex;
+display: block;
 width: 391px;
-height: 201px;
+height: 214px;
+// top: 5547px;
+// left: 726px;
 border: 1px solid $black;
-// top: 5556px;
-// left: 190px;
-margin: 0 111px 0 145px;
 color: $white;
+margin: 109px 111px 109px 0;
+}
+
+.boxlist72-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sekcija7-1 {
+  margin-bottom: 2px;
+}
+.sekcija7-1 {
+  margin-bottom: 2px;
+  margin-right: 55px;
+  //kodel Margin Right neveikia???
 }
 
 .box7-3 {
 width: 391px;
-height: 201px;
+height: 214px;
 border: 1px solid $black;
-// top: 5556px;
-// left: 190px;
+// top: 5547px;
+// left: 1228px;
 color: $white;
+margin: 109px -19px 109px 0;
 }
 
 

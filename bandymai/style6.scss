@@ -58,18 +58,165 @@ li {
 
 // Page 1 Top START
 
+// 6-3 BOX NEPABAIGTAS
+
+.apacia6 {
+  display: flex;
+}
 
 .lowbar6 {
-display: flex;
+  display: flex;
+
+  margin-top: 50px;
+  margin-left: 50px;
+  // marginai belekokie
+}
+
+.box6-1 {
+  margin-left: 240px;
+}
+
+.imagebox6-1 {
+  width: 369px;
+  height: 246px;
+  // top: 4593px;
+  // left: 240px;
+}
+
+.imagebox6-2 {
+  width: 409px;
+  height: 272px;
+  // top: 4589px;
+  // left: 605px;
+}
+
+.imagebox6-3 {
+  width: 367px;
+  height: 245px;
+  // top: 4591px;
+  // left: 995px;
+  margin-left: -25px;
+  margin-bottom: 24px;
+}
+
+.box6-1 span {
+  display: block;
+  width: 251px;
+  height: 64px;
+  // top: 4860px;
+  // left: 273px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $black;
+  margin: 21px 66px 12px 33px;
+}
+
+.box6-1 p {
+  width: 266px;
+  height: 84px;
+  // top: 4936px;
+  // left: 273px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $gray;
+  margin: 21px 66px 12px 33px;
 }
 
 
+.box6-2 span {
+  display: block;
+  width: 265px;
+  height: 64px;
+  // top: 4860px;
+  // left: 657px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $black;
+  margin: -5px 52px 12px 33px;
+}
+
+.box6-2 p {
+  width: 266px;
+  height: 84px;
+  // top: 4936px;
+  // left: 657px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $gray;
+  margin: 12px 51px 25px 33px;
+}
+
+.box6-3 {
+  margin-right: 238px;
+}
+
+.box6-3 span {
+  display: block;
+  width: 245px;
+  height: 64px;
+  // top: 4860px;
+  // left: 1042px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: $black;
+  margin-top: 10px;
+}
+
+.box6-3 p {
+  width: 266px;
+  height: 84px;
+  // top: 4936px;
+  // left: 1042px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $gray;
+  margin-bottom: 33px;
+  //margin bottom LEMPINIS!!!!!!!
+}
 
 
+.header-text6 {
+  width: 462px;
+  height: 84px;
+  // top: 4433px;
+  // left: 569px;
+  border-radius: 5px;
+  margin: 222px 569px 72px 569px;
+}
 
+.header-text6 span {
+  width: 462px;
+  height: 56px;
+  // top: 4433px;
+  // left: 569px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: 0%;
+  color: $black;
+}
 
-.lowbar6 a {
-  color: $blue;
+.Rectangle18 {
+  width: 56px;
+  height: 2px;
+  // top: 4515px;
+  // left: 772px;
+  border-radius: 5px;
+  color: $black;
+  margin-top: 26px;
+  margin-left: 250px;
 }
 
 .button6 {
@@ -86,83 +233,20 @@ display: flex;
   line-height: 60px;
   letter-spacing: 0%;
   color: $blue;
+  background-color: $white;
   border: 1.4px solid $blue;
+  margin: 72px 700px 201px 700px;
 }
 
-// .lowbar6 {
-// width: 1785.11474609375px;
-// height: 810.0001831054688px;
-// // top: 4427px;
-// // left: 191px;
-// }
-
-// .headeris6 {
-//   width: 462px;
-// height: 56px;
-// // top: 4433px;
-// // left: 569px;
-// font-weight: 700;
-// font-size: 36px;
-// line-height: 56px;
-// letter-spacing: 0%;
-// margin: 227px 569px 0 569px;
-// }
-
-// .Rectangle18 {
-// width: 56px;
-// height: 2px;
-// // top: 4515px;
-// // left: 772px;
-// border-radius: 5px;
-// color: $black;
-// margin: 26px 772px 72px 772px;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.lowbar6 a {
+  width: 266px;
+  height: 28px;
+  // top: 5045px;
+  // left: 273px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: $blue;
+  margin-left: 33px;
+}
