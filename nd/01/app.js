@@ -17,6 +17,7 @@ h4.style.color = 'blue';
 
 // 2.
 
+const keturkampis = document.querySelector('div');
 
 
 

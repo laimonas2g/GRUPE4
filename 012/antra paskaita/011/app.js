@@ -61,6 +61,50 @@ let V2 = 4;
 V2 += 5; // patrumpintas uzsrasymas (=9)
 
 console.log(V2);
+//-----------------------------TRECIA PASKAITA-------------------------------------
+let B1 = true;
+let B2 = false;
+
+let tusciasStringas = '';
+
+
+console.log(typeof B1, typeof B2);
+
+// ARBA OR ||
+// IR AND &&
+// NE NOT !
+
+console.clear();
+
+console.log('true || or true', true || true);
+console.log('true || or false', true || false);
+console.log('false || or true', false || true);
+console.log('false || or false', false || false);
+console.log('------------------');
+console.log('true && || true', true && true);
+console.log('true && or false', true && false);
+console.log('false && or true', false && true);
+console.log('false && or false', false && false);
+console.log('------------------');
+console.log('!true', !true);
+console.log('!true', !false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
