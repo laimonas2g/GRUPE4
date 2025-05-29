@@ -81,7 +81,7 @@ console.log('true || or false', true || false);
 console.log('false || or true', false || true);
 console.log('false || or false', false || false);
 console.log('------------------');
-console.log('true && || true', true && true);
+console.log('true && or true', true && true);
 console.log('true && or false', true && false);
 console.log('false && or true', false && true);
 console.log('false && or false', false && false);

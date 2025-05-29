@@ -82,10 +82,10 @@ console.log('true || or false', true || false);
 console.log('false || or true', false || true);
 console.log('false || or false', false || false);
 
-console.log('true && or true', true && true);
-console.log('true && or false', true && false);
-console.log('false && or true', false && true);
-console.log('false && or false', false && false);
+console.log('true && and true', true && true);
+console.log('true && and false', true && false);
+console.log('false && and true', false && true);
+console.log('false && and false', false && false);
 
 
 
