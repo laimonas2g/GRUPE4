@@ -65,13 +65,19 @@ li {
 //   width: $xl;
 // }
 
+ .virsus2 {
+  display: flex;
+  justify-content: space-around;
+}
+
 .virsus2-1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin: 192px 325px 80px 323px;
+  margin: 192px 0 80px 0;
 }
+
 
 .headeris2 {
   display: flex;
@@ -126,7 +132,7 @@ li {
 .apacia2-1 {
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   width: 1140px;
@@ -382,5 +388,25 @@ li {
   letter-spacing: 0%;
   color: $blue;
   border: 1.4px solid $blue;
-  margin: 37px 478px 32px 137px;
+  background-color: $white;
+  
 }
+
+.butonas2 {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 69px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

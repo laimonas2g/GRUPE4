@@ -23,14 +23,12 @@ let keturkampis = document.querySelector('code + div');
 keturkampis.style.width = '150px';
 keturkampis.style.height = '150px';
 keturkampis.style.backgroundColor = 'blue';
-console.log('keturkampis');
 
 let apskritimas = document.querySelector('code + div + div');
 apskritimas.style.width = '150px';
 apskritimas.style.height = '150px';
 apskritimas.style.backgroundColor = 'red';
 apskritimas.style.borderRadius = '50%';
-console.log('apskritimas');
 
 // 3.
 
