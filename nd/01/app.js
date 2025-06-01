@@ -46,6 +46,52 @@ apskritimas.style.borderRadius = '50%';
 //   `;                        
 // }
 
+// 3.
+
+// Sukurkite du kintamuosius ir naudodamiesi funkcija rand() 
+// jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
+// Didesnę reikšmę padalinkite iš mažesnės. 
+// Kintamuosius ir gautą rezultatą įrašykite į atitinkamus span tagus, 
+// esančius section tage su id=go3.
+
+function rand(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+}
+
+
+let iksas1 = rand(0, 4);
+
+let iksas2 = rand(0, 4);
+
+
+
+if (iksas1 > iksas2) {
+
+let atsakymas = document.getElementById("go3").innerHTML = "I have changed!";
+}
+
+else if (iksas1 < iksas2) {
+
+let atsakymas = document.getElementById("go3").innerHTML = "I changed!";
+}
+
+else if (iksas1 == 0 || iksas2 == 0) {
+
+let atsakymas = document.getElementById("go3").innerHTML = "Nulis!";
+    
+}
+
+
+
+
+
+
+
+
+
+
 // console.log(pirmasKint);
 
 // let antrasKint = function random(number) {
@@ -74,7 +120,7 @@ apskritimas.style.borderRadius = '50%';
 // <div data-sq-4="" style="width:55px; height:82px;"></div>
 // <div data-sq-5="" style="width:157px; height:92px;"></div>
 
-// x1 * x2 = x3; if x3 > 10000 px, 
+// x1 * x2 = x3; if x3 > 10000 px,
 // then background-color: red;
 
 

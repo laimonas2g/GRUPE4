@@ -92,6 +92,8 @@ else {
   console.log('B maziau uz 9'); //turetu but lygu 9, klaida kazkur !!!!!
 }
 
+
+
 // Ternary - priskiriamoji salyga
 
 
