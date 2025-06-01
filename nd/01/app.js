@@ -36,17 +36,9 @@ apskritimas.style.borderRadius = '50%';
 // let pirmasKint = function rand(min, max) {
 //     const minCeiled = Math.ceil(min);
 //     const maxFloored = Math.floor(max);
-//     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
-//                                   
-//                              
-//       document.getElementById("go3").innerHTML = `
-//     <span id="var1">Variable 1: ${a}</span>
-//     <span id="var2">Variable 2: ${b}</span>
-//     <span id="result">Result: ${result}</span>
-//   `;                        
-// }
+//     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);                                                             
 
-// 3.
+/////// 3. ///////
 
 // Sukurkite du kintamuosius ir naudodamiesi funkcija rand() 
 // jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
@@ -60,46 +52,97 @@ function rand(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
-
 let iksas1 = rand(0, 4);
+console.log(iksas1);
 
 let iksas2 = rand(0, 4);
-
-
+console.log(iksas2);
 
 if (iksas1 > iksas2) {
-
-let atsakymas = document.getElementById("go3").innerHTML = "I have changed!";
+  let atsakymas = document.getElementById("go3").innerHTML = (iksas1 / iksas2);
+  // console.log(iksas1 / iksas2);
 }
 
 else if (iksas1 < iksas2) {
-
-let atsakymas = document.getElementById("go3").innerHTML = "I changed!";
+  let atsakymas = document.getElementById("go3").innerHTML = (iksas2 / iksas1);
+  // console.log(iksas2 / iksas1);
 }
 
-else if (iksas1 == 0 || iksas2 == 0) {
+// else if (iksas1 == 0 || iksas2 == 0) {
+// let atsakymas = document.getElementById("go3").innerHTML = "Nulis!";
+// console.log('nulis');
+// };
 
-let atsakymas = document.getElementById("go3").innerHTML = "Nulis!";
-    
+/////// 4. /////// NEISPRESTAS!
+// Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 50 iki 200. 
+// Iš section tage su id=go4 esančių div tagų padarykite atitinkamo dydžio (px) apskritimus. 
+// Apskritimai turi būti išdėlioti eilute nuo mažiausio iki didžiausio.
+
+let a1 = rand(50, 200);
+console.log(a1);
+
+let a2 = rand(50, 200);
+console.log(a2);
+
+let a3 = rand(50, 200);
+console.log(a3);
+
+if (a1 > a2 && a1 > a3) {
+  console.log(a1 + " largest number.");
+  // apskritimas1 = document.getElementById("go4");
+  // apskritimas1.style.width = '${a1}px';
+  // apskritimas1.style.height = '${a1}px';
+  // apskritimas1.style.backgroundColor = 'green';
+  // apskritimas1.style.borderRadius = '50%';
 }
 
+else if (a2 > a1 && a2 > a3) {
+  console.log(a2 + " largest number.");
+  // let apskritimas2 = document.querySelector('section + div + div');
+  // apskritimas2.style.width = '${a2}px';
+  // apskritimas2.style.height = '${a2}px';
+  // apskritimas2.style.backgroundColor = 'green';
+  // apskritimas2.style.borderRadius = '50%';
+}
 
+else {
+  console.log(a3 + " largest number.");
+}
 
+// document.querySelector('section + div');
 
+// apskritimas1 = document.getElementById("go4");
+// apskritimas1.style.width = 'a1';
+// apskritimas1.style.style.height = 'a1';
+// apskritimas1.style.style.backgroundColor = 'green';
+// apskritimas1.style.borderRadius = '50%';
 
+/////// 5. /////// NEISPRESTAS!
 
+// Naudokite funkcija rand(). 
+// Į section tage su id=go5 esančius span įrašykite 3 skaičius nuo -10 iki 10. 
+// Skaičius mažesnių už 0 spausdinkite raudonai,  
+// didesnius už 0 mėlynai, 
+// o 0 žaliai.
 
+let b1 = rand(-10, 10);
+console.log(b1)
+let b2 = rand(-10, 10);
+console.log(b2)
+let b3 = rand(-10, 10);
+console.log(b3)
 
+if (b1 > 0 && b2 > 0 && b3 > 0 ) {
+  console.log('green')
+}
 
+else if (b2 > 0) {
+  console.log('blue')
+}
 
-// console.log(pirmasKint);
-
-// let antrasKint = function random(number) {
-//   const result = Math.floor(Math.random() * number);
-//   return result;
-// }
-
-// console.log(antrasKint);
+else if (b3 > 0) {
+  console.log('red')
+} 
 
 
 // 9. #go9
