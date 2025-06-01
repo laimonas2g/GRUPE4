@@ -56,23 +56,26 @@ li {
 
 // (reset END)
 
-// Page 1 Top START
+// Page 7
 
+footer {
+    display: flex;
+  justify-content: space-around;
+}
 .puslapis7 {
   display: flex;
   justify-content: space-around;
 }
 
 .apacia7 {
-display: flex;
-width: 1600px;
-height: 432px;
-// top: 5438px;
-border: 1px solid $black;
-background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
-margin-left: 50px;
-margin-top: 50px;
-// Margin TOP and LEFT pakeisti
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1600px;
+  height: 432px;
+  // top: 5438px;
+  background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+  margin: 0 19px 19px 19px;
 }
 
 .box7-0 {
@@ -80,13 +83,12 @@ margin-top: 50px;
 }
 
 .box7-1 {
-width: 391px;
-height: 201px;
-// top: 5556px;
-// left: 190px;
-
-color: $white;
-margin: 118px 145px 113px 0px;
+  width: 391px;
+  height: 201px;
+  // top: 5556px;
+  // left: 190px;
+  color: $white;
+  margin: 118px 145px 113px 0px;
 }
 
 .eclipse7 {
@@ -98,40 +100,37 @@ margin: 118px 145px 113px 0px;
 }
 
 .box7-1 span {
-  
-width: 391px;
-height: 84px;
-// top: 5614px;
-// left: 190px;
-font-weight: 300;
-font-size: 18px;
-line-height: 28px;
-letter-spacing: 0%;
+  width: 391px;
+  height: 84px;
+  // top: 5614px;
+  // left: 190px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
 }
 
 .box7-1 p {
   display: block;
-width: 391px;
-height: 28px;
-// top: 5729px;
-// left: 190px;
-font-weight: 300;
-font-size: 16px;
-line-height: 28px;
-letter-spacing: 0%;
-margin-top: 31px;
+  width: 391px;
+  height: 28px;
+  // top: 5729px;
+  // left: 190px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  margin-top: 31px;
 
 }
 
 .box7-2 {
-display: block;
-width: 391px;
-height: 214px;
-// top: 5547px;
-// left: 726px;
-border: 1px solid $black;
-color: $white;
-margin: 109px 111px 109px 0;
+  display: block;
+  width: 391px;
+  height: 214px;
+  // top: 5547px;
+  // left: 726px
+  color: $white;
 }
 
 .boxlist72-1 {
@@ -140,83 +139,91 @@ margin: 109px 111px 109px 0;
   align-items: center;
 }
 
-.sekcija7-1 {
-  margin-bottom: 2px;
+.sekcija72-1 {
+  width: 92px;
+  height: 60px;
+  // top: 5547px;
+  // left: 726px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
 }
-.sekcija7-1 {
-  margin-bottom: 2px;
-  margin-right: 55px;
-  //kodel Margin Right neveikia???
+
+.boxlist72-2 {
+  width: 391px;
+height: 152px;
+// top: 5609px;
+// left: 726px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
 }
 
 .box7-3 {
-width: 391px;
-height: 214px;
-border: 1px solid $black;
-// top: 5547px;
-// left: 1228px;
-color: $white;
-margin: 109px -19px 109px 0;
+  width: 391px;
+  height: 214px;
+  // top: 5547px;
+  // left: 1228px;
+  color: $white;
+  margin-left: -177px;
+
 }
 
+.sekcija73-1 {
+  width: 67px;
+  height: 60px;
+  // top: 5547px;
+  // left: 995px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
+}
 
+.boxlist73-2 {
+width: 391px;
+height: 152px;
+// top: 5609px;
+// left: 995px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
+}
 
+.box7-4 {
+  width: 391px;
+  height: 214px;
+  // top: 5547px;
+  // left: 1228px;
+  color: $white;
+  margin-left: -166px;
+}
 
+.sekcija74-1 {
+  width: 45px;
+  height: 60px;
+  // top: 5547px;
+  // left: 1228px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
+}
 
+.boxlist74-2 {
+width: 391px;
+height: 152px;
+// top: 5609px;
+// left: 1228px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 

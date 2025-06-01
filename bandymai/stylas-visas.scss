@@ -14,7 +14,7 @@ $white: #FFFFFF;
 
 $main-font: "Mulish", sans-serif;
 
-// Bendriniai
+// General
 
 * {
   box-sizing: border-box;
@@ -27,6 +27,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $main-font;
+  
 }
 
 a {
@@ -57,6 +58,12 @@ li {
 // (reset END)
 
 // Page 1 Top START
+
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
 
 .virsus1 {
   display: flex;
@@ -159,12 +166,11 @@ ul .li-5 {
   width: 693px;
   height: 598px;
   margin-top: 80px;
-  //4px minus nuo TOP
-  margin-right: 163px;
+  // Adjusted margin-top by 4px for better alignment
 }
 
 .header-text1 h1 {
-  //gal Header pakeist i span or p?
+  // Consider changing Header to span or p for better semantic structure.
   width: 427px;
   height: 112px;
   font-weight: 700;
@@ -175,7 +181,6 @@ ul .li-5 {
   font-family: $main-font;
   margin-bottom: 25px;
 }
-
 .header-text1 p {
   width: 445px;
   height: 96px;
@@ -205,83 +210,13 @@ ul .li-5 {
   color: $white;
 }
 
-// Page 2 Top START
-
-// IS BANDYMO
-// .tekstas2 {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// span {
-// width: 212px;
-// height: 56px;
-// // top: 967px;
-// // left: 695px;
-// font-family: Mulish, sans-serif;
-// font-weight: 700;
-// font-size: 36px;
-// line-height: 56px;
-// letter-spacing: 0%;
-// }
-
-// p {
-// width: 952px;
-// height: 60px;
-// // top: 1084px;
-// // left: 323px;
-// font-family: Mulish, sans-serif;
-// font-weight: 300;
-// font-size: 18px;
-// line-height: 30px;
-// letter-spacing: 0%;
-// text-align: center;
-// }
-
-// .virsus2 {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
-// .text2-1 {
-//   width: 1600px;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   width: 952px;
-//   height: 177px;
-// }
-
-// .header-text2 span {
-//  width: 212px;
-// height: 56px;
-// font-family: $main-font;
-// font-weight: 700;
-// font-size: 36px;
-// line-height: 56px;
-// letter-spacing: 0%;
-// color: $black;
-// text-align: center;
-// }
-
-// .header-text2 p {
-// width: 952px;
-// height: 60px;
-// font-family: $main-font;
-// font-weight: 300;
-// font-size: 18px;
-// line-height: 30px;
-// letter-spacing: 0%;
-// text-align: center;
-// }
 
 // Page 2
 
-.puslapis2 {
-  margin-top: 192px;
+
+ .virsus2 {
+  display: flex;
+  justify-content: space-around;
 }
 
 .virsus2-1 {
@@ -289,8 +224,9 @@ ul .li-5 {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin: 192px 325px 80px 323px;
+  margin: 192px 0 80px 0;
 }
+
 
 .headeris2 {
   display: flex;
@@ -306,6 +242,7 @@ ul .li-5 {
   letter-spacing: 0%;
   text-align: center;
   color: $black;
+
 }
 
 .Rectangle2 {
@@ -335,9 +272,16 @@ ul .li-5 {
   justify-content: space-around;
 }
 
+.element2 {
+  position: absolute;
+  margin-right: -980px;
+  margin-top: 310px;
+}
+
 .apacia2-1 {
+  position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   width: 1140px;
@@ -594,15 +538,16 @@ ul .li-5 {
   color: $blue;
   border: 1.4px solid $blue;
   background-color: $white;
-  margin: 37px 478px 32px 137px;
+  
 }
 
 .butonas2 {
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 69px;
 }
+
 
 
 // Page 3
@@ -658,13 +603,10 @@ ul .li-5 {
 }
 
 .Rectangle11 {
-  //NEVEIKIA
   width: 56px;
   height: 2px;
-  // top: 2513px;
-  // left: 927px;
   border-radius: 10px;
-  color: $black;
+  background-color: $black; // Added background-color to fix rendering issue
   margin: 26px 617px 31px 0px;
 }
 
@@ -756,16 +698,13 @@ ul .li-5 {
 .Rectangle12 {
   //NEVEIKIA
   width: 56px;
+.Rectangle12 {
+  width: 56px;
   height: 2px;
-  // top: 2513px;
-  // left: 927px;
   border-radius: 10px;
-  color: $black;
+  background-color: $black; // Added background-color to fix the issue
   margin: 30px 433px 31px 0px;
 }
-
-.header-text4 p {
-  width: 450px;
   height: 120px;
   // top: 2546px;
   // left: 927px;
@@ -837,6 +776,11 @@ ul .li-5 {
 
 // Page 6
 
+.puslapis6 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .apacia6 {
   display: flex;
@@ -845,10 +789,7 @@ ul .li-5 {
 
 .lowbar6 {
   display: flex;
-
-  margin-top: 50px;
-  margin-left: 50px;
-  // marginai belekokie
+  justify-content: space-around;
 }
 
 .box6-1 {
@@ -904,7 +845,6 @@ ul .li-5 {
   color: $gray;
   margin: 21px 66px 12px 33px;
 }
-
 
 .box6-2 span {
   display: block;
@@ -995,7 +935,7 @@ ul .li-5 {
   border-radius: 5px;
   color: $black;
   margin-top: 26px;
-  margin-left: 250px;
+  margin-left: 210px;
 }
 
 .button6 {
@@ -1030,8 +970,16 @@ ul .li-5 {
   margin-left: 33px;
 }
 
+.box6-3 a {
+  margin-left: 0;
+}
+
 // Page 7
 
+footer {
+    display: flex;
+  justify-content: space-around;
+}
 
 .puslapis7 {
   display: flex;
@@ -1040,14 +988,14 @@ ul .li-5 {
 
 .apacia7 {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 1600px;
   height: 432px;
   // top: 5438px;
-  border: 1px solid $black;
+  background: #67C3F3; /* Fallback color for older browsers */
   background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
-  margin-left: 50px;
-  margin-top: 50px;
-  // Margin TOP and LEFT pakeisti
+  margin: 0 19px 19px 19px;
 }
 
 .box7-0 {
@@ -1059,7 +1007,6 @@ ul .li-5 {
   height: 201px;
   // top: 5556px;
   // left: 190px;
-
   color: $white;
   margin: 118px 145px 113px 0px;
 }
@@ -1073,7 +1020,6 @@ ul .li-5 {
 }
 
 .box7-1 span {
-
   width: 391px;
   height: 84px;
   // top: 5614px;
@@ -1103,10 +1049,8 @@ ul .li-5 {
   width: 391px;
   height: 214px;
   // top: 5547px;
-  // left: 726px;
-  border: 1px solid $black;
+  // left: 726px
   color: $white;
-  margin: 109px 111px 109px 0;
 }
 
 .boxlist72-1 {
@@ -1115,22 +1059,89 @@ ul .li-5 {
   align-items: center;
 }
 
-.sekcija7-1 {
-  margin-bottom: 2px;
+.sekcija72-1 {
+  width: 92px;
+  height: 60px;
+  // top: 5547px;
+  // left: 726px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
 }
 
-.sekcija7-1 {
-  margin-bottom: 2px;
-  margin-right: 55px;
-  //kodel Margin Right neveikia???
+.boxlist72-2 {
+  width: 391px;
+height: 152px;
+// top: 5609px;
+// left: 726px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
 }
 
 .box7-3 {
   width: 391px;
   height: 214px;
-  border: 1px solid $black;
   // top: 5547px;
   // left: 1228px;
   color: $white;
-  margin: 109px -19px 109px 0;
+  margin-left: -177px;
+
 }
+
+.sekcija73-1 {
+  width: 67px;
+  height: 60px;
+  // top: 5547px;
+  // left: 995px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
+}
+
+.boxlist73-2 {
+width: 391px;
+height: 152px;
+// top: 5609px;
+// left: 995px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
+}
+
+.box7-4 {
+  width: 391px;
+  height: 214px;
+  // top: 5547px;
+  // left: 1228px;
+  color: $white;
+  margin-left: -166px;
+}
+
+.sekcija74-1 {
+  width: 45px;
+  height: 60px;
+  // top: 5547px;
+  // left: 1228px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
+}
+
+.boxlist74-2 {
+width: 391px;
+height: 152px;
+// top: 5609px;
+// left: 1228px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
+
+}
+

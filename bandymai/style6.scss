@@ -58,7 +58,11 @@ li {
 
 // Page 1 Top START
 
-// 6-3 BOX NEPABAIGTAS
+.puslapis6 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .apacia6 {
   display: flex;
@@ -213,7 +217,7 @@ li {
   border-radius: 5px;
   color: $black;
   margin-top: 26px;
-  margin-left: 250px;
+  margin-left: 210px;
 }
 
 .button6 {
@@ -246,4 +250,8 @@ li {
   letter-spacing: 0%;
   color: $blue;
   margin-left: 33px;
+}
+
+.box6-3 a {
+  margin-left: 0;
 }
