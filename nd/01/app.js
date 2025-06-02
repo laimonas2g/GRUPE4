@@ -90,8 +90,8 @@ console.log(a3);
 if (a1 > a2 && a1 > a3) {
   console.log(a1 + " largest number.");
   // apskritimas1 = document.getElementById("go4");
-  // apskritimas1.style.width = '${a1}px';
-  // apskritimas1.style.height = '${a1}px';
+  // apskritimas1.style.width = '{a1}px';
+  // apskritimas1.style.height = '{a1}px';
   // apskritimas1.style.backgroundColor = 'green';
   // apskritimas1.style.borderRadius = '50%';
 }
@@ -99,8 +99,8 @@ if (a1 > a2 && a1 > a3) {
 else if (a2 > a1 && a2 > a3) {
   console.log(a2 + " largest number.");
   // let apskritimas2 = document.querySelector('section + div + div');
-  // apskritimas2.style.width = '${a2}px';
-  // apskritimas2.style.height = '${a2}px';
+  // apskritimas2.style.width = '{a2}px';
+  // apskritimas2.style.height = '{a2}px';
   // apskritimas2.style.backgroundColor = 'green';
   // apskritimas2.style.borderRadius = '50%';
 }
@@ -112,12 +112,12 @@ else {
 // document.querySelector('section + div');
 
 // apskritimas1 = document.getElementById("go4");
-// apskritimas1.style.width = 'a1';
-// apskritimas1.style.style.height = 'a1';
+// apskritimas1.style.width = 'a3';
+// apskritimas1.style.style.height = 'a3';
 // apskritimas1.style.style.backgroundColor = 'green';
 // apskritimas1.style.borderRadius = '50%';
 
-/////// 5. /////// NEISPRESTAS!
+/////// 5. ///////
 
 // Naudokite funkcija rand(). 
 // Į section tage su id=go5 esančius span įrašykite 3 skaičius nuo -10 iki 10. 
@@ -132,17 +132,46 @@ console.log(b2)
 let b3 = rand(-10, 10);
 console.log(b3)
 
-if (b1 > 0 && b2 > 0 && b3 > 0 ) {
-  console.log('green')
+let spanas1 = document.querySelector('#go5  span');
+let spanas2 = document.querySelector('#go5  span  span');
+let spanas3 = document.getElementById('go5');
+spanas1.innerText = b1;
+spanas2.innerHTML = b2; //HTML or Text?? TypeError: Cannot set properties of null (setting 'innerHTML')
+spanas3.innerHTML = b3;
+
+if (b1 < 0) {
+spanas1.style.color = 'red';
+} else if (b1 > 0) {
+spanas1.style.color = 'blue';
+} else 
+{spanas1.style.color = 'green';
 }
 
-else if (b2 > 0) {
-  console.log('blue')
+if (b2 < 0) {
+spanas2.style.color = 'red';
+} else if (b2 > 0) {
+spanas2.style.color = 'blue';
+} else {
+spanas2.style.color = 'green';
 }
 
-else if (b3 > 0) {
-  console.log('red')
-} 
+if (b3 < 0) {
+spanas3.style.color = 'red';
+} else if (b3 > 0) {
+spanas3.style.color = 'blue';
+} else {
+spanas3.style.color = 'green';
+}
+
+/////// 6. ///////
+// Įmonė parduoda žvakes po 1 EUR. 
+// Perkant daugiau kaip 1000 EUR taikoma 3 % nuolaida, 
+// daugiau kaip už 2000 EUR - 4 % nuolaida. 
+// Parašykite skriptą, kuris skaičiuos žvakių kainą ir užpildykite formą 
+// easnčią section tage su id=go6. Žvakių kiekį generuokite ​rand() funkcija nuo 5 iki 3000.
+
+
+
 
 
 // 9. #go9
