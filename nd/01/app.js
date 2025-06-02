@@ -109,6 +109,7 @@ else {
   console.log(a3 + " largest number.");
 }
 
+
 // document.querySelector('section + div');
 
 // apskritimas1 = document.getElementById("go4");
@@ -116,6 +117,8 @@ else {
 // apskritimas1.style.style.height = 'a3';
 // apskritimas1.style.style.backgroundColor = 'green';
 // apskritimas1.style.borderRadius = '50%';
+
+
 
 /////// 5. ///////
 
@@ -125,19 +128,23 @@ else {
 // didesnius už 0 mėlynai, 
 // o 0 žaliai.
 
-let b1 = rand(-10, 10);
-console.log(b1)
-let b2 = rand(-10, 10);
-console.log(b2)
-let b3 = rand(-10, 10);
-console.log(b3)
 
-let spanas1 = document.querySelector('#go5  span');
-let spanas2 = document.querySelector('#go5  span  span');
-let spanas3 = document.getElementById('go5');
-spanas1.innerText = b1;
-spanas2.innerHTML = b2; //HTML or Text?? TypeError: Cannot set properties of null (setting 'innerHTML')
-spanas3.innerHTML = b3;
+let b1 = rand(-10, 10);
+console.log(b1);
+let b2 = rand(-10, 10);
+console.log(b2);
+let b3 = rand(-10, 10);
+console.log(b3);
+
+let spanas1 = document.querySelector('#go5 span');
+let spanas2 = document.querySelector('#go5 span:nth-child(2)');
+let spanas3 = document.querySelector('#go5 span:nth-child(3)'); 
+console.log(spanas1);
+console.log(spanas2);
+console.log(spanas3);
+spanas1.innerText = b1; // Kuri geriau naudoti, HTML or Text??
+spanas2.innerText = b2; 
+spanas3.innerText = b3;
 
 if (b1 < 0) {
 spanas1.style.color = 'red';
@@ -145,7 +152,7 @@ spanas1.style.color = 'red';
 spanas1.style.color = 'blue';
 } else 
 {spanas1.style.color = 'green';
-}
+};
 
 if (b2 < 0) {
 spanas2.style.color = 'red';
@@ -153,7 +160,7 @@ spanas2.style.color = 'red';
 spanas2.style.color = 'blue';
 } else {
 spanas2.style.color = 'green';
-}
+};
 
 if (b3 < 0) {
 spanas3.style.color = 'red';
@@ -161,15 +168,36 @@ spanas3.style.color = 'red';
 spanas3.style.color = 'blue';
 } else {
 spanas3.style.color = 'green';
-}
+};
+
+// apskritimas2.style.width = '${a2}px'
+// apskritimas2.style.width = '{a2}px'
+
 
 /////// 6. ///////
+
 // Įmonė parduoda žvakes po 1 EUR. 
 // Perkant daugiau kaip 1000 EUR taikoma 3 % nuolaida, 
 // daugiau kaip už 2000 EUR - 4 % nuolaida. 
 // Parašykite skriptą, kuris skaičiuos žvakių kainą ir užpildykite formą 
 // easnčią section tage su id=go6. Žvakių kiekį generuokite ​rand() funkcija nuo 5 iki 3000.
 
+
+
+
+/////// 7. ///////
+
+// Naudokite funkciją rand(). Parašykite skriptą, 
+// kuris atsitiktine tvarka generuotų ir iš section su  id=go7 esančio div tago padarytų apskritimą, 
+// arba keturkampį arba trikampį.
+
+
+
+
+/////// 8. ///////
+
+// Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8. 
+// Rezultatus įrašyti į šalia tam skirtas vietas.
 
 
 
