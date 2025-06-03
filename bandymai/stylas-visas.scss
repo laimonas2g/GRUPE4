@@ -16,10 +16,22 @@ $main-font: "Mulish", sans-serif;
 
 // Reset
 
+html {
+  width: 1600px;
+  height: 5870px;
+  top: -504px;
+  left: -637px;
+  margin-left: auto;
+  margin-right: auto;
+  // PANAIKINA RESIZE
+  background-color: $black;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: $main-font;
+  background-color: $white;
 }
 
 a {
@@ -143,26 +155,26 @@ ul .li-5 {
 }
 
 .elementas1 {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
-    height: 115px;
-    width: 70px;
-    top: 40px;
-    left: 10.56px;
-    gap: 15px 17px;
-    margin: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 115px;
+  width: 70px;
+  top: 40px;
+  left: 10.56px;
+  gap: 15px 17px;
+  margin: 0;
 }
 
-.elementas1 div{
-    height: 0px;
-    width: 0px;
-    background: $gray;
-    border-radius: 30px;
-    padding: 5px;
-    margin: 0;
+.elementas1 div {
+  height: 0px;
+  width: 0px;
+  background: $gray;
+  border-radius: 30px;
+  padding: 5px;
+  margin: 0;
 }
 
 .header-text1 {
@@ -177,6 +189,7 @@ ul .li-5 {
   width: 693px;
   height: 598px;
   margin-top: 80px;
+  padding-right: 163px;
   // Adjusted margin-top by 4px for better alignment
 }
 
@@ -315,6 +328,7 @@ ul .li-5 {
   height: 354px;
   margin: 0 34px 37px 0;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
+  background-color: $white;
 
 }
 
@@ -325,7 +339,7 @@ ul .li-5 {
   //   top: 1224px;
   // left: 240px;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
-
+  background-color: $white;
 }
 
 .box2-3 {
@@ -333,8 +347,7 @@ ul .li-5 {
   height: 354px;
   margin-bottom: 37px;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
-  border: 1px solid black;
-
+  background-color: $white;
 }
 
 .box2-4 {
@@ -342,7 +355,7 @@ ul .li-5 {
   height: 354px;
   margin-right: 34px;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
-
+  background-color: $white;
 }
 
 .box2-5 {
@@ -350,14 +363,14 @@ ul .li-5 {
   height: 354px;
   margin-right: 36px;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
-
+  background-color: $white;
 }
 
 .box2-6 {
   width: 350px;
   height: 354px;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
-
+  background-color: $white;
 }
 
 .frame2-1 {
@@ -1146,7 +1159,7 @@ footer {
   background: #67C3F3;
   /* Fallback color for older browsers */
   background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
-  margin: 0 19px 19px 19px;
+  
 }
 
 .box7-0 {

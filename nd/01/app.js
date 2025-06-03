@@ -1,4 +1,4 @@
-// 1.
+/////// 1. ///////
 
 let h1 = document.querySelector('h1');
 h1.innerText = 1;
@@ -17,7 +17,7 @@ h4.style.color = 'blue';
 
 console.log('h1');
 
-// 2.
+/////// 2. ///////
 
 let keturkampis = document.querySelector('code + div');
 keturkampis.style.width = '150px';
@@ -29,14 +29,6 @@ apskritimas.style.width = '150px';
 apskritimas.style.height = '150px';
 apskritimas.style.backgroundColor = 'red';
 apskritimas.style.borderRadius = '50%';
-
-// 3.
-
-
-// let pirmasKint = function rand(min, max) {
-//     const minCeiled = Math.ceil(min);
-//     const maxFloored = Math.floor(max);
-//     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);                                                             
 
 /////// 3. ///////
 
@@ -53,39 +45,47 @@ function rand(min, max) {
 }
 
 let iksas1 = rand(0, 4);
-console.log(iksas1);
-
 let iksas2 = rand(0, 4);
+console.log(iksas1);
 console.log(iksas2);
 
+let span3_1 = document.querySelector('#go3 span');
+let span3_2 = document.querySelector('#go3 span:nth-child(2)');
+
+span3_1.innerText = iksas1;
+span3_2.innerText = iksas2;
+
 if (iksas1 > iksas2) {
-  let atsakymas = document.getElementById("go3").innerHTML = (iksas1 / iksas2);
-  // console.log(iksas1 / iksas2);
+  let iksasR1 = (iksas1 / iksas2);
+  let span3_3 = document.querySelector('#go3 span:nth-child(3)');
+  span3_3.innerText = iksasR1;
 }
 
 else if (iksas1 < iksas2) {
-  let atsakymas = document.getElementById("go3").innerHTML = (iksas2 / iksas1);
-  // console.log(iksas2 / iksas1);
-}
+  let iksasR1 = (iksas2 / iksas1);
+  let span3_3 = document.querySelector('#go3 span:nth-child(3)');
+  span3_3.innerText = iksasR1;
+};
 
-// else if (iksas1 == 0 || iksas2 == 0) {
-// let atsakymas = document.getElementById("go3").innerHTML = "Nulis!";
-// console.log('nulis');
-// };
+/////// 4. ///////
 
-/////// 4. /////// NEISPRESTAS!
-// Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 50 iki 200. 
-// Iš section tage su id=go4 esančių div tagų padarykite atitinkamo dydžio (px) apskritimus. 
+// Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems 
+// priskirkite atsitiktines reikšmes nuo 50 iki 200. Iš section tage su 
+// id=go4 esančių div tagų padarykite atitinkamo dydžio (px) apskritimus. 
 // Apskritimai turi būti išdėlioti eilute nuo mažiausio iki didžiausio.
 
 let a1 = rand(50, 200);
-console.log(a1);
-
 let a2 = rand(50, 200);
-console.log(a2);
-
 let a3 = rand(50, 200);
+console.log(a1);
+console.log(a2);
 console.log(a3);
+let span4_1 = document.querySelector('#go4 div');
+let span4_2 = document.querySelector('#go4 div:nth-child(2)');
+let span4_3 = document.querySelector('#go4 div:nth-child(3)');
+span4_1.innerText = a1;
+span4_2.innerText = a2;
+span4_3.innerText = a3;
 
 if (a1 > a2 && a1 > a3) {
   console.log(a1 + " largest number.");
@@ -109,7 +109,6 @@ else {
   console.log(a3 + " largest number.");
 }
 
-
 // document.querySelector('section + div');
 
 // apskritimas1 = document.getElementById("go4");
@@ -119,7 +118,6 @@ else {
 // apskritimas1.style.borderRadius = '50%';
 
 
-
 /////// 5. ///////
 
 // Naudokite funkcija rand(). 
@@ -127,7 +125,6 @@ else {
 // Skaičius mažesnių už 0 spausdinkite raudonai,  
 // didesnius už 0 mėlynai, 
 // o 0 žaliai.
-
 
 let b1 = rand(-10, 10);
 console.log(b1);
@@ -142,7 +139,7 @@ let spanas3 = document.querySelector('#go5 span:nth-child(3)');
 console.log(spanas1);
 console.log(spanas2);
 console.log(spanas3);
-spanas1.innerText = b1; // Kuri geriau naudoti, HTML or Text??
+spanas1.innerText = b1; 
 spanas2.innerText = b2; 
 spanas3.innerText = b3;
 
@@ -169,10 +166,6 @@ spanas3.style.color = 'blue';
 } else {
 spanas3.style.color = 'green';
 };
-
-// apskritimas2.style.width = '${a2}px'
-// apskritimas2.style.width = '{a2}px'
-
 
 /////// 6. ///////
 
