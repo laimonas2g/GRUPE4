@@ -1,4 +1,4 @@
-/////// 1. ///////
+///////////// 1. /////////////
 
 let h1 = document.querySelector('h1');
 h1.innerText = 1;
@@ -17,7 +17,7 @@ h4.style.color = 'blue';
 
 console.log('h1');
 
-/////// 2. ///////
+///////////// 2. /////////////
 
 let keturkampis = document.querySelector('code + div');
 keturkampis.style.width = '150px';
@@ -30,7 +30,7 @@ apskritimas.style.height = '150px';
 apskritimas.style.backgroundColor = 'red';
 apskritimas.style.borderRadius = '50%';
 
-/////// 3. ///////
+///////////// 3. /////////////
 
 // Sukurkite du kintamuosius ir naudodamiesi funkcija rand() 
 // jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
@@ -67,7 +67,7 @@ else if (iksas1 < iksas2) {
   span3_3.innerText = iksasR1;
 };
 
-/////// 4. ///////
+////////////// 4. //////////////
 
 // Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems 
 // priskirkite atsitiktines reikšmes nuo 50 iki 200. Iš section tage su 
@@ -89,36 +89,38 @@ span4_3.innerText = a3;
 
 if (a1 > a2 && a1 > a3) {
   console.log(a1 + " largest number.");
-  // apskritimas1 = document.getElementById("go4");
-  // apskritimas1.style.width = '{a1}px';
-  // apskritimas1.style.height = '{a1}px';
-  // apskritimas1.style.backgroundColor = 'green';
-  // apskritimas1.style.borderRadius = '50%';
+  let apskritimas1 = a1;
+  apskritimas1 = document.querySelector("#go4 div");
+  apskritimas1.style.width = a1 + 'px';
+  apskritimas1.style.height = a1 + 'px';
+  apskritimas1.style.backgroundColor = 'green';
+  apskritimas1.style.borderRadius = '50%';
+  span4_1.innerText = a1;
 }
 
 else if (a2 > a1 && a2 > a3) {
   console.log(a2 + " largest number.");
-  // let apskritimas2 = document.querySelector('section + div + div');
-  // apskritimas2.style.width = '{a2}px';
-  // apskritimas2.style.height = '{a2}px';
-  // apskritimas2.style.backgroundColor = 'green';
-  // apskritimas2.style.borderRadius = '50%';
+  let apskritimas2 = a2;
+  apskritimas2 = document.querySelector("#go4 div:nth-child(2)");
+  apskritimas2.style.width = a2 + 'px';
+  apskritimas2.style.height = a2 + 'px';
+  apskritimas2.style.backgroundColor = 'blue';
+  apskritimas2.style.borderRadius = '50%';
+  span4_2.innerText = a2;
 }
 
 else {
   console.log(a3 + " largest number.");
+  let apskritimas3 = a3;
+  apskritimas3 = document.querySelector("#go4 div:nth-child(3)");
+  apskritimas3.style.width = a3 + 'px';
+  apskritimas3.style.height = a3 + 'px';
+  apskritimas3.style.backgroundColor = 'red';
+  apskritimas3.style.borderRadius = '50%';
+  span4_3.innerText = a3;
 }
 
-// document.querySelector('section + div');
-
-// apskritimas1 = document.getElementById("go4");
-// apskritimas1.style.width = 'a3';
-// apskritimas1.style.style.height = 'a3';
-// apskritimas1.style.style.backgroundColor = 'green';
-// apskritimas1.style.borderRadius = '50%';
-
-
-/////// 5. ///////
+///////////// 5. /////////////
 
 // Naudokite funkcija rand(). 
 // Į section tage su id=go5 esančius span įrašykite 3 skaičius nuo -10 iki 10. 
@@ -167,7 +169,7 @@ spanas3.style.color = 'blue';
 spanas3.style.color = 'green';
 };
 
-/////// 6. ///////
+///////////// 6. /////////////
 
 // Įmonė parduoda žvakes po 1 EUR. 
 // Perkant daugiau kaip 1000 EUR taikoma 3 % nuolaida, 
@@ -178,7 +180,7 @@ spanas3.style.color = 'green';
 
 
 
-/////// 7. ///////
+///////////// 7. /////////////
 
 // Naudokite funkciją rand(). Parašykite skriptą, 
 // kuris atsitiktine tvarka generuotų ir iš section su  id=go7 esančio div tago padarytų apskritimą, 
@@ -187,13 +189,14 @@ spanas3.style.color = 'green';
 
 
 
-/////// 8. ///////
+///////////// 8. /////////////
 
 // Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8. 
 // Rezultatus įrašyti į šalia tam skirtas vietas.
 
 
 
+///////////// 9. /////////////
 
 // 9. #go9
 // 2 X 8 = console.log(2*8);
