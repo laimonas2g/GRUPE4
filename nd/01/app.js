@@ -137,36 +137,36 @@ console.log(b3);
 
 let spanas1 = document.querySelector('#go5 span');
 let spanas2 = document.querySelector('#go5 span:nth-child(2)');
-let spanas3 = document.querySelector('#go5 span:nth-child(3)'); 
+let spanas3 = document.querySelector('#go5 span:nth-child(3)');
 console.log(spanas1);
 console.log(spanas2);
 console.log(spanas3);
-spanas1.innerText = b1; 
-spanas2.innerText = b2; 
+spanas1.innerText = b1;
+spanas2.innerText = b2;
 spanas3.innerText = b3;
 
 if (b1 < 0) {
-spanas1.style.color = 'red';
+  spanas1.style.color = 'red';
 } else if (b1 > 0) {
-spanas1.style.color = 'blue';
-} else 
-{spanas1.style.color = 'green';
+  spanas1.style.color = 'blue';
+} else {
+  spanas1.style.color = 'green';
 };
 
 if (b2 < 0) {
-spanas2.style.color = 'red';
+  spanas2.style.color = 'red';
 } else if (b2 > 0) {
-spanas2.style.color = 'blue';
+  spanas2.style.color = 'blue';
 } else {
-spanas2.style.color = 'green';
+  spanas2.style.color = 'green';
 };
 
 if (b3 < 0) {
-spanas3.style.color = 'red';
+  spanas3.style.color = 'red';
 } else if (b3 > 0) {
-spanas3.style.color = 'blue';
+  spanas3.style.color = 'blue';
 } else {
-spanas3.style.color = 'green';
+  spanas3.style.color = 'green';
 };
 
 ///////////// 6. /////////////
@@ -178,6 +178,60 @@ spanas3.style.color = 'green';
 // easnčią section tage su id=go6. Žvakių kiekį generuokite ​rand() funkcija nuo 5 iki 3000.
 
 
+let dataAmount = rand(5, 10000); 
+let dataSubtotal = ;  
+let dataDiscount3 = ;
+let dataTotal = ;
+let dataDiscount4 = ;
+
+if (dataAmount >= 1000) {
+
+}
+
+else if (dataAmount >= 2000); {
+  
+}
+
+else  {
+
+}
+
+
+// const S6 = {
+//   kaina: 1,
+//   nuolaida3: 3,
+//   nuolaida4: 4,
+// };
+
+// let kiekis = rand(5, 10000);
+
+// const amount = document.querySelector('#go6 p span');
+// const subtotal = document.querySelector('#go6 p + p  span');
+// const discount = document.querySelector('#go6 p + p + p span');
+// const total = document.querySelector('#go6 p + p + p + p span');
+
+// if (kiekis >= 1000) {
+//   console.log(kiekis);
+//   console.log('trys procentai')
+//   console.log(((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida3)).toFixed(2));
+//   amount.innerText = kiekis;
+//   subtotal.innerText = kiekis * S6.kaina;
+//   discount.innerText = S6.nuolaida3;
+//   total.innerText = ((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida3)).toFixed(2);
+// } else if (kiekis >= 2000) {
+//   console.log(kiekis);
+//   console.log('keturi procentai');
+//   console.log(((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida4)).toFixed(2));
+//   amount.innerText = kiekis;
+//   subtotal.innerText = kiekis * S6.kaina;
+//   discount.innerText = S6.nuolaida4;
+//   total.innerText = ((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida4)).toFixed(2);
+// } else {
+//   amount.innerText = kiekis;
+//   subtotal.innerText = kiekis * S6.kaina;
+//   discount.innerText = '0';
+//   total.innerText = (kiekis * S6.kaina).toFixed(2);
+// }
 
 
 ///////////// 7. /////////////
@@ -186,12 +240,35 @@ spanas3.style.color = 'green';
 // kuris atsitiktine tvarka generuotų ir iš section su  id=go7 esančio div tago padarytų apskritimą, 
 // arba keturkampį arba trikampį.
 
+let n7 = rand(1, 3);
+let a7 = document.querySelector('#go7 div');
 
+if (n7 == 1) {
+  a7.style.backgroundColor = 'red';
+  a7.style.borderRadius = '50%';
+  a7.style.width = '70px';
+  a7.style.height = '70px';
+}
 
+  else if (n7 == 2) {
+  a7.style.backgroundColor = 'red';
+  a7.style.width = '70px';
+  a7.style.height = '70px';
+}
+
+  else if (n7 == 3) {
+  a7.style.borderBottom = '70px solid red';
+  a7.style.borderRight = '70px solid transparent';
+  a7.style.borderLeft = '70px solid transparent';
+  a7.style.width = '0px';
+  a7.style.height = '0px';
+}
+
+console.log(n7)
 
 ///////////// 8. /////////////
 
-// Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8. 
+// Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8.
 // Rezultatus įrašyti į šalia tam skirtas vietas.
 
 
