@@ -19,10 +19,17 @@ function randomColor() {
 // and 14 h4 tags with the number 1. 
 // All tags must line up on one line.
 
-const numbers = [];
-for (let i = 0; i < 44; i++) {
-  numbers.push(rand(14, 44));
+let h1String = '';
+
+for (let i = 0; i < 14; i++) {
+  h1String += '<h1>' + [i] + '</h1>';
 }
+
+let h1 = document.querySelector('h1');
+h1.innerHTML = h1String;
+h1.style.display = 'flex';
+h1.style.gap = '3px';
+console.log(h1String)
 
 ///////////// 2. /////////////
 
@@ -42,7 +49,7 @@ let h5 = document.querySelector('h5');
 h5.innerHTML = h5String;
 h5.style.display = 'flex';
 h5.style.gap = '3px';
-console.log(h4String)
+console.log(h5String)
 
 //  = rand(14, 44);
 
