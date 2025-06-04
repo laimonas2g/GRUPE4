@@ -1,3 +1,9 @@
+function rand(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+}
+
 ///////////// 1. /////////////
 
 let h1 = document.querySelector('h1');
@@ -37,12 +43,6 @@ apskritimas.style.borderRadius = '50%';
 // Didesnę reikšmę padalinkite iš mažesnės. 
 // Kintamuosius ir gautą rezultatą įrašykite į atitinkamus span tagus, 
 // esančius section tage su id=go3.
-
-function rand(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
-}
 
 let iksas1 = rand(0, 4);
 let iksas2 = rand(0, 4);
@@ -177,62 +177,21 @@ if (b3 < 0) {
 // Parašykite skriptą, kuris skaičiuos žvakių kainą ir užpildykite formą 
 // easnčią section tage su id=go6. Žvakių kiekį generuokite ​rand() funkcija nuo 5 iki 3000.
 
-
-let dataAmount = rand(5, 10000); 
-let dataSubtotal = ;  
-let dataDiscount3 = ;
-let dataTotal = ;
-let dataDiscount4 = ;
-
-if (dataAmount >= 1000) {
-
-}
-
-else if (dataAmount >= 2000); {
-  
-}
-
-else  {
-
-}
+let ZvakeQuantity = rand(5, 3000);
+console.log(ZvakeQuantity);
 
 
-// const S6 = {
-//   kaina: 1,
-//   nuolaida3: 3,
-//   nuolaida4: 4,
-// };
+   
+ totalPrice = ZvakeQuantity;
 
-// let kiekis = rand(5, 10000);
+  if (totalPrice > 1000) {
+     totalPrice *= 0.97;
+   }
+     if (totalPrice > 2000) {
+       totalPrice *= 0.96; 
+   }
 
-// const amount = document.querySelector('#go6 p span');
-// const subtotal = document.querySelector('#go6 p + p  span');
-// const discount = document.querySelector('#go6 p + p + p span');
-// const total = document.querySelector('#go6 p + p + p + p span');
-
-// if (kiekis >= 1000) {
-//   console.log(kiekis);
-//   console.log('trys procentai')
-//   console.log(((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida3)).toFixed(2));
-//   amount.innerText = kiekis;
-//   subtotal.innerText = kiekis * S6.kaina;
-//   discount.innerText = S6.nuolaida3;
-//   total.innerText = ((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida3)).toFixed(2);
-// } else if (kiekis >= 2000) {
-//   console.log(kiekis);
-//   console.log('keturi procentai');
-//   console.log(((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida4)).toFixed(2));
-//   amount.innerText = kiekis;
-//   subtotal.innerText = kiekis * S6.kaina;
-//   discount.innerText = S6.nuolaida4;
-//   total.innerText = ((S6.kaina * kiekis) / 100 * (100 - S6.nuolaida4)).toFixed(2);
-// } else {
-//   amount.innerText = kiekis;
-//   subtotal.innerText = kiekis * S6.kaina;
-//   discount.innerText = '0';
-//   total.innerText = (kiekis * S6.kaina).toFixed(2);
-// }
-
+   console.log(totalPrice)
 
 ///////////// 7. /////////////
 
@@ -248,23 +207,24 @@ if (n7 == 1) {
   a7.style.borderRadius = '50%';
   a7.style.width = '70px';
   a7.style.height = '70px';
+  console.log('Apskritimas');
 }
 
-  else if (n7 == 2) {
+else if (n7 == 2) {
   a7.style.backgroundColor = 'red';
   a7.style.width = '70px';
   a7.style.height = '70px';
+  console.log('Keturkampis');
 }
 
-  else if (n7 == 3) {
+else if (n7 == 3) {
   a7.style.borderBottom = '70px solid red';
   a7.style.borderRight = '70px solid transparent';
   a7.style.borderLeft = '70px solid transparent';
   a7.style.width = '0px';
   a7.style.height = '0px';
+  console.log('Trikampis');
 }
-
-console.log(n7)
 
 ///////////// 8. /////////////
 
@@ -275,27 +235,19 @@ console.log(n7)
 
 ///////////// 9. /////////////
 
-// 9. #go9
-// 2 X 8 = console.log(2*8);
-// 3 X 3 = console.log(3*3);
-// 1 X 3 =
-// 3 X 6 =
-// 3 X 4 =
+// Užpildyti daugybos lentelę, esančią tage section su id=go9.
 
-// let daugyba1 = document.querySelector('#go9')
-// console.log('2*9 = 18');
+let span9_1 = document.querySelector('#go5 div span');
+let span9_2 = document.querySelector('#go5 div span:nth-child(2)');
+let span9_3 = document.querySelector('#go5 div span:nth-child(3)');
+console.log(span9_1);
 
+let a9 = span9_3;
 
-// 10.
-// <div data-sq-1="" style="width:190px; height:65px;"></div>
-// <div data-sq-2="" style="width:192px; height:67px;"></div>
-// <div data-sq-3="" style="width:86px; height:107px;"></div>
-// <div data-sq-4="" style="width:55px; height:82px;"></div>
-// <div data-sq-5="" style="width:157px; height:92px;"></div>
+///////////// 10. /////////////
 
-// x1 * x2 = x3; if x3 > 10000 px,
-// then background-color: red;
-
+// Keturkapius, esančius tage section su id=go10, 
+// kurių plotas didesnis nei 10000 (px) nuspalvinkite raudonai.
 
 
 

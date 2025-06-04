@@ -31,6 +31,18 @@ h1.style.display = 'flex';
 h1.style.gap = '3px';
 console.log(h1String)
 
+let h4String = '';
+
+for (let i = 0; i < 14; i++) {
+  h4String += '<h4>' + [i] + '</h4>';
+}
+
+let h4 = document.querySelector('h4');
+h4.innerHTML = h4String;
+h4.style.display = 'flex';
+h4.style.gap = '3px';
+console.log(h4String)
+
 ///////////// 2. /////////////
 
 // Using the rand() function in your browser, 
