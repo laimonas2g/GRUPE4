@@ -9,10 +9,6 @@ function rand(min, max) {
 function randomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, '0');
 }
-// for (let i = 0; i < 10; i++) {     
-//   // i = skaiciuotuvas, kol True, padidinam vienu vientu
-//   console.log('GA GA');
-// }
 ///////////// 1. /////////////
 
 // In your browser, insert 14 h1 tags with the number 4
@@ -62,38 +58,6 @@ h5.innerHTML = h5String;
 h5.style.display = 'flex';
 h5.style.gap = '3px';
 console.log(h5String)
-
-//  = rand(14, 44);
-
-  // if (i % 2) {  
-  //  li.style.color = 'green';
-  //  } else {
-  //  li.style.color = 'crimson';
-  //  }
-
-// let htmlLis = '';
-
-// for (let i = 0; i < piestukai.length; i++) {
-//   htmlLis += '<li>' + piestukai[i] + '</li>'; 
-// }
-
-// console.log(htmlLis);
-
-// const ul = document.querySelector('ul'); 
-
-// const allLis = document.querySelectorAll('li') 
-
-// console.log(allLis) 
-
-// for (let i = 0; i < allLis.length; i++) {
-//   const li = allLis[i];
-//   if (i % 2) {  erciamas i logini kintamaji true 0/0 liekana 0
-//     li.style.color = 'green';
-//   } else {
-//     li.style.color = 'crimson';
-//   }
-// }
-
 
 ///////////// 3. /////////////
 
