@@ -1,83 +1,115 @@
 // Duotos Funkcijos
 
 function rand(min, max) {
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
 function randomColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, '0');
+  return '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, '0');
 }
+
 ///////////// 1. /////////////
+// Naršyklėje įdėkite 14 h1 tagų su skaičiumi 4 ir 14 h4 tagų su skaičiumi 1. 
+// Visi tagai turi rikiuotis į vieną eilutę.
 
-// In your browser, insert 14 h1 tags with the number 4
-// and 14 h4 tags with the number 1. 
-// All tags must line up on one line.
+let body1 = document.querySelector(`body`);
+body1.style.alignItems = `center`;
+  body1.style.display = `flex`;
+  body1.style.flexWrap = 'wrap';
+  body1.style.alignItems = 'center';
 
-let h1String = '';
-
-for (let i = 0; i < 14; i++) {
-  h1String += '<h1>' + [i] + '</h1>';
+for (let index = 0; index < 14; index++) {
+  let h1tagai = document.createElement(`h1`);
+  h1tagai.innerText = 4;
+  h1tagai.style.display = `inline-block`;
+  body1.append(h1tagai);
 }
 
-let h1 = document.querySelector('h1');
-h1.innerHTML = h1String;
-h1.style.display = 'flex';
-h1.style.gap = '3px';
-console.log(h1String)
+for (let index = 0; index < 14; index++) {
+  let h4tagai = document.createElement(`h4`);
+  h4tagai.style.display = `inline-block`;
 
-let h4String = '';
-
-for (let i = 0; i < 14; i++) {
-  h4String += '<h4>' + [i] + '</h4>';
+  h4tagai.innerText = 1;
+  body1.append(h4tagai);
 }
-
-let h4 = document.querySelector('h4');
-h4.innerHTML = h4String;
-h4.style.display = 'flex';
-h4.style.gap = '3px';
-console.log(h4String)
 
 ///////////// 2. /////////////
+// Naudodamiesi funkcija rand() naršyklėje eilute (tarp skaičių turi būti tarpai) surašykite 44 
+// atsitiktinius skaičius nuo 14 iki 44. Skaičius, kurie iš 4 dalinasi be liekanos nuspalvinkite raudonai, 
+// o kitus mėlynai.
 
-// Using the rand() function in your browser, 
-// write 44 random numbers from 14 to 44 in a string 
-// (there must be spaces between the numbers). 
-// Color the numbers that are divisible by 4 without a remainder red, 
-// and the others blue.
-
-let h5String = '';
-
-for (let i = rand(14, 44); i < 44; i++) {
-  h5String += '<h5>' + [i] + '</h5>';
-}
-
-let h5 = document.querySelector('h5');
-h5.innerHTML = h5String;
-h5.style.display = 'flex';
-h5.style.gap = '3px';
-console.log(h5String)
+for (let index = 0; index < 44; index++) {
+  let a2 = rand(14, 44);
+  console.log(a2)
+  let div1tagai = document.createElement(`div.klase1`);
+  div1tagai.innerText = a2;
+  div1tagai.style.display = `flex`;
+  div1tagai.style.flexWrap = 'wrap';
+  div1tagai.style.alignItems = 'center';
+  body1.append(div1tagai);
+  if (a2 % 4) div1tagai.style = `color: blue`;
+  else div1tagai.style = `color: red`;
+};
 
 ///////////// 3. /////////////
-
 // In the browser, draw 14 blue circles arranged in a row.
 
-////////////// 4. //////////////
+for (let index = 0; index < 14; index++) {
+  let a3 = document.createElement(`div`);
+  a3.style.color = 'skyblue';
+  body1.appendChild(a3)
+  a3.style.width = `50px`;
+  a3.style.height = `50px`;
+  a3.style.borderRadius = `50%`;
+  a3.style.backgroundColor = `skyblue`;
+  a3.style.display = `inline-block`;
+}
 
-// In the browser, draw 4 blue and 4 red circles arranged in a “zebra” pattern 
+////////////// 4. //////////////
+// In the browser, draw 4 blue and 4 red circles arranged in a “zebra” pattern
 // (red, blue, red…).
 
+for (let i = 0; i < 8; i++) {
+  let apskritimas4 = document.createElement('div');
+  apskritimas4.style.width = '50px';
+  apskritimas4.style.height = '50px';
+  apskritimas4.style.borderRadius = '50%';
+  apskritimas4.style.backgroundColor = 'red';
+  // apskritimas4.style.backgroundColor = if (i % 2 == 0) 'red'; else 'blue';
+  body1.appendChild(apskritimas4);
+}
+
+// for (let index = 0; index < 4; index++) {
+//   let a4 = document.createElement(`div`);
+//   body1.appendChild(a4)
+//   a4.innerHTML = 'a4';
+//   a4.style.width = `50px`;
+//   a4.style.height = `50px`;
+//   a4.style.borderRadius = `50%`;
+//   a4.style.backgroundColor = `blue`;
+// }
+
+// for (let index = 0; index < 4; index++) {
+//   let a4 = document.createElement(`div`);
+//   body1.appendChild(a4)
+//   a4.innerHTML = 'a4';
+//   a4.style.width = `50px`;
+//   a4.style.height = `50px`;
+//   a4.style.borderRadius = `50%`;
+//   a4.style.backgroundColor = `red`;
+// }
 
 ///////////// 5. /////////////
 
-// In your browser, draw a multiplication table for 4 times the numbers from 4 to 14.
 // Naršyklėje nupieškite daygybos lentelę 4 dauginant iš skaičių nuo 4 iki 14.
+
 
 ///////////// 6. /////////////
 
-// Naršyklėje nupieškite linija iš 444 “*” (tarp žvaigždučių tarpų nėra). 
-// Programiškai “suskaldykite” (naudodami tagus atskirom žvaigždučių grupėm) 
+// Naršyklėje nupieškite linija iš 444 “*” (tarp žvaigždučių tarpų nėra).
+// Programiškai “suskaldykite” (naudodami tagus atskirom žvaigždučių grupėm)
 // žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 44 “*”.
 
 

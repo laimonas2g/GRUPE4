@@ -117,17 +117,18 @@ div4.style.padding = `100px`
 // iš masyvo B nuskaitytais gyvūnais ir tų gyvūnų raidžių skaičiumi.
 
 console.log(B.length);
+
 let section5 = document.querySelector('.klausimas5');
 
 let div5_1 = document.createElement(`div`);
-div5_1.innerHTML = A[0] + ' ' + A[0].length;
+div5_1.innerHTML = B[0] + ' ' + B[0].length;
 
 section5.append(div5_1)
 section5.style.display = `flex`;
-
 section5.style.gap = `5px`;
-div5_1.style.width = `57px`;
-div5_1.style.height = `57px`;
+
+div5_1.style.width = `70px`;
+div5_1.style.height = `70px`;
 div5_1.style.borderRadius = `50%`;
 div5_1.style.backgroundColor = `#f63737`;
 div5_1.style.display = `flex`;
@@ -137,11 +138,11 @@ div5_1.style.flexDirection = `column`;
 div5_1.style.padding = `10px`
 
 let div5_2 = document.createElement(`div`);
-div5_2.innerHTML = A[1] + ' ' + A[1].length;
+div5_2.innerHTML = B[1] + ' ' + B[1].length;
 section5.append(div5_2)
 
-div5_2.style.width = `57px`;
-div5_2.style.height = `57px`;
+div5_2.style.width = `70px`;
+div5_2.style.height = `70px`;
 div5_2.style.borderRadius = `50%`;
 div5_2.style.backgroundColor = `#f63737`;
 div5_2.style.display = `flex`;
@@ -151,11 +152,11 @@ div5_2.style.flexDirection = `column`;
 div5_2.style.padding = `10px`
 
 let div5_3 = document.createElement(`div`);
-div5_3.innerHTML = A[2] + ' ' + A[2].length;
+div5_3.innerHTML = B[2] + ' ' + B[2].length;
 section5.append(div5_3)
 
-div5_3.style.width = `57px`;
-div5_3.style.height = `57px`;
+div5_3.style.width = `70px`;
+div5_3.style.height = `70px`;
 div5_3.style.borderRadius = `50%`;
 div5_3.style.backgroundColor = `#f63737`;
 div5_3.style.display = `flex`;
@@ -165,11 +166,11 @@ div5_3.style.flexDirection = `column`;
 div5_3.style.padding = `10px`
 
 let div5_4 = document.createElement(`div`);
-div5_4.innerHTML = A[3] + ' ' + A[3].length;
+div5_4.innerHTML = B[3] + ' ' + B[3].length;
 section5.append(div5_4)
 
-div5_4.style.width = `57px`;
-div5_4.style.height = `57px`;
+div5_4.style.width = `70px`;
+div5_4.style.height = `70px`;
 div5_4.style.borderRadius = `50%`;
 div5_4.style.backgroundColor = `#f63737`;
 div5_4.style.display = `flex`;
@@ -179,11 +180,11 @@ div5_4.style.flexDirection = `column`;
 div5_4.style.padding = `10px`
 
 let div5_5 = document.createElement(`div`);
-div5_5.innerHTML = A[4] + ' ' + A[4].length;
+div5_5.innerHTML = B[4] + ' ' + B[4].length;
 section5.append(div5_5)
 
-div5_5.style.width = `57px`;
-div5_5.style.height = `57px`;
+div5_5.style.width = `70px`;
+div5_5.style.height = `70px`;
 div5_5.style.borderRadius = `50%`;
 div5_5.style.backgroundColor = `#f63737`;
 div5_5.style.display = `flex`;
@@ -198,7 +199,71 @@ div5_5.style.padding = `10px`
 // Į sukurtą tagą, su JS, sudėkite div tagus, kurie yra žali apskritimai su centre užrašytais gyvūnais, 
 // nuskaityto iš masyvo A. Dėkite tik tuos gyvūnus, kurie savo pavadinime turi tik vieną žodį.
 
+console.log(A.length);
+// let splitas = A.split(' ');  // Kaip atsortinti turincius tik vieną zodi?????
+// console.log(A.split(' '));
 
+
+let section6 = document.querySelector('.klausimas6');
+
+let div6_1 = document.createElement(`div`);
+div6_1.innerHTML = A[0];
+
+section6.append(div6_1)
+section6.style.display = `flex`;
+section6.style.gap = `5px`;
+
+div6_1.style.width = `70px`;
+div6_1.style.height = `70px`;
+div6_1.style.borderRadius = `50%`;
+div6_1.style.backgroundColor = `lightgreen`;
+div6_1.style.display = `flex`;
+div6_1.style.color = `#black`;
+div6_1.style.justifyContent = `center`;
+div6_1.style.flexDirection = `column`;
+div6_1.style.padding = `10px`
+
+let div6_2 = document.createElement(`div`);
+div6_2.innerHTML = A[1];
+section6.append(div6_2)
+
+div6_2.style.width = `70px`;
+div6_2.style.height = `70px`;
+div6_2.style.borderRadius = `50%`;
+div6_2.style.backgroundColor = `lightgreen`;
+div6_2.style.display = `flex`;
+div6_2.style.color = `#black`;
+div6_2.style.justifyContent = `center`;
+div6_2.style.flexDirection = `column`;
+div6_2.style.padding = `10px`
+
+let div6_3 = document.createElement(`div`);
+div6_3.innerHTML = A[2];
+section6.append(div6_3)
+
+div6_3.style.width = `70px`;
+div6_3.style.height = `70px`;
+div6_3.style.borderRadius = `50%`;
+div6_3.style.backgroundColor = `lightgreen`;
+div6_3.style.display = `flex`;
+div6_3.style.color = `#black`;
+div6_3.style.justifyContent = `center`;
+div6_3.style.flexDirection = `column`;
+div6_3.style.padding = `10px`
+
+let div6_4 = document.createElement(`div`);
+div6_4.innerHTML = A[3];
+section6.append(div6_4)
+
+div6_4.style.width = `70px`;
+div6_4.style.height = `70px`;
+div6_4.style.borderRadius = `50%`;
+div6_4.style.backgroundColor = `lightgreen`;
+div6_4.style.display = `flex`;
+div6_4.style.color = `#black`;
+div6_4.style.justifyContent = `center`;
+div6_4.style.flexDirection = `column`;
+div6_4.style.padding = `10px`
 
 
 ///////////// 7. /////////////
@@ -209,9 +274,21 @@ div5_5.style.padding = `10px`
 
 
 
+///////////// 8. /////////////
+// Html faile sukurkite du ul tagus (tiesiogiai). 
+// Į  vieną sukurtą tagą, su JS, sudėkite li tagus su iš masyvo C nuskaitytais gyvūnais, 
+// kurių pavadinimas ne ilgesnis kaip 6 raidės, į kitą likusius.
 
+///////////// 9. /////////////
+// Html faile sukurkite ul tagą (tiesiogiai). Į sukurtą tagą, su JS, 
+// sudėkite li tagus su iš masyvo B nuskaitytais gyvūnais. Išfiltruokite ir nedėkite šunų.
 
-
+///////////// 10. /////////////
+// Uždavinį atlikite atskirame html faile. Visame ekrane atsitiktine tvarka “išmėtykite“ 
+// iš masyvo C nuskaitytus gyvūnus. Kad būtų daugiau gyvūnų, tą patį masyvą nuskaitykite 10 kartų. 
+// Gyvūnų pavadinimų raidžių dydis- atsitiktinis nuo 10px iki 100px. Gyvūnų pavadinimų 
+// raidžių spalva atsitiktinė. Pavadinimai turi tolygiai (pagal funkciją rand()) dengti 
+// visą ekraną (funkcijos duotos 02. DOM ir Cycles (one & four edition)).#fun
 
 
 
