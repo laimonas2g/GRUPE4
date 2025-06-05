@@ -1,4 +1,4 @@
-// Duotos Funkcijos
+// Duotos Funkcijos //
 
 function rand(min, max) {
   const minCeiled = Math.ceil(min);
@@ -15,22 +15,18 @@ function randomColor() {
 // Visi tagai turi rikiuotis į vieną eilutę.
 
 let body1 = document.querySelector(`body`);
-body1.style.alignItems = `center`;
   body1.style.display = `flex`;
-  body1.style.flexWrap = 'wrap';
   body1.style.alignItems = 'center';
 
 for (let index = 0; index < 14; index++) {
   let h1tagai = document.createElement(`h1`);
   h1tagai.innerText = 4;
-  h1tagai.style.display = `inline-block`;
   body1.append(h1tagai);
 }
 
 for (let index = 0; index < 14; index++) {
   let h4tagai = document.createElement(`h4`);
   h4tagai.style.display = `inline-block`;
-
   h4tagai.innerText = 1;
   body1.append(h4tagai);
 }
@@ -46,8 +42,6 @@ for (let index = 0; index < 44; index++) {
   let div1tagai = document.createElement(`div.klase1`);
   div1tagai.innerText = a2;
   div1tagai.style.display = `flex`;
-  div1tagai.style.flexWrap = 'wrap';
-  div1tagai.style.alignItems = 'center';
   body1.append(div1tagai);
   if (a2 % 4) div1tagai.style = `color: blue`;
   else div1tagai.style = `color: red`;
@@ -64,45 +58,22 @@ for (let index = 0; index < 14; index++) {
   a3.style.height = `50px`;
   a3.style.borderRadius = `50%`;
   a3.style.backgroundColor = `skyblue`;
-  a3.style.display = `inline-block`;
 }
 
 ////////////// 4. //////////////
 // In the browser, draw 4 blue and 4 red circles arranged in a “zebra” pattern
 // (red, blue, red…).
 
-for (let i = 0; i < 8; i++) {
-  let apskritimas4 = document.createElement('div');
-  apskritimas4.style.width = '50px';
-  apskritimas4.style.height = '50px';
-  apskritimas4.style.borderRadius = '50%';
-  apskritimas4.style.backgroundColor = 'red';
-  // apskritimas4.style.backgroundColor = if (i % 2 == 0) 'red'; else 'blue';
-  body1.appendChild(apskritimas4);
+for (let index = 0; index < 8; index++) {
+  let a4 = document.createElement('div');
+  a4.style.width = '50px';
+  a4.style.height = '50px';
+  a4.style.borderRadius = '50%';
+  a4.style.backgroundColor = index % 2 == 0 ? 'red' : 'blue';
+  body1.appendChild(a4);
 }
 
-// for (let index = 0; index < 4; index++) {
-//   let a4 = document.createElement(`div`);
-//   body1.appendChild(a4)
-//   a4.innerHTML = 'a4';
-//   a4.style.width = `50px`;
-//   a4.style.height = `50px`;
-//   a4.style.borderRadius = `50%`;
-//   a4.style.backgroundColor = `blue`;
-// }
-
-// for (let index = 0; index < 4; index++) {
-//   let a4 = document.createElement(`div`);
-//   body1.appendChild(a4)
-//   a4.innerHTML = 'a4';
-//   a4.style.width = `50px`;
-//   a4.style.height = `50px`;
-//   a4.style.borderRadius = `50%`;
-//   a4.style.backgroundColor = `red`;
-// }
-
 ///////////// 5. /////////////
-
 // Naršyklėje nupieškite daygybos lentelę 4 dauginant iš skaičių nuo 4 iki 14.
 
 

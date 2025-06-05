@@ -42,7 +42,7 @@ const C = [
 console.log(A, A.length);
 
 
-let GyvList1 = '';
+let GyvList1 = ''; // ka jis reiskia?
 
 for (let index = 0; index < A.length; index++) {
   GyvList1 += '<li>' + A[index] + '</li>'; 
@@ -132,7 +132,7 @@ div5_1.style.height = `70px`;
 div5_1.style.borderRadius = `50%`;
 div5_1.style.backgroundColor = `#f63737`;
 div5_1.style.display = `flex`;
-div5_1.style.color = `#black`;
+div5_1.style.color = `black`;
 div5_1.style.justifyContent = `center`;
 div5_1.style.flexDirection = `column`;
 div5_1.style.padding = `10px`
@@ -146,7 +146,7 @@ div5_2.style.height = `70px`;
 div5_2.style.borderRadius = `50%`;
 div5_2.style.backgroundColor = `#f63737`;
 div5_2.style.display = `flex`;
-div5_2.style.color = `#black`;
+div5_2.style.color = `black`;
 div5_2.style.justifyContent = `center`;
 div5_2.style.flexDirection = `column`;
 div5_2.style.padding = `10px`
@@ -160,7 +160,7 @@ div5_3.style.height = `70px`;
 div5_3.style.borderRadius = `50%`;
 div5_3.style.backgroundColor = `#f63737`;
 div5_3.style.display = `flex`;
-div5_3.style.color = `#black`;
+div5_3.style.color = `black`;
 div5_3.style.justifyContent = `center`;
 div5_3.style.flexDirection = `column`;
 div5_3.style.padding = `10px`
@@ -174,7 +174,7 @@ div5_4.style.height = `70px`;
 div5_4.style.borderRadius = `50%`;
 div5_4.style.backgroundColor = `#f63737`;
 div5_4.style.display = `flex`;
-div5_4.style.color = `#black`;
+div5_4.style.color = `black`;
 div5_4.style.justifyContent = `center`;
 div5_4.style.flexDirection = `column`;
 div5_4.style.padding = `10px`
@@ -188,7 +188,7 @@ div5_5.style.height = `70px`;
 div5_5.style.borderRadius = `50%`;
 div5_5.style.backgroundColor = `#f63737`;
 div5_5.style.display = `flex`;
-div5_5.style.color = `#black`;
+div5_5.style.color = `black`;
 div5_5.style.justifyContent = `center`;
 div5_5.style.flexDirection = `column`;
 div5_5.style.padding = `10px`
@@ -200,9 +200,7 @@ div5_5.style.padding = `10px`
 // nuskaityto iš masyvo A. Dėkite tik tuos gyvūnus, kurie savo pavadinime turi tik vieną žodį.
 
 console.log(A.length);
-// let splitas = A.split(' ');  // Kaip atsortinti turincius tik vieną zodi?????
-// console.log(A.split(' '));
-
+// let splitas = A.split(' ');  // Kaip atsortinti turincius tik vieną zodi?
 
 let section6 = document.querySelector('.klausimas6');
 
