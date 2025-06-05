@@ -16,6 +16,7 @@ function randomColor() {
 
 let body1 = document.querySelector(`body`);
   body1.style.display = `flex`;
+  body1.style.flexWrap = `wrap`;
   body1.style.alignItems = 'center';
 
 for (let index = 0; index < 14; index++) {

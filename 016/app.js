@@ -84,10 +84,10 @@ console.log(all);
 // Yra zodis "Ananasas". Reikai su for ciklu pereiti kiekviena raide ir konsoleje spausdinti
 // tik tada jeigu raide yra a
 
-const B = 'Ananasas';
+const str1 = 'Ananasas';
 
-for (let i = 0; i < B.length; i++) {
-  B[i] == 'a' && console.log(B[i]);
+for (let i = 0; i < str1.length; i++) {
+  str1[i] == 'a' && console.log(str1[i]);
 }
 
 // pasidaryti su if
