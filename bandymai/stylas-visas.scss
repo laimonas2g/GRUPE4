@@ -23,7 +23,7 @@ html {
   left: -637px;
   margin-left: auto;
   margin-right: auto;
-  // PANAIKINA RESIZE
+  overflow-x: hidden;
   background-color: $black;
 }
 
@@ -161,9 +161,9 @@ ul .li-5 {
   align-content: center;
   flex-wrap: wrap;
   top: 67px;
-  left: -51.56px;
+  left: 10px;
   height: 114.999px;
-  width: 131.58px;
+  width: 73.58px;
   gap: 15.75px 19.82px;
   opacity: 0.3;
 }
@@ -788,16 +788,16 @@ ul .li-5 {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  top: -200px;
+  top: -245px;
   right: -151.56px;
   height: 114.999px;
-  width: 131.58px;
+  width: 73.58px;
   gap: 15.75px 19.82px;
   opacity: 0.3;
 }
 
 .elementas4 div {
-  background: red;
+  background: linear-gradient(338.5deg, #97C3F9 -869.19%, #93C1F9 574.86%);
   padding: 5px;
   border-radius: 30px;
 }
@@ -862,6 +862,7 @@ ul .li-5 {
   flex-direction: column;
   align-items: center;
   margin-top: 0;
+  
 }
 
 .puslapis5-box {
@@ -876,6 +877,7 @@ ul .li-5 {
   width: 1120px;
   height: 425px;
   border-radius: 24px;
+  z-index: 2;
 }
 
 .psl5-virsus {
@@ -884,14 +886,17 @@ ul .li-5 {
   align-items: center;
   padding-bottom: 60px;
   padding-top: 64px;
-}
+  
+} 
 
 .puslapis5-box div .headeris5 {
+  position: relative;
   font-weight: 700;
   font-size: 36px;
   line-height: 48px;
   letter-spacing: 0%;
   color: $white;
+  z-index: 2;
 }
 
 .rect5 {
@@ -901,46 +906,7 @@ ul .li-5 {
   border-bottom: 2px solid $white;
   margin: 13px;
   padding: 0;
-}
 
-.elementas5_1 {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  top: 0px;
-  right: -51.56px;
-  height: 114.999px;
-  width: 131.58px;
-  gap: 15.75px 19.82px;
-  opacity: 0.3;
-}
-
-.elementas5_1 div {
-  background: red;
-  padding: 5px;
-  border-radius: 30px;
-}
-
-.elementas5_2 {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  top: 150px;
-  left: -90px;
-  height: 414.999px;
-  width: 131.58px;
-  gap: 15.75px 19.82px;
-  opacity: 0.3;
-}
-
-.elementas5_2 div {
-  background: red;
-  padding: 5px;
-  border-radius: 30px;
 }
 
 .psl5-apacia {
@@ -951,12 +917,14 @@ ul .li-5 {
   justify-content: center;
   column-gap: 60px;
   margin-top: 0px;
+  
 }
 
 .psl5-apacia img+div p {
   color: $white;
   flex-direction: column;
   margin: 0%;
+  
 }
 
 .psl5-apacia div {
@@ -966,6 +934,7 @@ ul .li-5 {
   justify-content: center;
   padding-right: 20px;
   padding-bottom: 60px;
+  
 }
 
 .psl5-apacia .tekstas5 {
@@ -981,18 +950,25 @@ ul .li-5 {
   font-size: 19px;
   line-height: 30px;
   letter-spacing: 0%;
-
+  opacity: 0.5;
+  
 }
 
 #founder5 {
   flex-direction: column;
   align-items: flex-start;
   margin-left: 29px;
+
+  padding-bottom: 15px;
+}
+
+#founder5 span {
   font-weight: 700;
   font-size: 22px;
   line-height: 48px;
   letter-spacing: 0%;
-  padding-bottom: 15px;
+  color: $white;
+  
 }
 
 #founder5 p+p {
@@ -1001,13 +977,14 @@ ul .li-5 {
   line-height: 48px;
   letter-spacing: 0%;
   color: $white;
+  
 }
 
 .puslapis5-nav {
-  margin-top: 0px;
   display: flex;
   flex-direction: row;
   gap: 70px;
+  
 }
 
 .puslapis5-nav div {
@@ -1021,6 +998,7 @@ ul .li-5 {
   left: 1514px;
   gap: 15px 17px;
   margin: 0;
+  
 }
 
 .puslapis5-nav div div {
@@ -1049,6 +1027,45 @@ ul .li-5 {
   cursor: pointer;
 }
 
+.elementas5_1 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  top: -17px;
+  right: -50px;
+  height: 114.999px;
+  width: 131.58px;
+  gap: 15.75px 19.82px;
+  opacity: 0.3;
+}
+
+.elementas5_1 div {
+  background: linear-gradient(338.5deg, #FFFFFF -951.03%, #FFFFFF 493.02%);
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.elementas5_2 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  top: 110px;
+  left: -50px;
+  height: 414.999px;
+  width: 131.58px;
+  gap: 15.75px 19.82px;
+  opacity: 0.3;
+}
+
+.elementas5_2 div {
+  background: linear-gradient(338.5deg, #97C3F9 -869.19%, #93C1F9 574.86%);
+  padding: 5px;
+  border-radius: 30px;
+}
 
 // Page 6
 
@@ -1056,22 +1073,25 @@ ul .li-5 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
 }
 
 .apacia6 {
   display: flex;
   justify-content: space-around;
-   position: relative;
+  position: relative;
+  
 }
 
 .lowbar6 {
   display: flex;
   justify-content: space-around;
+  
 }
 
 .box6-1 {
   margin-left: 240px;
- 
+  z-index: 1;
 }
 
 .imagebox6-1 {
@@ -1079,6 +1099,7 @@ ul .li-5 {
   height: 246px;
   // top: 4593px;
   // left: 240px;
+  box-shadow: 10px 40px 50px 0px #E5E9F666;
 }
 
 
@@ -1088,7 +1109,7 @@ ul .li-5 {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  top: 330px;
+  top: 270px;
   left: 190px;
   height: 114.999px;
   width: 131.58px;
@@ -1097,7 +1118,7 @@ ul .li-5 {
 }
 
 .elementas6 div {
-  background: red;
+  background: linear-gradient(338.5deg, #97C3F9 -689.1%, #93C1F9 754.96%);
   padding: 5px;
   border-radius: 30px;
 }
@@ -1105,8 +1126,12 @@ ul .li-5 {
 .imagebox6-2 {
   width: 409px;
   height: 272px;
+  padding-left: 20px;
   // top: 4589px;
   // left: 605px;
+  z-index: 1;
+  box-shadow: 10px 40px 50px 0px #E5E9F666;
+
 }
 
 .imagebox6-3 {
@@ -1116,6 +1141,7 @@ ul .li-5 {
   // left: 995px;
   margin-left: -25px;
   margin-bottom: 24px;
+  
 }
 
 .box6-1 span {
@@ -1142,8 +1168,10 @@ ul .li-5 {
   line-height: 28px;
   letter-spacing: 0%;
   color: $gray;
-  margin: 21px 66px 12px 33px;
+  margin: 0px 66px 25px 33px;
+
 }
+
 
 .box6-2 span {
   display: block;
@@ -1156,7 +1184,7 @@ ul .li-5 {
   line-height: 32px;
   letter-spacing: 0%;
   color: $black;
-  margin: -5px 52px 12px 33px;
+  margin: -5px 52px 12px 53px;
 }
 
 .box6-2 p {
@@ -1169,11 +1197,16 @@ ul .li-5 {
   line-height: 28px;
   letter-spacing: 0%;
   color: $gray;
-  margin: 12px 51px 25px 33px;
+  margin: 0 51px 25px 53px;
+  background-color: $white;
+  box-shadow: 10px 40px 50px 0px #E5E9F666;
+
 }
 
 .box6-3 {
   margin-right: 238px;
+  z-index: 1;
+  
 }
 
 .box6-3 span {
@@ -1188,6 +1221,10 @@ ul .li-5 {
   letter-spacing: 0%;
   color: $black;
   margin-top: 10px;
+  margin-bottom: 12px;
+  background-color: $white;
+  padding-left: 10px;
+  
 }
 
 .box6-3 p {
@@ -1200,8 +1237,10 @@ ul .li-5 {
   line-height: 28px;
   letter-spacing: 0%;
   color: $gray;
-  margin-bottom: 33px;
-  //margin bottom LEMPINIS!!!!!!!
+  margin-bottom: 25px;
+  padding-left: 10px;
+  background-color: $white;
+  z-index: 1;
 }
 
 
@@ -1211,6 +1250,7 @@ ul .li-5 {
   // top: 4433px;
   // left: 569px;
   border-radius: 5px;
+  background-color: $white;
   margin: 156px 569px 72px 569px;
 }
 
@@ -1223,6 +1263,7 @@ ul .li-5 {
   font-size: 36px;
   line-height: 56px;
   letter-spacing: 0%;
+  background-color: $white;
   color: $black;
 }
 
@@ -1234,7 +1275,7 @@ ul .li-5 {
   border-radius: 5px;
   color: $black;
   margin-top: 26px;
-  margin-left: 210px;
+  margin-left: 200px;
 }
 
 .button6 {
@@ -1253,7 +1294,7 @@ ul .li-5 {
   color: $blue;
   background-color: $white;
   border: 1.4px solid $blue;
-  margin: 72px 700px 201px 700px;
+  margin: 104px 700px 201px 700px;
 }
 
 .lowbar6 a {
@@ -1266,89 +1307,60 @@ ul .li-5 {
   line-height: 28px;
   letter-spacing: 0%;
   color: $blue;
+  background-color: $white;
   margin-left: 33px;
+
+}
+
+.box6-2 a {
+  margin: 42px;
+  background-color: $white;
+  padding-left: 10px;
 }
 
 .box6-3 a {
   margin-left: 0;
+  background-color: $white;
+  padding-left: 10px;
+}
+
+.vectorius2 {
+  left: 1122px;
+  top: 230px;
+  position: absolute;
+  background-color: linear-gradient(175.68deg, #F3F7FF -10.48%, #DEEEFE 92.66%);
+
 }
 
 //////////// Page 7 /////////////////////////////
 
 footer {
   display: flex;
-  justify-content: space-around;
 }
 
 .puslapis7 {
   display: flex;
-  justify-content: space-around;
 }
 
 .apacia7 {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 1600px;
   height: 432px;
-  // top: 5438px;
   background: #67C3F3;
   background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
-
 }
 
 .box7-0 {
   position: relative;
-  margin: 336px 77.42px 7.12px 0px;
-}
-
-.elementas7_1 {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  top: -50px;
-  right: -100px;
-  height: 114.999px;
-  width: 131.58px;
-  gap: 15.75px 19.82px;
-  opacity: 0.3;
-}
-
-.elementas7_1 div {
-  background: red;
-  padding: 5px;
-  border-radius: 30px;
-}
-
-.elementas7_2 {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  top: -600px;
-  right: -1500px;
-  height: 414.999px;
-  width: 131.58px;
-  gap: 15.75px 19.82px;
-  opacity: 0.3;
-}
-
-.elementas7_2 div {
-  background: red;
-  padding: 5px;
-  border-radius: 30px;
+  width: 190px;
+  height: 432px;
 }
 
 .box7-1 {
   width: 391px;
   height: 201px;
-  // top: 5556px;
-  // left: 190px;
   color: $white;
-  margin: 118px 145px 113px 0px;
+  padding: 118px 145px 113px 0px;
 }
 
 .logo7 {
@@ -1359,7 +1371,6 @@ footer {
   position: absolute;
   margin-top: 12px;
   margin-left: 12px;
-
 }
 
 .eclipse7 {
@@ -1373,8 +1384,6 @@ footer {
 .box7-1 span {
   width: 391px;
   height: 84px;
-  // top: 5614px;
-  // left: 190px;
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
@@ -1382,11 +1391,8 @@ footer {
 }
 
 .box7-1 p {
-  display: block;
   width: 391px;
   height: 28px;
-  // top: 5729px;
-  // left: 190px;
   font-weight: 300;
   font-size: 16px;
   line-height: 28px;
@@ -1395,101 +1401,95 @@ footer {
 }
 
 .box7-2 {
-  display: block;
   width: 391px;
   height: 214px;
-  // top: 5547px;
-  // left: 726px
   color: $white;
-}
-
-.boxlist72-1 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.sekcija72-1 {
-  width: 92px;
-  height: 60px;
-  // top: 5547px;
-  // left: 726px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 60px;
-  letter-spacing: 0%;
-}
-
-.boxlist72-2 {
-  width: 391px;
-  height: 152px;
-  // top: 5609px;
-  // left: 726px;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 38px;
-  letter-spacing: 0%;
+  padding: 109px 0px 109px 0px;
 }
 
 .box7-3 {
   width: 391px;
   height: 214px;
-  // top: 5547px;
-  // left: 1228px;
   color: $white;
   margin-left: -177px;
-
+  padding: 109px 0px 109px 0px;
 }
 
-.sekcija73-1 {
-  width: 67px;
-  height: 60px;
-  // top: 5547px;
-  // left: 995px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 60px;
+.box7-4 {
+  width: 391px;
+  height: 214px;
+  color: $white;
+  margin-left: -166px;
+  padding: 109px 0px 109px 0px;
+}
+
+.boxlist72-1 {
+  display: flex;
+  width: 391px;
+  height: 152px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 38px;
   letter-spacing: 0%;
 }
 
 .boxlist73-2 {
   width: 391px;
   height: 152px;
-  // top: 5609px;
-  // left: 995px;
   font-weight: 300;
   font-size: 18px;
   line-height: 38px;
-  letter-spacing: 0%;
-}
-
-.box7-4 {
-  width: 391px;
-  height: 214px;
-  // top: 5547px;
-  // left: 1228px;
-  color: $white;
-  margin-left: -166px;
-}
-
-.sekcija74-1 {
-  width: 45px;
-  height: 60px;
-  // top: 5547px;
-  // left: 1228px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 60px;
   letter-spacing: 0%;
 }
 
 .boxlist74-2 {
   width: 391px;
   height: 152px;
-  // top: 5609px;
-  // left: 1228px;
   font-weight: 300;
   font-size: 18px;
   line-height: 38px;
   letter-spacing: 0%;
 }
+
+.elementas7_1 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  top: 330px;
+  right: 70px;
+  height: 104.999px;
+  width: 121.58px;
+  gap: 15.75px 19.82px;
+  opacity: 0.26;
+}
+
+.elementas7_1 div {
+  background: linear-gradient(338.5deg, #FFFFFF -951.03%, #FFFFFF 493.02%);
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.elementas7_2 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  bottom: 439px;
+  left: 1379px;
+  height: 72.5px;
+  width: 131.58px;
+  gap: 15.75px 19.82px;
+  opacity: 0.3;
+}
+
+.elementas7_2 div {
+  background: linear-gradient(338.5deg, #97C3F9 -787.35%, #93C1F9 656.7%);
+  padding: 5px;
+  border-radius: 30px;
+}
+
+
+
