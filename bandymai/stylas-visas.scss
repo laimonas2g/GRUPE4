@@ -319,9 +319,9 @@ ul .li-5 {
 }
 
 .vectorius1 {
+  position: absolute;
   left: 260px;
   top: -43px;
-  position: absolute;
   background-color: (#F3F7FF -10.48%, #DEEEFE 92.66%);
 }
 
@@ -1404,7 +1404,12 @@ footer {
   width: 391px;
   height: 214px;
   color: $white;
-  padding: 109px 0px 109px 0px;
+  padding: 85px 0px 109px 0px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
+
 }
 
 .box7-3 {
@@ -1412,7 +1417,12 @@ footer {
   height: 214px;
   color: $white;
   margin-left: -177px;
-  padding: 109px 0px 109px 0px;
+  padding: 85px 0px 109px 0px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
+
 }
 
 .box7-4 {
@@ -1420,35 +1430,44 @@ footer {
   height: 214px;
   color: $white;
   margin-left: -166px;
-  padding: 109px 0px 109px 0px;
+  padding: 85px 0px 109px 0px;
+font-weight: 300;
+font-size: 18px;
+line-height: 38px;
+letter-spacing: 0%;
+
 }
 
-.boxlist72-1 {
-  display: flex;
-  width: 391px;
-  height: 152px;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 38px;
-  letter-spacing: 0%;
+.listas72-1 {
+  padding: 0;
 }
 
-.boxlist73-2 {
-  width: 391px;
-  height: 152px;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 38px;
-  letter-spacing: 0%;
+.listas72-1 li:first-child {
+  padding: 0;
+  padding-bottom: 20px;
+font-weight: 700;
+font-size: 20px;
+line-height: 60px;
+letter-spacing: 0%;
+
 }
 
-.boxlist74-2 {
-  width: 391px;
-  height: 152px;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 38px;
-  letter-spacing: 0%;
+.listas73-1 li:first-child {
+  padding: 0;
+  padding-bottom: 20px;
+  font-weight: 700;
+font-size: 20px;
+line-height: 60px;
+letter-spacing: 0%;
+}
+
+.listas74-1 li:first-child {
+  padding: 0;
+  padding-bottom: 20px;
+  font-weight: 700;
+font-size: 20px;
+line-height: 60px;
+letter-spacing: 0%;
 }
 
 .elementas7_1 {

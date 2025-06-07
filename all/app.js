@@ -1,13 +1,33 @@
 
-
+console.log('Labas, Bebrai!')
 // Yra zodis "divagate". Reikia su for ciklu pereiti kiekviena raide ir 
 // konsoleje spausdinti tik tada jeigu raide yra a
+
+const zodis1 = 'divagate';
+
+console.log(typeof zodis1)
+
+for (let index = 0; index < zodis1.length; index++) {
+  if ('a' != zodis1[index]) console.log(zodis1[index]) 
+}
+
+
 
 // Yra zodis "afforest". Reikia su for ciklu pereiti kiekviena raide ir 
 // konsoleje spausdinti tik tada jeigu raide yra f
 
+const zodis2 = 'afforest';
+for (let index = 0; index < zodis2.length; index++) {
+  if (zodis2[index] == 'e') console.log(zodis2[index]);
+}
+
 // Yra zodis "aftermath". Reikia su for ciklu pereiti kiekviena raide ir 
 // konsoleje spausdinti tik tada jeigu raide yra a
+
+const zodis3 = 'aftermath';
+for (let index = 0; index < zodis3.length; index++) {
+  if (zodis3[index] == 'a') console.log(zodis3[index]);
+}
 
 // Yra zodis "blithesome". Reikia su for ciklu pereiti kiekviena raide ir 
 // konsoleje spausdinti tik tada jeigu raide yra e
