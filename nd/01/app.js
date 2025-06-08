@@ -77,47 +77,26 @@ else if (iksas1 < iksas2) {
 let a1 = rand(50, 200);
 let a2 = rand(50, 200);
 let a3 = rand(50, 200);
-console.log(a1);
-console.log(a2);
-console.log(a3);
-let span4_1 = document.querySelector('#go4 div');
-let span4_2 = document.querySelector('#go4 div:nth-child(2)');
-let span4_3 = document.querySelector('#go4 div:nth-child(3)');
-span4_1.innerText = a1;
-span4_2.innerText = a2;
-span4_3.innerText = a3;
 
-if (a1 > a2 && a1 > a3) {
-  console.log(a1 + " largest number.");
-  let apskritimas1 = a1;
-  apskritimas1 = document.querySelector("#go4 div");
-  apskritimas1.style.width = a1 + 'px';
-  apskritimas1.style.height = a1 + 'px';
-  apskritimas1.style.backgroundColor = 'green';
-  apskritimas1.style.borderRadius = '50%';
-  span4_1.innerText = a1;
-}
+let dydziai4 = [
+  { dydis: a1, color: 'green' },
+  { dydis: a2, color: 'blue' },
+  { dydis: a3, color: 'red' }
+];
 
-else if (a2 > a1 && a2 > a3) {
-  console.log(a2 + " largest number.");
-  let apskritimas2 = a2;
-  apskritimas2 = document.querySelector("#go4 div:nth-child(2)");
-  apskritimas2.style.width = a2 + 'px';
-  apskritimas2.style.height = a2 + 'px';
-  apskritimas2.style.backgroundColor = 'blue';
-  apskritimas2.style.borderRadius = '50%';
-  span4_2.innerText = a2;
-}
+// Sort from smallest to largest
+dydziai4.sort((a, b) => a.dydis - b.dydis);
 
-else {
-  console.log(a3 + " largest number.");
-  let apskritimas3 = a3;
-  apskritimas3 = document.querySelector("#go4 div:nth-child(3)");
-  apskritimas3.style.width = a3 + 'px';
-  apskritimas3.style.height = a3 + 'px';
-  apskritimas3.style.backgroundColor = 'red';
-  apskritimas3.style.borderRadius = '50%';
-  span4_3.innerText = a3;
+let go4 = document.querySelector('#go4');
+let divai = go4.querySelectorAll('div');
+
+for (let index = 0; index < 3; index++) {
+  let d = divai[index];
+  d.style.width = dydziai4[index].dydis + 'px';
+  d.style.height = dydziai4[index].dydis + 'px';
+  d.style.backgroundColor = dydziai4[index].color;
+  d.style.borderRadius = '50%';
+  d.innerText = dydziai4[index].dydis;
 }
 
 ///////////// 5. /////////////
