@@ -14,6 +14,7 @@ $white: #FFFFFF;
 
 $main-font: "Mulish", sans-serif;
 
+
 // Reset
 
 html {
@@ -32,6 +33,29 @@ body {
   padding: 0;
   font-family: $main-font;
   background-color: $white;
+  // width: auto; ?
+}
+//  img {
+//   max-width: 100%;
+//   height: auto;
+//   vertical-align: middle;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   shape-margin: 0.75rem;
+// }
+
+.navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: $xl) {
+  .navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 
 a {
@@ -68,6 +92,9 @@ li {
 header {
   display: flex;
   justify-content: space-around;
+  align-items: center; //?
+  flex-wrap: wrap; //?
+  
 }
 
 .virsus1 {
@@ -320,7 +347,7 @@ ul .li-5 {
 
 .vectorius1 {
   position: absolute;
-  left: 260px;
+  left: 0px;
   top: -43px;
   background-color: (#F3F7FF -10.48%, #DEEEFE 92.66%);
 }
