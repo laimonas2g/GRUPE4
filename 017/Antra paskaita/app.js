@@ -1,81 +1,78 @@
-console.log(`Labas, Udra!`);
+console.log('Labas, Ūdra!');
 
 function rand(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
 
-const stringas = `A`.repeat((rand)(1, 11)) + rand(10,99) + `A`.repeat((rand)(1, 11))+ rand(10,99);
-const regex = /[0-9]{2}/g; // regex skiriamieji zenklai
+const stringas = 'A'.repeat(rand(1, 11)) + rand(10, 200) + 'A'.repeat(rand(1, 11));
+const regex = /[0-9]{3}/g;
 
-const found = stringas.match(regex); // gali nieko nerast, bus NULL
-
-console.log(typeof regex)
+const found = stringas.match(regex); // gali nerast nieko tada bus NULL
 
 console.log(stringas);
 
 if (null === found) {
-  console.log (`nieko neradau`)
-}  else {
-  console.log(+found[0]);  // bus stringas, su + bus skaicius [1 array found]
+    console.log('nieko neradau');
+} else {
+    console.log(+found[0]);
 }
-
-// for (let index = 0; index <= 5; index++) {
-//   if (index % 2 == 0) console.log(`Hello World`, index)
-// }
-
-
-//Atspausdinti consoleje po viena visas ne `a` (tiek ne mazas, tiek ne didelias)
 
 const str1 = 'Ananasas';
+// Atspausdinti konsolėje po vieną visas ne a raides (tiek ne mažas tiek ne didelias)
 
-// for (let index = 0; i < str1.length; index++) {
-//   str1[index] > 'a' && console.log(str1[index]);
-// }
-
-// for (let index = 0; index < str1.length; index++) {
-//   if (str1[index] > `a`) console.log((str1[index]));
-// }
 
 for (let i = 0; i < str1.length; i++) {
-  if (str1[i].toLowerCase() != `a`) {
-    console.log(str1[i])
-  }
+
+    // if (str1[i] != 'a' && str1[i] != 'A') {
+
+    if (str1[i].toLowerCase() != 'a') {
+        console.log(str1[i]);
+    }
 }
 
-const str2 = `Bananas`;
-// Is stringo reika padaryti kita stringa, kuriame nebutu 'a' raidziu. 
-// Padarius toki stringa ji atspausdinti konsoleje
+const str2 = 'Bananas';
+// Iš stringo reikia padaryti kitą stringą, kuriame nebūtų 'a' raidžių. Padarius tokį stringą jį atspausdinti konsolėje
 
-let result2 = ``;
-
+let result2 = '';
 for (let i = 0; i < str2.length; i++) {
-  if (str2[i].toLowerCase() != `a`) {
-    result2 = result2 + str2[i];
-    // console.log(str2[i] + str2[i][0])
-    console.log(result2)
-  }
+
+    if (str2[i].toLowerCase() != 'a') {
+        result2 = result2 + str2[i];
+    }
 }
 
-// suskaiciuoti kiek `a` raidziu yra str2 stringe
+console.log(result2);
 
+// Suskaičiuoti kiek 'a' raidžių yra str2 stringe
+
+// Iš stringo reikia padaryti kitą stringą, kuriame vietoj 'a' raidžių būtų '*'. Padarius tokį stringą jį atspausdinti konsolėje
+
+
+let resultC = 0;
 for (let i = 0; i < str2.length; i++) {
-  if (`a` == str2[i]) console.log(str2[i].length)
+
+    if (str2[i].toLowerCase() == 'a') {
+        resultC++;
+    }
 }
 
+console.log(resultC);
 
-// Iš stringo reikia padaryti kitą stringą, kuriame vietoj 'a' raidžių būtų '*'. 
-// Padarius tokį stringą jį atspausdinti konsolėje
 
+let result3 = '';
 for (let i = 0; i < str2.length; i++) {
-  if (`a` == str2[i]) console.log(str2[i].length)
+
+    if (str2[i].toLowerCase() != 'a') {
+        result3 = result3 + str2[i];
+    } else {
+        result3 = result3 + '*';
+    }
 }
 
-
-
-
+console.log(result3);
 
 
 

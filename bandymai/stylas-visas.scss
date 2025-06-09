@@ -24,7 +24,7 @@ html {
   left: -637px;
   margin-left: auto;
   margin-right: auto;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   background-color: $black;
 }
 
@@ -55,6 +55,8 @@ body {
   .navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
     max-width: 100%;
     padding: 0 20px;
+    flex-shrink: 1;
+    flex-grow: 0;
   }
 }
 
@@ -88,6 +90,13 @@ li {
 
 // Page 1 Top START
 
+@media (width <= 1250px) {
+  header {
+ display: flex;
+ flex-wrap: wrap;
+  }
+}
+
 
 header {
   display: flex;
@@ -100,18 +109,21 @@ header {
 .virsus1 {
   display: flex;
   justify-content: space-around;
+  
 }
 
 .navbar {
   width: 1600px;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .topnav ul {
   display: flex;
   justify-content: space-around;
   gap: 40px;
+  
 }
 
 .logo {
@@ -119,6 +131,7 @@ header {
   height: 41px;
   margin-left: 191px;
   margin-top: 56px;
+  
 }
 
 .topnav ul {
@@ -130,6 +143,7 @@ header {
   line-height: 100%;
   letter-spacing: 0%;
   color: #1F1534;
+  
 }
 
 li:first-child {
@@ -140,6 +154,7 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 ul .li-1 {
@@ -172,6 +187,7 @@ ul .li-5 {
 .apacia1 {
   display: flex;
   justify-content: space-around;
+  
 }
 
 .lowbar {
@@ -179,6 +195,7 @@ ul .li-5 {
   display: flex;
   justify-content: space-between;
   position: relative;
+  
 }
 
 .elementas1 {
@@ -193,6 +210,7 @@ ul .li-5 {
   width: 73.58px;
   gap: 15.75px 19.82px;
   opacity: 0.3;
+  
 }
 
 .elementas1 div {
@@ -230,6 +248,7 @@ ul .li-5 {
   margin-top: 186px;
   margin-left: 190px;
   border-radius: 55px;
+  
 }
 
 .illustration1 {
@@ -237,7 +256,8 @@ ul .li-5 {
   height: 598px;
   margin-top: 80px;
   padding-right: 163px;
-  // Adjusted margin-top by 4px for better alignment
+  
+ 
 }
 
 .header-text1 h1 {
@@ -913,7 +933,7 @@ ul .li-5 {
   align-items: center;
   padding-bottom: 60px;
   padding-top: 64px;
-  
+
 } 
 
 .puslapis5-box div .headeris5 {
@@ -1089,7 +1109,7 @@ ul .li-5 {
 }
 
 .elementas5_2 div {
-  background: linear-gradient(338.5deg, #97C3F9 -869.19%, #93C1F9 574.86%);
+background-color: red;
   padding: 5px;
   border-radius: 30px;
 }
