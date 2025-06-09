@@ -1,15 +1,6 @@
 const str2 = 'Bananas';
 // Iš stringo reikia padaryti kitą stringą, kuriame nebūtų 'a' raidžių. Padarius tokį stringą jį atspausdinti konsolėje
 
-let result2 = '';
-for (let i = 0; i < str2.length; i++) {
-
-  if (str2[i].toLowerCase() != 'a') {
-    result2 = result2 + str2[i];
-  }
-}
-
-console.log(result2);
 
 let resultC = 0;
 for (let i = 0; i < str2.length; i++) {
@@ -44,16 +35,7 @@ console.log(result3);
 
 // 3. Iš stringo 'Strawberry' padarykite kitą stringą, kuriame vietoj 'r' raidžių būtų skaičius '1'. Atspausdinkite rezultatą konsolėje.
 
-let result4 = '';
 
-const a1 = `Pineapple`;
-for (let i = 0; i < a1.length; i++) {
-  if (a1[i].toLowerCase() != 'e') {
-    result4 = result4 + a1[i];
-  }
-}
-  
-console.log(result4);
 
 let result5 = '';
 const a2 = `Mississippi`; 
@@ -315,10 +297,15 @@ console.clear()
 // 20. Suskaičiuokite, kiek kartų stringe 'California' pasikartoja raidė 'a'. Atspausdinkite rezultatą konsolėje.
 
 1. 
+const str23 = 'Watermelon';
+let result27 = ''; 
 
-
-
-
+for (let ii = 0; ii < str23.length; ii++) {
+  if (str23[ii].toLowerCase() != 'a') {
+    result27 = result27 + str23[ii];
+  }
+}
+console.log(result27);
 
 
 
