@@ -11,20 +11,19 @@ $gray: #7D7987;
 $black: #000000;
 $white: #FFFFFF;
 
-
 $main-font: "Mulish", sans-serif;
 
 
 // Reset
 
 html {
-  width: 1600px;
-  height: 5870px;
-  top: -504px;
-  left: -637px;
+  max-width: 1600px;
+  // height: 5870px;
+  // top: -504px;
+  // left: -637px;
   margin-left: auto;
   margin-right: auto;
-  // overflow-x: hidden;
+  overflow-x: hidden;
   background-color: $black;
 }
 
@@ -35,6 +34,7 @@ body {
   background-color: $white;
   // width: auto; ?
 }
+
 //  img {
 //   max-width: 100%;
 //   height: auto;
@@ -44,21 +44,21 @@ body {
 //   shape-margin: 0.75rem;
 // }
 
-.navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
-  width: 100%;
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
+//   width: 100%;
+//   max-width: 1600px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-@media (max-width: $xl) {
-  .navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
-    max-width: 100%;
-    padding: 0 20px;
-    flex-shrink: 1;
-    flex-grow: 0;
-  }
-}
+// @media (max-width: $xl) {
+//   .navbar, .lowbar, .lowbar3, .lowbar4, .apacia7 {
+//     max-width: 100%;
+//     padding: 0 20px;
+//     flex-shrink: 1;
+//     flex-grow: 0;
+//   }
+// }
 
 a {
   text-decoration: none;
@@ -90,12 +90,12 @@ li {
 
 // Page 1 Top START
 
-@media (width <= 1250px) {
-  header {
- display: flex;
- flex-wrap: wrap;
-  }
-}
+// @media (width <= 1250px) {
+//   header {
+//  display: flex;
+//  flex-wrap: wrap;
+//   }
+// }
 
 
 header {
@@ -103,27 +103,26 @@ header {
   justify-content: space-around;
   align-items: center; //?
   flex-wrap: wrap; //?
-  
+
 }
 
 .virsus1 {
   display: flex;
   justify-content: space-around;
-  
+
 }
 
 .navbar {
-  width: 1600px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  
+  gap: 512px; // space between pries tai
 }
 
 .topnav ul {
   display: flex;
   justify-content: space-around;
   gap: 40px;
-  
+
 }
 
 .logo {
@@ -131,7 +130,7 @@ header {
   height: 41px;
   margin-left: 191px;
   margin-top: 56px;
-  
+
 }
 
 .topnav ul {
@@ -143,7 +142,7 @@ header {
   line-height: 100%;
   letter-spacing: 0%;
   color: #1F1534;
-  
+
 }
 
 li:first-child {
@@ -154,7 +153,7 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 ul .li-1 {
@@ -187,7 +186,7 @@ ul .li-5 {
 .apacia1 {
   display: flex;
   justify-content: space-around;
-  
+
 }
 
 .lowbar {
@@ -195,7 +194,7 @@ ul .li-5 {
   display: flex;
   justify-content: space-between;
   position: relative;
-  
+
 }
 
 .elementas1 {
@@ -210,7 +209,7 @@ ul .li-5 {
   width: 73.58px;
   gap: 15.75px 19.82px;
   opacity: 0.3;
-  
+
 }
 
 .elementas1 div {
@@ -248,16 +247,16 @@ ul .li-5 {
   margin-top: 186px;
   margin-left: 190px;
   border-radius: 55px;
-  
+
 }
 
 .illustration1 {
-  width: 693px;
+  width: 693px; //fractional
   height: 598px;
   margin-top: 80px;
   padding-right: 163px;
-  
- 
+// pagal viewport
+
 }
 
 .header-text1 h1 {
@@ -909,7 +908,7 @@ ul .li-5 {
   flex-direction: column;
   align-items: center;
   margin-top: 0;
-  
+
 }
 
 .puslapis5-box {
@@ -934,7 +933,7 @@ ul .li-5 {
   padding-bottom: 60px;
   padding-top: 64px;
 
-} 
+}
 
 .puslapis5-box div .headeris5 {
   position: relative;
@@ -964,14 +963,14 @@ ul .li-5 {
   justify-content: center;
   column-gap: 60px;
   margin-top: 0px;
-  
+
 }
 
 .psl5-apacia img+div p {
   color: $white;
   flex-direction: column;
   margin: 0%;
-  
+
 }
 
 .psl5-apacia div {
@@ -981,7 +980,7 @@ ul .li-5 {
   justify-content: center;
   padding-right: 20px;
   padding-bottom: 60px;
-  
+
 }
 
 .psl5-apacia .tekstas5 {
@@ -998,7 +997,7 @@ ul .li-5 {
   line-height: 30px;
   letter-spacing: 0%;
   opacity: 0.5;
-  
+
 }
 
 #founder5 {
@@ -1015,7 +1014,7 @@ ul .li-5 {
   line-height: 48px;
   letter-spacing: 0%;
   color: $white;
-  
+
 }
 
 #founder5 p+p {
@@ -1024,14 +1023,14 @@ ul .li-5 {
   line-height: 48px;
   letter-spacing: 0%;
   color: $white;
-  
+
 }
 
 .puslapis5-nav {
   display: flex;
   flex-direction: row;
   gap: 70px;
-  
+
 }
 
 .puslapis5-nav div {
@@ -1045,7 +1044,7 @@ ul .li-5 {
   left: 1514px;
   gap: 15px 17px;
   margin: 0;
-  
+
 }
 
 .puslapis5-nav div div {
@@ -1109,7 +1108,8 @@ ul .li-5 {
 }
 
 .elementas5_2 div {
-background-color: red;
+  background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
+
   padding: 5px;
   border-radius: 30px;
 }
@@ -1120,20 +1120,20 @@ background-color: red;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
+
 }
 
 .apacia6 {
   display: flex;
   justify-content: space-around;
   position: relative;
-  
+
 }
 
 .lowbar6 {
   display: flex;
   justify-content: space-around;
-  
+
 }
 
 .box6-1 {
@@ -1188,7 +1188,7 @@ background-color: red;
   // left: 995px;
   margin-left: -25px;
   margin-bottom: 24px;
-  
+
 }
 
 .box6-1 span {
@@ -1253,7 +1253,7 @@ background-color: red;
 .box6-3 {
   margin-right: 238px;
   z-index: 1;
-  
+
 }
 
 .box6-3 span {
@@ -1271,7 +1271,7 @@ background-color: red;
   margin-bottom: 12px;
   background-color: $white;
   padding-left: 10px;
-  
+
 }
 
 .box6-3 p {
@@ -1452,10 +1452,10 @@ footer {
   height: 214px;
   color: $white;
   padding: 85px 0px 109px 0px;
-font-weight: 300;
-font-size: 18px;
-line-height: 38px;
-letter-spacing: 0%;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 38px;
+  letter-spacing: 0%;
 
 }
 
@@ -1465,10 +1465,10 @@ letter-spacing: 0%;
   color: $white;
   margin-left: -177px;
   padding: 85px 0px 109px 0px;
-font-weight: 300;
-font-size: 18px;
-line-height: 38px;
-letter-spacing: 0%;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 38px;
+  letter-spacing: 0%;
 
 }
 
@@ -1478,10 +1478,10 @@ letter-spacing: 0%;
   color: $white;
   margin-left: -166px;
   padding: 85px 0px 109px 0px;
-font-weight: 300;
-font-size: 18px;
-line-height: 38px;
-letter-spacing: 0%;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 38px;
+  letter-spacing: 0%;
 
 }
 
@@ -1492,10 +1492,10 @@ letter-spacing: 0%;
 .listas72-1 li:first-child {
   padding: 0;
   padding-bottom: 20px;
-font-weight: 700;
-font-size: 20px;
-line-height: 60px;
-letter-spacing: 0%;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
 
 }
 
@@ -1503,18 +1503,18 @@ letter-spacing: 0%;
   padding: 0;
   padding-bottom: 20px;
   font-weight: 700;
-font-size: 20px;
-line-height: 60px;
-letter-spacing: 0%;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
 }
 
 .listas74-1 li:first-child {
   padding: 0;
   padding-bottom: 20px;
   font-weight: 700;
-font-size: 20px;
-line-height: 60px;
-letter-spacing: 0%;
+  font-size: 20px;
+  line-height: 60px;
+  letter-spacing: 0%;
 }
 
 .elementas7_1 {
@@ -1556,6 +1556,27 @@ letter-spacing: 0%;
   padding: 5px;
   border-radius: 30px;
 }
+
+// .footer_background {
+//   display: flex;
+//   position: absolute;
+//   background-color: #000000;
+//   bottom: 0;
+//   left: 0;
+//   height: 100px;
+//   width: 100%;
+// }
+
+//  @media (max-width: 1000px) {
+//   html {
+//     width: 1000px;
+//   }
+//  }
+
+
+
+
+
 
 
 
