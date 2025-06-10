@@ -36,21 +36,50 @@ const funClick2 = function() {
 // }
 
 
-
 btn2.addEventListener('click', funClick2);
 
-btn2.addEventListener('mouseover', function() {
-  btn2.style.color = 'skyblue';
+btn2.addEventListener('mouseover', function(e) {  // e = eventas, objekta
+  e.target.style.color = 'skyblue';
+  console.log(e); 
+  // btn2.style.color = 'skyblue'; // pakeiciam i e.target.style.color = 'skyblue';
 });
 
 btn2.addEventListener('mouseleave', function() {
   btn2.style.color = 'black';
 });
 
+const vz = document.querySelector('a');
 
 
+vz.addEventListener('click', function(e){
+  e.preventDefault(); // preventin'a default'a, e - (ivykis eventas)
+  console.log('Tu paspaudei ant VZLinko');
+})
 
+// eventu bublinimas (plytos metimas. jei vaikas turi tai ir tevas, iki body)
 
+const vaikas = document.querySelector('.vaikas');
+const tevas = document.querySelector('.tevas');
+
+vaikas.addEventListener('click', function (e) { // 
+  e.stopPropagation();  // sustabdo propaganda
+  vaikas.style.backgroundColor = 'darkblue';
+  // e.target.style.backgroundColor = 'darkblue';
+})
+
+tevas.addEventListener('click', function (e) {  // tevas tampa vaiku del 'e'
+  // tevas.style.backgroundColor = 'orangered';
+  e.target.style.backgroundColor = 'orangered';
+})
+
+const btn3 = document.querySelector('#btn3');
+
+btn3.addEventListener('click', function() {
+  const input = document.querySelector('input');
+  const reiksme = +input.value; //stringas, + pakeiciam i skaiciu
+
+  console.log(reiksme);
+});
 
 
 
