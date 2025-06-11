@@ -1,3 +1,4 @@
+
 function rand(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
@@ -214,28 +215,31 @@ else if (n7 == 3) {
   console.log('Trikampis');
 }
 
+
 ///////////// 8. /////////////
 
 // Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8.
+
+
 let go8 = document.querySelector('#go8');
 let apskritimai8 = go8.querySelectorAll('div:not([data-result])');
 
-let countRed = 0;
-let countGreen = 0;
-let countBlue = 0;
+let raudoni = 0;
+let zali = 0;
+let melyni = 0;
+
+for (let i = 0; i < apskritimai8.length; i++) {
+  let color = apskritimai8[i].style.backgroundColor;
+  if (color === 'red') raudoni++;
+  else if (color === 'green') zali++;
+  else if (color === 'blue') melyni++;
+}
+
+go8.querySelector('p[data-green] span').innerText = zali;
+go8.querySelector('p[data-red] span').innerText = raudoni;
+go8.querySelector('p[data-blue] span').innerText = melyni;
 
 
-apskritimai8.forEach(div => {
-  let color = div.style.backgroundColor;
-  if (color === 'red') countRed++;
-  else if (color === 'green') countGreen++;
-  else if (color === 'blue') countBlue++;
-  
-});
-
-go8.querySelector('p[data-green] span').innerText = countGreen;
-go8.querySelector('p[data-red] span').innerText = countRed;
-go8.querySelector('p[data-blue] span').innerText = countBlue;
 
 ///////////// 9. /////////////
 
@@ -256,7 +260,6 @@ for (let i = 0; i < eilutes.length; i++) {
 
 // Keturkapius, esančius tage section su id=go10, 
 // kurių plotas didesnis nei 10000 (px) nuspalvinkite raudonai.
-
 
 
 

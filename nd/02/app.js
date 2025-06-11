@@ -1,3 +1,4 @@
+
 // Duotos Funkcijos //
 
 function rand(min, max) {
@@ -116,9 +117,9 @@ for (let i = 0; i < zvaigzdutes; i += zvaigzdutesPerLinija) {
   for (let j = 0; j < zvaigzdutesPerLinija && i + j < zvaigzdutes; j++) {
     starsai += '*';
   }
-  let lineDiv = document.createElement('div');
-  lineDiv.innerText = starsai;
-  body1.appendChild(lineDiv);
+  let divas6 = document.createElement('div');
+  divas6.innerText = starsai;
+  body1.appendChild(divas6);
 }
 
 body1.append(document.createElement('br'));

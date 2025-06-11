@@ -1,3 +1,4 @@
+
 const A = [
     'Bebras',
     'Zebras',
@@ -42,7 +43,7 @@ const C = [
 console.log(A, A.length);
 
 
-let GyvList1 = ''; // ka jis reiskia?
+let GyvList1 = '';
 
 for (let index = 0; index < A.length; index++) {
   GyvList1 += '<li>' + A[index] + '</li>'; 
