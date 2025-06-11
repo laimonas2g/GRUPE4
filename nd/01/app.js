@@ -159,18 +159,27 @@ if (b3 < 0) {
 let ZvakeQuantity = rand(5, 3000);
 console.log(ZvakeQuantity);
 
+let unitPrice = 1; 
+let subtotal = ZvakeQuantity * unitPrice;
+let discount = 0;
 
-   
- totalPrice = ZvakeQuantity;
+if (subtotal > 2000) {
+  discount = 4;
+  subtotal *= 0.96;
+} else if (subtotal > 1000) {
+  discount = 3;
+  subtotal *= 0.97;
+}
 
-  if (totalPrice > 1000) {
-     totalPrice *= 0.97;
-   }
-     if (totalPrice > 2000) {
-       totalPrice *= 0.96; 
-   }
+let totalPrice = subtotal;
 
-   console.log(totalPrice)
+console.log(totalPrice);
+
+document.querySelector('[data-amount] span').textContent = ZvakeQuantity;
+document.querySelector('[data-subtotal] span').textContent = ZvakeQuantity * unitPrice;
+document.querySelector('[data-discount] span').textContent = discount;
+document.querySelector('[data-total] span').textContent = totalPrice.toFixed(2);
+
 
 ///////////// 7. /////////////
 
@@ -208,20 +217,40 @@ else if (n7 == 3) {
 ///////////// 8. /////////////
 
 // Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8.
-// Rezultatus įrašyti į šalia tam skirtas vietas.
+let go8 = document.querySelector('#go8');
+let apskritimai8 = go8.querySelectorAll('div:not([data-result])');
+
+let countRed = 0;
+let countGreen = 0;
+let countBlue = 0;
 
 
+apskritimai8.forEach(div => {
+  let color = div.style.backgroundColor;
+  if (color === 'red') countRed++;
+  else if (color === 'green') countGreen++;
+  else if (color === 'blue') countBlue++;
+  
+});
+
+go8.querySelector('p[data-green] span').innerText = countGreen;
+go8.querySelector('p[data-red] span').innerText = countRed;
+go8.querySelector('p[data-blue] span').innerText = countBlue;
 
 ///////////// 9. /////////////
 
 // Užpildyti daugybos lentelę, esančią tage section su id=go9.
 
-let span9_1 = document.querySelector('#go5 div span');
-let span9_2 = document.querySelector('#go5 div span:nth-child(2)');
-let span9_3 = document.querySelector('#go5 div span:nth-child(3)');
-console.log(span9_1);
+let go9 = document.querySelector('#go9');
+let eilutes = go9.children;
 
-let a9 = span9_3;
+for (let i = 0; i < eilutes.length; i++) {
+  let spanai = eilutes[i].children;
+  let a = +spanai[0].textContent;
+  let b = +spanai[1].textContent;
+  spanai[2].textContent = a * b;
+}
+
 
 ///////////// 10. /////////////
 
