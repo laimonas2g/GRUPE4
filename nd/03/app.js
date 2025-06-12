@@ -1,4 +1,6 @@
 
+// Duoti Masyvai //
+
 const A = [
     'Bebras',
     'Zebras',
