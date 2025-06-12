@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #333;
+  color: gold;
+}
+
+.container>* {
+  border: 2px solid gold;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); //fr = fraction, uzpildo likusia laisva vieta, Funkcija
+  grid-template-rows: 100px repeat(5, 300px) 150px; // pabaigoje, kai matai kiek yra viduje
+  gap: 20px;
+  margin: 20px;
+
+    grid-template-areas:  // kur kas turi stoveti
+      "head head head"
+      "hero hero hero"
+      "s1 s2 s2"
+      "s3 s3 s4"
+      "s5 s6 s6"
+      "promo promo promo"
+      "foot foot foot";
+  
+}
+
+header {
+  grid-area: head;
+  // grid-column-start: 1;
+  // grid-column-end: 4;
+  // grid-column: 1 / 4;
+  // grid-column: 1 / -1; // per visa ploti
+  // grid-column: span 3;
+
+  // grid-row-start: 1;
+  // grid-row-end: 4;
+  // grid-row: 1 / 4;
+  // grid-row: 1 / -1; // per visa ploti
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.sec-1 {
+  grid-area: s1;
+}
+
+.sec-2 {
+  grid-area: s2;
+}
+
+.sec-3 {
+  grid-area: s3;
+}
+
+.sec-4 {
+  grid-area: s4;
+}
+
+.sec-5 {
+  grid-area: s5;
+}
+
+.sec-6 {
+  grid-area: s6;
+}
+
+.promo {
+  grid-area: promo;
+}
+
+footer {
+  grid-area: foot;
+}

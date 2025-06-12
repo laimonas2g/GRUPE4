@@ -133,7 +133,7 @@ digits.forEach(el => {
 // map //              React'o pagrindinis metodas             
 // --------------------------------------------------------------------------------------
 
-// NEGALIMA KEISTI MASYVO SU MAP IR FOREACH
+// NEGALIMA KEISTI MASYVO SU MAP IR FOREACH (push'int)
 
 console.clear();
 
