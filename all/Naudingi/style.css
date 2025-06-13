@@ -1,0 +1,55 @@
+main {
+  text-align: left;
+  font-size: xx-large;
+}
+
+h2 {
+  color: skyblue;
+}
+ol {
+  color: chocolate;
+}
+
+ol li {
+  color: cadetblue;
+}
+
+ol li.taikinys {
+  color: darkgreen;
+}
+
+ol li li li {
+  color:peru;
+}
+
+ol li li li li {
+  color: red;
+}
+
+ol ol {
+  color: olivedrab;
+}
+
+ol ol li {
+  color: plum
+}
+
+ol ol li span {
+  color: brown;
+}
+
+ol li span span {
+  color: darkmagenta;
+}
+
+ol ol li span span {
+  color: darkmagenta;
+}
+
+ol ol li span span span {
+  color: goldenrod;
+}
+
+ol li span div {
+  color:slateblue;
+}

@@ -13,7 +13,6 @@ $white: #FFFFFF;
 
 $main-font: "Mulish", sans-serif;
 
-
 html {
   max-width: 1600px;
   // height: 5870px;
@@ -31,7 +30,6 @@ body {
   font-family: $main-font;
   background-color: $white;
 }
-
 
 a {
   text-decoration: none;
@@ -58,7 +56,7 @@ li {
   padding: 0;
 }
 
-// Page 1
+////////// Puslapis 1 //////////
 
 header {
   display: flex;
@@ -77,7 +75,7 @@ header {
 .navbar {
   max-width: 100%;
   display: flex;
-  gap: 512px; // space between pries tai
+  gap: 512px; // space between pries tai buvo
 }
 
 .topnav ul {
@@ -198,7 +196,6 @@ ul .li-5 {
 }
 
 .header-text1 h1 {
-  // Consider changing Header to span or p for better semantic structure.
   width: 427px;
   height: 112px;
   font-weight: 700;
@@ -240,9 +237,7 @@ ul .li-5 {
   color: $white;
 }
 
-
-// Page 2
-
+////////// Puslapis 2 //////////
 
 .virsus2 {
   display: flex;
@@ -256,7 +251,6 @@ ul .li-5 {
   flex-direction: column;
   margin: 192px 0 80px 0;
 }
-
 
 .headeris2 {
   display: flex;
@@ -272,7 +266,6 @@ ul .li-5 {
   letter-spacing: 0%;
   text-align: center;
   color: $black;
-
 }
 
 .Rectangle2 {
@@ -310,7 +303,6 @@ ul .li-5 {
   justify-content: space-around;
   position: relative;
   margin-bottom: 72px;
-
 }
 
 .vectorius1 {
@@ -358,7 +350,6 @@ ul .li-5 {
   margin: 0 34px 37px 0;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
   background-color: $white;
-
 }
 
 .box2-2 {
@@ -623,9 +614,7 @@ ul .li-5 {
   flex-wrap: wrap;
 }
 
-
-
-// Page 3
+////////// Puslapis 3 //////////
 
 .puslapis3 {
   display: flex;
@@ -696,7 +685,6 @@ ul .li-5 {
   color: $gray;
 }
 
-
 .button3 {
   display: flex;
   justify-content: center;
@@ -718,8 +706,7 @@ ul .li-5 {
   background-color: $white;
 }
 
-// Page 4
-
+////////// Puslapis 4 //////////
 
 .puslapis4 {
   display: flex;
@@ -814,7 +801,6 @@ ul .li-5 {
   color: $gray;
 }
 
-
 .button4 {
   position: relative;
   display: flex;
@@ -843,7 +829,7 @@ ul .li-5 {
   top: 22px;
 }
 
-// Page 5
+////////// Puslapis 5 //////////
 
 .puslapis5 {
   position: relative;
@@ -851,7 +837,6 @@ ul .li-5 {
   flex-direction: column;
   align-items: center;
   margin-top: 0;
-
 }
 
 .puslapis5-box {
@@ -866,7 +851,6 @@ ul .li-5 {
   width: 1120px;
   height: 425px;
   border-radius: 24px;
-
 }
 
 .psl5-virsus {
@@ -875,7 +859,6 @@ ul .li-5 {
   align-items: center;
   padding-bottom: 60px;
   padding-top: 64px;
-
 }
 
 .puslapis5-box div .headeris5 {
@@ -885,7 +868,6 @@ ul .li-5 {
   line-height: 48px;
   letter-spacing: 0%;
   color: $white;
-
 }
 
 .rect5 {
@@ -895,7 +877,6 @@ ul .li-5 {
   border-bottom: 2px solid $white;
   margin: 13px;
   padding: 0;
-
 }
 
 .psl5-apacia {
@@ -906,14 +887,12 @@ ul .li-5 {
   justify-content: center;
   column-gap: 60px;
   margin-top: 0px;
-
 }
 
 .psl5-apacia img+div p {
   color: $white;
   flex-direction: column;
   margin: 0%;
-
 }
 
 .psl5-apacia div {
@@ -923,7 +902,6 @@ ul .li-5 {
   justify-content: center;
   padding-right: 20px;
   padding-bottom: 60px;
-
 }
 
 .psl5-apacia .tekstas5 {
@@ -1061,7 +1039,7 @@ ul .li-5 {
   border-radius: 30px;
 }
 
-// Page 6
+////////// Puslapis 6 //////////
 
 .puslapis6 {
   display: flex;
@@ -1125,7 +1103,6 @@ ul .li-5 {
   // left: 605px;
   z-index: 1;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
-
 }
 
 .imagebox6-3 {
@@ -1135,7 +1112,6 @@ ul .li-5 {
   // left: 995px;
   margin-left: 0px; // pakeistas marginas
   margin-bottom: 24px;
-
 }
 
 .box6-1 span {
@@ -1163,9 +1139,7 @@ ul .li-5 {
   letter-spacing: 0%;
   color: $gray;
   margin: 0px 66px 25px 33px;
-
 }
-
 
 .box6-2 span {
   display: block;
@@ -1200,7 +1174,6 @@ ul .li-5 {
 .box6-3 {
   margin-right: 238px;
   z-index: 1;
-
 }
 
 .box6-3 span {
@@ -1302,7 +1275,6 @@ ul .li-5 {
   color: $blue;
   background-color: $white;
   margin-left: 33px;
-
 }
 
 .box6-2 a {
@@ -1314,7 +1286,6 @@ ul .li-5 {
 .box6-3 a {
   margin-left: 20px;
   background-color: $white;
-
 }
 
 .vectorius2 {
@@ -1322,10 +1293,9 @@ ul .li-5 {
   top: 230px;
   position: absolute;
   background-color: linear-gradient(175.68deg, #F3F7FF -10.48%, #DEEEFE 92.66%);
-
 }
 
-//////////// Page 7 /////////////////////////////
+////////// Puslapis 7 //////////
 
 footer {
   display: flex;
@@ -1402,8 +1372,6 @@ footer {
   margin-top: 31px;
 }
 
-
-
 .box7-2 {
   width: 391px;
   height: 214px;
@@ -1413,7 +1381,6 @@ footer {
   font-size: 18px;
   line-height: 38px;
   letter-spacing: 0%;
-
 }
 
 .box7-3 {
@@ -1426,7 +1393,6 @@ footer {
   font-size: 18px;
   line-height: 38px;
   letter-spacing: 0%;
-
 }
 
 .box7-4 {
@@ -1439,7 +1405,6 @@ footer {
   font-size: 18px;
   line-height: 38px;
   letter-spacing: 0%;
-
 }
 
 .listas72-1 {
@@ -1453,7 +1418,6 @@ footer {
   font-size: 20px;
   line-height: 60px;
   letter-spacing: 0%;
-
 }
 
 .listas73-1 li:first-child {

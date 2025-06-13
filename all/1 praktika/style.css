@@ -1,0 +1,110 @@
+body {
+  background-image: url("hehhee_PPPP.png");
+background-attachment: fixed;
+  height: 900px;
+
+  position: relative;
+
+  color: #000000;
+  margin: 0;
+  font-size: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  height: 80px;
+  /* 
+  background-color: #f1f1f1; */
+  align-content: center;
+  display: block;
+  border-bottom: 1px solid black;
+  text-align: center;
+  min-width: 800px;
+}
+
+.box {
+  width: 30.3333%;
+  /* 
+  background-color: #d84c4c; */
+  display: inline-block;
+  padding: 1%;
+
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none;
+  background-color: transparent;
+}
+
+.btn.random {
+  background-color: #000000;
+  color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.mid {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  top: +4px;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+div h1 {
+  font-size: 200px;
+  /* 
+  display: inline-block; */
+  text-align: center;
+  vertical-align: top;
+  margin: auto;
+  margin-top: -20px;
+  z-index: 1;
+}
+
+div p {
+
+  max-width: 600px;
+  display: inline-block;
+  text-align: center;
+
+}
+
+main div {
+  text-align: center;
+  font-size: 12px;
+}
+
+.takeMe {
+  background-color: #000000;
+  color: #f1f1f1;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.findOutMore {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+  border: 1px solid black;
+  z-index: 9999;
+}
+
+/* 
+div img {
+  position: absolute;
+  top: +10%;
+  z-index: 0;
+}
+
+footer {
+  position: relative;
+} */
