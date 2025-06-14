@@ -38,24 +38,6 @@ body {
   
 }
 
-header {
-  grid-area: head;
-  // grid-column-start: 1;
-  // grid-column-end: 4;
-  // grid-column: 1 / 4;
-  // grid-column: 1 / -1; // per visa ploti
-  // grid-column: span 3;
-
-  // grid-row-start: 1;
-  // grid-row-end: 4;
-  // grid-row: 1 / 4;
-  // grid-row: 1 / -1; // per visa ploti
-}
-
-.hero {
-  grid-area: hero;
-}
-
 .sec-1 {
   grid-area: s1;
 }
@@ -80,10 +62,10 @@ header {
   grid-area: s6;
 }
 
-.promo {
-  grid-area: promo;
+.sec-6 {
+  grid-area: s6;
 }
 
-footer {
-  grid-area: foot;
+.sec-6 {
+  grid-area: s6;
 }

@@ -4,68 +4,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <script src="app.js" defer></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-    rel="stylesheet">
-  <script src="app.js"></script>
+  <title>nd-04</title>
 </head>
 
 <body>
-
-  <header>
-    <div class="puslapis1">
-      <div class="virsus1">
-        <div class="navbar">
-          <div class="logo"><img src="/bandymai/logo.png" class="logo1"></div>
-          <div class="topnav">
-            <nav>
-              <ul class="listas">
-                <li class="li-1">Home</li>
-                <li class="li-2">Find a doctor</li>
-                <li class="li-3">Apps</li>
-                <li class="li-4">Testimonials</li>
-                <li class="li-5">About us</li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <div class="apacia1">
-        <div class="lowbar">
-          <div class="elementas1">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div class="header-text1">
-            <h1 class="h1-1">Virtual healthcare for you</h1>
-            <p>Trafalgar provides progressive, and affordable
-              healthcare, accessible on mobile and online<br>
-              for everyone</p>
-            <button class="button1">Consult today</button>
-          </div>
-          <div class="illustration1"><img src="/bandymai/Trafalgar1.png" alt="Illustration"></div>
-        </div>
-      </div>
+<div class="invoice-container"></div>
+  <h1>PVM SĄSKAITA FAKTŪRA</h1>
+  <div class="invoice-header">
+    <div>
+      <strong>Sąskaitos Nr.:</strong> SF-2024-001<br>
+      <strong>Sąskaitos data:</strong> 2024-06-15<br>
+      <strong>Mokėjimo terminas:</strong> 2024-06-30
     </div>
-  </header>
+    <div>
+      <strong>Pardavėjas:</strong><br>
+      UAB "Pavyzdys"<br>
+      Įmonės kodas: 123456789<br>
+      PVM kodas: LT123456789<br>
+      Adresas: Vilniaus g. 1, Vilnius<br>
+      Tel.: +370 600 00000
+    </div>
+    <div>
+      <strong>Pirkėjas:</strong><br>
+      UAB "Klientas"<br>
+      Įmonės kodas: 987654321<br>
+      PVM kodas: LT987654321<br>
+      Adresas: Kauno g. 2, Kaunas<br>
+      Tel.: +370 600 11111
+    </div>
+  </div>
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>Prekė</th>
+        <th>Kiekis</th>
+        <th>Kaina (be PVM)</th>
+        <th>Nuolaida</th>
+        <th>Suma (be PVM)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monitorius</td>
+        <td>2</td>
+        <td>120.00 €</td>
+        <td>-10.00 €</td>
+        <td>230.00 €</td>
+      </tr>
+      <tr>
+        <td>Klaviatūra</td>
+        <td>3</td>
+        <td>20.00 €</td>
+        <td>-10%</td>
+        <td>54.00 €</td>
+      </tr>
+      <tr>
+        <td>Pelė</td>
+        <td>5</td>
+        <td>10.00 €</td>
+        <td>-0.00 €</td>
+        <td>50.00 €</td>
+      </tr>
+      <tr>
+        <td>Transportavimo išlaidos</td>
+        <td>1</td>
+        <td>15.00 €</td>
+        <td>-0.00 €</td>
+        <td>15.00 €</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" style="text-align:right;"><strong>Tarpinė suma:</strong></td>
+        <td>349.00 €</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:right;"><strong>PVM 21%:</strong></td>
+        <td>73.29 €</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:right;"><strong>Galutinė suma su PVM:</strong></td>
+        <td><strong>422.29 €</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
 
 
- </body>
+</body>
 
 </html>
