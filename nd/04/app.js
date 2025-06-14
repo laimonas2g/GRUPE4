@@ -77,38 +77,42 @@ const duomenys = {
   "shippingPrice": 90
 };
 
-console.log(typeof duomenys.items);
-
 const prekes = duomenys.items;
 
-for (let i = 0; i < prekes.length; i++) {
-  console.log(prekes[i]);
-};
+// for (let i = 0; i < prekes.length; i++) {
+//   console.log(prekes[i]);
+// };
 
 const pirkejasImone = duomenys.company.buyer.name;
 console.log(pirkejasImone);
 const pirkejasAdresas = duomenys.company.buyer.address;
 console.log(pirkejasAdresas);
-
-console.log(duomenys['items']);
-console.log(duomenys.items[0]);
-console.log(duomenys.items[0].quantity);
-
-const preke1kaina = duomenys.items[0].price;
-console.log(preke1kaina);
-
-const transportavimoIslaidas = duomenys.shippingPrice;
-console.log(transportavimoIslaidas);
-
 const preke1pavadinimas = duomenys.items[0].description;
 console.log(preke1pavadinimas);
+const preke1kaina = duomenys.items[0].price;
+console.log(preke1kaina);
 
 const sec10 = document.querySelector('.sec-10');
 sec10.innerHTML = preke1pavadinimas;
 
- console.clear();
+// async function getData() {
+//   const url = "https://in3.dev/inv/";
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error(`Response status: ${response.status}`);
+//     }
 
-async function getData() {
+//     const json = await response.json();
+//     console.log(json);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+// ; 
+// getData();
+
+async function fetchData() {
   const url = "https://in3.dev/inv/";
   try {
     const response = await fetch(url);
@@ -122,9 +126,7 @@ async function getData() {
     console.error(error.message);
   }
 }
-
-getData();
-
+fetchData(); 
 
 
 
