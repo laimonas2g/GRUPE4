@@ -5,14 +5,7 @@ jeigu yra nurodytos nuolaidos (fiksuotos nuolaidos dydis su minuso ženklu, proc
 ir kainos dalis pagal procentus su minuso ženklu), transportavimo išlaidos. Paskaičiuota tarpinė kaina, 
 įvertinant kiekius, nuolaidas ir transportavimo išlaidas, paskaičiuotas pvm 21% ir galutinė kaina su PVM*/
 
-/*Using HTML and CSS, create a realistic-looking (using a minimum number of colors) invoice, 
-which can be printed. The invoice must contain the words VAT INVOICE, invoice number, 
-seller and buyer details, invoice date and payment due date. Listed goods, their names, 
-if discounts are indicated (fixed discount amount with a minus sign, percentages - percentages 
-and price share based on percentages with a minus sign), transportation costs. Calculated intermediate price, 
-evaluating quantities, discounts and transportation costs, calculated VAT 21% and final price with VAT*/
-  
-  const imone = {
+const duomenys = {
   number: "AB-52638700",
   date: "2025-06-08",
   due_date: "2025-06-20",
@@ -34,7 +27,7 @@ evaluating quantities, discounts and transportation costs, calculated VAT 21% an
       email: "naglis56@hotmail.com"
     }
   },
-  items : [
+  items: [
     {
       "description": "TV staliukas \"Telebimbam\" mėlynas",
       "quantity": 5,
@@ -84,48 +77,53 @@ evaluating quantities, discounts and transportation costs, calculated VAT 21% an
   "shippingPrice": 90
 };
 
-console.log(typeof imone)
-console.log(typeof imone.items)
-console.log(imone.items[0])
+console.log(typeof duomenys.items);
 
-console.log('Pradedam darbą!')
-
-const prekes = imone.items;
+const prekes = duomenys.items;
 
 for (let i = 0; i < prekes.length; i++) {
   console.log(prekes[i]);
 };
 
-const pirkejas = imone.company.buyer;
+const pirkejasImone = duomenys.company.buyer.name;
+console.log(pirkejasImone);
+const pirkejasAdresas = duomenys.company.buyer.address;
+console.log(pirkejasAdresas);
 
+console.log(duomenys['items']);
+console.log(duomenys.items[0]);
+console.log(duomenys.items[0].quantity);
 
-for (let i = 0; i < pirkejas.length; i++) {
-  console.log(pirkejas[i]);
-};
+const preke1kaina = duomenys.items[0].price;
+console.log(preke1kaina);
 
+const transportavimoIslaidas = duomenys.shippingPrice;
+console.log(transportavimoIslaidas);
 
+const preke1pavadinimas = duomenys.items[0].description;
+console.log(preke1pavadinimas);
 
+const sec10 = document.querySelector('.sec-10');
+sec10.innerHTML = preke1pavadinimas;
 
+ console.clear();
 
+async function getData() {
+  const url = "https://in3.dev/inv/";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
 
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+getData();
 
 
 
