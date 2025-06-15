@@ -60,7 +60,8 @@ digits.forEach(el => el != 0 ? console.log(el) : 0);
 
 
 const str2 = 'Bananas';
-/* Question_8 You need to make another string from the string in "const str2", in which the letters 'a' are replaced by '*'. After making such a string, print it to the console */
+/* Question_8 You need to make another string from the string in "const str2", in which the letters 'a' are replaced by '*'. 
+After making such a string, print it to the console */
 let result3 = '';
 for (let i = 0; i < str2.length; i++) {
 
@@ -102,27 +103,42 @@ const question11 = [
 ];
 /* Question_11: Create a new array where each number in "const question11" is multiplied by 3, 
 numbers must remain in the given object, the object property name must remain the same, print to the console */
+const question11a = question11.map(obj => {return { skaicius: obj.skaicius *3}});
+console.log(question11a);
+console.log(typeof question11a[1]);
+for (let i = 0; i < question11a.length; i++) {
+ console.log(question11a[i])
+};
 
 const question12 = [2, 4, 6, 8];
 /* Question_12: Create a new array where each number in "const question12" is multiplied by 10, print to the console */
+// const  question12a = question12.map(obj => {return [ skaicius = obj.skaicius * 10]}); //kam return reikalingas masyvo objekte, bet ne masyve? objektas vs primityvas(number)?
+const  question12a = question12.map( obj => obj * 10 );
+console.log(question12a);
+console.log(typeof question12a[1]);
+for (let i = 0; i < question12a.length; i++) {
+  console.log(question12a[i]);
+}
 
 const question13 = [
   { id: 1, title: 'Milk', price: 1.5, count: 3 },
   { id: 2, title: 'Bread', price: 2.0, count: 2 }
 ];
 /* Question_13: Increase the quantities of all products by 2 that are in "const question13", print to the console */
+const question13a = question13.map(obj => ({ ...obj, count: obj.count + 2 })); //kodel 1 garbanotas ir 2 skliaustai, o 12 ne?
+console.log(question13a);
+for (let i = 0; i < question13a.length; i++) {
+  console.log(question13a[i]);
+}
 
 const question14 = [
   { id: 5, title: 'Apple', price: 0.5, count: 1 },
   { id: 6, title: 'Banana', price: 0.7, count: 2 }
 ];
 /* Question_14: Increase the quantity of product 6 by 3 that are in "const question14", print to the console */
+const question14a = question14.map( obj => obj.id === 6 ? {...obj, count: obj.count +3} : {...obj} );
+console.log(question14a);
 
-const question15 = [
-  { skaicius: 3 },
-  { skaicius: 6 },
-  { skaicius: 9 }
-];
 /* Question_15: Create a new array where each number in "const question15" is multiplied by 2, 
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
@@ -135,13 +151,16 @@ const question16 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question17 = [3, 6, 9, 12];
-/* Question_17: With the forEach loop, print the numbers in "const question17" one by one in the console, multiplied by 2 (in a column), print to the console */
+/* Question_17: With the forEach loop, print the numbers in "const question17" one by one in the console, 
+multiplied by 2 (in a column), print to the console */
 
 const question18 = [0, 5, 10, 15];
-/* Question_18: With a forEach loop, print the numbers in "const question18" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_18: With a forEach loop, print the numbers in "const question18" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question19 = 'Apples';
-/* Question_19: You need to make another string from the string in "const question19", in which the letters 'p' are replaced by '#'. After making such a string, print it to the console */
+/* Question_19: You need to make another string from the string in "const question19", in which the letters 'p' are replaced by '#'. 
+After making such a string, print it to the console */
 
 const question20 = [1, 2, 3, 4];
 /* Question_20: Create a new array where each number in "const question20" is multiplied by 6, print to the console */
@@ -183,13 +202,16 @@ const question25 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question26 = [7, 14, 21, 28];
-/* Question_26: With the forEach loop, print the numbers in "const question26" one by one in the console, multiplied by 4 (in a column), print to the console */
+/* Question_26: With the forEach loop, print the numbers in "const question26" one by one in the console, multiplied by 4 (in a column), 
+print to the console */
 
 const question27 = [0, 2, 4, 6, 8];
-/* Question_27: With a forEach loop, print the numbers in "const question27" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_27: With a forEach loop, print the numbers in "const question27" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question28 = 'Oranges';
-/* Question_28: You need to make another string from the string in "const question28", in which the letters 'o' are replaced by '@'. After making such a string, print it to the console */
+/* Question_28: You need to make another string from the string in "const question28", in which the letters 'o' are replaced by '@'. 
+After making such a string, print it to the console */
 
 const question29 = [2, 4, 6, 8];
 /* Question_29: Create a new array where each number in "const question29" is multiplied by 8, print to the console */
@@ -231,13 +253,16 @@ const question34 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question35 = [5, 10, 15, 20];
-/* Question_35: With the forEach loop, print the numbers in "const question35" one by one in the console, multiplied by 5 (in a column), print to the console */
+/* Question_35: With the forEach loop, print the numbers in "const question35" one by one in the console, multiplied by 5 (in a column), 
+print to the console */
 
 const question36 = [0, 3, 6, 9, 12];
-/* Question_36: With a forEach loop, print the numbers in "const question36" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_36: With a forEach loop, print the numbers in "const question36" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question37 = 'Grapes';
-/* Question_37: You need to make another string from the string in "const question37", in which the letters 'e' are replaced by '!', After making such a string, print it to the console */
+/* Question_37: You need to make another string from the string in "const question37", in which the letters 'e' are replaced by '!', 
+After making such a string, print it to the console */
 
 const question38 = [3, 6, 9, 12];
 /* Question_38: Create a new array where each number in "const question38" is multiplied by 7, print to the console */
@@ -279,13 +304,16 @@ const question43 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question44 = [6, 12, 18, 24];
-/* Question_44: With the forEach loop, print the numbers in "const question44" one by one in the console, multiplied by 6 (in a column), print to the console */
+/* Question_44: With the forEach loop, print the numbers in "const question44" one by one in the console, multiplied by 6 (in a column), 
+print to the console */
 
 const question45 = [0, 7, 14, 21, 28];
-/* Question_45: With a forEach loop, print the numbers in "const question45" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_45: With a forEach loop, print the numbers in "const question45" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question46 = 'Peaches';
-/* Question_46: You need to make another string from the string in "const question46", in which the letters 'h' are replaced by '$'. After making such a string, print it to the console */
+/* Question_46: You need to make another string from the string in "const question46", in which the letters 'h' are replaced by '$'. 
+After making such a string, print it to the console */
 
 const question47 = [4, 8, 12, 16];
 /* Question_47: Create a new array where each number in "const question47" is multiplied by 9, print to the console */
@@ -327,13 +355,16 @@ const question52 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question53 = [8, 16, 24, 32];
-/* Question_53: With the forEach loop, print the numbers in "const question53" one by one in the console, multiplied by 7 (in a column), print to the console */
+/* Question_53: With the forEach loop, print the numbers in "const question53" one by one in the console, multiplied by 7 (in a column), 
+print to the console */
 
 const question54 = [0, 9, 18, 27, 36];
-/* Question_54: With a forEach loop, print the numbers in "const question54" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_54: With a forEach loop, print the numbers in "const question54" in the console one number at a time (column) but not == 0 
+using ternary, print to the console */
 
 const question55 = 'Cherries';
-/* Question_55: You need to make another string from the string in "const question55", in which the letters 'r' are replaced by '%'. After making such a string, print it to the console */
+/* Question_55: You need to make another string from the string in "const question55", in which the letters 'r' are replaced by '%'. 
+After making such a string, print it to the console */
 
 const question56 = [5, 10, 15, 20];
 /* Question_56: Create a new array where each number in "const question56" is multiplied by 10, print to the console */
@@ -375,13 +406,16 @@ const question61 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question62 = [10, 20, 30, 40];
-/* Question_62: With the forEach loop, print the numbers in "const question62" one by one in the console, multiplied by 8 (in a column), print to the console */
+/* Question_62: With the forEach loop, print the numbers in "const question62" one by one in the console, multiplied by 8 (in a column), 
+print to the console */
 
 const question63 = [0, 11, 22, 33, 44];
-/* Question_63: With a forEach loop, print the numbers in "const question63" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_63: With a forEach loop, print the numbers in "const question63" in the console one number at a time (column) but not == 0 
+using ternary, print to the console */
 
 const question64 = 'Plums';
-/* Question_64: You need to make another string from the string in "const question64", in which the letters 'u' are replaced by '^'. After making such a string, print it to the console */
+/* Question_64: You need to make another string from the string in "const question64", in which the letters 'u' are replaced by '^'. 
+After making such a string, print it to the console */
 
 const question65 = [6, 12, 18, 24];
 /* Question_65: Create a new array where each number in "const question65" is multiplied by 11, print to the console */
@@ -423,13 +457,16 @@ const question70 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question71 = [12, 24, 36, 48];
-/* Question_71: With the forEach loop, print the numbers in "const question71" one by one in the console, multiplied by 9 (in a column), print to the console */
+/* Question_71: With the forEach loop, print the numbers in "const question71" one by one in the console, multiplied by 9 (in a column), 
+print to the console */
 
 const question72 = [0, 13, 26, 39, 52];
-/* Question_72: With a forEach loop, print the numbers in "const question72" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_72: With a forEach loop, print the numbers in "const question72" in the console one number at a time (column) but not == 0 
+using ternary, print to the console */
 
 const question73 = 'Apricots';
-/* Question_73: You need to make another string from the string in "const question73", in which the letters 't' are replaced by '&'. After making such a string, print it to the console */
+/* Question_73: You need to make another string from the string in "const question73", in which the letters 't' are replaced by '&'. 
+After making such a string, print it to the console */
 
 const question74 = [8, 16, 24, 32];
 /* Question_74: Create a new array where each number in "const question74" is multiplied by 12, print to the console */
@@ -471,13 +508,16 @@ const question79 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question80 = [14, 28, 42, 56];
-/* Question_80: With the forEach loop, print the numbers in "const question80" one by one in the console, multiplied by 10 (in a column), print to the console */
+/* Question_80: With the forEach loop, print the numbers in "const question80" one by one in the console, multiplied by 10 (in a column), 
+print to the console */
 
 const question81 = [0, 15, 30, 45, 60];
-/* Question_81: With a forEach loop, print the numbers in "const question81" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_81: With a forEach loop, print the numbers in "const question81" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question82 = 'Mangoes';
-/* Question_82: You need to make another string from the string in "const question82", in which the letters 'g' are replaced by '?'. After making such a string, print it to the console */
+/* Question_82: You need to make another string from the string in "const question82", in which the letters 'g' are replaced by '?'. 
+After making such a string, print it to the console */
 
 const question83 = [9, 18, 27, 36];
 /* Question_83: Create a new array where each number in "const question83" is multiplied by 13, print to the console */
@@ -519,13 +559,16 @@ const question88 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question89 = [16, 32, 48, 64];
-/* Question_89: With the forEach loop, print the numbers in "const question89" one by one in the console, multiplied by 11 (in a column), print to the console */
+/* Question_89: With the forEach loop, print the numbers in "const question89" one by one in the console, multiplied by 11 (in a column), 
+print to the console */
 
 const question90 = [0, 17, 34, 51, 68];
-/* Question_90: With a forEach loop, print the numbers in "const question90" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_90: With a forEach loop, print the numbers in "const question90" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question91 = 'Papayas';
-/* Question_91: You need to make another string from the string in "const question91", in which the letters 'a' are replaced by '*'. After making such a string, print it to the console */
+/* Question_91: You need to make another string from the string in "const question91", in which the letters 'a' are replaced by '*'. 
+After making such a string, print it to the console */
 
 const question92 = [10, 20, 30, 40];
 /* Question_92: Create a new array where each number in "const question92" is multiplied by 14, print to the console */
@@ -567,13 +610,16 @@ const question97 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question98 = [18, 36, 54, 72];
-/* Question_98: With the forEach loop, print the numbers in "const question98" one by one in the console, multiplied by 12 (in a column), print to the console */
+/* Question_98: With the forEach loop, print the numbers in "const question98" one by one in the console, multiplied by 12 (in a column), 
+print to the console */
 
 const question99 = [0, 19, 38, 57, 76];
-/* Question_99: With a forEach loop, print the numbers in "const question99" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_99: With a forEach loop, print the numbers in "const question99" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question100 = 'Blueberries';
-/* Question_100: You need to make another string from the string in "const question100", in which the letters 'b' are replaced by '+'. After making such a string, print it to the console */
+/* Question_100: You need to make another string from the string in "const question100", in which the letters 'b' are replaced by '+'. 
+After making such a string, print it to the console */
 
 const question101 = [12, 24, 36, 48];
 /* Question_101: Create a new array where each number in "const question101" is multiplied by 15, print to the console */
@@ -615,19 +661,23 @@ const question106 = [
 numbers must remain in the given object, the object property name must remain the same, print to the console */
 
 const question107 = [20, 40, 60, 80];
-/* Question_107: With the forEach loop, print the numbers in "const question107" one by one in the console, multiplied by 13 (in a column), print to the console */
+/* Question_107: With the forEach loop, print the numbers in "const question107" one by one in the console, multiplied by 13 (in a column), 
+print to the console */
 
 const question108 = [0, 21, 42, 63, 84];
-/* Question_108: With a forEach loop, print the numbers in "const question108" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_108: With a forEach loop, print the numbers in "const question108" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question109 = 'Strawberries';
-/* Question_109: You need to make another string from the string in "const question109", in which the letters 's' are replaced by '='. After making such a string, print it to the console */
+/* Question_109: You need to make another string from the string in "const question109", in which the letters 's' are replaced by '='. 
+After making such a string, print it to the console */
 
 const question110 = [14, 28, 42, 56];
 /* Question_110: Create a new array where each number in "const question110" is multiplied by 16, print to the console */
 
 const question_111 = [11, 8, 74, 0, 4];
-/* Question_111: With a forEach loop, print the numbers in "const question_111" in the console one number at a time (column) but not == 0, use ternary, print to the console */
+/* Question_111: With a forEach loop, print the numbers in "const question_111" in the console one number at a time (column) but not == 0, 
+use ternary, print to the console */
 
 const question_112 = [
   { skaicius: 10 },
@@ -636,10 +686,12 @@ const question_112 = [
   { skaicius: 14 },
   { skaicius: 11 }
 ];
-/* Question_112: Create a new array where each number in "const question_112" is multiplied by 3, numbers must remain in the given object, use Arrow function expressions (=>), the object property name must remain the same, print to the console */
+/* Question_112: Create a new array where each number in "const question_112" is multiplied by 3, numbers must remain in the given object, 
+use Arrow function expressions (=>), the object property name must remain the same, print to the console */
 
 const question_113 = [2, 4, 6, 8];
-/* Question_113: Create a new array where each number in "const question_113" is multiplied by 9 using Array.prototype.map() and Arrow function, print to the console */
+/* Question_113: Create a new array where each number in "const question_113" is multiplied by 9 using Array.prototype.map() and 
+Arrow function, print to the console */
 
 const question_114 = [
   { id: 1, title: 'Juice', price: 2.5, count: 2 },
@@ -658,33 +710,39 @@ const question_116 = [
   { skaicius: 6 },
   { skaicius: 9 }
 ];
-/* Question_116: Create a new array where each number in "const question_116" is multiplied by 5 using map and Arrow function, print to the console */
+/* Question_116: Create a new array where each number in "const question_116" is multiplied by 5 using map and Arrow function,
+print to the console */
 
 const question_117 = [
   1,
   [2, 3],
   4
 ];
-/* Question_117: Create a new array where each number in "const question_117" is multiplied by 5, nested numbers must also be multiplied, print to the console */
+/* Question_117: Create a new array where each number in "const question_117" is multiplied by 5, nested numbers must also be multiplied, 
+print to the console */
 
 const question_118 = [3, 6, 9, 12];
-/* Question_118: With the forEach loop, print the numbers in "const question_118" one by one in the console, multiplied by 4 (in a column), print to the console */
+/* Question_118: With the forEach loop, print the numbers in "const question_118" one by one in the console, multiplied by 4 (in a column), 
+print to the console */
 
 const question_119 = [0, 5, 10, 15];
-/* Question_119: With a forEach loop, print the numbers in "const question_119" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_119: With a forEach loop, print the numbers in "const question_119" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_120 = 'Bananas';
 /* Question_120: Create a new string from "const question_120" where all 'n' letters are replaced by '-', print to the console */
 
 const question_121 = [1, 2, 3, 4];
-/* Question_121: Create a new array where each number in "const question_121" is multiplied by 7 using map and Arrow function, print to the console */
+/* Question_121: Create a new array where each number in "const question_121" is multiplied by 7 using map and Arrow function, 
+print to the console */
 
 const question_122 = [
   { skaicius: 8 },
   { skaicius: 12 },
   { skaicius: 20 }
 ];
-/* Question_122: Create a new array where each number in "const question_122" is multiplied by 6 using map and Arrow function, print to the console */
+/* Question_122: Create a new array where each number in "const question_122" is multiplied by 6 using map and Arrow function, 
+print to the console */
 
 const question_123 = [
   { id: 11, title: 'Juice', price: 2.5, count: 1 },
@@ -703,33 +761,39 @@ const question_125 = [
   { skaicius: 15 },
   { skaicius: 25 }
 ];
-/* Question_125: Create a new array where each number in "const question_125" is multiplied by 8 using map and Arrow function, print to the console */
+/* Question_125: Create a new array where each number in "const question_125" is multiplied by 8 using map and Arrow function, 
+print to the console */
 
 const question_126 = [
   2,
   [4, 6],
   8
 ];
-/* Question_126: Create a new array where each number in "const question_126" is multiplied by 4, nested numbers must also be multiplied, print to the console */
+/* Question_126: Create a new array where each number in "const question_126" is multiplied by 4, nested numbers must also be multiplied, 
+print to the console */
 
 const question_127 = [7, 14, 21, 28];
-/* Question_127: With the forEach loop, print the numbers in "const question_127" one by one in the console, multiplied by 5 (in a column), print to the console */
+/* Question_127: With the forEach loop, print the numbers in "const question_127" one by one in the console, multiplied by 5 (in a column), 
+print to the console */
 
 const question_128 = [0, 2, 4, 6, 8];
-/* Question_128: With a forEach loop, print the numbers in "const question_128" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_128: With a forEach loop, print the numbers in "const question_128" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_129 = 'Oranges';
 /* Question_129: Create a new string from "const question_129" where all 'a' letters are replaced by '@', print to the console */
 
 const question_130 = [2, 4, 6, 8];
-/* Question_130: Create a new array where each number in "const question_130" is multiplied by 10 using map and Arrow function, print to the console */
+/* Question_130: Create a new array where each number in "const question_130" is multiplied by 10 using map and Arrow function, 
+print to the console */
 
 const question_131 = [
   { skaicius: 9 },
   { skaicius: 18 },
   { skaicius: 27 }
 ];
-/* Question_131: Create a new array where each number in "const question_131" is multiplied by 7 using map and Arrow function, print to the console */
+/* Question_131: Create a new array where each number in "const question_131" is multiplied by 7 using map and Arrow function, 
+print to the console */
 
 const question_132 = [
   { id: 31, title: 'Butter', price: 2.0, count: 2 },
@@ -748,33 +812,39 @@ const question_134 = [
   { skaicius: 24 },
   { skaicius: 36 }
 ];
-/* Question_134: Create a new array where each number in "const question_134" is multiplied by 11 using map and Arrow function, print to the console */
+/* Question_134: Create a new array where each number in "const question_134" is multiplied by 11 using map and Arrow function, 
+print to the console */
 
 const question_135 = [
   3,
   [6, 9],
   12
 ];
-/* Question_135: Create a new array where each number in "const question_135" is multiplied by 3, nested numbers must also be multiplied, print to the console */
+/* Question_135: Create a new array where each number in "const question_135" is multiplied by 3, nested numbers must also be multiplied, 
+print to the console */
 
 const question_136 = [5, 10, 15, 20];
-/* Question_136: With the forEach loop, print the numbers in "const question_136" one by one in the console, multiplied by 6 (in a column), print to the console */
+/* Question_136: With the forEach loop, print the numbers in "const question_136" one by one in the console, multiplied by 6 (in a column), 
+print to the console */
 
 const question_137 = [0, 3, 6, 9, 12];
-/* Question_137: With a forEach loop, print the numbers in "const question_137" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_137: With a forEach loop, print the numbers in "const question_137" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_138 = 'Grapes';
 /* Question_138: Create a new string from "const question_138" where all 'a' letters are replaced by '!', print to the console */
 
 const question_139 = [3, 6, 9, 12];
-/* Question_139: Create a new array where each number in "const question_139" is multiplied by 8 using map and Arrow function, print to the console */
+/* Question_139: Create a new array where each number in "const question_139" is multiplied by 8 using map and Arrow function, 
+print to the console */
 
 const question_140 = [
   { skaicius: 14 },
   { skaicius: 28 },
   { skaicius: 42 }
 ];
-/* Question_140: Create a new array where each number in "const question_140" is multiplied by 9 using map and Arrow function, print to the console */
+/* Question_140: Create a new array where each number in "const question_140" is multiplied by 9 using map and Arrow function, 
+print to the console */
 
 const question_141 = [
   { id: 51, title: 'Sugar', price: 1.1, count: 2 },
@@ -793,33 +863,39 @@ const question_143 = [
   { skaicius: 32 },
   { skaicius: 48 }
 ];
-/* Question_143: Create a new array where each number in "const question_143" is multiplied by 12 using map and Arrow function, print to the console */
+/* Question_143: Create a new array where each number in "const question_143" is multiplied by 12 using map and Arrow function, 
+print to the console */
 
 const question_144 = [
   4,
   [8, 12],
   16
 ];
-/* Question_144: Create a new array where each number in "const question_144" is multiplied by 6, nested numbers must also be multiplied, print to the console */
+/* Question_144: Create a new array where each number in "const question_144" is multiplied by 6, nested numbers must also be multiplied, 
+print to the console */
 
 const question_145 = [6, 12, 18, 24];
-/* Question_145: With the forEach loop, print the numbers in "const question_145" one by one in the console, multiplied by 7 (in a column), print to the console */
+/* Question_145: With the forEach loop, print the numbers in "const question_145" one by one in the console, multiplied by 7 (in a column), 
+print to the console */
 
 const question_146 = [0, 7, 14, 21, 28];
-/* Question_146: With a forEach loop, print the numbers in "const question_146" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_146: With a forEach loop, print the numbers in "const question_146" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_147 = 'Peaches';
 /* Question_147: Create a new string from "const question_147" where all 'e' letters are replaced by '$', print to the console */
 
 const question_148 = [4, 8, 12, 16];
-/* Question_148: Create a new array where each number in "const question_148" is multiplied by 13 using map and Arrow function, print to the console */
+/* Question_148: Create a new array where each number in "const question_148" is multiplied by 13 using map and Arrow function, 
+print to the console */
 
 const question_149 = [
   { skaicius: 18 },
   { skaicius: 36 },
   { skaicius: 54 }
 ];
-/* Question_149: Create a new array where each number in "const question_149" is multiplied by 14 using map and Arrow function, print to the console */
+/* Question_149: Create a new array where each number in "const question_149" is multiplied by 14 using map and Arrow function, 
+print to the console */
 
 const question_150 = [
   { id: 71, title: 'Tomato', price: 1.4, count: 3 },
@@ -838,33 +914,39 @@ const question_152 = [
   { skaicius: 40 },
   { skaicius: 60 }
 ];
-/* Question_152: Create a new array where each number in "const question_152" is multiplied by 15 using map and Arrow function, print to the console */
+/* Question_152: Create a new array where each number in "const question_152" is multiplied by 15 using map and Arrow function, 
+print to the console */
 
 const question_153 = [
   5,
   [10, 15],
   20
 ];
-/* Question_153: Create a new array where each number in "const question_153" is multiplied by 7, nested numbers must also be multiplied, print to the console */
+/* Question_153: Create a new array where each number in "const question_153" is multiplied by 7, nested numbers must also be multiplied, 
+print to the console */
 
 const question_154 = [8, 16, 24, 32];
-/* Question_154: With the forEach loop, print the numbers in "const question_154" one by one in the console, multiplied by 8 (in a column), print to the console */
+/* Question_154: With the forEach loop, print the numbers in "const question_154" one by one in the console, multiplied by 8 (in a column), 
+print to the console */
 
 const question_155 = [0, 9, 18, 27, 36];
-/* Question_155: With a forEach loop, print the numbers in "const question_155" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_155: With a forEach loop, print the numbers in "const question_155" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_156 = 'Cherries';
 /* Question_156: Create a new string from "const question_156" where all 'i' letters are replaced by '%', print to the console */
 
 const question_157 = [5, 10, 15, 20];
-/* Question_157: Create a new array where each number in "const question_157" is multiplied by 12 using map and Arrow function, print to the console */
+/* Question_157: Create a new array where each number in "const question_157" is multiplied by 12 using map and Arrow function, 
+print to the console */
 
 const question_158 = [
   { skaicius: 22 },
   { skaicius: 44 },
   { skaicius: 66 }
 ];
-/* Question_158: Create a new array where each number in "const question_158" is multiplied by 16 using map and Arrow function, print to the console */
+/* Question_158: Create a new array where each number in "const question_158" is multiplied by 16 using map and Arrow function, 
+print to the console */
 
 const question_159 = [
   { id: 91, title: 'Onion', price: 0.7, count: 2 },
@@ -883,33 +965,39 @@ const question_161 = [
   { skaicius: 48 },
   { skaicius: 72 }
 ];
-/* Question_161: Create a new array where each number in "const question_161" is multiplied by 17 using map and Arrow function, print to the console */
+/* Question_161: Create a new array where each number in "const question_161" is multiplied by 17 using map and Arrow function, 
+print to the console */
 
 const question_162 = [
   6,
   [12, 18],
   24
 ];
-/* Question_162: Create a new array where each number in "const question_162" is multiplied by 8, nested numbers must also be multiplied, print to the console */
+/* Question_162: Create a new array where each number in "const question_162" is multiplied by 8, nested numbers must also be multiplied, 
+print to the console */
 
 const question_163 = [10, 20, 30, 40];
-/* Question_163: With the forEach loop, print the numbers in "const question_163" one by one in the console, multiplied by 9 (in a column), print to the console */
+/* Question_163: With the forEach loop, print the numbers in "const question_163" one by one in the console, multiplied by 9 (in a column), 
+print to the console */
 
 const question_164 = [0, 11, 22, 33, 44];
-/* Question_164: With a forEach loop, print the numbers in "const question_164" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_164: With a forEach loop, print the numbers in "const question_164" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_165 = 'Plums';
 /* Question_165: Create a new string from "const question_165" where all 'm' letters are replaced by '^', print to the console */
 
 const question_166 = [6, 12, 18, 24];
-/* Question_166: Create a new array where each number in "const question_166" is multiplied by 13 using map and Arrow function, print to the console */
+/* Question_166: Create a new array where each number in "const question_166" is multiplied by 13 using map and Arrow function, 
+print to the console */
 
 const question_167 = [
   { skaicius: 26 },
   { skaicius: 52 },
   { skaicius: 78 }
 ];
-/* Question_167: Create a new array where each number in "const question_167" is multiplied by 18 using map and Arrow function, print to the console */
+/* Question_167: Create a new array where each number in "const question_167" is multiplied by 18 using map and Arrow function, 
+print to the console */
 
 const question_168 = [
   { id: 111, title: 'Pumpkin', price: 2.3, count: 4 },
@@ -928,33 +1016,39 @@ const question_170 = [
   { skaicius: 56 },
   { skaicius: 84 }
 ];
-/* Question_170: Create a new array where each number in "const question_170" is multiplied by 19 using map and Arrow function, print to the console */
+/* Question_170: Create a new array where each number in "const question_170" is multiplied by 19 using map and Arrow function, 
+print to the console */
 
 const question_171 = [
   7,
   [14, 21],
   28
 ];
-/* Question_171: Create a new array where each number in "const question_171" is multiplied by 9, nested numbers must also be multiplied, print to the console */
+/* Question_171: Create a new array where each number in "const question_171" is multiplied by 9, nested numbers must also be multiplied, 
+print to the console */
 
 const question_172 = [12, 24, 36, 48];
-/* Question_172: With the forEach loop, print the numbers in "const question_172" one by one in the console, multiplied by 10 (in a column), print to the console */
+/* Question_172: With the forEach loop, print the numbers in "const question_172" one by one in the console, multiplied by 10 (in a column), 
+print to the console */
 
 const question_173 = [0, 13, 26, 39, 52];
-/* Question_173: With a forEach loop, print the numbers in "const question_173" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_173: With a forEach loop, print the numbers in "const question_173" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_174 = 'Apricots';
 /* Question_174: Create a new string from "const question_174" where all 'o' letters are replaced by '&', print to the console */
 
 const question_175 = [8, 16, 24, 32];
-/* Question_175: Create a new array where each number in "const question_175" is multiplied by 14 using map and Arrow function, print to the console */
+/* Question_175: Create a new array where each number in "const question_175" is multiplied by 14 using map and Arrow function, 
+print to the console */
 
 const question_176 = [
   { skaicius: 30 },
   { skaicius: 60 },
   { skaicius: 90 }
 ];
-/* Question_176: Create a new array where each number in "const question_176" is multiplied by 20 using map and Arrow function, print to the console */
+/* Question_176: Create a new array where each number in "const question_176" is multiplied by 20 using map and Arrow function, 
+print to the console */
 
 const question_177 = [
   { id: 131, title: 'Corn', price: 1.7, count: 5 },
@@ -973,33 +1067,39 @@ const question_179 = [
   { skaicius: 64 },
   { skaicius: 96 }
 ];
-/* Question_179: Create a new array where each number in "const question_179" is multiplied by 21 using map and Arrow function, print to the console */
+/* Question_179: Create a new array where each number in "const question_179" is multiplied by 21 using map and Arrow function, 
+print to the console */
 
 const question_180 = [
   9,
   [18, 27],
   36
 ];
-/* Question_180: Create a new array where each number in "const question_180" is multiplied by 10, nested numbers must also be multiplied, print to the console */
+/* Question_180: Create a new array where each number in "const question_180" is multiplied by 10, nested numbers must also be multiplied, 
+print to the console */
 
 const question_181 = [14, 28, 42, 56];
-/* Question_181: With the forEach loop, print the numbers in "const question_181" one by one in the console, multiplied by 11 (in a column), print to the console */
+/* Question_181: With the forEach loop, print the numbers in "const question_181" one by one in the console, multiplied by 11 (in a column), 
+print to the console */
 
 const question_182 = [0, 15, 30, 45, 60];
-/* Question_182: With a forEach loop, print the numbers in "const question_182" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_182: With a forEach loop, print the numbers in "const question_182" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_183 = 'Mangoes';
 /* Question_183: Create a new string from "const question_183" where all 'n' letters are replaced by '?', print to the console */
 
 const question_184 = [9, 18, 27, 36];
-/* Question_184: Create a new array where each number in "const question_184" is multiplied by 15 using map and Arrow function, print to the console */
+/* Question_184: Create a new array where each number in "const question_184" is multiplied by 15 using map and Arrow function, 
+print to the console */
 
 const question_185 = [
   { skaicius: 34 },
   { skaicius: 68 },
   { skaicius: 102 }
 ];
-/* Question_185: Create a new array where each number in "const question_185" is multiplied by 22 using map and Arrow function, print to the console */
+/* Question_185: Create a new array where each number in "const question_185" is multiplied by 22 using map and Arrow function,
+print to the console */
 
 const question_186 = [
   { id: 151, title: 'Eggplant', price: 2.8, count: 6 },
@@ -1018,33 +1118,39 @@ const question_188 = [
   { skaicius: 72 },
   { skaicius: 108 }
 ];
-/* Question_188: Create a new array where each number in "const question_188" is multiplied by 23 using map and Arrow function, print to the console */
+/* Question_188: Create a new array where each number in "const question_188" is multiplied by 23 using map and Arrow function, 
+print to the console */
 
 const question_189 = [
   10,
   [20, 30],
   40
 ];
-/* Question_189: Create a new array where each number in "const question_189" is multiplied by 11, nested numbers must also be multiplied, print to the console */
+/* Question_189: Create a new array where each number in "const question_189" is multiplied by 11, nested numbers must also be multiplied, 
+print to the console */
 
 const question_190 = [16, 32, 48, 64];
-/* Question_190: With the forEach loop, print the numbers in "const question_190" one by one in the console, multiplied by 12 (in a column), print to the console */
+/* Question_190: With the forEach loop, print the numbers in "const question_190" one by one in the console, multiplied by 12 (in a column),
+ print to the console */
 
 const question_191 = [0, 17, 34, 51, 68];
-/* Question_191: With a forEach loop, print the numbers in "const question_191" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_191: With a forEach loop, print the numbers in "const question_191" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_192 = 'Papayas';
 /* Question_192: Create a new string from "const question_192" where all 'y' letters are replaced by '*', print to the console */
 
 const question_193 = [10, 20, 30, 40];
-/* Question_193: Create a new array where each number in "const question_193" is multiplied by 16 using map and Arrow function, print to the console */
+/* Question_193: Create a new array where each number in "const question_193" is multiplied by 16 using map and Arrow function, 
+print to the console */
 
 const question_194 = [
   { skaicius: 38 },
   { skaicius: 76 },
   { skaicius: 114 }
 ];
-/* Question_194: Create a new array where each number in "const question_194" is multiplied by 24 using map and Arrow function, print to the console */
+/* Question_194: Create a new array where each number in "const question_194" is multiplied by 24 using map and Arrow function, 
+print to the console */
 
 const question_195 = [
   { id: 171, title: 'Leek', price: 1.3, count: 4 },
@@ -1063,33 +1169,39 @@ const question_197 = [
   { skaicius: 80 },
   { skaicius: 120 }
 ];
-/* Question_197: Create a new array where each number in "const question_197" is multiplied by 25 using map and Arrow function, print to the console */
+/* Question_197: Create a new array where each number in "const question_197" is multiplied by 25 using map and Arrow function, 
+print to the console */
 
 const question_198 = [
   11,
   [22, 33],
   44
 ];
-/* Question_198: Create a new array where each number in "const question_198" is multiplied by 12, nested numbers must also be multiplied, print to the console */
+/* Question_198: Create a new array where each number in "const question_198" is multiplied by 12, nested numbers must also be multiplied, 
+print to the console */
 
 const question_199 = [18, 36, 54, 72];
-/* Question_199: With the forEach loop, print the numbers in "const question_199" one by one in the console, multiplied by 13 (in a column), print to the console */
+/* Question_199: With the forEach loop, print the numbers in "const question_199" one by one in the console, multiplied by 13 (in a column), 
+print to the console */
 
 const question_200 = [0, 19, 38, 57, 76];
-/* Question_200: With a forEach loop, print the numbers in "const question_200" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_200: With a forEach loop, print the numbers in "const question_200" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_201 = 'Blueberries';
 /* Question_201: Create a new string from "const question_201" where all 'u' letters are replaced by '+', print to the console */
 
 const question_202 = [12, 24, 36, 48];
-/* Question_202: Create a new array where each number in "const question_202" is multiplied by 17 using map and Arrow function, print to the console */
+/* Question_202: Create a new array where each number in "const question_202" is multiplied by 17 using map and Arrow function, 
+print to the console */
 
 const question_203 = [
   { skaicius: 42 },
   { skaicius: 84 },
   { skaicius: 126 }
 ];
-/* Question_203: Create a new array where each number in "const question_203" is multiplied by 26 using map and Arrow function, print to the console */
+/* Question_203: Create a new array where each number in "const question_203" is multiplied by 26 using map and Arrow function, 
+print to the console */
 
 const question_204 = [
   { id: 191, title: 'Cabbage', price: 1.8, count: 5 },
@@ -1108,20 +1220,24 @@ const question_206 = [
   { skaicius: 88 },
   { skaicius: 132 }
 ];
-/* Question_206: Create a new array where each number in "const question_206" is multiplied by 27 using map and Arrow function, print to the console */
+/* Question_206: Create a new array where each number in "const question_206" is multiplied by 27 using map and Arrow function, 
+print to the console */
 
 const question_207 = [
   12,
   [24, 36],
   48
 ];
-/* Question_207: Create a new array where each number in "const question_207" is multiplied by 13, nested numbers must also be multiplied, print to the console */
+/* Question_207: Create a new array where each number in "const question_207" is multiplied by 13, nested numbers must also be multiplied, 
+print to the console */
 
 const question_208 = [20, 40, 60, 80];
-/* Question_208: With the forEach loop, print the numbers in "const question_208" one by one in the console, multiplied by 14 (in a column), print to the console */
+/* Question_208: With the forEach loop, print the numbers in "const question_208" one by one in the console, multiplied by 14 (in a column), 
+print to the console */
 
 const question_209 = [0, 21, 42, 63, 84];
-/* Question_209: With a forEach loop, print the numbers in "const question_209" in the console one number at a time (column) but not == 0 using ternary, print to the console */
+/* Question_209: With a forEach loop, print the numbers in "const question_209" in the console one number at a time (column) 
+but not == 0 using ternary, print to the console */
 
 const question_210 = 'Strawberries';
 /* Question_210: Create a new string from "const question_210" where all 'r' letters are replaced by '=', print to the console */

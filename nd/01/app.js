@@ -223,7 +223,6 @@ else if (n7 == 3) {
 
 // Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8.
 
-
 let go8 = document.querySelector('#go8');
 let apskritimai8 = go8.querySelectorAll('div:not([data-result])');
 
@@ -257,7 +256,13 @@ for (let i = 0; i < eilutes.length; i++) {
   let b = +spanai[1].textContent;
   spanai[2].textContent = a * b;
 }
+// const div_list = document.querySelectorAll('div'); // returns NodeList
+// const div_array = [...div_list]; // converts NodeList to Array
+// div_array.forEach(div => {
 
+// // do something awesome with each div
+
+// });
 
 ///////////// 10. /////////////
 
