@@ -5,6 +5,8 @@ jeigu yra nurodytos nuolaidos (fiksuotos nuolaidos dydis su minuso ženklu, proc
 ir kainos dalis pagal procentus su minuso ženklu), transportavimo išlaidos. Paskaičiuota tarpinė kaina, 
 įvertinant kiekius, nuolaidas ir transportavimo išlaidas, paskaičiuotas pvm 21% ir galutinė kaina su PVM*/
 
+
+
 const duomenys = {
   number: "AB-52638700",
   date: "2025-06-08",
@@ -83,50 +85,165 @@ const prekes = duomenys.items;
 //   console.log(prekes[i]);
 // };
 
-const pirkejasImone = duomenys.company.buyer.name;
-console.log(pirkejasImone);
-const pirkejasAdresas = duomenys.company.buyer.address;
-console.log(pirkejasAdresas);
-const preke1pavadinimas = duomenys.items[0].description;
-console.log(preke1pavadinimas);
-const preke1kaina = duomenys.items[0].price;
-console.log(preke1kaina);
+// const pirkejasImone = duomenys.company.buyer.name;
+// console.log(pirkejasImone);
+// const pirkejasAdresas = duomenys.company.buyer.address;
+// console.log(pirkejasAdresas);
+// const preke1pavadinimas = duomenys.items[0].description;
+// console.log(preke1pavadinimas);
+// const preke1kaina = duomenys.items[0].price;
+// console.log(preke1kaina);
 
-const sec10 = document.querySelector('.sec-10');
-sec10.innerHTML = preke1pavadinimas;
+// const sec10 = document.querySelector('.sec-10');
+// sec10.innerHTML = preke1pavadinimas;
 
-// async function getData() {
-//   const url = "https://in3.dev/inv/";
-//   try {
-//     const response = await fetch(url);
-//     if (!response.ok) {
-//       throw new Error(`Response status: ${response.status}`);
-//     }
 
-//     const json = await response.json();
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+//   .then(json => {
 //     console.log(json);
-//   } catch (error) {
-//     console.error(error.message);
+//     printTitles(json); // sukurtas variable ateityje, 34 eilute
+//   }) // atspausdinam konsoleje
+
+// console.log('kodas po fetch');  // nelaukia response ir spausdina
+
+// const printTitles = obj => { 
+//   const ul = document.querySelector('ul');
+
+//   obj.forEach(p => {
+//     const li = document.createElement('li');
+//     li.innerText = p.title;
+//     ul.appendChild(li);
+//   });
+// }
+
+// const obj = [
+//   { a: 2 },
+//   { a: 2 },
+//   { a: [4, 5] },
+// ];
+
+// console.log(obj, typeof obj);
+
+// const objString = JSON.stringify(obj);
+
+// console.log(objString, typeof objString);
+
+
+// const objBack = JSON.parse(objString);
+
+// console.log(objBack, typeof objBack);
+
+// console.clear();
+
+// fetch('https://in3.dev/inv/')
+//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+//   .then(json => {
+//     console.log(json);
+//     printDescriptions(json); // sukurtas variable ateityje, 34 eilute
+//   }) // atspausdinam konsoleje
+
+// console.log('kodas po fetch');  // nelaukia response ir spausdina
+
+// const printDescriptions = obj => {
+//    let ul = document.querySelector('ul');
+//    if (!ul) {
+//      ul = document.createElement('ul');
+//      document.body.appendChild(ul);
+//    }
+
+//   obj.forEach(p => {
+//     const li = document.createElement('li');
+//     li.innerText = p.description;
+//     ul.appendChild(li);
+//   });
+// }
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+//   .then(json => {
+//     console.log(json);
+//     printTitles(json); // sukurtas variable ateityje, 34 eilute
+//   }) // atspausdinam konsoleje
+
+// console.log('kodas po fetch');  // nelaukia response ir spausdina
+// console.log(typeof 'kodas po fetch'); 
+
+// const printTitles = obj => { 
+//   const ul = document.querySelector('ul');
+
+//   obj.forEach(p => {
+//     const li = document.createElement('li');
+//     li.innerText = p.id;
+//     ul.appendChild(li);
+//   });
+// }
+
+
+
+// const printNames = obj => {
+//   const ul = document.querySelector('ul');
+//   // Example: print buyer and seller names if present
+//   if (obj.company && obj.company.buyer && obj.company.seller) {
+//     const buyerLi = document.createElement('li');
+//     buyerLi.innerText = 'Buyer: ' + obj.company.buyer.name;
+//     ul.appendChild(buyerLi);
+
+//     const sellerLi = document.createElement('li');
+//     sellerLi.innerText = 'Seller: ' + obj.company.seller.name;
+//     ul.appendChild(sellerLi);
+//   }
+//   // Example: print item descriptions if present
+//   if (Array.isArray(obj.items)) {
+//     obj.items.forEach(item => {
+//       const li = document.createElement('li');
+//       li.innerText = 'Item: ' + item.description;
+//       ul.appendChild(li);
+//     });
 //   }
 // }
-// ; 
-// getData();
 
-async function fetchData() {
-  const url = "https://in3.dev/inv/";
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
+  fetch('https://in3.dev/inv/')
+    .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+    .then(json => {
+      console.log(json);
+      printNames(json); // sukurtas variable ateityje, 34 eilute
+    }) // atspausdinam konsoleje
 
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.error(error.message);
-  }
+console.log('kodas po fetch');  // nelaukia response ir spausdina
+console.log(typeof 'kodas po fetch'); 
+
+const printNames = obj => { 
+  const ul = document.querySelector('ul');
+    const buyerLi = document.createElement('li');
+    buyerLi.innerText = 'Buyer: ' + obj.company.buyer.name;
+    ul.appendChild(buyerLi);
 }
-fetchData(); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

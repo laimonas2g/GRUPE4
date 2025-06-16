@@ -105,7 +105,7 @@ const deti = rand(0, 1) ? newProduct2 : newProduct3;
 //   console.log(cart);
 // }
 
-const cartProduct = cart.find(p => p.id == deti.id);
+const cartProduct = cart.find(p => p.id == deti);
 
 if (cartProduct) {
   cartProduct.count = cartProduct.count + deti.count;
