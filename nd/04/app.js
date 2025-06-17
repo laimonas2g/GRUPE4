@@ -1,273 +1,150 @@
-/*Naudojant HTML ir CSS padaryti realiai atrodančią (naudojant minimalų spalvų kiekį) sąskaitą faktūrą, 
-kurią būtų galim atspausdinti. Sąskaitoje turi matytis užrašas PVM SĄSKAITA FAKTŪRA, sąskaitos numeris, 
-pardavėjo ir pirkėjo duomenys, sąskaitos data ir mokėjimo termino data. Išvardintos prekės, jų pavadinimai, 
-jeigu yra nurodytos nuolaidos (fiksuotos nuolaidos dydis su minuso ženklu, procentinės- procentai 
-ir kainos dalis pagal procentus su minuso ženklu), transportavimo išlaidos. Paskaičiuota tarpinė kaina, 
-įvertinant kiekius, nuolaidas ir transportavimo išlaidas, paskaičiuotas pvm 21% ir galutinė kaina su PVM*/
 
-
-
-const duomenys = {
-  number: "AB-52638700",
-  date: "2025-06-08",
-  due_date: "2025-06-20",
-  company: {
-    buyer: {
-      name: "VŠĮ \"Urbonas ir Urbonas\"",
-      address: "Didžioji gatvė 37, Mažeikiai",
-      code: "71626008",
-      vat: "LT267024369",
-      phone: "(8 46) 41 33 63",
-      email: "zukauskiene.vyte@gmail.com"
-    },
-    seller: {
-      name: "MB Kazlauskas",
-      address: "Vilniaus prospektas 10-55, Visaginas",
-      code: "76521541",
-      vat: "LT785631994",
-      phone: "(8 46) 96 18 57",
-      email: "naglis56@hotmail.com"
-    }
-  },
-  items: [
-    {
-      "description": "TV staliukas \"Telebimbam\" mėlynas",
-      "quantity": 5,
-      "price": 180.99,
-      "discount": []
-    },
-    {
-      "description": "Kavos staliukas \"Arbūzas\" su raudonu paviršium, apvalus, su padėklu ir uždengimu",
-      "quantity": 3,
-      "price": 390.5,
-      "discount": []
-    },
-    {
-      "description": "Fotelis \"Pūkas\" su uždengimu ir pagalve",
-      "quantity": 5,
-      "price": 150,
-      "discount": []
-    },
-    {
-      "description": "Rašomasis stalas \"Studentas\" su stiklo plokšte ir ąžuoliniu stalviršium",
-      "quantity": 9,
-      "price": 270.97,
-      "discount": []
-    },
-    {
-      "description": "Geltonas vaikiškas odinis fotelis \"Saulutė\"",
-      "quantity": 6,
-      "price": 150.95,
-      "discount": []
-    },
-    {
-      "description": "Rašomasis stalas \"Violeta\" su ąžuoliniu stalviršium",
-      "quantity": 10,
-      "price": 210,
-      "discount": []
-    },
-    {
-      "description": "Sofa dviguba \"Trys muškietininkai\"",
-      "quantity": 6,
-      "price": 450,
-      "discount": {
-        "type": "fixed",
-        "value": 204
-      }
-    }
-  ],
-  "shippingPrice": 90
-};
-
-const prekes = duomenys.items;
-
-// for (let i = 0; i < prekes.length; i++) {
-//   console.log(prekes[i]);
-// };
-
-// const pirkejasImone = duomenys.company.buyer.name;
-// console.log(pirkejasImone);
-// const pirkejasAdresas = duomenys.company.buyer.address;
-// console.log(pirkejasAdresas);
-// const preke1pavadinimas = duomenys.items[0].description;
-// console.log(preke1pavadinimas);
-// const preke1kaina = duomenys.items[0].price;
-// console.log(preke1kaina);
-
-// const sec10 = document.querySelector('.sec-10');
-// sec10.innerHTML = preke1pavadinimas;
-
-
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
-//   .then(json => {
-//     console.log(json);
-//     printTitles(json); // sukurtas variable ateityje, 34 eilute
-//   }) // atspausdinam konsoleje
-
-// console.log('kodas po fetch');  // nelaukia response ir spausdina
-
-// const printTitles = obj => { 
-//   const ul = document.querySelector('ul');
-
-//   obj.forEach(p => {
-//     const li = document.createElement('li');
-//     li.innerText = p.title;
-//     ul.appendChild(li);
-//   });
-// }
-
-// const obj = [
-//   { a: 2 },
-//   { a: 2 },
-//   { a: [4, 5] },
-// ];
-
-// console.log(obj, typeof obj);
-
-// const objString = JSON.stringify(obj);
-
-// console.log(objString, typeof objString);
-
-
-// const objBack = JSON.parse(objString);
-
-// console.log(objBack, typeof objBack);
-
-// console.clear();
-
-// fetch('https://in3.dev/inv/')
-//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
-//   .then(json => {
-//     console.log(json);
-//     printDescriptions(json); // sukurtas variable ateityje, 34 eilute
-//   }) // atspausdinam konsoleje
-
-// console.log('kodas po fetch');  // nelaukia response ir spausdina
-
-// const printDescriptions = obj => {
-//    let ul = document.querySelector('ul');
-//    if (!ul) {
-//      ul = document.createElement('ul');
-//      document.body.appendChild(ul);
-//    }
-
-//   obj.forEach(p => {
-//     const li = document.createElement('li');
-//     li.innerText = p.description;
-//     ul.appendChild(li);
-//   });
-// }
-
-
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
-//   .then(json => {
-//     console.log(json);
-//     printTitles(json); // sukurtas variable ateityje, 34 eilute
-//   }) // atspausdinam konsoleje
-
-// console.log('kodas po fetch');  // nelaukia response ir spausdina
-// console.log(typeof 'kodas po fetch'); 
-
-// const printTitles = obj => { 
-//   const ul = document.querySelector('ul');
-
-//   obj.forEach(p => {
-//     const li = document.createElement('li');
-//     li.innerText = p.id;
-//     ul.appendChild(li);
-//   });
-// }
-
-
-
-// const printNames = obj => {
-//   const ul = document.querySelector('ul');
-//   // Example: print buyer and seller names if present
-//   if (obj.company && obj.company.buyer && obj.company.seller) {
-//     const buyerLi = document.createElement('li');
-//     buyerLi.innerText = 'Buyer: ' + obj.company.buyer.name;
-//     ul.appendChild(buyerLi);
-
-//     const sellerLi = document.createElement('li');
-//     sellerLi.innerText = 'Seller: ' + obj.company.seller.name;
-//     ul.appendChild(sellerLi);
-//   }
-//   // Example: print item descriptions if present
-//   if (Array.isArray(obj.items)) {
-//     obj.items.forEach(item => {
-//       const li = document.createElement('li');
-//       li.innerText = 'Item: ' + item.description;
-//       ul.appendChild(li);
-//     });
-//   }
-// }
-
-
-//   fetch('https://in3.dev/inv/')
-//     .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
-//     .then(json => {
-//       console.log(json);
-//       printNames(json); // sukurtas variable ateityje, 34 eilute
-//     }) // atspausdinam konsoleje
-
-// console.log('kodas po fetch');  // nelaukia response ir spausdina
-// console.log(typeof 'kodas po fetch'); 
-
-// const printNames = obj => {
-//   const ul = document.querySelector('.sec-10');
-
-
-//     obj.items.forEach(item => {
-
-//       ul.innerText = item.description;
-
-//     });
-
-// }
 
 fetch('https://in3.dev/inv/')
-  .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+  .then(response => response.json())
   .then(json => {
     console.log(json);
-    printNames(json); // sukurtas variable ateityje, 34 eilute
-    printPrices(json);
-  }) 
+    printBelekas1(json);
+    printBelekas2(json);
+    printBelekas3(json);
+    printBelekas4(json);
+    printBelekas5(json);
+    printBelekas6(json);
+  });
 
-console.log('kodas po fetch');  // nelaukia response ir spausdina
-console.log(typeof 'kodas po fetch');
 
-const printNames = obj => {
-  const ul1 = document.querySelector('.sec-10');
+const printBelekas1 = belekas1 => {
+  const ul = document.querySelector('ul');
+  const buyer = belekas1.company.buyer;
+  const template = document.querySelector('#buyer-template1');
+  const clone = template.content.cloneNode(true); // padaro atskirą kopiją
+  clone.querySelector('.name').textContent = buyer.name;
+  clone.querySelector('.address').textContent = buyer.address;
+  clone.querySelector('.code').textContent = buyer.code;
+  clone.querySelector('.vat').textContent = buyer.vat;
+  clone.querySelector('.phone').textContent = buyer.phone;
+  clone.querySelector('.email').textContent = buyer.email;
+  ul.appendChild(clone);
+}
 
-  obj.items.forEach(item => {
-    const div1 = document.createElement('div');
-    div1.innerText = item.description;
-    ul1.appendChild(div1);
+const printBelekas2 = belekas2 => {
+  const ul = document.querySelector('ul');
+  const seller = belekas2.company.seller;
+  const template = document.querySelector('#buyer-template2');
+  const clone = template.content.cloneNode(true); // padaro atskirą kopiją
+  clone.querySelector('.name').textContent = seller.name;
+  clone.querySelector('.address').textContent = seller.address;
+  clone.querySelector('.code').textContent = seller.code;
+  clone.querySelector('.vat').textContent = seller.vat;
+  clone.querySelector('.phone').textContent = seller.phone;
+  clone.querySelector('.email').textContent = seller.email;
+  ul.appendChild(clone);
+}
+
+
+const printBelekas3 = belekas3 => {
+  const ul = document.querySelector('ul');
+  const template = document.querySelector('#buyer-template3');
+  belekas3.items.forEach(item => {
+    const clone = template.content.cloneNode(true); // clone for each item
+    clone.querySelector('.description').textContent = item.description;
+    clone.querySelector('.quantity').textContent = item.quantity;
+    clone.querySelector('.priceWithoutDiscount').textContent = item.price;
+
+    // Handle discount display and calculation
+    let discountText = '';
+    let priceWithDiscount = item.price;
+    if (
+      item.discount &&
+      typeof item.discount === 'object' &&
+      !Array.isArray(item.discount) &&
+      item.discount.type &&
+      item.discount.value !== undefined
+    ) {
+      if (item.discount.type === 'fixed') {
+        discountText = `-${item.discount.value} €`;
+        priceWithDiscount = item.price - item.discount.value;
+      } else if (item.discount.type === 'percentage') {
+        discountText = `-${item.discount.value}%`;
+        priceWithDiscount = item.price - (item.price * item.discount.value / 100);
+      }
+    } else {
+      discountText = '0';
+      priceWithDiscount = item.price;
+    }
+
+    clone.querySelector('.discount').textContent = discountText;
+    clone.querySelector('.priceWithDiscount').textContent = priceWithDiscount.toFixed(2);
+    ul.appendChild(clone);
   });
 }
 
-const printPrices = obj => {
-const ul12 = document.querySelector('.sec-11');
+const printBelekas4 = belekas4 => {
+  const ul = document.querySelector('ul');
+  const data = belekas4;
+  const template = document.querySelector('#buyer-template4');
+  const clone = template.content.cloneNode(true); // padaro atskirą kopiją
+  clone.querySelector('.number').textContent = data.number;
+  clone.querySelector('.date').textContent = data.date;
+  clone.querySelector('.due_date').textContent = data.due_date;
+  ul.appendChild(clone);
+}
 
-    obj.items.forEach(item => {
-    const div2 = document.createElement('div');
-    div2.innerText = item.price;
-    ul12.appendChild(div2);
-  });
+const printBelekas5 = belekas5 => {
+  const ul = document.querySelector('ul');
+  const data = belekas5;
+  const template = document.querySelector('#buyer-template5');
+  const clone = template.content.cloneNode(true); // padaro atskirą kopiją
+  clone.querySelector('.shippingPrice').textContent = data.shippingPrice;
+  ul.appendChild(clone);
+}
+
+const printBelekas6 = belekas6 => {
+  const ul = document.querySelector('ul');
+  const template = document.querySelector('#buyer-template6');
+
+  // Viso Suma (item.price * item.quantity)
+  const sumWithoutPVM = belekas6.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+  // 21% PVM
+  const pvmPercent = 21;
+  const pvmAmount = sumWithoutPVM * (pvmPercent / 100);
+
+  // Galutine su PVM
+  const totalWithPVM = sumWithoutPVM + pvmAmount;
+
+  const clone = template.content.cloneNode(true);
+  clone.querySelector('.sumOfAllWithoutPVM21').textContent = sumWithoutPVM.toFixed(2);
+  clone.querySelector('.PVM21').textContent = `${pvmPercent}%`;
+  clone.querySelector('.totalPriceWithPVM21').textContent = totalWithPVM.toFixed(2);
+  ul.appendChild(clone);
 }
 
 
-const printQuantity = obj => {
-const ul13 = document.querySelector('.sec-12');
 
-    obj.items.forEach(item => {
-    const div3 = document.createElement('div');
-    div3.innerText = item.quantity;
-    ul13.appendChild(div3);
-  });
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

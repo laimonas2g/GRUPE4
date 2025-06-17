@@ -4,67 +4,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style1.css">
+
   <script src="app1.js" defer></script>
+    <link rel="stylesheet" href="style1.css">
   <title>nd-04</title>
 </head>
-
 <body>
-  <ul></ul>
 
+
+<div class="invoice-container">
+  <h1>PVM SĄSKAITA FAKTŪRA</h1>
+  <div class="invoice-info">
+    <span>Sąskaitos Nr.: <span class="number"></span></span>
+    <span>Sąskaitos data: <span class="date"></span></span>
+    <span>Mokėjimo terminas: <span class="due_date"></span></span>
+  </div>
+  <div class="flex-row">
+    <div class="section">
+      <div class="section-title">Pardavėjas:</div>
+      <div><strong>Įmonė:</strong> <span class="name"></span></div>
+      <div><strong>Adresas:</strong> <span class="address"></span></div>
+      <div><strong>Įmonės kodas:</strong> <span class="code"></span></div>
+      <div><strong>PVM kodas:</strong> <span class="vat"></span></div>
+      <div><strong>Tel.:</strong> <span class="phone"></span></div>
+      <div><strong>E-mail:</strong> <span class="email"></span></div>
+    </div>
+    <div class="section">
+      <div class="section-title">Pirkėjas:</div>
+      <div><strong>Įmonė:</strong> <span class="name"></span></div>
+      <div><strong>Adresas:</strong> <span class="address"></span></div>
+      <div><strong>Įmonės kodas:</strong> <span class="code"></span></div>
+      <div><strong>PVM kodas:</strong> <span class="vat"></span></div>
+      <div><strong>Tel.:</strong> <span class="phone"></span></div>
+      <div><strong>E-mail:</strong> <span class="email"></span></div>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Prekė</th>
+        <th>Kiekis</th>
+        <th>Kaina (be PVM) (€)</th>
+        <th>Nuolaida</th>
+        <th>Suma (be PVM) (€)</th>
+      </tr>
+    </thead>
+    <tbody class="items-list">
+      <!-- itemai -->
+    </tbody>
+  </table>
+  <table class="totals">
+    <tr>
+      <td class="label">Transportavimo išlaidos:</td>
+      <td class="value shippingPrice"></td>
+    </tr>
+    <tr>
+      <td class="label">Suma be PVM:</td>
+      <td class="value sumOfAllWithoutPVM21"></td>
+    </tr>
+    <tr>
+      <td class="label">PVM (<span class="PVM21"></span>):</td>
+      <td class="value vatAmount"></td>
+    </tr>
+    <tr>
+      <td class="label" style="font-size:1.15em;">Galutinė suma su PVM:</td>
+      <td class="value totalPriceWithPVM21" style="font-size:1.15em;"></td>
+    </tr>
+  </table>
+</div>
+
+
+<ul style="display:none;">
   <template id="buyer-template1">
-    <li>
-      <div>Įmonė: <span class="name"></span></div>
-      <div>Adresas: <span class="address"></span></div>
-      <div>Įmonės kodas:: <span class="code"></span></div>
-      <div>PVM kodas: <span class="vat"></span></div>
-      <div>Tel.: <span class="phone"></span></div>
-      <div>E-mail:  <span class="email"></span></div>
+    <li class="buyer-data">
+      <span class="name"></span>
+      <span class="address"></span>
+      <span class="code"></span>
+      <span class="vat"></span>
+      <span class="phone"></span>
+      <span class="email"></span>
     </li>
   </template>
-
   <template id="buyer-template2">
-    <li>
-      <div>Įmonė: <span class="name"></span></div>
-      <div>Adresas: <span class="address"></span></div>
-      <div>Įmonės kodas: <span class="code"></span></div>
-      <div>PVM kodas: <span class="vat"></span></div>
-      <div>Tel.: <span class="phone"></span></div>
-      <div>E-mail: <span class="email"></span></div>
+    <li class="seller-data">
+      <span class="name"></span>
+      <span class="address"></span>
+      <span class="code"></span>
+      <span class="vat"></span>
+      <span class="phone"></span>
+      <span class="email"></span>
     </li>
   </template>
-
-    <template id="buyer-template3">
-    <li>
-      <div>Prekė <span class="description"></span></div>
-      <div>Kiekis <span class="quantity"></span></div>
-      <div>Kaina (be PVM) <span class="priceWithoutDiscount"></span></div>
-      <div>Nuolaida <span class="discount"></span></div>
-      <div>Suma (be PVM) <span class="priceWithDiscount"></span></div>
+  <template id="buyer-template3">
+    <li class="invoice-info-data">
+      <span class="number"></span>
+      <span class="date"></span>
+      <span class="due_date"></span>
     </li>
   </template>
-
   <template id="buyer-template4">
-    <li>
-      <div>Sąskaitos Nr.: <span class="number"></span></div>
-      <div>Sąskaitos data: <span class="date"></span></div>
-      <div>Mokėjimo terminas: <span class="due_date"></span></div>
+    <tr>
+      <td class="description"></td>
+      <td class="quantity"></td>
+      <td class="priceWithoutDiscount"></td>
+      <td class="discount"></td>
+      <td class="priceWithDiscount"></td>
+    </tr>
+  </template>
+  <template id="buyer-template5">
+    <li class="shipping-data">
+      <span class="shippingPrice"></span>
     </li>
   </template>
-  
-    <template id="buyer-template5">
-    <li>
-      <div>Transportavimo išlaidos: <span class="shippingPrice"></span></div>
+  <template id="buyer-template6">
+    <li class="totals-data">
+      <span class="sumOfAllWithoutPVM21"></span>
+      <span class="PVM21"></span>
+      <span class="totalPriceWithPVM21"></span>
     </li>
   </template>
+</ul>
+</div>
 
-    <template id="buyer-template6">
-    <li>
-      <div>Tarpinė suma: <span class="sumOfAllWithoutPVM21"></span></div>
-      <div>PVM 21% <span class="PVM21"></span></div>
-      <div>Galutinė suma su PVM: <span class="totalPriceWithPVM21"></span></div>
-    </li>
-  </template>
 
 </body>
 </html>
