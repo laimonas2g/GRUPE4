@@ -204,26 +204,70 @@ const prekes = duomenys.items;
 //   }
 // }
 
-  fetch('https://in3.dev/inv/')
-    .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
-    .then(json => {
-      console.log(json);
-      printNames(json); // sukurtas variable ateityje, 34 eilute
-    }) // atspausdinam konsoleje
+
+//   fetch('https://in3.dev/inv/')
+//     .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+//     .then(json => {
+//       console.log(json);
+//       printNames(json); // sukurtas variable ateityje, 34 eilute
+//     }) // atspausdinam konsoleje
+
+// console.log('kodas po fetch');  // nelaukia response ir spausdina
+// console.log(typeof 'kodas po fetch'); 
+
+// const printNames = obj => {
+//   const ul = document.querySelector('.sec-10');
+
+
+//     obj.items.forEach(item => {
+
+//       ul.innerText = item.description;
+
+//     });
+
+// }
+
+fetch('https://in3.dev/inv/')
+  .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+  .then(json => {
+    console.log(json);
+    printNames(json); // sukurtas variable ateityje, 34 eilute
+    printPrices(json);
+  }) 
 
 console.log('kodas po fetch');  // nelaukia response ir spausdina
-console.log(typeof 'kodas po fetch'); 
+console.log(typeof 'kodas po fetch');
 
-const printNames = obj => { 
-  const ul = document.querySelector('ul');
-    const buyerLi = document.createElement('li');
-    buyerLi.innerText = 'Buyer: ' + obj.company.buyer.name;
-    ul.appendChild(buyerLi);
+const printNames = obj => {
+  const ul1 = document.querySelector('.sec-10');
+
+  obj.items.forEach(item => {
+    const div1 = document.createElement('div');
+    div1.innerText = item.description;
+    ul1.appendChild(div1);
+  });
+}
+
+const printPrices = obj => {
+const ul12 = document.querySelector('.sec-11');
+
+    obj.items.forEach(item => {
+    const div2 = document.createElement('div');
+    div2.innerText = item.price;
+    ul12.appendChild(div2);
+  });
 }
 
 
+const printQuantity = obj => {
+const ul13 = document.querySelector('.sec-12');
 
-
+    obj.items.forEach(item => {
+    const div3 = document.createElement('div');
+    div3.innerText = item.quantity;
+    ul13.appendChild(div3);
+  });
+}
 
 
 
