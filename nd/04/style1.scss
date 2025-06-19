@@ -2,11 +2,13 @@
   body {
     font-family: Arial, sans-serif;
     background: #fff;
-    color: #222;
+    color: black;
     margin: 0;
     padding: 0;
   }
-  .invoice-container {
+
+
+  .saskaita {
     max-width: 800px;
     margin: 40px auto;
     background: #fff;
@@ -14,85 +16,102 @@
     padding: 32px 40px 40px 40px;
     box-shadow: 0 2px 8px #eee;
   }
+
+  
   h1 {
     text-align: center;
     letter-spacing: 2px;
     font-size: 2.2em;
     margin-bottom: 24px;
-    color: #222;
+    color: black;
   }
-  .flex-row {
+
+  .flexas1 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
   }
-  .section {
+
+  .sectionas {
     width: 48%;
-    background: #f8f8f8;
+    background: #ddd;
     padding: 16px;
     border-radius: 6px;
     border: 1px solid #eee;
   }
-  .section-title {
+
+  .sectionas-title {
     font-weight: bold;
     margin-bottom: 8px;
-    color: #444;
+    color: black;
     font-size: 1.1em;
   }
-  .invoice-info {
+
+  .saskaita-info {
     margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
-    font-size: 1.05em;
+    flex-wrap: wrap;
+    font-size: 1em;
   }
-  .invoice-info span {
+
+  .saskaita-info span {
     margin-right: 24px;
   }
+
   table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 18px;
     background: #fff;
   }
+
   th, td {
     border: 1px solid #ddd;
     padding: 8px 10px;
     text-align: left;
     font-size: 1em;
   }
+
   th {
     background: #f0f0f0;
     font-weight: bold;
-    color: #333;
+    color: black;
   }
-  .totals {
+
+  .galutine {
     margin-top: 24px;
+    border: 2px solid #ddd;
     width: 100%;
     max-width: 400px;
     float: right;
   }
-  .totals td {
+
+  .galutine td {
     border: none;
     padding: 6px 10px;
     font-size: 1.05em;
   }
-  .totals .label {
+
+  .galutine .tekstas1 {
     text-align: right;
-    color: #555;
+    color: black;
   }
-  .totals .value {
+
+  .galutine .tekstas2 {
     text-align: right;
     font-weight: bold;
-    color: #222;
+    color: black;
   }
+  
   @media print {
-    body, .invoice-container {
+    body, .saskaita {
       box-shadow: none;
       border: none;
       margin: 0;
       padding: 0;
     }
-    .invoice-container {
+    .saskaita {
       padding: 0 0 0 0;
     }
   }
