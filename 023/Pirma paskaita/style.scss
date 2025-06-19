@@ -8,6 +8,7 @@ body {
   font-family: sans-serif;
   background-color: #333;
   color: gold;
+  overflow-x: hidden;
 }
 
 .container>* {
@@ -86,25 +87,28 @@ footer {
   grid-area: foot;
 }
 
-/* PATHS */
+///////////////////////////////// PATHS /////////////////////////////////
 /* clip-path: polygon(0 0, 100% 0, 100% 100px, 0 100px); */
 // clip path nedraugauja su border
 
 header {
   clip-path: polygon(0 0, 100% 0, 100% 80px, 50% 100px, 0 80px);
-  animation: moveDown 500ms ease-in;
+  animation: moveDown 500ms ease-in, fastUp 200ms linear 800ms;
 }
 
 .hero {
   clip-path: polygon(0 0, 50% 20px, 100% 0, 100% 280px, 0 300px);
+  animation: dropDown 700ms ease-in;
 }
 
 .sec-1 {
   clip-path: polygon(0 20px, 100% 13px, 100% 0, 100% 300px, 0 300px);
+  animation: moveRight 500ms ease-in, fastDown 200ms linear 800ms;;
 }
 
 .sec-2 {
   clip-path: polygon(0 13px, 100% 0px, 100% 300px, 0 300px);
+  animation: moveLeft 500ms ease-in;
 }
 
 .sec-3,
@@ -116,7 +120,7 @@ footer {
   margin-top: 20px;
 }
 
-// ANIMACIJOS
+///////////////////////////////// ANIMACIJOS /////////////////////////////////
 
 @keyframes moveDown {
   0% {
@@ -134,31 +138,103 @@ footer {
   }
 }
 
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 
+  80% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
 
+  100% {
+    transform: translateX(0);
+  }
+}
 
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 
+  80% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
 
+  100% {
+    transform: translateX(0);
+  }
+}
 
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: scale(2); //permatomas, dvigubai didesnis
+  }
 
+  70% {
+    opacity: 1;
+  }
 
+  100% {
+    transform: scale(1); //gryzta koks buvo
+  }
+}
 
+@keyframes fastUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
+@keyframes fastDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
+@keyframes shockWave {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
 
+  100% {
+    opacity: 0.1;
+    transform: scale(54, 35);
+  }
+}
 
+/* Shockwave efektas */
 
-
-
-
-
-
-
-
-
-
-
-
+.shock {
+  width: 2%;
+  height: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 265px;
+  left: 50%;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 2px;
+  animation: shockWave 500ms ease-out 500ms;
+}
 
 
 

@@ -52,7 +52,7 @@ fetch('https://in3.dev/inv/')
       skaiciuotiVisus(json);
     }, 0);
   });
-  ///////////////////////////////// itemai //////////////////////////////////////////////////
+///////////////////////////////// itemai //////////////////////////////////////////////////
 
 const spausdintiPrekes = items => {
 
@@ -72,15 +72,9 @@ const spausdintiPrekes = items => {
     ///////////////////////////////// nuolaida //////////////////////////////////////////////////
     let discountText = '';
     let discountKiekis = 0;
-    
-    //// ar objektas su savybemis?
-    if (
-      item.discount &&
-      typeof item.discount === 'object' &&
-      !Array.isArray(item.discount) &&
-      item.discount.type &&
-      item.discount.value !== undefined
-    ) {
+
+    //// ar objektas?
+    if (item.discount && typeof item.discount === 'object') {
       // jei fixed, rodyk ir skaiciuok
       if (item.discount.type === 'fixed') {
         discountText = `-${item.discount.value} `;
