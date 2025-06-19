@@ -61,12 +61,28 @@ const products = [
 ];
 
 
-const renderProducts = _ => {
+const renderProducts = (sort = 'default') => {
     const productsHtmlBin = document.querySelector('[data-products]');
     const productTemplate = document.querySelector('[data-product-template]');
-        products.forEach(product => {
+         productsHtmlBin.innerHTML = ''; // isvalo kazka
+       let sortedProducts;
+        if (sort == 'default') {
+            sortedProducts = [...products];
+        } else if(sort == '0-9') {
+            sortedProducts = products.toSorted((a, b) => a.price - b.price);
+        } else if(sort == '9-0') {
+            sortedProducts = products.toSorted((a, b) => b.price - a.price);
+        } else if(sort == 'A-Z') {
+            sortedProducts = products.toSorted((a, b) => a.tittle.localeCompare(b.title, 'lt'));
+        } else {
+            console.error('Bad sort type');
+        }
+
+
+
+    sortedProducts.forEach(product => {
         const clone = productTemplate.content.cloneNode(true);
-        
+
         clone.querySelector('[data-title]').textContent = product.title;
         clone.querySelector('[data-image]').setAttribute('src', product.image);
         clone.querySelector('[data-price]').textContent = product.price;
@@ -77,10 +93,18 @@ const renderProducts = _ => {
     });
 }
 
+const doSort = _ => {
+    const selector = document.querySelector('[data-sort-selector]');
+    selector.addEventListener('change', _ => {
+        console.log('pasikeite', selector.value);
+        renderProducts(selector.value);
+    });
+}
 
 
 const initShop = _ => {
     renderProducts();
+    doSort();
 }
 
 
