@@ -1,3 +1,8 @@
+img {
+  width: 100px;
+  height: 200px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +14,7 @@ body {
   background-color: #1b1b1b;
 }
 
-header {
+.header {
   background-color: #1b1b1b;
   height: 100px;
   display: flex;
@@ -17,9 +22,12 @@ header {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  font-family: "Acme", sans-serif;
+  color: red;
 }
 
-
-
+.interface >* {
+    color: #fff;
+}
 
 
