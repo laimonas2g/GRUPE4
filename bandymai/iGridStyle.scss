@@ -1,0 +1,60 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 200px;
+  grid-template-areas: 
+  ". nav nav nav nav nav nav nav ."
+  ". hl hl hl hr hr hr ."
+  ". ser ser ser ser ser ser ser.";
+}
+
+
+nav {
+  grid-area: nav;
+}
+.hero-l {
+  grid-area: hl;
+}
+.hero-r {
+  grid-area: hr;
+}
+.services {
+  grid-area: ser;
+} 
+
+/* laikinas aukstis ir border */
+.laikinai {
+  height: 200px;
+  border: 2px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
