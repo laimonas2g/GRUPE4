@@ -1,0 +1,49 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: 'Arial', sans-serif;
+// };
+
+// body {
+//   background-color: #333;
+//   color: #fff;
+//   // width: 100%;
+// };
+
+// main {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 20px;
+//   color: #fff;
+
+// }
+
+// @media (max-width: 768px) {
+//   main {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background: url(/game/game1/mario.jpg);
+  background-size: cover;
+}
+
+#board {
+  width: 540px;
+  height: 540px;
+  background-color: green;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  background: url(/game/game1/soil.jpg);
+  background-size: cover;
+  border:3px solid white;
+  border-radius: 25px;
+}
