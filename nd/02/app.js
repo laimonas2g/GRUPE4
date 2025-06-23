@@ -144,8 +144,26 @@ body1.append(document.createElement('br'));
 
 
 
+///////////// 10. /////////////
+// Uždavinį atlikite atskirame html faile. Visame ekrane atsitiktine tvarka “išmėtykite“ 444 pusiau 
+// permatomus atsitiktinės spalvos ir atsitiktinio skersmens nuo 44 iki 144 (px) apskritimus. 
+// Apskritimai turi tolygiai (pagal funkciją rand()) dengti visą ekraną.#fun
 
+// let body = document.querySelector('body');
+// body.style.position = 'relative';
 
+// for (let i = 0; i < 444; i++) {
+//   let aDim = rand(44, 144);
+//   let aDiv = document.createElement('div');
+//   body.appendChild(aDiv);
+//   aDiv.style.width = aDim + 'px';
+//     aDiv.style.height = aDim + 'px';
+//       aDiv.style.borderRadius = '50%';
+//         aDiv.style.backgroundColor = randomColor() + '80';
+//           aDiv.style.position = 'absolute';
+//             aDiv.style.top = rand(0, 100) + 'vh';
+//               aDiv.style.left = rand(0, 100) + 'vw';
+// }
 
 
 

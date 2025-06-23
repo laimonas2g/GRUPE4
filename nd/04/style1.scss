@@ -19,6 +19,7 @@
 
   
   h1 {
+    position: relative;
     text-align: center;
     letter-spacing: 2px;
     font-size: 2.2em;
@@ -34,7 +35,7 @@
 
   .sectionas {
     width: 48%;
-    background: #ddd;
+    background: #94B4C1;
     padding: 16px;
     border-radius: 6px;
     border: 1px solid #eee;
@@ -74,15 +75,14 @@
   }
 
   th {
-    background: #f0f0f0;
+    background: #94B4C1;
     font-weight: bold;
     color: black;
   }
 
   .galutine {
     margin-top: 24px;
-    border: 2px solid #ddd;
-    width: 100%;
+    border: 2px solid #94B4C1;
     max-width: 400px;
     float: right;
   }
@@ -103,6 +103,18 @@
     font-weight: bold;
     color: black;
   }
+
+
+.beaver {
+  display: flex;
+  position: absolute;
+  max-height: 50px;
+  min-width: 50px;
+  color: #2d2f3a;
+  background-color: #fff;
+  top: -8px;
+}
+
   
   @media print {
     body, .saskaita {

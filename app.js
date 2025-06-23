@@ -139,8 +139,73 @@ const question14 = [
 const question14a = question14.map( obj => obj.id === 6 ? {...obj, count: obj.count +3} : {...obj} );
 console.log(question14a);
 
-/* Question_15: Create a new array where each number in "const question15" is multiplied by 2, 
+const question15 = [
+  111,
+  [44, 55],
+  4,
+  77
+];
+/* Question_15: Create a new array where each number in "const question15" is multiplied by 3, 
 numbers must remain in the given object, the object property name must remain the same, print to the console */
+
+// const question15a = question15.map(el => (el * 3));
+// const question15b = question15.map(obj => { return { obj: obj * 3 } });
+// console.log(question15a);
+
+const question15a = question15.map(el => {
+  if (typeof el === 'number') {
+    return el * 3;
+  } else if (typeof el === 'object' && el !== null && el.length) {
+    return el.map(num => num * 3);
+  }
+});
+console.log(question15a);
+
+const question15b = question15.map(el => Array.isArray(el) ? el.map(num => num * 3) : el * 3);
+console.log(question15b)
+
+ 
+// // padidintu visu produktu kiekius 1;
+
+// const cart2 = cart.map(obj => ({ ...obj, count: obj.count + 1 }));
+
+// console.log(cart2);
+
+// const cartPlus1 = cart.map(obj => ({ ...obj, count: obj.count + 1 }))
+
+// console.log(cartPlus1);
+
+// // padidinti 8974 produkto kieki 2
+
+const cartas = [
+    { id: 877, title: 'Pieniškos dešros', price: 2.45, count: 2 },
+    { id: 8974, title: 'Sviestukas sintetinis', price: 3.20, count: 1 },
+    { id: 16548, title: 'Batonas studentų', price: 1.22, count: 1 },
+    { id: 974, title: 'Bulvės 4kl', price: 0.88, count: 2 }
+];
+
+// Prie kiekvieno produkto pridėti savybę total ir joje paskaičiuoti atitinkamo produkto bendrą sumą
+
+ const cartasPlus1 = cartas.map(obj => ({ ...obj, total: 'price' * 'count' }))
+
+// const cartWithTotal = cart.map(obj => ({...obj, total: obj.price * obj.count
+// }));
+
+const cartasWithTotal = cartas.map(p => ({...p, total: p.count * p.price}));
+
+console.log(cartasWithTotal);
+
+
+
+
+
+
+
+
+
+
+
+
 
 const question16 = [
   1,
