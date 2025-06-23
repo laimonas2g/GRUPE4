@@ -164,36 +164,59 @@ console.log(question15a);
 const question15b = question15.map(el => Array.isArray(el) ? el.map(num => num * 3) : el * 3);
 console.log(question15b)
 
- 
-// // padidintu visu produktu kiekius 1;
-
-// const cart2 = cart.map(obj => ({ ...obj, count: obj.count + 1 }));
-
-// console.log(cart2);
-
-// const cartPlus1 = cart.map(obj => ({ ...obj, count: obj.count + 1 }))
-
-// console.log(cartPlus1);
 
 // // padidinti 8974 produkto kieki 2
 
-const cartas = [
-    { id: 877, title: 'Pieniškos dešros', price: 2.45, count: 2 },
-    { id: 8974, title: 'Sviestukas sintetinis', price: 3.20, count: 1 },
-    { id: 16548, title: 'Batonas studentų', price: 1.22, count: 1 },
-    { id: 974, title: 'Bulvės 4kl', price: 0.88, count: 2 }
-];
+// const cartas = [
+//     { id: 877, title: 'Pieniškos dešros', price: 2.45, count: 2 },
+//     { id: 8974, title: 'Sviestukas sintetinis', price: 3.20, count: 1 },
+//     { id: 16548, title: 'Batonas studentų', price: 1.22, count: 1 },
+//     { id: 974, title: 'Bulvės 4kl', price: 0.88, count: 2 }
+// ];
 
-// Prie kiekvieno produkto pridėti savybę total ir joje paskaičiuoti atitinkamo produkto bendrą sumą
+// // Prie kiekvieno produkto pridėti savybę total ir joje paskaičiuoti atitinkamo produkto bendrą sumą
 
- const cartasPlus1 = cartas.map(obj => ({ ...obj, total: 'price' * 'count' }))
+// const cartasWithTotal = cartas.map(p => ({...p, total: p.count * p.price}));
+// console.log(cartasWithTotal);
 
-// const cartWithTotal = cart.map(obj => ({...obj, total: obj.price * obj.count
-// }));
+// // // padidintu visu produktu kiekius 1;
 
-const cartasWithTotal = cartas.map(p => ({...p, total: p.count * p.price}));
+// // const cartas2 = cartas.map(obj => ({ ...obj, count: obj.count + 1 }));
 
-console.log(cartasWithTotal);
+// // console.log(cartas2);
+
+// const cartasPlus1 = cartas.map(obj => ({ ...obj, count: obj.count + 1 }))
+
+// console.log(cartasPlus1);
+
+// const funSpread = function (a, b) {
+//   console.log(a - b);
+// }
+
+// const manoSK = [7, 10];
+
+// funSpread(...manoSK);
+
+// const stebuklas1 = [
+//   4,
+//   [88, 77],  // masyvas masyve (stulpelis)
+//   5,
+//   8
+// ];
+
+// const kitasStebuklas1 = [...stebuklas1]; // seklus kopijavimas (shallow copy)
+// const deepStebuklas1 = structuredClone(stebuklas1); // // gilus kopijavimas (deep copy)
+
+// stebuklas1[0] = 100; // taip pat galim ir spread'e padaryti?
+// stebuklas1[1][1] = 200; // tik shallow copy?
+
+// console.log(stebuklas1, kitasStebuklas1, deepStebuklas1);
+
+const cartPlus4 = cartas.map(obj =>
+  obj.id === 8974 ? { ...obj, count: obj.count + 2 } : { ...obj }
+);
+
+console.log(cartPlus3);
 
 
 
@@ -201,12 +224,7 @@ console.log(cartasWithTotal);
 
 
 
-
-
-
-
-
-
+// -------------------------------------
 const question16 = [
   1,
   [2, 3],

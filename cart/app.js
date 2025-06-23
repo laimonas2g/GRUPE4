@@ -90,7 +90,7 @@ const renderProducts = (sort = 'default') => {
         clone.querySelector('[data-add-button]').dataset.id = product.id; // prideda tagui attr data-id="45"
 
         productsHtmlBin.appendChild(clone);
-        
+
     });
     addButtonsInit();
 }
@@ -102,10 +102,53 @@ const addButtonsInit = _ => {
             const id = parseInt(b.dataset.id);
             const input = b.closest('[data-product]').querySelector('[data-add-amount]');
             const amount = parseInt(input.value);
-            console.log(id, amount);
+            addToCart(id, amount);
+            renderCart();
+            showCartContent();
         });
     });
 }
+
+const renderCart = _ => {
+    const cartHtmlBin = document.querySelector('[data-cart-content]');
+    const cartProductTemplate = document.querySelector('[data-cart-product-template]');
+    const cartTotalTemplate = document.querySelector('[data-cart-total-template]');
+    cartHtmlBin.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(cartProduct => {
+        const product = products.find(p => p.id == cartProduct.id);
+        const clone = cartProductTemplate.content.cloneNode(true);
+
+        clone.querySelector('[data-title]').textContent = product.title;
+        clone.querySelector('[data-image]').setAttribute('src', product.image);
+        clone.querySelector('[data-price]').textContent = product.price;
+        clone.querySelector('[data-amount]').textContent = cartProduct.amount;
+        clone.querySelector('[data-remove]').dataset.id = product.id;
+
+        total += product.price * cartProduct.amount;
+
+        cartHtmlBin.appendChild(clone);
+
+    });
+
+    const clone = cartTotalTemplate.content.cloneNode(true);
+    clone.querySelector('[data-value]').textContent = total;
+    cartHtmlBin.appendChild(clone);
+
+}
+
+const addToCart = (id, amount) => {
+    const productInCart = cart.find(p => p.id == id);
+    if (productInCart) {
+        productInCart.amount += amount;
+    } else {
+        // cart.unshift({ id: id, amount: amount }); // apacioje tas pat
+        cart.unshift({ id, amount });
+    }
+    console.log(cart);
+}
+
 
 const doSort = _ => {
     const selector = document.querySelector('[data-sort-selector]');
