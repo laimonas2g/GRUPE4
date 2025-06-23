@@ -10,7 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
-    <title>Miško pasakos parduotuvė</title>
+    <title>Miško pasakaos parduotuvė</title>
 </head>
 
 <body>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="menu__right">
                     <div class="cart">
-                        <div class="count"><span>5</span></div>
+                        <div class="count"><span data-cart-amount>0</span></div>
                         <div class="icon" data-cart-icon>
                             <svg height="512" viewBox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg">
                                 <g>
@@ -139,8 +139,8 @@
         <div class="cart-content__title" data-title></div>
         <div class="cart-content__price" data-price></div>
         <div class="cart-content__amount" data-amount></div>
-        <div class="cart-content__remove" data-remove>
-            <span>x</span>
+        <div class="cart-content__remove">
+            <span data-remove>x</span>
         </div>
     </div>
 </template>
