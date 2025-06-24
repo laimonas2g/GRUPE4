@@ -167,18 +167,19 @@ const kvadratoDydis = 41;
 let kvadratas = document.createElement('div');
 kvadratas.style.display = 'inline-block';
 kvadratas.style.lineHeight = '1';
-kvadratas.style.fontSize = '16px';
+kvadratas.style.fontSize = '7px';
 kvadratas.style.fontFamily = 'monospace';
+kvadratas.style.marginLeft = '75px';
 
 for (let i = 0; i < kvadratoDydis; i++) {
   let eilute = document.createElement('div');
-  eilute.style.height = '16px';
+  eilute.style.height = '7px';
   for (let j = 0; j < kvadratoDydis; j++) {
     let simbolis = document.createElement('span');
     simbolis.innerHTML = '&#9632;';
     simbolis.style.color = 'green';
     simbolis.style.display = 'inline-block';
-    simbolis.style.width = '16px';
+    simbolis.style.width = '7px';
     simbolis.style.textAlign = 'center';
     eilute.appendChild(simbolis);
   }
