@@ -212,15 +212,11 @@ console.log(question15b)
 
 // console.log(stebuklas1, kitasStebuklas1, deepStebuklas1);
 
-const cartPlus4 = cartas.map(obj =>
-  obj.id === 8974 ? { ...obj, count: obj.count + 2 } : { ...obj }
-);
+// const cartPlus4 = cartas.map(obj =>
+//   obj.id === 8974 ? { ...obj, count: obj.count + 2 } : { ...obj }
+// );
 
-console.log(cartPlus3);
-
-
-
-
+// console.log(cartPlus3);
 
 
 
@@ -232,14 +228,40 @@ const question16 = [
 ];
 /* Question_16: Create a new array where each number in the array "const question16" is multiplied by 4, 
 numbers must remain in the given object, the object property name must remain the same, print to the console */
+console.log(question16);
+const question16a = question16.map(obj => obj * 4);
+console.log(question16a);
 
 const question17 = [3, 6, 9, 12];
 /* Question_17: With the forEach loop, print the numbers in "const question17" one by one in the console, 
 multiplied by 2 (in a column), print to the console */
+const question17a = question17.forEach(el => console.log(el * 2));
+console.log(typeof question17a);
+console.log(typeof question17);
+
+const itemas = ["item1", "item2", "item3"];
+const copyItemas = [];
+
+// before
+for (let i = 0; i < itemas.length; i++) {
+  copyItemas.push(itemas[i]);
+}
+
+// after
+itemas.forEach((itemas) => {
+  copyItemas.push(itemas);
+});
+
+console.log(copyItemas);
 
 const question18 = [0, 5, 10, 15];
 /* Question_18: With a forEach loop, print the numbers in "const question18" in the console one number at a time (column) 
 but not == 0 using ternary, print to the console */
+const question18b = question18.forEach(el => {
+  if (el != 0) console.log(el)
+})
+const question18a = question18.forEach(el => el != 0 ? console.log(el) : 0);
+
 
 const question19 = 'Apples';
 /* Question_19: You need to make another string from the string in "const question19", in which the letters 'p' are replaced by '#'. 
