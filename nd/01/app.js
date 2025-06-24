@@ -8,7 +8,6 @@ function rand(min, max) {
 }
 
 ///////////// 1. /////////////
-
 let h1 = document.querySelector('h1');
 h1.innerText = 1;
 h1.style.color = 'crimson';
@@ -28,7 +27,6 @@ h4.style.color = 'blue';
 console.log('h1');
 
 ///////////// 2. /////////////
-
 let keturkampis = document.querySelector('code + div');
 keturkampis.style.width = '150px';
 keturkampis.style.height = '150px';
@@ -41,7 +39,6 @@ apskritimas.style.backgroundColor = 'red';
 apskritimas.style.borderRadius = '50%';
 
 ///////////// 3. /////////////
-
 // Sukurkite du kintamuosius ir naudodamiesi funkcija rand() 
 // jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
 // Didesnę reikšmę padalinkite iš mažesnės. 
@@ -72,7 +69,6 @@ else if (iksas1 < iksas2) {
 };
 
 ////////////// 4. //////////////
-
 // Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems 
 // priskirkite atsitiktines reikšmes nuo 50 iki 200. Iš section tage su 
 // id=go4 esančių div tagų padarykite atitinkamo dydžio (px) apskritimus. 
@@ -104,12 +100,9 @@ for (let index = 0; index < 3; index++) {
 }
 
 ///////////// 5. /////////////
-
 // Naudokite funkcija rand(). 
 // Į section tage su id=go5 esančius span įrašykite 3 skaičius nuo -10 iki 10. 
-// Skaičius mažesnių už 0 spausdinkite raudonai,  
-// didesnius už 0 mėlynai, 
-// o 0 žaliai.
+// Skaičius mažesnių už 0 spausdinkite raudonai,  didesnius už 0 mėlynai, o 0 žaliai.
 
 let b1 = rand(-10, 10);
 console.log(b1);
@@ -184,9 +177,7 @@ document.querySelector('[data-subtotal] span').textContent = ZvakeQuantity * uni
 document.querySelector('[data-discount] span').textContent = discount;
 document.querySelector('[data-total] span').textContent = totalPrice.toFixed(2);
 
-
 ///////////// 7. /////////////
-
 // Naudokite funkciją rand(). Parašykite skriptą, 
 // kuris atsitiktine tvarka generuotų ir iš section su  id=go7 esančio div tago padarytų apskritimą, 
 // arba keturkampį arba trikampį.
@@ -218,9 +209,7 @@ else if (n7 == 3) {
   console.log('Trikampis');
 }
 
-
 ///////////// 8. /////////////
-
 // Suskaičiuoti kiek kiekvienos spalvos apskritimų yra section su id=go8.
 
 let go8 = document.querySelector('#go8');
@@ -241,8 +230,6 @@ go8.querySelector('p[data-green] span').innerText = zali;
 go8.querySelector('p[data-red] span').innerText = raudoni;
 go8.querySelector('p[data-blue] span').innerText = melyni;
 
-
-
 ///////////// 9. /////////////
 
 // Užpildyti daugybos lentelę, esančią tage section su id=go9.
@@ -256,25 +243,22 @@ for (let i = 0; i < eilutes.length; i++) {
   let b = +spanai[1].textContent;
   spanai[2].textContent = a * b;
 }
-// const div_list = document.querySelectorAll('div'); // returns NodeList
-// const div_array = [...div_list]; // converts NodeList to Array
-// div_array.forEach(div => {
 
-// // do something awesome with each div
-
-// });
-
-///////////// 10. /////////////
-
+///////////// Question - 10. /////////////
 // Keturkapius, esančius tage section su id=go10, 
 // kurių plotas didesnis nei 10000 (px) nuspalvinkite raudonai.
 
+let go10 = document.querySelector('#go10');
+let divs10 = go10.querySelectorAll('div');
 
-
-
-
-
-
+divs10.forEach(div => {
+  let width = parseInt(div.style.width);
+  let height = parseInt(div.style.height);
+  let area = width * height;
+  if (area > 10000) {
+    div.style.backgroundColor = 'red';
+  }
+});
 
 
 

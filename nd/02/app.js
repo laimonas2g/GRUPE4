@@ -125,23 +125,83 @@ for (let i = 0; i < zvaigzdutes; i += zvaigzdutesPerLinija) {
 body1.append(document.createElement('br'));
 body1.append(document.createElement('br'));
 
-///////////// 7. /////////////
+///////////// question 7. /////////////
 // Naršyklėje nupieškite 14 atsitiktinių spalvų kvadratų esančių vienas kitame (“matrioška”).
 // #pamastykKaip
 
+let size = 350;
+let offset = 0;
+for (let i = 0; i < 14; i++) {
+  let square = document.createElement('div');
+  square.style.width = size - offset * 20 + 'px';
+  square.style.height = size - offset * 20 + 'px';
+  square.style.backgroundColor = randomColor();
+  square.style.position = 'absolute';
+  square.style.left = 50 + offset * 10 + 'px';
+  square.style.top = 50 + offset * 10 + 'px';
+  square.style.boxSizing = 'border-box';
+  square.style.border = '2px solid #fff';
+  body1.appendChild(square);
+  offset++;
+}
+// Wrap squares in a relative container to keep them together
+let container = document.createElement('div');
+container.style.position = 'relative';
+container.style.width = size + 'px';
+container.style.height = size + 'px';
+container.style.marginBottom = '30px';
+// Move all squares into the container
+let squares = Array.from(body1.querySelectorAll('div[style*="absolute"]'));
+squares.forEach(sq => container.appendChild(sq));
+body1.appendChild(container);
 
+body1.append(document.createElement('br'));
+body1.append(document.createElement('br'));
 
-///////////// 8. /////////////
+///////////// question 8. /////////////
 // Iš simbolio &#9632; (kopijuoti visą žalią tekstą su kabliataškiu) sudėliokite žalią kvadratą 
 // turintį 41x41 šių simbolių. Kad kvadratas atrodytų “kvadratiškai” panaudokite css stilių ir 
 // papildomus tagus. #ciklasCikle
 
+const kvadratoDydis = 41;
+let kvadratas = document.createElement('div');
+kvadratas.style.display = 'inline-block';
+kvadratas.style.lineHeight = '1';
+kvadratas.style.fontSize = '16px';
+kvadratas.style.fontFamily = 'monospace';
 
+for (let i = 0; i < kvadratoDydis; i++) {
+  let eilute = document.createElement('div');
+  eilute.style.height = '16px';
+  for (let j = 0; j < kvadratoDydis; j++) {
+    let simbolis = document.createElement('span');
+    simbolis.innerHTML = '&#9632;';
+    simbolis.style.color = 'green';
+    simbolis.style.display = 'inline-block';
+    simbolis.style.width = '16px';
+    simbolis.style.textAlign = 'center';
+    eilute.appendChild(simbolis);
+  }
+  kvadratas.appendChild(eilute);
+}
+body1.appendChild(kvadratas);
+
+body1.append(document.createElement('br'));
 
 ///////////// 9. /////////////
 // Uždavinyje prieš tai nupieštam kvadratui nupieškite geltonas istrižaides (geltonai nudažykite 
 // atitinkamus simbolius). #ciklasCikle
 
+for (let i = 0; i < kvadratoDydis; i++) {
+  for (let j = 0; j < kvadratoDydis; j++) {
+    // Pagrindinė įstrižainė (i == j) arba šalutinė įstrižainė (i + j == kvadratoDydis - 1)
+    if (i === j || i + j === kvadratoDydis - 1) {
+      let eilute = kvadratas.children[i];
+      let simbolis = eilute.children[j];
+      simbolis.style.color = 'yellow';
+    }
+  }
+}
 
 
 ///////////// 10. /////////////

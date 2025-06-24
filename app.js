@@ -257,10 +257,23 @@ console.log(copyItemas);
 const question18 = [0, 5, 10, 15];
 /* Question_18: With a forEach loop, print the numbers in "const question18" in the console one number at a time (column) 
 but not == 0 using ternary, print to the console */
+const question18a = question18.forEach(el => el != 0 ? console.log(el) : 0);
+
 const question18b = question18.forEach(el => {
   if (el != 0) console.log(el)
 })
-const question18a = question18.forEach(el => el != 0 ? console.log(el) : 0);
+
+const question18c = question18.map(el => {
+  if (el != 0) console.log(el)
+})
+console.log(question18c)
+
+const question18d = question18.map(sk => sk * 5);
+console.log(question18d);
+console.log(question18)
+const question18e = question18.forEach(sk => sk * 5);
+console.log(question18d);
+console.log(question18)
 
 
 const question19 = 'Apples';

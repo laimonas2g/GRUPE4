@@ -3,14 +3,13 @@ const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('mins');
 const secondsEl = document.getElementById('seconds');
 
-const newYears = "17 May 2026";
+const newYears = "17 december 2025";
 
 function countdown() {
   const newYearsDate = new Date(newYears);
   const currentDate = new Date();
 
-  const totalSeconds = (newYearsDate - currentDate) /
-    1000;
+  const totalSeconds = (newYearsDate - currentDate) / 1000;
 
   const days = Math.floor(totalSeconds / 3600 / 24);
   const hours = Math.floor(totalSeconds / 3600) % 24;
