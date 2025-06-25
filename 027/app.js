@@ -59,27 +59,39 @@ console.log(preke4, preke4.total());
 // Question-3, Patobulinkit klasę, pridėdami savybę "turi", kurią galima įrašyti objekto kūrimo metu
 // Question-4, Patobulinkit klasę, pridėdami metodą "daug", kuris sudaugina kiek ir turiu ir grąžina rezultatą
 // Question-4, Patobulinkit klasę, pridėdami metodą "daug", kuris sudaugina kiek ir turiu ir grąžina rezultatą
+// Question-5, Patobulinkit klasę, pridėdami metodą, kuris įgalina pakeisti savybe "kiek"
+// Question-6, Patobulinkit klasę, pridėdami metodą, kuris įgalina pakeisti savybe "kiek", jeigu norime keisti, į skaičių kuris yra didesnis nei 10, keitimo NEATLIEKAME
+
 // PETRAS sukure:
 class Du {
 
-  constructor(t) {
+  constructor(t) { // pasileidzia pati
     this.kiek = 2;
     this.turi = t;
   }
 
-  daug() {
+  daug() {  // getter, funkcija kuri grazina, gaunu
     return this.kiek * this.turi;
   }
 
+  keistiKiek(k) { // setter, irasyt i objekta
+    if (k >= 10) {
+      this.kiek = k;
+    }
+  }
 }
 
 // ONA sukure, objekto kurimo metas
 const du01 = new Du(55);
 const du02 = new Du(33);
 
-console.log(du01, du02, du01.daug(), du02.daug());
+du01.keistiKiek(40);
 
-console.log(typeof Du, typeof du01);
+console.log(du01.kiek);
+
+// console.log(du01, du02, du01.keistiKiek(5), du01.daug(), du02.daug());
+
+// console.log(typeof Du, typeof du01);
 
 
 
