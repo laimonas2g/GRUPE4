@@ -276,9 +276,31 @@ console.log(question18d);
 console.log(question18)
 
 
+const str5 = 'Apples';
 const question19 = 'Apples';
 /* Question_19: You need to make another string from the string in "const question19", in which the letters 'p' are replaced by '#'. 
 After making such a string, print it to the console */
+// let result4 = '';
+// for (let i = 0; i < str5.length; i++) {
+
+//     if (str5[i].toLowerCase() != 'a') {
+//         result4 = result4 + str5[i];
+//     } else {
+//         result4 = result4 + '#';
+//     }
+// }
+// console.log(result4);
+
+let q19a = '';
+for (let i = 0; i < question19.length; i++) {
+
+    if (question19[i].toLowerCase() != 'a') {
+        q19a = q19a + question19[i];
+    } else {
+        q19a = q19a + '#';
+    }
+}
+console.log(q19a);
 
 const question20 = [1, 2, 3, 4];
 /* Question_20: Create a new array where each number in "const question20" is multiplied by 6, print to the console */

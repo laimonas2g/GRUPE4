@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #333;
+  color: gold;
+  overflow-x: hidden;
+}
+
+.container>* {
+  // containerio visi tiesioginiai vaikai
+  background-color: #444;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); //fr = fraction, uzpildo likusia laisva vieta, Funkcija
+  grid-template-rows: 100px repeat(5, 300px) 150px; // pabaigoje, kai matai kiek yra viduje
+  column-gap: 20px;
+  margin: 20px;
+
+  grid-template-areas:
+    "head head head"
+    "hero hero hero"
+    "s1 s2 s2"
+    "s3 s3 s4"
+    "s5 s6 s6"
+    "promo promo promo"
+    "foot foot foot";
+}
+
+header {
+  grid-area: head;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.sec-1 {
+  grid-area: s1;
+}
+
+.sec-2 {
+  grid-area: s2;
+}
+
+.sec-3 {
+  grid-area: s3;
+}
+
+.sec-4 {
+  grid-area: s4;
+}
+
+.sec-5 {
+  grid-area: s5;
+}
+
+.sec-6 {
+  grid-area: s6;
+}
+
+.sec-6 {
+  grid-area: s6;
+}
+
+.sec-6 {
+  grid-area: s6;
+}
+
+
+
+.promo {
+  grid-area: promo;
+}
+
+footer {
+  grid-area: foot;
+}
+
+///////////////////////////////// PATHS /////////////////////////////////
+/* clip-path: polygon(0 0, 100% 0, 100% 100px, 0 100px); */
+// clip path nedraugauja su border
+
+header {
+  clip-path: polygon(0 0, 100% 0, 100% 80px, 50% 100px, 0 80px);
+  animation: moveDown 500ms ease-in, fastUp 200ms linear 800ms;
+}
+
+.hero {
+  clip-path: polygon(0 0, 50% 20px, 100% 0, 100% 280px, 0 300px);
+  animation: dropDown 700ms ease-in;
+}
+
+.sec-1 {
+  clip-path: polygon(0 20px, 100% 13px, 100% 0, 100% 300px, 0 300px);
+  animation: moveRight 500ms ease-in, fastDown 200ms linear 800ms;;
+}
+
+.sec-2 {
+  clip-path: polygon(0 13px, 100% 0px, 100% 300px, 0 300px);
+  animation: moveLeft 500ms ease-in;
+}
+
+.sec-3,
+.sec-4,
+.sec-5,
+.sec-6,
+.promo,
+footer {
+  margin-top: 20px;
+}
+
+///////////////////////////////// ANIMACIJOS /////////////////////////////////
+
+@keyframes moveDown {
+  0% {
+    opacity: 0; // animacijos pradzioje headeris nesimatys
+    transform: translateY(-100%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: scale(2); //permatomas, dvigubai didesnis
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1); //gryzta koks buvo
+  }
+}
+
+@keyframes fastUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fastDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shockWave {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0.1;
+    transform: scale(54, 35);
+  }
+}
+
+/* Shockwave efektas */
+
+.shock {
+  width: 2%;
+  height: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 265px;
+  left: 50%;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 2px;
+  animation: shockWave 500ms ease-out 500ms;
+}
+
+
+
+
+
+
+

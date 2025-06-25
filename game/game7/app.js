@@ -1,0 +1,16 @@
+console.log('Pradedam darba!');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
