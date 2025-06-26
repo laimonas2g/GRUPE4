@@ -1,55 +1,49 @@
-console.log('Kibiras')
+console.log('Kibiras!!!');
 
-// Question-1: Sukurti klasę Kibiras1. Konstruktoriuje sukurti savybę akmenuKiekis  kuri lygi 0. 
-// Parašyti šiai klasei metodus, pridedančius akmenis: prideti1Akmeni() pridetiDaugAkmenu(kiekis) 
-// ir metodą išvedantį akmenų kiekį į konsolę- kiekPririnktaAkmenu(). Sukurti vieną kibiro objektą 
-// ir pademonstruoti akmenų rinkimą į kibirą ir rezultatų išvedimą.
-
-// class Kibiras1 {
-
-//     constructor(kiekis) {
-//         this.akmenuKiekis = 0;
-//         this.kiekis = kiekis;
-//     }
-//     prideti1Akmeni() {
-//         return this.akmenuKiekis + 1;
-//     }
-
-//     pridetiDaugAkmenu() {
-//         return this.akmenuKiekis + this.kiekis;
-//     }
-//     kiekPririnktaAkmenu() {
-//         console.log(this.pridetiDaugAkmenu);
-//     }
-// }
-
-// const Kibiras2 = new Kibiras1();
-
-// kibiras2.pridetiDaugAkmenu(3);
+/* Question-1: Sukurti klasę Kibiras1. Konstruktoriuje sukurti savybę akmenuKiekis  kuri lygi 0. 
+Parašyti šiai klasei metodus, pridedančius akmenis: prideti1Akmeni() pridetiDaugAkmenu(kiekis) 
+ir metodą išvedantį akmenų kiekį į konsolę- kiekPririnktaAkmenu(). Sukurti vieną kibiro objektą 
+ir pademonstruoti akmenų rinkimą į kibirą ir rezultatų išvedimą. */
 
 class Kibiras1 {
+
     constructor() {
         this.akmenuKiekis = 0;
     }
 
     prideti1Akmeni() {
-        this.akmenuKiekis = this.akmenuKiekis + 1;
+        this.akmenuKiekis++; 
+        // this.akmenuKiekis = this.akmenuKiekis + 1;
     }
-
     pridetiDaugAkmenu(kiekis) {
-        this.akmenuKiekis = this.akmenuKiekis + kiekis;
+        this.akmenuKiekis += kiekis; 
+        // this.akmenuKiekis = this.akmenuKiekis + kiekis;
+    }
+    kiekPririnktaAkmenu() {
+        console.log('Kibire jau yra: ', this.akmenuKiekis);
     }
 
-    kiekPririnktaAkmenu() {
-        console.log(this.akmenuKiekis);
-    }
+    // gautiAkmenuKieki() {
+    //     return this.akmenuKiekis
+    // }
+
 }
 
-const kibiras2 = new Kibiras1();
-kibiras2.prideti1Akmeni();
-kibiras2.pridetiDaugAkmenu(3);
-kibiras2.kiekPririnktaAkmenu();
+const k1 = new Kibiras1();
+const k2 = new Kibiras1();
 
+k1.prideti1Akmeni();
+k1.prideti1Akmeni();
+k1.pridetiDaugAkmenu(5);
+
+k2.pridetiDaugAkmenu(10);
+k2.prideti1Akmeni();
+
+k1.kiekPririnktaAkmenu();
+k2.kiekPririnktaAkmenu();
+
+// const k2Kiekis = k2.gautiAkmenuKieki();
+// console.log(k2Kiekis);
 
 
 
