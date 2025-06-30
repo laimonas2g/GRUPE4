@@ -60,7 +60,257 @@ Jeigu kiekis nedidesnis už 2, tai prideda prie metaliniaiPinigai, jeigu kitaip-
 
 
 
+/* 1. Sukurti klasę Kibiras1. (Jau padaryta aukščiau) */
 
+// Demonstracija (jau yra aukščiau)
+
+/* 2. Sukurti klasę Pinigine. (Jau padaryta aukščiau) */
+
+// Demonstracija (jau yra aukščiau)
+
+/* 3. Sukurti klasę Troleibusas. (Jau padaryta aukščiau) */
+
+// Demonstracija (jau yra aukščiau)
+
+/* 4. (STATIC) Sukurti metodą keleiviuSkaiciusVisuoseTroleibusuose() */
+
+class TroleibusasStatic {
+    static visiKeleiviai = 0;
+
+    constructor() {
+        this.keleiviuSkaicius = 0;
+    }
+
+    ilipa(keleiviuSkaicius) {
+        this.keleiviuSkaicius += keleiviuSkaicius;
+        TroleibusasStatic.bendrasKeleiviuSkaicius(keleiviuSkaicius);
+    }
+
+    islipa(keleiviuSkaicius) {
+        const islipaKiek = Math.min(this.keleiviuSkaicius, keleiviuSkaicius);
+        this.keleiviuSkaicius -= islipaKiek;
+        TroleibusasStatic.bendrasKeleiviuSkaicius(-islipaKiek);
+    }
+
+    vaziuoja() {
+        console.log('Troleibuse važiuoja keleivių:', this.keleiviuSkaicius);
+    }
+
+    static bendrasKeleiviuSkaicius(keleiviuSkaicius) {
+        TroleibusasStatic.visiKeleiviai += keleiviuSkaicius;
+        if (TroleibusasStatic.visiKeleiviai < 0) TroleibusasStatic.visiKeleiviai = 0;
+    }
+
+    static keleiviuSkaiciusVisuoseTroleibusuose() {
+        console.log('Visuose troleibusuose važiuoja keleivių:', TroleibusasStatic.visiKeleiviai);
+    }
+}
+
+// Demonstracija
+const ts1 = new TroleibusasStatic();
+const ts2 = new TroleibusasStatic();
+ts1.ilipa(10);
+ts2.ilipa(5);
+ts1.islipa(3);
+ts2.ilipa(7);
+ts2.islipa(2);
+ts1.vaziuoja();
+ts2.vaziuoja();
+TroleibusasStatic.keleiviuSkaiciusVisuoseTroleibusuose();
+
+/* 5. (MAP) Sukurti klasę PirkiniuKrepselis */
+
+class PirkiniuKrepselis {
+    constructor() {
+        this.turinys = new Map();
+    }
+
+    idetiSureli(kiekis) {
+        this._ideti('surelis', kiekis);
+    }
+
+    idetiPieno(kiekis) {
+        this._ideti('pienas', kiekis);
+    }
+
+    idetiDuonos(kiekis) {
+        this._ideti('duona', kiekis);
+    }
+
+    _ideti(produktas, kiekis) {
+        const esamas = this.turinys.get(produktas) || 0;
+        this.turinys.set(produktas, esamas + kiekis);
+    }
+
+    krepselioTurinys() {
+        console.log('Krepšelio turinys:');
+        for (const [produktas, kiekis] of this.turinys.entries()) {
+            console.log(`${produktas}: ${kiekis}`);
+        }
+    }
+}
+
+// Demonstracija
+const krepselis = new PirkiniuKrepselis();
+krepselis.idetiSureli(2);
+krepselis.idetiPieno(1);
+krepselis.idetiDuonos(3);
+krepselis.idetiSureli(1);
+krepselis.krepselioTurinys();
+
+/* 6. Patobulinti 2 uždavinio piniginę su monetų ir banknotų skaičiavimu */
+
+class Pinigine2 {
+    constructor() {
+        this.popieriniaiPinigai = 0;
+        this.metaliniaiPinigai = 0;
+        this.monetosKiekis = 0;
+        this.banknotaiKiekis = 0;
+    }
+
+    ideti(kiekis) {
+        if (kiekis <= 2) {
+            this.metaliniaiPinigai += kiekis;
+            this.monetosKiekis++;
+        } else {
+            this.popieriniaiPinigai += kiekis;
+            this.banknotaiKiekis++;
+        }
+    }
+
+    skaiciuoti() {
+        console.log('Popieriniai pinigai:', this.popieriniaiPinigai, 'Metaliniai pinigai:', this.metaliniaiPinigai, 'Viso:', this.popieriniaiPinigai + this.metaliniaiPinigai);
+    }
+
+    monetos() {
+        console.log('Monetų kiekis:', this.monetosKiekis);
+    }
+
+    banknotai() {
+        console.log('Banknotų kiekis:', this.banknotaiKiekis);
+    }
+}
+
+// Demonstracija
+const pin2 = new Pinigine2();
+pin2.ideti(2);
+pin2.ideti(10);
+pin2.ideti(1);
+pin2.ideti(5);
+pin2.skaiciuoti();
+pin2.monetos();
+pin2.banknotai();
+
+/* 7. (STATIC) Kibiras1 - bendras akmenų kiekis */
+
+class Kibiras1Static {
+    static visiAkmenys = 0;
+
+    constructor() {
+        this.akmenuKiekis = 0;
+    }
+
+    prideti1Akmeni() {
+        this.akmenuKiekis++;
+        Kibiras1Static.visiAkmenys++;
+    }
+
+    pridetiDaugAkmenu(kiekis) {
+        this.akmenuKiekis += kiekis;
+        Kibiras1Static.visiAkmenys += kiekis;
+    }
+
+    kiekPririnktaAkmenu() {
+        console.log('Kibire jau yra:', this.akmenuKiekis);
+    }
+
+    static akmenuSkaiciusVisuoseKibiruose() {
+        console.log('Visuose kibiruose pririnkta akmenų:', Kibiras1Static.visiAkmenys);
+    }
+}
+
+// Demonstracija
+const kb1 = new Kibiras1Static();
+const kb2 = new Kibiras1Static();
+kb1.prideti1Akmeni();
+kb1.pridetiDaugAkmenu(3);
+kb2.pridetiDaugAkmenu(5);
+kb1.kiekPririnktaAkmenu();
+kb2.kiekPririnktaAkmenu();
+Kibiras1Static.akmenuSkaiciusVisuoseKibiruose();
+
+/* 8. Sukurti klasę Stikline */
+
+class Stikline {
+    constructor(turis) {
+        this.turis = turis;
+        this.kiekis = 0;
+    }
+
+    ipilti(kiekis) {
+        this.kiekis += kiekis;
+        if (this.kiekis > this.turis) {
+            this.kiekis = this.turis;
+        }
+    }
+
+    ispilti() {
+        const kiek = this.kiekis;
+        this.kiekis = 0;
+        return kiek;
+    }
+
+    stiklinejeYra() {
+        console.log(`Stiklinėje yra: ${this.kiekis}`);
+    }
+}
+
+// Demonstracija
+const s200 = new Stikline(200);
+const s150 = new Stikline(150);
+const s100 = new Stikline(100);
+
+s200.ipilti(200);
+s200.stiklinejeYra();
+s150.ipilti(s200.ispilti());
+s150.stiklinejeYra();
+s100.ipilti(s150.ispilti());
+s100.stiklinejeYra();
+
+/* 9. Sukurti klasę Grybas ir Krepsys */
+
+class Grybas {
+    constructor() {
+        this.valgomas = Math.random() < 0.5;
+        this.sukirmijes = Math.random() < 0.5;
+        this.svoris = Math.floor(Math.random() * (45 - 5 + 1)) + 5;
+    }
+}
+
+class Krepsys {
+    constructor() {
+        this.dydis = 500;
+        this.prikrauta = 0;
+        this.grybai = [];
+    }
+
+    deti(grybas) {
+        if (this.prikrauta < this.dydis) {
+            this.grybai.push(grybas);
+            this.prikrauta += grybas.svoris;
+        }
+    }
+}
+
+// Demonstracija
+const krepsys = new Krepsys();
+while (krepsys.prikrauta < krepsys.dydis) {
+    const grybas = new Grybas();
+    if (grybas.valgomas && !grybas.sukirmijes) {
+        krepsys.deti(grybas);
+    }
+}
+console.log('Pririnkta grybų:', krepsys.grybai.length, 'Svoris:', krepsys.prikrauta);
 
 
 
