@@ -1065,13 +1065,20 @@ ul .li-5 {
 
 }
 
+.lowbar6>*:not(:last-child) {
+  background-color: $white;
+  box-shadow: 10px 40px 50px 0px #E5E9F666;
+  border-radius: 30px;
+}
+
 .box6-1 {
   margin-left: 240px;
   z-index: 1;
 }
 
 .imagebox6-1 {
-  width: 369px;
+  // width: 369px;
+  width: 100%;
   height: 246px;
   // top: 4593px;
   // left: 240px;
@@ -1106,16 +1113,19 @@ ul .li-5 {
   // top: 4589px;
   // left: 605px;
   z-index: 1;
+  background-color: $white;
   box-shadow: 10px 40px 50px 0px #E5E9F666;
 }
 
 .imagebox6-3 {
   width: 367px;
   height: 245px;
+    width: 100%;
   // top: 4591px;
   // left: 995px;
   margin-left: 0px; // pakeistas marginas
   margin-bottom: 24px;
+
 }
 
 .box6-1 span {
@@ -1171,7 +1181,7 @@ ul .li-5 {
   color: $gray;
   margin: 0 51px 25px 53px;
   background-color: $white;
-  box-shadow: 10px 40px 50px 0px #E5E9F666;
+  // box-shadow: 10px 40px 50px 0px #E5E9F666;
 
 }
 
