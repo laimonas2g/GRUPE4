@@ -127,6 +127,8 @@ t4.vaziuoja();
 // Parašyti metodą monetos(), kuris skaičiuotų kiek yra piniginėje monetų ir metoda banknotai() - popierinių pinigų skaičiavimui. 
 // Kiekvieną atskirą dėjimą (ideti(kiekis) metodo kvietimą) laikykite vienu banknotu ar viena moneta.
 
+console.log('Hello, Pinigine2!');
+
 class Pinigine2 {
     constructor() {
         this.popieriniaiPinigai = 0;
@@ -137,10 +139,10 @@ class Pinigine2 {
 
     ideti(kiekis) {
         if (kiekis <= 2) {
-            this.metaliniaiPinigai += kiekis;
+            this.metaliniaiPinigai = this.metaliniaiPinigai + kiekis;
             this.monetosKiekis++;
         } else {
-            this.popieriniaiPinigai += kiekis;
+            this.popieriniaiPinigai = this.popieriniaiPinigai + kiekis;
             this.banknotaiKiekis++;
         }
     }
@@ -168,14 +170,154 @@ pin2.monetos();
 pin2.banknotai();
 
 
+// 8.Sukurti klasę Stikline. Sukurti savybes turis ir kiekis. Turis turi būti pasirenkamas objekto kūrimo metu. 
+// Parašyti metodą ipilti(kiekis), kuris keistų savybę kiekis. Jeigu stiklinės tūris yra mažesnis nei pilamas kiekis- 
+// kiekis netelpa ir būna lygus tūriui. Parašyti metodą ispilti(), kuris grąžiną kiekį. Pilant išpilamas visas kiekis, 
+// tas kas netelpa, nuteka per stalo viršų.  Sukurti metodą stiklinejeYra(), kuris į konsolę atspausdintų kiek 
+// stiklinėje yra skysčio. Sukurti tris stiklinės objektus su tūriais: 200, 150, 100. 
+// Didžiausią pripilti pilną ir tada ją ispilti į mažesnę stiklinę, o mažesnę į dar mažesnę.
+
+console.log('Labas, as esu Stikline!');
+
+class Stikline {
+
+    #turis;
+
+    constructor(turis) {
+        this.#turis = turis;
+        this.kiekis = 0;
+    }
+    ipilti(kiekis) {
+        this.kiekis = this.kiekis + kiekis;
+        this.kiekis = Math.min(this.#turis, this,kiekis);
+        return this; // pilna stikline arba tuscia
+    }
+    ispilti() {
+        const kiekis = this.kiekis;
+        this.kiekis = 0;
+        return kiekis;
+    }
+}
+
+const s200 = new Stikline(200);
+const s150 = new Stikline(150);
+const s100 = new Stikline(100);
+
+s100.ipilti(s150.ipilti(s200.ipilti(320).ipilti()).ispilti());
+
+console.log(s200, s150, s100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Stikline {
+//     constructor(turis) {
+//         this.turis = turis;
+//         this.kiekis = 0;
+//     }
+
+//     ipilti(kiekis) {
+//         this.kiekis = this.kiekis + kiekis;
+//         if (this.kiekis > this.turis) {
+//             this.kiekis = this.turis;
+//         }
+//     }
+
+//     ispilti() {
+//         const kiek = this.kiekis;
+//         this.kiekis = 0;
+//         return kiek;
+//     }
+
+//     stiklinejeYra() {
+//         console.log(`Stiklinėje yra: ${this.kiekis}`);
+//     }
+// }
+
+// const s200 = new Stikline(200);
+// const s150 = new Stikline(150);
+// const s100 = new Stikline(100);
+
+// s200.ipilti(200);
+// s200.stiklinejeYra();
+// s150.ipilti(s200.ispilti());
+// s150.stiklinejeYra();
+// s100.ipilti(s150.ispilti());
+// s100.stiklinejeYra();
 
 /*
 4.(STATIC) Sukurti metodą keleiviuSkaiciusVisuoseTroleibusuose(), kuris rodytų bendrą keleivių skaičių visuose Troleibusas objektuose. Bendram kelevių skaičiaus skaičiavimui sukurkite statinį metodą bendrasKeleiviuSkaicius(keleiviuSkaicius), kuris pridėtų arba atimtų keleivius iš statinės savybės visiKeleiviai (kurioje yra įrašytas bendras keleivių skaičius). Taip pat atitinkamai modifikuokite metodus ilipa(keleiviuSkaicius) ir islipa(keleiviuSkaicius).
 5.(MAP) Sukurti klasę PirkiniuKrepselis. Konstruktoriuje sukurti savybę turinys, kuri yra Map tipo objektas. Sukurti tris metodus: idetiSureli(kiekis), idetiPieno(kiekis), idetiDuonos(kiekis). Parašyti metodą krepselioTurinys(), kuris į konsolę išvestų produktų sąrašą (turinys kintamąjį). Pridėti tuos pačius produktus galima po kelis kartus, tokiu atveju produktų kiekis turėtų sumuotis.
 7.(STATIC) Klasėje Kibiras1 (pirmas uždavinys) sukurti metodą akmenuSkaiciusVisuoseKibiruose(), kuris rodytų bendrą visuose kibiruose pririnktų akmenų kiekį (visuose sukurtuose Kibiras objektuose). Skaičiuoti akmenim, kurie buvo surinkti visuose objektuose, naudokite statinę savybę visiAkmenys (kurioje yra įrašytas ir saugomas bendras akmenų skaičius). Taip pat atitinkamai modifikuokite metodus prideti1Akmeni(),  pridetiDaugAkmenu(kiekis).
-8.Sukurti klasę Stikline. Sukurti savybes turis ir kiekis. Turis turi būti pasirenkamas objekto kūrimo metu. Parašyti metodą ipilti(kiekis), kuris keistų savybę kiekis. Jeigu stiklinės tūris yra mažesnis nei pilamas kiekis- kiekis netelpa ir būna lygus tūriui. Parašyti metodą ispilti(), kuris grąžiną kiekį. Pilant išpilamas visas kiekis, tas kas netelpa, nuteka per stalo viršų.  Sukurti metodą stiklinejeYra(), kuris į konsolę atspausdintų kiek stiklinėje yra skysčio. Sukurti tris stiklinės objektus su tūriais: 200, 150, 100. Didžiausią pripilti pilną ir tada ją ispilti į mažesnę stiklinę, o mažesnę į dar mažesnę.
 9.Sukurti klasę Grybas. Sukurti klasę Krepsys. Krepsys, kuri turi savybę dydis,kuriai konstruktoriuje yra priskiriama reikšmė 500 ir savybę prikrauta (kuri pradžioje lygi 0). Grybas turi tris savybes, kurios taip pat yra paskaičiuojamos konstruktoriuje: valgomas, sukirmijes, svoris. Kuriant Grybo objektą jo savybės turi būti atsitiktinai (rand funkcija) priskiriamos taip: valgomas- true arba false, sukirmijes- true arba false ir svoris- nuo 5 iki 45. Eiti grybauti, t.y. Kurti naujus Grybas objektus, jeigu nesukirmijęs ir valgomas dėti į Krepsi objektą, t.y. Vykdyti deti(grybas) metodą kol bus pririnktas pilnas krepšys nesukirmijusių ir valgomų grybų (gali būti truputį daugiau nei dydis).
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
