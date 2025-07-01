@@ -3,3 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; //stulpeliu
+}
+
+/* DIGITAL ONE */
+
+.clock-digital {
+  text-align: center;
+}
+
+.date {
+  font-family: sans-serif;
+  font-size: 3rem;
+}
+
+.time {
+  font-family: monospace;
+  font-size: 6rem;
+}
