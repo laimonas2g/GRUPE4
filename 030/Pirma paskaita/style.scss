@@ -29,3 +29,52 @@ body {
   font-family: monospace;
   font-size: 6rem;
 }
+
+
+/* ANALOGUE ONE */
+
+.clock-analogue {
+  background-color: #fff;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  position: relative;
+}
+
+.arr {
+  position: absolute;
+  border-radius: 0 0 3px 3px;
+  transform-origin: bottom;
+}
+
+.hours {
+  background-color: seagreen;
+  width: 6px;
+  height: 65px;
+  top: calc(50% - 65px);
+  left: calc(50% - 3px);
+}
+
+.minutes {
+  background-color: royalblue;
+  width: 4px;
+  height: 75px;
+  top: calc(50% - 75px);
+  left: calc(50% - 2px);
+}
+
+.seconds {
+  background-color: tomato;
+  width: 2px;
+  height: 85px;
+  top: calc(50% - 85px);
+  left: calc(50% - 1px);
+}
+
+
+
+
+
+
+
+

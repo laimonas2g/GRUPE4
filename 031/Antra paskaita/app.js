@@ -93,7 +93,7 @@ do {
 
 
 */
-// Meskite monetą tol, kol tris kartus iškris herbas
+// Meskite tris monetas tol, kol tris kartus iškris herbas
 
 let HS3;
 let saugiklis3 = 100;
@@ -131,14 +131,25 @@ do {
 } while (kiekis != 3);
 
 
+// Meskite monetą tol, kol iš eilės tris kartus iškris herbas
+
+let HS3kart = '';
+saugiklis = 10000;
 
 
+do {
+    if (--saugiklis3 == 0) {
+    console.log('BUM');
+    break;
+  }
 
+  const HS = rand(0, 1) ? 'H' : 'S';
+  console.log(HS);
+  if (HS == 'H') {
+    kiekis++;
+  }
 
-
-
-
-
+} while (kiekis != 3);
 
 
 
