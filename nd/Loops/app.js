@@ -41,12 +41,14 @@ do {
   const HS = rand(0, 1) ? 'H' : 'S';
   console.log(HS);
   metimuKiekis++;
+
   if (HS == 'H') {
     isEilesHeads++;
   } else {
     isEilesHeads = 0;
   }
-} while (isEilesHeads < 3);
+
+} while (isEilesHeads != 3);
 
 
 // 1. Sukurkite tris kintamuosius ir priskirkite jiems skirtingus sveikus skaičius iš 
@@ -63,7 +65,7 @@ let sk3;
 
 do {
 
-  if (--saugiklis == 0) {  // rankinis stabdis
+  if (--saugiklis == 0) { 
     console.log('Klaida, uzsiciklinai!!!');
     break;
   }
@@ -90,8 +92,8 @@ console.log(typeof skStringas, skStringas);
 const skStringasTarpais1 = String(sk1) + ' ' + String(sk2) + ' ' + String(sk3);
 const skStringasTarpais2 = `${sk1} ${sk2} ${sk3}`;
 
-console.log(typeof skStringasTarpais1, 'Budas1: ', skStringasTarpais1);
-console.log(typeof skStringasTarpais2, 'Budas2: ', skStringasTarpais2);
+console.log(typeof skStringasTarpais1, 'Tarpai budas1: ', skStringasTarpais1);
+console.log(typeof skStringasTarpais2, 'Tarpai budas2: ', skStringasTarpais2);
 
 //  D. Sudėkite skaičius į stringo tipo kintamąją padarant tarp skaičių tarpus 
 // ir gale pridedėkite trijų skaičių sumą, paskaičiuotą A dalyje. 
@@ -108,6 +110,7 @@ console.log(skaicius2);
 // kintamąjį 5 kartus;
 const labas = 'Labas';
 for (let i = 0; i < 5; i++) {
+  
   console.log(labas);
 }
 // 4. Pasinaudojus ciklu ir ir console.log atspauzdinkite kintamąjį iš 2 uždavinio 7 kartus;
@@ -115,12 +118,14 @@ const skaicius2_7kart = skaicius2;
 for (let i = 0; i < 7; i++) {
   console.log(skaicius2_7kart);
 }
+
 // 5. Pasinaudojus ciklu ir ir console.log atspauzdinkite kintamąjį iš 2 uždavinio tiek kartų, 
 // koks skaičius yra sugeneruotas;
 const skaicius2_rand = skaicius2;
 for (let i = 0; i < skaicius2.legth; i++) {
   console.log(skaicius2_7kart);
 }
+
 // 6. Pasinaudojus ciklu ir ir console.log atspauzdinkite kintamąjį iš 2 uždavinio tiek kartų,
 // koks skaičius yra sugeneruotas, bet tik tada jeigu jis didesnis už 7;
 if (skaicius2 > 7) {
@@ -128,6 +133,7 @@ if (skaicius2 > 7) {
     console.log(skaicius2);
   }
 }
+
 // 7. Deklaruokite kintamąjį už ciklo ribų. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(),
 // kurie yra iš intervalo 10…20. Ciklą kartokite 5 kartus;
 
