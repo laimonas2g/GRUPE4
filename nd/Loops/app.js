@@ -1,3 +1,4 @@
+
 function rand(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);

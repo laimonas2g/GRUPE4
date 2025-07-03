@@ -118,6 +118,85 @@ switch (siunta) {
   default: console.log('Trikrinam XL');
 };
 
+console.clear();
+
+// for...in
+// for...of
+
+const masyvas = ['Bijunas', 'Jurginas', 'Roze', 'Tulpe', 'Narcizas'];
+
+for (let i = 0; i < masyvas.length; i++) {
+  const gelyte = masyvas[i];
+  console.log(gelyte)
+}
+
+for (const gelyte of masyvas) {
+  console.log(gelyte);
+}
+
+for (const gelyte of masyvas) {
+  if (gelyte == 'Roze') {
+    break // arba continue
+  }
+  console.log(gelyte);
+}
+// nesigauna taip:
+//
+// masyvas.forEach(gelyte => {
+//     if (gelyte == 'Roze') {
+//     break;
+//     }
+//     console.log(gelyte);
+// })
+
+console.log('----------');
+
+for (const gelyte in masyvas) {
+  if (gelyte == 'Roze') {
+    break // arba continue
+  }
+  console.log(gelyte);
+}
+
+const objektas = {
+  darze:'Bijunas', 
+  prie_kelio: 'Jurginas', 
+  po_langu88888: 'Roze', 
+  sode:'Tulpe', 
+  pamerktas: 'Narcizas'
+};
+
+console.log('----------');
+
+for (const gelyte in objektas) {
+  if (objektas[gelyte] == 'Roze') {
+    continue // arba break
+  }
+  console.log(gelyte);
+}
+
+// naudojam kai nezinom kas tame objekte, kad susizinoti
+
+// sukurkite masyvą su 5 elementais kurie yra random skaičiai nuo 5 iki 10;
+
+const masyvas1 = [];
+for (let i = 0; i < 5; i++) {
+  masyvas1.push(rand(5, 10));
+}
+
+console.log(masyvas1)
+
+
+const masyvas2 = [];
+for (let i = 0; i < 5; i++) {
+  const sk = rand(5, 10)
+  masyvas2.push(sk);
+}
+
+console.log(masyvas2);
+
+
+
 
 
 
