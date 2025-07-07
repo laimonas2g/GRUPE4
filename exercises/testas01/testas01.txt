@@ -1,0 +1,90 @@
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+//1.
+
+const k1 = rand(1, 6);
+const k2 = rand(1, 6);
+const sumaK = k1 + k2;
+
+if (sumaK > 8) {
+  console.log('I kauliukas = ', k1,'II kauliukas = ', k2, 'Jus Laimėjote! -', sumaK)
+} else {console.log('I kauliukas = ', k1,'II kauliukas = ', k2, 'Jus Pralošėte! -', sumaK)}
+
+//2.
+
+const Pilkis = rand(3, 6);
+const Murklys = rand(3, 6);
+
+if (Pilkis < Murklys) {
+  console.log('Lengvesnis katinas: Pilkis', Pilkis, ' kg');
+} else if (Murklys < Pilkis) {
+  console.log('Lengvesnis katinas: Murklys', Murklys, 'kg');
+} else {
+  console.log('Katinukų svoriai vienodi!');
+}
+
+//3.
+
+const katinukai = rand(0, 30);
+const karves = rand(0, 30);
+// const telpa = 15;
+console.log('Atejo katinukų:', katinukai, 'Atėjo karvių:', karves);
+
+if (katinukai <= 15 && karves <= 15) {
+  console.log('Telpa -',' katiunkai:', katinukai, ' karvės:', karves);
+} else {
+  console.log('Netelpa!');
+}
+
+//4.
+
+const kauliukas = rand(1, 6);
+console.log(kauliukas);
+let daiktas = '';
+
+if (kauliukas == 1 || kauliukas == 5) {
+  daiktas = 'televizorių';
+} else if (kauliukas == 3 || kauliukas == 4) {
+  daiktas = 'skalbimo mašiną';
+} else {
+  daiktas = 'šaldytuvą';
+}
+console.log('Iskrito:', kauliukas, 'Antanui reikia pirkti -', daiktas);
+
+//5.
+
+const n1 = rand(1, 7);
+const n2 = rand(1, 7);
+const n3 = rand(1, 7);
+console.log(n1, n2, n3)
+let pirmas = '';
+let antras  = '';
+let trecias = '';
+
+if (n1 <= n2 && n1 <= n3) {
+  pirmas = n1;
+  if (n2 <= n3) {
+    antras = n2;
+    trecias = n3;
+  } else {
+    antras = n3;
+    trecias = n2;
+  }
+} else if (n2 <= n1 && n2 <= n3) {
+  pirmas = n2;
+  if (n1 <= n3) {
+    antras = n1;
+    trecias = n3;
+  } else {
+    antras = n3;
+    trecias = n1;
+  }
+} else if {
+  pirmas = n3;
+  }
+  
+

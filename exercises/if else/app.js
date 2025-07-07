@@ -86,59 +86,57 @@ Write a simple number guessing game. Provide a secret number and a guess. Based 
 
 */
 
+// const n = 11;
+// if (n) {
+
+// }
+
+// function checkNumber(num) {
+// if (typeof num === "number") {
+// if (num > 0) {
+// return "Positive";
+// } else if (num < 0) {
+// return "Negative";
+// } else {
+// return "Zero";
+// }
+// } else {
+// return "Not a Number";
+// }
+// }
+
+
+// const oddEvenNumber = 11;
+// if (typeof oddEvenNumber === 'number') {
+//   if (oddEvenNumber % 2 === 0) {
+//     console.log('number is even')
+//   } else {
+//     console.log('number is odd')
+//   }
+// } else if (oddEvenNumber === 0) {
+//   console.log('nulis');
+// } else {
+//   console.log('not a number');
+// }
+
+// const n = -2;
+// if (n === 'number') {
+//   if (n === 0) {
+//     console.log('nulis')
+//   }
+//   else if (n % 2 === 0 && n > 0) {
+//     console.log('odd, positive')
+//   }
+//   else if (n % 2 !== 0 && n < 0) {
+//     console.log('odd, negative')
+//   }
+
+// } else { console.log('not a number') }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fetch('https://in3.dev/inv/')
+  .then((response) => response.json())
+  .then((data) => console.log(data));

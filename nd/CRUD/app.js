@@ -74,42 +74,44 @@ You can add your own functionality that supplements, but does not replace, those
 
 
 
+// console.clear();
+
+// fetch('https://in3.dev/inv/')
+//   .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
+//   .then(json => {
+//     console.log(json);
+//     printPrice(json); // sukurtas variable ateityje, 34 eilute
+//   }) // atspausdinam konsoleje
+
+// console.log('kodas po fetch');  // nelaukia response ir spausdina
 
 
 
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(response => response.json())
+//     .then(json => {
+//         console.log(json);
+//         printUsers(json);
+//     });
 
 
+// const printUsers = users => {
+//     const ul = document.querySelector('ul');
+//     users.forEach(user => {
+//         // const li = document.createElement('li');
+//         // li.textContent = `${user.name} (${user.email}) from ${user.address.city}`;
+//         // ul.appendChild(li);
+//         const template = document.querySelector('#user-template');
+//         const clone = template.content.cloneNode(true); // padaro atskirą kopiją
+//         clone.querySelector('.name').textContent = user.name;
+//         clone.querySelector('.email').textContent = user.email;
+//         clone.querySelector('.city').textContent = user.address.city;
+//         ul.appendChild(clone);
+//     });
+// }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fetch('https://in3.dev/inv/')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
