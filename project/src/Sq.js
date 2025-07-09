@@ -25,7 +25,6 @@ export default class Sq {
             
             if (this.#gate) {
                 this.#color = this.#activeColor;
-                console.log(this.#color);
                 this.#el.style.backgroundColor = this.#color;
             }
         });

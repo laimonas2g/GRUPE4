@@ -96,6 +96,14 @@ var Frame = /*#__PURE__*/function () {
         return sq.activeColor = color;
       });
     }
+  }, {
+    key: "addBorders",
+    value: function addBorders(color, borderSize) {
+      _classPrivateFieldGet(_frameHolderElement, this).style.border = "".concat(borderSize, "px solid ").concat(color);
+      var elSize = _classPrivateFieldGet(_frameSize, this) * _classPrivateFieldGet(_size, this);
+      _classPrivateFieldGet(_frameHolderElement, this).style.width = elSize + 'px';
+      _classPrivateFieldGet(_frameHolderElement, this).style.heigth = elSize + 'px';
+    }
   }]);
 }();
 
@@ -198,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 console.log('Labas, Projektai');
 
 var tf = document.querySelector('.test-frame');
-var F = new _Frame__WEBPACK_IMPORTED_MODULE_0__["default"](10, 100, tf, 'edit');
+var F = new _Frame__WEBPACK_IMPORTED_MODULE_0__["default"](10, 20, tf, 'edit');
 F.openGates();
 F.setActiveColor('crimson');
 

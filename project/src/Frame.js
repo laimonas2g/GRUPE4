@@ -53,5 +53,12 @@ export default class Frame {
         this.#sqs.forEach(sq => sq.activeColor = color)
     }
 
+    addBorders(color, borderSize) {
+        this.#frameHolderElement.style.border = `${borderSize}px solid ${color}`
+        const elSize = this.#frameSize * this.#size + 2 * borderSize;
+        this.#frameHolderElement.style.width = elSize + 'px';
+        this.#frameHolderElement.style.height = elSize + 'px';
+    }
+
 
 }
