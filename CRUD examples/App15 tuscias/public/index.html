@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sąskaitų šablonas</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <h1>Sąskaitos</h1>
+
+  <div class="container">
+    <div id="invoice-sidebar" class="sidebar">
+      <!-- <button id="fetch-invoices-btn" class="fetch-btn">Gauti sąskaitą</button> -->
+      <div id="invoice-list"></div>  <!-- Dinaminis sąrašas -->
+    </div>
+
+    <div id="invoice-display"></div>
+  </div>
+
+  <!-- Produktų lentelės šablonas -->
+  <template data-table-template>
+    <div class="product-item">
+      <p><strong>Prekė:</strong> <span data-item-description></span></p>
+      <p>Kiekis: <span data-item-quantity></span></p>
+      <p>Kaina: €<span data-item-price></span></p>
+      <p>Nuolaida: <span data-item-discount></span></p>
+      <p>Kaina su nuolaida: €<span data-item-discounted-price></span></p>
+      <p>PVM: €<span data-item-taxes></span></p>
+      <p>Iš viso su PVM: €<span data-item-total></span></p>
+    </div>
+  </template>
+
+  
+</body>
+</html>
