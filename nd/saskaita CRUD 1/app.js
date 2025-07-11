@@ -1292,11 +1292,265 @@ End of File List
 */
 
 
+/*
+==========================
+public/index.html
+==========================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VAT Invoice List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
 
+==========================
+public/create.html
+==========================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Invoice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
 
+==========================
+public/view.html
+==========================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Invoice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
 
+==========================
+public/edit.html
+==========================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Invoice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
 
+==========================
+public/style.css
+==========================
+/* General styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7fa;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
 
+#app {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 36px 36px 36px;
+  min-height: 400px;
+}
 
+h1, h2 {
+  margin-top: 0;
+  color: #2d3a4a;
+  letter-spacing: 1px;
+}
+
+button, input[type="submit"] {
+  background: #2d7ff9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 22px;
+  font-size: 1em;
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover, input[type="submit"]:hover {
+  background: #1a5fd0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 24px 0;
+  background: #f9fbfd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background: #eaf1fb;
+  color: #2d3a4a;
+  font-weight: 600;
+  border-bottom: 2px solid #d3e0f0;
+}
+
+tr:nth-child(even) {
+  background: #f4f8fc;
+}
+
+tr:hover {
+  background: #eaf1fb;
+}
+
+input[type="number"], input[type="text"] {
+  padding: 6px 8px;
+  border: 1px solid #bfc9d8;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 80px;
+  background: #fff;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+  outline: 2px solid #2d7ff9;
+  border-color: #2d7ff9;
+}
+
+form {
+  margin: 0;
+}
+
+#message, .crud-message {
+  margin: 18px 0 0 0;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 1em;
+  background: #eaf1fb;
+  color: #2d7ff9;
+  border: 1px solid #bfc9d8;
+  min-height: 24px;
+  transition: opacity 0.2s;
+}
+.crud-message.success, #message.success { background: #e6fbe6; color: #1e7e34; border-color: #b2e2b2; }
+.crud-message.error, #message.error { background: #fdeaea; color: #c82333; border-color: #f5b7b7; }
+.crud-message.info, #message.info { background: #eaf1fb; color: #2d7ff9; border-color: #bfc9d8; }
+
+.saskaita {
+  margin: 0 auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px 30px;
+}
+
+.saskaita h1 {
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saskaita-info {
+  display: flex;
+  gap: 32px;
+  margin: 18px 0 18px 0;
+  font-size: 1.08em;
+}
+
+.flexas1 {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 18px;
+}
+
+.sectionas {
+  flex: 1;
+  background: #f4f8fc;
+  border-radius: 7px;
+  padding: 12px 18px;
+  margin-bottom: 8px;
+}
+
+.sectionas-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2d7ff9;
+}
+
+.galutine {
+  margin-top: 18px;
+  width: 100%;
+  background: #f9fbfd;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.galutine td {
+  padding: 8px 12px;
+  font-size: 1.08em;
+}
+
+.tekstas1 {
+  color: #2d3a4a;
+  font-weight: 500;
+}
+
+.tekstas2 {
+  text-align: right;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  #app, .saskaita {
+    padding: 12px 4vw;
+  }
+  .flexas1 {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .saskaita-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  table, .galutine {
+    font-size: 0.97em;
+  }
+}
+
+.beaver {
+  width: 38px;
+  height: 38px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 
 

@@ -1,0 +1,225 @@
+/* =========================
+  style1.css (index.html)
+  Playful/Fun & Dynamic
+  ========================= */
+
+:root {
+  --bg: #fffbe7;
+  --fg: #3a2d1a;
+  --primary: #ffb400;
+  --secondary: #ffe7a0;
+  --accent: #ff6f61;
+  --border: #ffd36b;
+  --success: #4dd599;
+  --error: #ff6f61;
+  --info: #4db6e2;
+  --table-row: #fff6c1;
+  --table-row-alt: #ffe7a0;
+  --radius: 18px;
+  --shadow: 0 4px 16px rgba(255,180,0,0.10);
+  --transition: 0.18s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Comic Neue', 'Comic Sans MS', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+}
+
+#main {
+  max-width: 900px;
+  margin: 36px auto;
+  background: #fffde7;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 32px 28px;
+  border: 3px dashed var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+h2 {
+  margin-top: 0;
+  font-family: 'Luckiest Guy', 'Comic Neue', cursive, sans-serif;
+  font-size: 2.2rem;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  text-shadow: 1px 2px 0 #ffe7a0, 0 2px 8px #ffd36b44;
+}
+
+button {
+  background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  margin: 0 8px 12px 0;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #ffd36b55;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+  outline: none;
+}
+button:hover, button:focus {
+  background: linear-gradient(90deg, var(--accent) 60%, var(--primary) 100%);
+  color: #fffbe7;
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 4px 16px #ffb40033;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 22px 0 14px 0;
+  background: #fffbe7;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--primary);
+}
+
+th, td {
+  padding: 13px 12px;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+th {
+  background: var(--secondary);
+  color: var(--accent);
+  font-family: 'Luckiest Guy', 'Comic Neue', cursive, sans-serif;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--border);
+  letter-spacing: 0.03em;
+}
+
+tr:nth-child(even) {
+  background: var(--table-row-alt);
+}
+tr:nth-child(odd) {
+  background: var(--table-row);
+}
+
+input[type="number"], input[type="text"] {
+  padding: 7px 12px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 1rem;
+  width: 80px;
+  background: #fffbe7;
+  color: var(--fg);
+  font-family: inherit;
+  transition: border var(--transition), background var(--transition), box-shadow var(--transition);
+}
+input[type="number"]:focus, input[type="text"]:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 2px 8px #ffd36b44;
+  outline: none;
+}
+
+.crud-message {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  min-width: 180px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+  box-shadow: 0 4px 16px #ffd36b55;
+  z-index: 1000;
+  background: var(--info);
+  color: #fff;
+  opacity: 0.97;
+  animation: bounceIn 0.5s;
+  transition: opacity var(--transition);
+}
+.crud-message.success { background: var(--success); }
+.crud-message.error { background: var(--error); }
+.crud-message.info { background: var(--info); }
+
+@keyframes bounceIn {
+  0% { transform: scale(0.7); opacity: 0.2; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 700px) {
+  #main { padding: 12px 2vw; }
+  table, th, td { font-size: 0.99rem; }
+  th, td { padding: 8px 6px; }
+}
+
+/* Fun doodle background for playful style */
+#main::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle at 60% 40%, #ffe7a0 60%, transparent 100%);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+#main::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; right: -40px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle at 40% 60%, #ffb400 60%, transparent 100%);
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --bg: #2d1a3a;
+  --fg: #ffe7a0;
+  --primary: #ffb400;
+  --secondary: #3a2d1a;
+  --accent: #ff6f61;
+  --border: #ffb400;
+  --table-row: #3a2d1a;
+  --table-row-alt: #2d1a3a;
+  background: var(--bg);
+  color: var(--fg);
+}
+body.dark-mode #main {
+  background: #3a2d1a;
+  border-color: #ffb400;
+  box-shadow: 0 4px 24px #ffb40033;
+}
+body.dark-mode table {
+  background: #3a2d1a;
+  border-color: #ffb400;
+}
+body.dark-mode th {
+  background: #2d1a3a;
+  color: #ffb400;
+  border-bottom: 2px solid #ffb400;
+}
+body.dark-mode input[type="number"], 
+body.dark-mode input[type="text"] {
+  background: #2d1a3a;
+  color: var(--fg);
+  border-color: #ffb400;
+}
+body.dark-mode .crud-message {
+  color: #fffbe7;
+  box-shadow: 0 4px 24px #ffb40033;
+}
+body.dark-mode #main::before {
+  background: radial-gradient(circle at 60% 40%, #ffb400 60%, transparent 100%);
+}
+body.dark-mode #main::after {
+  background: radial-gradient(circle at 40% 60%, #ff6f61 60%, transparent 100%);
+}

@@ -1,0 +1,284 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7fa;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+#app {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 36px 36px 36px;
+  min-height: 400px;
+}
+
+h1, h2 {
+  margin-top: 0;
+  color: #2d3a4a;
+  letter-spacing: 1px;
+}
+
+button, input[type="submit"] {
+  background: #2d7ff9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 22px;
+  font-size: 1em;
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover, input[type="submit"]:hover {
+  background: #1a5fd0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 24px 0;
+  background: #f9fbfd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background: #eaf1fb;
+  color: #2d3a4a;
+  font-weight: 600;
+  border-bottom: 2px solid #d3e0f0;
+}
+
+tr:nth-child(even) {
+  background: #f4f8fc;
+}
+
+tr:hover {
+  background: #eaf1fb;
+}
+
+input[type="number"], input[type="text"] {
+  padding: 6px 8px;
+  border: 1px solid #bfc9d8;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 80px;
+  background: #fff;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+  outline: 2px solid #2d7ff9;
+  border-color: #2d7ff9;
+}
+
+form {
+  margin: 0;
+}
+
+#message, .crud-message {
+  margin: 18px 0 0 0;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 1em;
+  background: #eaf1fb;
+  color: #2d7ff9;
+  border: 1px solid #bfc9d8;
+  min-height: 24px;
+  transition: opacity 0.2s;
+}
+.crud-message.success, #message.success { background: #e6fbe6; color: #1e7e34; border-color: #b2e2b2; }
+.crud-message.error, #message.error { background: #fdeaea; color: #c82333; border-color: #f5b7b7; }
+.crud-message.info, #message.info { background: #eaf1fb; color: #2d7ff9; border-color: #bfc9d8; }
+
+.saskaita {
+  margin: 0 auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px 30px;
+}
+
+.saskaita h1 {
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saskaita-info {
+  display: flex;
+  gap: 32px;
+  margin: 18px 0 18px 0;
+  font-size: 1.08em;
+}
+
+.flexas1 {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 18px;
+}
+
+.sectionas {
+  flex: 1;
+  background: #f4f8fc;
+  border-radius: 7px;
+  padding: 12px 18px;
+  margin-bottom: 8px;
+}
+
+.sectionas-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2d7ff9;
+}
+
+.galutine {
+  margin-top: 18px;
+  width: 100%;
+  background: #f9fbfd;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.galutine td {
+  padding: 8px 12px;
+  font-size: 1.08em;
+}
+
+.tekstas1 {
+  color: #2d3a4a;
+  font-weight: 500;
+}
+
+.tekstas2 {
+  text-align: right;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  #app, .saskaita {
+    padding: 12px 4vw;
+  }
+  .flexas1 {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .saskaita-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  table, .galutine {
+    font-size: 0.97em;
+  }
+}
+
+.beaver {
+  width: 38px;
+  height: 38px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sąskaita CRUD Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>
+      <img src="https://em-content.zobj.net/source/microsoft-teams/363/beaver_1f9ab.png" alt="Beaver" class="beaver">
+      Sąskaitų valdymas
+    </h1>
+    <form>
+      <input type="text" placeholder="Vardas" required>
+      <input type="number" placeholder="Suma" required>
+      <input type="submit" value="Pridėti">
+    </form>
+    <div id="message" class="crud-message info" style="display:none;"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Vardas</th>
+          <th>Suma</th>
+          <th>Veiksmai</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Jonas</td>
+          <td>150</td>
+          <td>
+            <button>Redaguoti</button>
+            <button>Trinti</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ona</td>
+          <td>200</td>
+          <td>
+            <button>Redaguoti</button>
+            <button>Trinti</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="saskaita">
+      <h1>
+        <img src="https://em-content.zobj.net/source/microsoft-teams/363/beaver_1f9ab.png" alt="Beaver" class="beaver">
+        Sąskaita
+      </h1>
+      <div class="saskaita-info">
+        <div><strong>Gavėjas:</strong> UAB Pavyzdys</div>
+        <div><strong>Sąskaitos nr.:</strong> INV-2024-001</div>
+        <div><strong>Data:</strong> 2024-06-01</div>
+      </div>
+      <div class="flexas1">
+        <div class="sectionas">
+          <div class="sectionas-title">Pirkėjas</div>
+          <div>Vardas: Jonas</div>
+          <div>Adresas: Vilnius</div>
+        </div>
+        <div class="sectionas">
+          <div class="sectionas-title">Pardavėjas</div>
+          <div>UAB Pavyzdys</div>
+          <div>Įmonės kodas: 123456789</div>
+        </div>
+      </div>
+      <table class="galutine">
+        <tr>
+          <td class="tekstas1">Suma</td>
+          <td class="tekstas2">150 €</td>
+        </tr>
+        <tr>
+          <td class="tekstas1">PVM</td>
+          <td class="tekstas2">31.50 €</td>
+        </tr>
+        <tr>
+          <td class="tekstas1">Iš viso</td>
+          <td class="tekstas2"><strong>181.50 €</strong></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
