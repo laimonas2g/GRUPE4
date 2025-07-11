@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(2, 17, 30);
+}
+
+.form_container {
+    margin-top: 20px;
+    width: 40vw;
+    border-radius: 10px;
+    height: 80vh;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+form button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.add div {
+    width: 100%;
+    padding: 10px 0px 0px 90px;
+}
+
+.add_div button {
+    padding: 8px;
+    background-color: green;
+    color: white;
+    border-radius: 7px;
+}
+
+.add_div button:hover {
+    background-color: rgb(2, 58, 2);
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.update_form, .create_form {
+    display: none;
+}

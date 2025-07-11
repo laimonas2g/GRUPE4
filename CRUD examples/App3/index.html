@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>CRUD Operation</title>
+</head>
+
+<body onload="readAll()">
+    <div class="container">
+        <div class="form_container">
+            <form class="create_form">
+                <input type="text" class="name" placeholder="Enter name" />
+                <input type="email" class="email" placeholder="Enter Email" />
+                <button type="button" onclick="add()">Create</button>
+            </form>
+            <form class="update_form">
+                <input type="text" class="uname" />
+                <input type="text" class="uemail" />
+                <button type="button" onclick="update()">Update</button>
+            </form>
+            <div class="add_div">
+                <button onclick="create()">Add +</button>
+            </div>
+
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </thead>
+                <tbody class="data_table">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
