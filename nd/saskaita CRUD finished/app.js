@@ -494,5 +494,3 @@ window.onload = () => {
   document.head.appendChild(style);
 })();
 
-
-
