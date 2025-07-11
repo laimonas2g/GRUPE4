@@ -1,1 +1,129 @@
-*{box-sizing:border-box;margin:0}
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .saskaita {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 32px 40px 40px 40px;
+    box-shadow: 0 2px 8px #eee;
+  }
+
+  
+  h1 {
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 2.2em;
+    margin-bottom: 24px;
+    color: black;
+  }
+
+  .flexas1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .sectionas {
+    width: 48%;
+    background: #94B4C1;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+  }
+
+  .sectionas-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: black;
+    font-size: 1.1em;
+  }
+
+  .saskaita-info {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1em;
+  }
+
+  .saskaita-info span {
+    margin-right: 24px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+    background: #fff;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 1em;
+  }
+
+  th {
+    background: #94B4C1;
+    font-weight: bold;
+    color: black;
+  }
+
+  .galutine {
+    margin-top: 24px;
+    border: 2px solid #94B4C1;
+    max-width: 400px;
+    float: right;
+  }
+
+  .galutine td {
+    border: none;
+    padding: 6px 10px;
+    font-size: 1.05em;
+  }
+
+  .galutine .tekstas1 {
+    text-align: right;
+    color: black;
+  }
+
+  .galutine .tekstas2 {
+    text-align: right;
+    font-weight: bold;
+    color: black;
+  }
+
+
+.beaver {
+  display: flex;
+  position: absolute;
+  max-height: 50px;
+  min-width: 50px;
+  color: #2d2f3a;
+  background-color: #fff;
+  top: -8px;
+}
+
+  
+  @media print {
+    body, .saskaita {
+      box-shadow: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    .saskaita {
+      padding: 0 0 0 0;
+    }
+  }
