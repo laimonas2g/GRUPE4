@@ -63,6 +63,7 @@ var Frame = /*#__PURE__*/function () {
   return _createClass(Frame, [{
     key: "makeFrame",
     value: function makeFrame() {
+      var _this = this;
       var sqNumber = 0;
       for (var i = 0; i < _classPrivateFieldGet(_frameSize, this); i++) {
         for (var j = 0; j < _classPrivateFieldGet(_frameSize, this); j++) {
@@ -74,6 +75,22 @@ var Frame = /*#__PURE__*/function () {
           sqNumber++;
         }
       }
+      if (mode == 'view') {
+        return;
+      }
+      _classPrivateFieldGet(_frameHolderElement, this).addEventListener("mousedown", function (_) {
+        return _this.openGates();
+      });
+      _classPrivateFieldGet(_frameHolderElement, this).addEventListener("mouseup", function (_) {
+        return _this.closeGates();
+      });
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      _classPrivateFieldGet(_sqs, this).forEach(function (sq) {
+        return sq.reset(true);
+      });
     }
   }, {
     key: "openGates",
@@ -100,12 +117,98 @@ var Frame = /*#__PURE__*/function () {
     key: "addBorders",
     value: function addBorders(color, borderSize) {
       _classPrivateFieldGet(_frameHolderElement, this).style.border = "".concat(borderSize, "px solid ").concat(color);
-      var elSize = _classPrivateFieldGet(_frameSize, this) * _classPrivateFieldGet(_size, this);
+      var elSize = _classPrivateFieldGet(_frameSize, this) * _classPrivateFieldGet(_size, this) + 2 * borderSize;
       _classPrivateFieldGet(_frameHolderElement, this).style.width = elSize + 'px';
-      _classPrivateFieldGet(_frameHolderElement, this).style.heigth = elSize + 'px';
+      _classPrivateFieldGet(_frameHolderElement, this).style.height = elSize + 'px';
     }
   }]);
 }();
+
+
+/***/ }),
+
+/***/ "./src/LS.js":
+/*!*******************!*\
+  !*** ./src/LS.js ***!
+  \*******************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LS)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+var LS = /*#__PURE__*/_createClass(function LS() {
+  _classCallCheck(this, LS);
+});
+
+
+/***/ }),
+
+/***/ "./src/Main.js":
+/*!*********************!*\
+  !*** ./src/Main.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Main)
+/* harmony export */ });
+/* harmony import */ var _Frame__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Frame */ "./src/Frame.js");
+/* harmony import */ var _LS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LS */ "./src/LS.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+
+
+var Main = /*#__PURE__*/function (_LS) {
+  function Main() {
+    _classCallCheck(this, Main);
+    return _callSuper(this, Main, arguments);
+  }
+  _inherits(Main, _LS);
+  return _createClass(Main, null, [{
+    key: "init",
+    value: function init() {
+      if (document.querySelector('[data-create]')) {
+        this.initCreate();
+      }
+    }
+  }, {
+    key: "initCreate",
+    value: function initCreate() {
+      var f = document.querySelector('[data-create-frame]');
+      var colorInput = document.querySelector('[type="color"]');
+      var saveButton = document.querySelector('button[data-save]');
+      var saveClear = document.querySelector('button[data-clear]');
+      var frame = new _Frame__WEBPACK_IMPORTED_MODULE_0__["default"](10, 20, f, 'create');
+      frame.addBorders('gray', 1);
+      frame.setActiveColor(colorInput.value);
+      colorInput.addEventListener('change', function (e) {
+        frame.setActiveColor(e.target.value);
+      });
+      saveClear.addEventListener('click', function (_) {
+        frame.reset();
+      });
+    }
+  }]);
+}(_LS__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 
 /***/ }),
@@ -164,7 +267,6 @@ var Sq = /*#__PURE__*/function () {
       _classPrivateFieldGet(_el, this).addEventListener('mouseover', function (_) {
         if (_classPrivateFieldGet(_gate, _this)) {
           _classPrivateFieldSet(_color, _this, _classPrivateFieldGet(_activeColor, _this));
-          console.log(_classPrivateFieldGet(_color, _this));
           _classPrivateFieldGet(_el, _this).style.backgroundColor = _classPrivateFieldGet(_color, _this);
         }
       });
@@ -202,13 +304,9 @@ var Sq = /*#__PURE__*/function () {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Frame__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Frame */ "./src/Frame.js");
-console.log('Labas, Projektai');
+/* harmony import */ var _Main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main */ "./src/Main.js");
 
-var tf = document.querySelector('.test-frame');
-var F = new _Frame__WEBPACK_IMPORTED_MODULE_0__["default"](10, 20, tf, 'edit');
-F.openGates();
-F.setActiveColor('crimson');
+_Main__WEBPACK_IMPORTED_MODULE_0__["default"].init();
 
 /***/ }),
 

@@ -1,3 +1,4 @@
+
 export default class Sq {
 
     #color;
@@ -22,7 +23,6 @@ export default class Sq {
             return;
         }
         this.#el.addEventListener('mouseover', _ => {
-            
             if (this.#gate) {
                 this.#color = this.#activeColor;
                 this.#el.style.backgroundColor = this.#color;

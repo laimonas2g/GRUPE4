@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* DIGITAL ONE */
+
+.clock-digital {
+  text-align: center;
+}
+.date {
+  font-family: sans-serif;
+  font-size: 2.5rem;
+}
+.time {
+  font-family: monospace;
+  font-size: 5rem;
+}
+
+/* ANALOGUE ONE */
+
+.clock-analogue {
+  background-color: #fff;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  position: relative;
+  box-shadow: inset 0 0 3px 1px #333;
+  border: 3px solid white;
+}
+div[class^="h-"] {
+  position: absolute;
+  color: #333;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+.h-12 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.arr {
+  position: absolute;
+  border-radius: 0 0 3px 3px;
+  transform-origin: bottom;
+}
+.hours {
+  background-color: seagreen;
+  width: 6px;
+  height: 65px;
+  top: calc(50% - 65px);
+  left: calc(50% - 3px);
+}
+.minutes {
+  background-color: royalblue;
+  width: 4px;
+  height: 75px;
+  top: calc(50% - 75px);
+  left: calc(50% - 2px);
+}
+.seconds {
+  background-color: tomato;
+  width: 2px;
+  height: 85px;
+  top: calc(50% - 85px);
+  left: calc(50% - 1px);
+}
+
+/* POMODORO */
+.pomodoro {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+.slider {
+  background-color: #fff;
+  padding: 3px;
+  width: 51px;
+  border-radius: 11px;
+  transition: all 200ms;
+}
+.dot {
+  background-color: tomato;
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  transition: all 200ms;
+}
+.label {
+  font-family: sans-serif;
+}
+
+.active {
+  background-color: tomato;
+}
+.active .dot {
+  background-color: #fff;
+  transform: translateX(30px);
+}
+
+.work {
+  color: tomato;
+}
+.chill {
+  color: limegreen;
+}
+/* POMODORO Background */
+
+.pomodoro-bg {
+  position: relative;
+}
+
+.pomidoro-bg > div {
+  width: 97px;
+}

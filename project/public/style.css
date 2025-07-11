@@ -11974,6 +11974,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.test-frame {
+h1, .h1 {
+  font-size: 26px;
+}
+
+.frame {
   position: relative;
 }

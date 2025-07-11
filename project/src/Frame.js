@@ -24,6 +24,7 @@ export default class Frame {
             throw new Error('Invalid argument: frameSizeOrFrameData must be a number or an array');
         }
         this.makeFrame();
+
     }
 
 
@@ -39,6 +40,17 @@ export default class Frame {
                 sqNumber++;
             }
         }
+
+        if (mode == 'view') {
+            return;
+        }
+
+        this.#frameHolderElement.addEventListener("mousedown", _ => this.openGates())
+        this.#frameHolderElement.addEventListener("mouseup", _ => this.closeGates())
+    }
+
+    reset() {
+        this.#sqs.forEach(sq => sq.reset(true));
     }
 
     openGates() {
@@ -54,7 +66,7 @@ export default class Frame {
     }
 
     addBorders(color, borderSize) {
-        this.#frameHolderElement.style.border = `${borderSize}px solid ${color}`
+        this.#frameHolderElement.style.border = `${borderSize}px solid ${color}`;
         const elSize = this.#frameSize * this.#size + 2 * borderSize;
         this.#frameHolderElement.style.width = elSize + 'px';
         this.#frameHolderElement.style.height = elSize + 'px';
