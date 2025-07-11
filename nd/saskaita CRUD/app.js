@@ -392,7 +392,7 @@ HTML FILE (index.html)
 -->
 
 ================================================================================
-JAVASCRIPT CODE (app.js)
+JAVASCRIPT CODE1 (app.js)
 ================================================================================
 */
 
@@ -563,45 +563,76 @@ function renderEditInvoice(number) {
 
   // Save edited invoice
   document.getElementById('save-edit').onclick = () => {
-    // Read edited values
+    // Get the edit form element
     const form = document.getElementById('edit-invoice-form');
+    // Map over each item to read and update quantity and discount
     const items = invoice.items.map((item, idx) => {
+      // Parse the quantity input as a float
       const quantity = parseFloat(form.querySelector(`[name="quantity-${idx}"]`).value);
-      let discountValue = form.querySelector(`[name="discount-${idx}"]`).value;
+      // Get the discount input value as a string and trim whitespace
+      let discountInput = form.querySelector(`[name="discount-${idx}"]`).value.trim();
       let discount = null;
-      if (discountValue.endsWith('%')) {
-        discount = { type: 'percentage', value: parseFloat(discountValue) };
-      } else if (discountValue) {
-        discount = { type: 'fixed', value: parseFloat(discountValue) };
+
+      // If discount input is empty, set discount to null (no discount)
+      if (discountInput === '') {
+        discount = null;
       }
-      // Validation
+      // If discount input ends with '%', treat as percentage discount
+      else if (discountInput.endsWith('%')) {
+        // Remove '%' and parse the number
+        const percentValue = parseFloat(discountInput.slice(0, -1));
+        // If valid number, set as percentage discount object
+        if (!isNaN(percentValue)) {
+          discount = { type: 'percentage', value: percentValue };
+        } else {
+          // Show error if not a valid number
+          showMessage('Invalid discount percentage', 'error');
+          return null;
+        }
+      }
+      // Otherwise, treat as fixed discount
+      else {
+        const fixedValue = parseFloat(discountInput);
+        // If valid number, set as fixed discount object
+        if (!isNaN(fixedValue)) {
+          discount = { type: 'fixed', value: fixedValue };
+        } else {
+          // Show error if not a valid number
+          showMessage('Invalid discount value', 'error');
+          return null;
+        }
+      }
+
+      // Validate quantity (must be a non-negative number)
       if (isNaN(quantity) || quantity < 0) {
         showMessage('Invalid quantity', 'error');
         return null;
       }
-      if (discount && isNaN(discount.value)) {
-        showMessage('Invalid discount', 'error');
-        return null;
-      }
+
+      // Return the updated item with new quantity and discount
       return {
         ...item,
         quantity,
-        discount: discount || null
+        discount
       };
     });
-    if (items.includes(null)) return; // Validation failed
 
+    // If any validation failed, stop processing
+    if (items.includes(null)) return;
+
+    // Update invoice items with edited values
     invoice.items = items;
-    // Recalculate totals
+    // Recalculate invoice totals based on new items
     const totals = calculateTotals(invoice);
     Object.assign(invoice, totals);
 
-    // Save back to localStorage
+    // Save updated invoice list to localStorage
     let invoices = getInvoices();
     invoices = invoices.map(inv => inv.number === invoice.number ? invoice : inv);
     saveInvoices(invoices);
     showMessage('Invoice updated', 'success');
-    renderEditInvoice(invoice.number); // Stay on edit page
+    // Stay on edit page with updated data
+    renderEditInvoice(invoice.number);
   };
 
   // Cancel edit
@@ -630,30 +661,50 @@ function renderInvoiceView(invoice, containerId, editable = false) {
       </thead>
       <tbody>
   `;
+  // Loop through each invoice item to render its row in the table
   invoice.items.forEach((item, idx) => {
-    // Calculate discount
+    // Initialize discount display text and discount amount
     let discountText = '';
     let discountKiekis = 0;
+
+    // If the item has a discount object, determine its type and value
     if (item.discount && typeof item.discount === 'object') {
       if (item.discount.type === 'fixed') {
-        discountText = `-${item.discount.value}`;
-        discountKiekis = item.discount.value;
+        // If fixed discount, show value or 0 if undefined
+        discountText = `-${typeof item.discount.value !== 'undefined' ? item.discount.value : 0}`;
+        discountKiekis = typeof item.discount.value !== 'undefined' ? item.discount.value : 0;
       } else if (item.discount.type === 'percentage') {
-        discountText = `-${item.discount.value}%`;
-        discountKiekis = (item.quantity * item.price) * item.discount.value / 100;
+        // If percentage discount, show value with % or 0% if undefined
+        discountText = `-${typeof item.discount.value !== 'undefined' ? item.discount.value : 0}%`;
+        discountKiekis = (item.quantity * item.price) * (typeof item.discount.value !== 'undefined' ? item.discount.value : 0) / 100;
       }
     } else {
+      // If no discount, show 0
       discountText = '0';
       discountKiekis = 0;
     }
+
+    // Calculate the price with discount applied
     const priceWithDiscount = (item.quantity * item.price) - discountKiekis;
 
+    // Render the table row for this item
     html += `<tr>
       <td>${item.description}</td>
-      <td>${editable ? `<input type="number" min="0" name="quantity-${idx}" value="${item.quantity}">` : item.quantity}</td>
+      <td>${editable 
+        // If editable, show input for quantity, else show value
+        ? `<input type="number" min="0" name="quantity-${idx}" value="${item.quantity}">` 
+        : item.quantity}</td>
       <td>${item.price.toFixed(2)}</td>
       <td>${editable 
-        ? `<input type="text" name="discount-${idx}" value="${item.discount ? (item.discount.type === 'percentage' ? item.discount.value + '%' : item.discount.value) : ''}" placeholder="e.g. 10 or 5%">`
+        // If editable, show input for discount, else show discount text
+        ? `<input type="text" name="discount-${idx}" value="${
+            item.discount 
+              ? (item.discount.type === 'percentage' 
+                  ? (typeof item.discount.value !== 'undefined' ? item.discount.value : 0) + '%' 
+                  : (typeof item.discount.value !== 'undefined' ? item.discount.value : 0)
+                ) 
+              : 0
+          }" placeholder="e.g. 10 or 5%">`
         : discountText
       }</td>
       <td>${priceWithDiscount.toFixed(2)}</td>
@@ -724,3 +775,355 @@ END OF CRUD IMPLEMENTATION
 ================================================================================
 */
 
+/*
+================================================================================
+Elegant & Dynamic CSS for Task_1 CRUD (style.css)
+================================================================================
+*/
+
+// .css for CRUD
+// body {
+//   font-family: 'Segoe UI', Arial, sans-serif;
+//   background: #f7f9fb;
+//   margin: 0;
+//   padding: 0;
+//   color: #222;
+// }
+
+// #main {
+//   max-width: 900px;
+//   margin: 40px auto 0 auto;
+//   background: #fff;
+//   border-radius: 12px;
+//   box-shadow: 0 6px 32px rgba(0,0,0,0.07);
+//   padding: 32px 36px 36px 36px;
+//   min-height: 400px;
+// }
+
+// h2 {
+//   margin-top: 0;
+//   font-weight: 600;
+//   color: #2d5be3;
+//   letter-spacing: 1px;
+// }
+
+// button, input[type="button"] {
+//   background: linear-gradient(90deg, #2d5be3 60%, #4e8cff 100%);
+//   color: #fff;
+//   border: none;
+//   border-radius: 6px;
+//   padding: 8px 20px;
+//   font-size: 1em;
+//   margin: 4px 6px 4px 0;
+//   cursor: pointer;
+//   transition: background 0.2s, box-shadow 0.2s;
+//   box-shadow: 0 2px 8px rgba(45,91,227,0.08);
+// }
+// button:hover, input[type="button"]:hover {
+//   background: linear-gradient(90deg, #1a3c8b 60%, #2d5be3 100%);
+// }
+
+// table {
+//   width: 100%;
+//   border-collapse: collapse;
+//   margin: 18px 0 24px 0;
+//   background: #f9fbff;
+//   border-radius: 8px;
+//   overflow: hidden;
+//   box-shadow: 0 1px 6px rgba(45,91,227,0.04);
+// }
+
+// th, td {
+//   padding: 12px 10px;
+//   text-align: left;
+// }
+
+// th {
+//   background: #eaf1ff;
+//   color: #2d5be3;
+//   font-weight: 600;
+//   border-bottom: 2px solid #d0e1ff;
+// }
+
+// tr:nth-child(even) {
+//   background: #f4f8ff;
+// }
+
+// tr:hover {
+//   background: #e6f0ff;
+//   transition: background 0.2s;
+// }
+
+// input[type="number"], input[type="text"] {
+//   padding: 6px 8px;
+//   border: 1px solid #bcd0ee;
+//   border-radius: 4px;
+//   font-size: 1em;
+//   width: 80px;
+//   background: #f7faff;
+//   transition: border 0.2s;
+// }
+// input[type="number"]:focus, input[type="text"]:focus {
+//   border: 1.5px solid #2d5be3;
+//   outline: none;
+//   background: #fff;
+// }
+
+// .crud-message {
+//   position: fixed;
+//   top: 24px;
+//   right: 32px;
+//   z-index: 9999;
+//   padding: 14px 28px;
+//   border-radius: 8px;
+//   font-size: 1.1em;
+//   font-weight: 500;
+//   box-shadow: 0 4px 18px rgba(45,91,227,0.13);
+//   background: #eaf1ff;
+//   color: #2d5be3;
+//   opacity: 0.97;
+//   animation: fadeIn 0.3s;
+// }
+// .crud-message.success {
+//   background: #e6fbe7;
+//   color: #1a8b2d;
+//   border-left: 6px solid #1a8b2d;
+// }
+// .crud-message.error {
+//   background: #ffeaea;
+//   color: #d32f2f;
+//   border-left: 6px solid #d32f2f;
+// }
+// .crud-message.info {
+//   background: #eaf1ff;
+//   color: #2d5be3;
+//   border-left: 6px solid #2d5be3;
+// }
+// @keyframes fadeIn {
+//   from { opacity: 0; right: 0; }
+//   to { opacity: 0.97; right: 32px; }
+// }
+
+// div > b {
+//   color: #2d5be3;
+// }
+
+// #invoice-form, #edit-invoice-form {
+//   margin-bottom: 18px;
+// }
+
+// @media (max-width: 700px) {
+//   #main {
+//     padding: 12px 4vw;
+//   }
+//   table, th, td {
+//     font-size: 0.97em;
+//   }
+//   button {
+//     padding: 7px 12px;
+//     font-size: 0.97em;
+//   }
+// }
+
+/*
+================================================================================
+main.html
+================================================================================
+
+This file provides the main UI for the VAT Invoice CRUD app.
+It includes a "Create VAT Invoice" button and a list of all invoices.
+When "Create VAT Invoice" is pressed, it shows the invoice creation view (like index.html).
+When "View" is pressed in the invoice list, it shows the invoice in read-only mode.
+
+================================================================================
+*/
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>VAT Invoice Main</title>
+//   <link rel="stylesheet" href="style.css">
+//   <script defer>
+//     // Utility functions (same as in app.js)
+//     function getInvoices() {
+//       return JSON.parse(localStorage.getItem('invoices') || '[]');
+//     }
+//     function findInvoice(number) {
+//       return getInvoices().find(inv => inv.number === number);
+//     }
+//     function showMessage(msg, type = 'info') {
+//       const oldMsg = document.querySelector('.crud-message');
+//       if (oldMsg) oldMsg.remove();
+//       const div = document.createElement('div');
+//       div.className = `crud-message ${type}`;
+//       div.textContent = msg;
+//       document.body.appendChild(div);
+//       setTimeout(() => div.remove(), 2500);
+//     }
+//     function calculateTotals(json) {
+//       const isVIso = json.items.reduce((sum, item) => {
+//         let discountKiekis = 0;
+//         if (
+//           item.discount &&
+//           typeof item.discount === 'object' &&
+//           !Array.isArray(item.discount) &&
+//           item.discount.type &&
+//           item.discount.value !== undefined
+//         ) {
+//           if (item.discount.type === 'fixed') {
+//             discountKiekis = item.discount.value;
+//           } else if (item.discount.type === 'percentage') {
+//             discountKiekis = (item.quantity * item.price) * item.discount.value / 100;
+//           }
+//         }
+//         return sum + ((item.quantity * item.price) - discountKiekis);
+//       }, 0);
+//       const shipping = json.shippingPrice || 0;
+//       const isVIsoSuTransportavimas = isVIso + shipping;
+//       const vatPercent = 21;
+//       const vatAmount = isVIsoSuTransportavimas * vatPercent / 100;
+//       const totalWithVAT = isVIsoSuTransportavimas + vatAmount;
+//       return {
+//         sumOfAllWithoutPVM21: isVIsoSuTransportavimas,
+//         vatAmount,
+//         totalPriceWithPVM21: totalWithVAT
+//       };
+//     }
+//     function renderInvoiceView(invoice, containerId, editable = false) {
+//       const container = document.getElementById(containerId);
+//       let html = `
+//         <div><b>Number:</b> ${invoice.number}</div>
+//         <div><b>Date:</b> ${invoice.date}</div>
+//         <div><b>Due Date:</b> ${invoice.due_date}</div>
+//         <div><b>Seller:</b> ${invoice.company.seller.name}, ${invoice.company.seller.address}</div>
+//         <div><b>Buyer:</b> ${invoice.company.buyer.name}, ${invoice.company.buyer.address}</div>
+//         <table>
+//           <thead>
+//             <tr>
+//               <th>Description</th>
+//               <th>Quantity</th>
+//               <th>Price (€)</th>
+//               <th>Discount</th>
+//               <th>Total (€)</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//       `;
+//       invoice.items.forEach((item, idx) => {
+//         let discountText = '';
+//         let discountKiekis = 0;
+//         if (item.discount && typeof item.discount === 'object') {
+//           if (item.discount.type === 'fixed') {
+//             discountText = `-${typeof item.discount.value !== 'undefined' ? item.discount.value : 0}`;
+//             discountKiekis = typeof item.discount.value !== 'undefined' ? item.discount.value : 0;
+//           } else if (item.discount.type === 'percentage') {
+//             discountText = `-${typeof item.discount.value !== 'undefined' ? item.discount.value : 0}%`;
+//             discountKiekis = (item.quantity * item.price) * (typeof item.discount.value !== 'undefined' ? item.discount.value : 0) / 100;
+//           }
+//         } else {
+//           discountText = '0';
+//           discountKiekis = 0;
+//         }
+//         const priceWithDiscount = (item.quantity * item.price) - discountKiekis;
+//         html += `<tr>
+//           <td>${item.description}</td>
+//           <td>${item.quantity}</td>
+//           <td>${item.price.toFixed(2)}</td>
+//           <td>${discountText}</td>
+//           <td>${priceWithDiscount.toFixed(2)}</td>
+//         </tr>`;
+//       });
+//       html += `</tbody></table>
+//         <div><b>Shipping (€):</b> ${invoice.shippingPrice ? invoice.shippingPrice.toFixed(2) : '0.00'}</div>
+//         <div><b>Sum without VAT (€):</b> ${(invoice.sumOfAllWithoutPVM21 || 0).toFixed(2)}</div>
+//         <div><b>VAT (21%):</b> ${(invoice.vatAmount || 0).toFixed(2)}</div>
+//         <div><b>Total with VAT (€):</b> ${(invoice.totalPriceWithPVM21 || 0).toFixed(2)}</div>
+//       `;
+//       container.innerHTML = html;
+//     }
+
+//     // Main rendering functions
+//     function renderMainList() {
+//       const main = document.getElementById('main');
+//       main.innerHTML = `<h2>VAT Invoices</h2>
+//         <button id="create-invoice">Create VAT Invoice</button>
+//         <table>
+//           <thead>
+//             <tr>
+//               <th>Number</th>
+//               <th>Date</th>
+//               <th>Final Amount (€)</th>
+//               <th>Actions</th>
+//             </tr>
+//           </thead>
+//           <tbody id="invoice-list"></tbody>
+//         </table>
+//       `;
+//       const invoices = getInvoices();
+//       const tbody = document.getElementById('invoice-list');
+//       invoices.forEach(inv => {
+//         const tr = document.createElement('tr');
+//         tr.innerHTML = `
+//           <td>${inv.number}</td>
+//           <td>${inv.date}</td>
+//           <td>${(inv.totalPriceWithPVM21 || 0).toFixed(2)}</td>
+//           <td>
+//             <button class="view-invoice" data-id="${inv.number}">View</button>
+//           </td>
+//         `;
+//         tbody.appendChild(tr);
+//       });
+//       document.getElementById('create-invoice').onclick = () => renderCreateInvoice();
+//       tbody.onclick = e => {
+//         if (e.target.classList.contains('view-invoice')) {
+//           renderViewInvoice(e.target.dataset.id);
+//         }
+//       };
+//     }
+
+//     function renderCreateInvoice() {
+//       const main = document.getElementById('main');
+//       main.innerHTML = `<h2>Create VAT Invoice</h2>
+//         <div id="invoice-form">Loading...</div>
+//         <div>
+//           <button id="back-list">Back to List</button>
+//         </div>
+//       `;
+//       fetch('https://in3.dev/inv/')
+//         .then(res => res.json())
+//         .then(json => {
+//           const totals = calculateTotals(json);
+//           Object.assign(json, totals);
+//           renderInvoiceView(json, 'invoice-form', false);
+//         });
+//       document.getElementById('back-list').onclick = () => renderMainList();
+//     }
+
+//     function renderViewInvoice(number) {
+//       const invoice = findInvoice(number);
+//       if (!invoice) return showMessage('Invoice not found', 'error');
+//       const main = document.getElementById('main');
+//       main.innerHTML = `<h2>View Invoice</h2>
+//         <div id="invoice-form"></div>
+//         <button id="back-list">Back to List</button>
+//       `;
+//       renderInvoiceView(invoice, 'invoice-form', false);
+//       document.getElementById('back-list').onclick = () => renderMainList();
+//     }
+
+//     window.onload = () => {
+//       if (!document.getElementById('main')) {
+//         const div = document.createElement('div');
+//         div.id = 'main';
+//         document.body.appendChild(div);
+//       }
+//       renderMainList();
+//     };
+//   </script>
+// </head>
+// <body>
+//   <div id="main"></div>
+// </body>
+// </html>

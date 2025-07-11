@@ -127,3 +127,147 @@
       padding: 0 0 0 0;
     }
   }
+
+  
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f9fb;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+#main {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.07);
+  padding: 32px 36px 36px 36px;
+  min-height: 400px;
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 600;
+  color: #2d5be3;
+  letter-spacing: 1px;
+}
+
+button, input[type="button"] {
+  background: linear-gradient(90deg, #2d5be3 60%, #4e8cff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1em;
+  margin: 4px 6px 4px 0;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(45,91,227,0.08);
+}
+button:hover, input[type="button"]:hover {
+  background: linear-gradient(90deg, #1a3c8b 60%, #2d5be3 100%);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 24px 0;
+  background: #f9fbff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(45,91,227,0.04);
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+th {
+  background: #eaf1ff;
+  color: #2d5be3;
+  font-weight: 600;
+  border-bottom: 2px solid #d0e1ff;
+}
+
+tr:nth-child(even) {
+  background: #f4f8ff;
+}
+
+tr:hover {
+  background: #e6f0ff;
+  transition: background 0.2s;
+}
+
+input[type="number"], input[type="text"] {
+  padding: 6px 8px;
+  border: 1px solid #bcd0ee;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 80px;
+  background: #f7faff;
+  transition: border 0.2s;
+}
+input[type="number"]:focus, input[type="text"]:focus {
+  border: 1.5px solid #2d5be3;
+  outline: none;
+  background: #fff;
+}
+
+.crud-message {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 9999;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  box-shadow: 0 4px 18px rgba(45,91,227,0.13);
+  background: #eaf1ff;
+  color: #2d5be3;
+  opacity: 0.97;
+  animation: fadeIn 0.3s;
+}
+.crud-message.success {
+  background: #e6fbe7;
+  color: #1a8b2d;
+  border-left: 6px solid #1a8b2d;
+}
+.crud-message.error {
+  background: #ffeaea;
+  color: #d32f2f;
+  border-left: 6px solid #d32f2f;
+}
+.crud-message.info {
+  background: #eaf1ff;
+  color: #2d5be3;
+  border-left: 6px solid #2d5be3;
+}
+@keyframes fadeIn {
+  from { opacity: 0; right: 0; }
+  to { opacity: 0.97; right: 32px; }
+}
+
+div > b {
+  color: #2d5be3;
+}
+
+#invoice-form, #edit-invoice-form {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 700px) {
+  #main {
+    padding: 12px 4vw;
+  }
+  table, th, td {
+    font-size: 0.97em;
+  }
+  button {
+    padding: 7px 12px;
+    font-size: 0.97em;
+  }
+}
