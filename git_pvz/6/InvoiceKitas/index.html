@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Sąskaita faktūra</title>
+
+</head>
+
+<body>
+    <div class="invoice-container">
+        <div class="invoice-details">
+            <h1>PVM SĄSKAITA FAKTŪRA</h1>
+            <span data-serial-number></span>
+            <span data-date></span>
+            <p data-due-date></p>
+        </div>
+
+        <div class="invoice-parties">
+            <div class="seller">
+                <h2>Pardavėjas:</h2>
+                <p data-seller-name></p>
+                <p data-seller-address></p>
+                <p data-seller-code></p>
+                <p data-seller-VAT></p>
+                <p data-seller-phone></p>
+                <p data-seller-email></p>
+
+
+            </div>
+            <div class="buyer">
+                <h2>Pirkėjas:</h2>
+                <p data-buyer-name></p>
+                <p data-buyer-address></p>
+                <p data-buyer-code></p>
+                <p data-buyer-VAT></p>
+                <p data-buyer-phone></p>
+                <p data-buyer-email></p>
+            </div>
+        </div>
+        <div data-items id="items">
+            <div class="item">
+                <div class="item-name th">Prekė</div>
+                <div class="price th">Kaina</div>
+                <div class="quantity th">Kiekis</div>
+                <div class="discount th">Nuolaida</div>
+                <div class="total-item th">Suma</div>
+            </div>
+        </div>
+        <div class="totals">
+            <div data-sum class="data-sum"></div>
+            <div data-shipping-price></div>
+            <div data-pre-total></div>
+            <div data-vat-tax></div>
+            <div data-total-final class="data-total"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

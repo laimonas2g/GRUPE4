@@ -1,0 +1,16 @@
+<main>
+    <section class="content-section">
+        <div class="content-container">
+            <h1>Sąskaitos trynimas</h1>
+            <h2>Ar tikrai norite ištrinti <b>{{invoice.number}}</b> sąskaitą?</h2>
+
+
+            <div class="buttons">
+                <a href="{{URL}}destroy/{{invoice.number}}"><button><span class="text">Ištrinti</span></button></a>
+                <a href="{{URL}}"><button><span class="text">Atšaukti</span></button></a>
+
+            </div>
+
+        </div>
+    </section>
+</main>

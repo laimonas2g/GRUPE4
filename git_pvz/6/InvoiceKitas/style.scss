@@ -1,0 +1,109 @@
+.invoice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .invoice-details {
+        // display: flex;
+        // align-items: center;
+        // flex-direction: column;
+        // justify-content: flex-start;
+        text-align: center;
+    }
+
+    h2 {
+        padding: 0;
+        margin: 5px 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        padding: 0;
+        margin: 10px 0 10px 0;
+    }
+
+    p {
+        margin: 5px 0;
+    }
+
+    .invoice-parties {
+        display: flex;
+        justify-content: space-between;
+        width: 850px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+
+    #items {
+        // border: 2px solid black;
+        width: 850px;
+        border: 2px solid black;
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+
+            .th {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .item-name {
+                width: 420px;
+            }
+
+            .price {
+                width: 100px;
+                text-align: right;
+            }
+
+            .quantity {
+                width: 70px;
+                text-align: right;
+            }
+
+            .discount {
+                width: 160px;
+                text-align: right;
+            }
+
+            .total-item {
+                width: 100px;
+                text-align: right;
+            }
+
+        }
+    }
+
+    .totals {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 850px;
+        row-gap: 10px;
+        margin-right: 12px;
+
+        .sum {
+            text-decoration: underline;
+        }
+
+        .data-sum {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .finalSum {
+            text-decoration: underline;
+        }
+    }
+}
+
+;

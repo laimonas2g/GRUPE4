@@ -1,0 +1,25 @@
+{
+  "name": "saskaitu-crud",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js",
+    "front": "npx mix watch"
+  },
+  "keywords": [],
+  "author": "Jonas Petrikas (https://github.com/Jonas-Petrikas)",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "handlebars": "^4.7.8",
+    "laravel-mix": "^6.0.49",
+    "webpack": "^5.97.1"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.83.1",
+    "sass-loader": "^12.6.0"
+  }
+}

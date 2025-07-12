@@ -1,0 +1,137 @@
+.invoice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 920px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 35px;
+  background-color: #FFFFFF;
+  box-shadow: darkcyan 0 5px 45px -5px;
+}
+.invoice-container .invoice-details {
+  text-align: center;
+}
+.invoice-container h2 {
+  padding: 0;
+  margin: 5px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.invoice-container h1 {
+  padding: 0;
+  margin: 10px 0 10px 0;
+}
+.invoice-container p {
+  margin: 5px 0;
+}
+.invoice-container .invoice-parties {
+  display: flex;
+  justify-content: space-between;
+  width: 850px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+.invoice-container #items {
+  width: 850px;
+}
+.invoice-container #items .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(69, 69, 69, 0.3137254902);
+  padding: 3px 0 5px 0;
+}
+.invoice-container #items .item .th {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0;
+}
+.invoice-container #items .item .th .quantity {
+  text-align: right;
+}
+.invoice-container #items .item .item-name {
+  width: 300px;
+  padding: 0 5px;
+}
+.invoice-container #items .item .price {
+  width: 140px;
+  text-align: right;
+  padding: 0 5px;
+}
+.invoice-container #items .item .quantity {
+  width: 90px;
+  text-align: center;
+  padding: 0 5px;
+}
+.invoice-container #items .item .discount {
+  width: 200px;
+  text-align: center;
+  padding: 0 5px;
+}
+.invoice-container #items .item .total-item {
+  width: 100px;
+  text-align: right;
+  padding: 0 5px;
+}
+.invoice-container #items .item .edit-qty {
+  width: 50px;
+  text-align: center;
+  padding: 0 3px;
+}
+.invoice-container #items .item .edit-disc {
+  width: 60px;
+  text-align: center;
+  padding: 0 3px;
+}
+.invoice-container #items .item .edit-name {
+  width: 350px;
+  text-align: left;
+  padding: 0 3px;
+}
+.invoice-container #items .item .edit-price {
+  width: 60px;
+  text-align: left;
+  padding: 0 3px;
+}
+.invoice-container #items .item .line-delete {
+  font-size: 20px;
+  color: crimson;
+  font-weight: 900;
+  cursor: pointer;
+}
+.invoice-container .totals {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 850px;
+  row-gap: 10px;
+  margin-right: 12px;
+}
+.invoice-container .totals .sum {
+  text-decoration: underline;
+}
+.invoice-container .totals .data-sum {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.invoice-container .totals .finalSum {
+  text-decoration: underline;
+}
+.invoice-container .totals .shipping-input {
+  width: 50px;
+  padding: 1px 3px;
+  text-align: right;
+  font-size: 16px;
+}
+
+input {
+  padding: 5px;
+}

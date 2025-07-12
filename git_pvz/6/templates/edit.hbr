@@ -1,0 +1,85 @@
+<main>
+    <section class="content-section">
+
+        <div class="invoice-container">
+            <div class="invoice-details">
+                <h1>PVM SĄSKAITA FAKTŪRA</h1>
+                <span data-serial-number>{{invoice.number}}</span>
+                <span data-date>{{invoice.date}}</span>
+                <p data-due-date>Sumokėti iki: {{invoice.due_date}}</p>
+            </div>
+
+            <div class="invoice-parties">
+                <div class="seller">
+                    <h2>Pardavėjas:</h2>
+                    <p data-seller-name><b>{{invoice.company.seller.name}}</b></p>
+                    <p data-seller-address>{{invoice.company.seller.address}}</p>
+                    <p data-seller-code>{{invoice.company.seller.code}}</p>
+                    <p data-seller-VAT>{{invoice.company.seller.vat}}</p>
+                    <p data-seller-phone>{{invoice.company.seller.phone}}</p>
+                    <p data-seller-email>{{invoice.company.seller.email}}</p>
+
+
+                </div>
+                <div class="buyer">
+                    <h2>Pirkėjas:</h2>
+                    <p data-buyer-name><b>{{invoice.company.buyer.name}}</b></p>
+                    <p data-buyer-address>{{invoice.company.buyer.address}}</p>
+                    <p data-buyer-code>{{invoice.company.buyer.code}}</p>
+                    <p data-buyer-VAT>{{invoice.company.buyer.vat}}</p>
+                    <p data-buyer-phone>{{invoice.company.buyer.phone}}</p>
+                    <p data-buyer-email>{{invoice.company.buyer.email}}</p>
+                </div>
+            </div>
+            <div data-items id="items">
+
+                <div class="item">
+                    <div class="item-name th">Prekė</div>
+                    <div class="price th">Kaina, Eur</div>
+                    <div class="quantity th">Kiekis, vnt</div>
+                    <div class="discount th">Nuolaida</div>
+                    <div class="total-item th">Suma, Eur</div>
+                </div>
+                <form action="{{URL}}update/{{invoice.number}}" method="post">
+                    {{#each invoice.items}}
+                    <div class="item" data-item>
+                        <div class="item-name">{{this.description}}</div>
+                        <div class="price" data-item-price>{{this.price}}</div>
+                        <div class="quantity"><input type="number" name="quantity" class="edit-qty"
+                                value="{{this.quantity}}" data-item-qty></input></div>
+                        <div class="discount">
+                            <input type="text" name="discount_eur" class="edit-disc" value="{{this.discount.Eur}}"
+                                data-item-discount-eur>
+                            EUR</input>
+                            <input type="text" name="discount_p" class="edit-disc" value="{{this.discount.P}}"
+                                data-item-discount-p>
+                            %</input>
+                        </div>
+                        <div class="total-item" data-item-discounted-total>{{this.itemDiscountedTotal}}</div>
+                    </div>
+                    {{/each}}
+            </div>
+
+            <div class="totals">
+                <div data-sum class="data-sum"></div>
+                <div><b>Tarpinė suma:</b> <span data-pre-total>{{invoice.subTotal}}</span> EUR</div>
+                <div><b>Siuntimo išlaidos:</b> <span data-shipping-price>{{invoice.shippingPrice}}</span> EUR</div>
+                <div><b>PVM (21%):</b> <span data-vat>{{invoice.vat}}</span> EUR</div>
+                <div><b>Visos nuolaidos:</b> -<span data-total-discounts>{{invoice.totalDiscounts}}</span> EUR</div>
+                <div></div>
+                <div class="data-total"><b>Galutinė suma:</b> <u data-total-final>{{invoice.grandTotal}}</u> EUR </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="buttons">
+        <button type="submit"><span class="text">✅ Išsaugoti</span></button>
+        </form>
+        <a href="{{URL}}edit/{{invoice.number}}"><button> <span class="text">Atsatatyti</span></button></a>
+        <a href="{{URL}}list"><button><span class="text">❌ Atšaukti</span></button></a>
+
+
+    </div>
+
+
+</main>

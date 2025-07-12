@@ -1,0 +1,55 @@
+.list-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+  
+  .list-container h2 {
+    margin-bottom: 15px;
+  }
+  
+  .message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e0ffe0;
+    border: 1px solid #b2d8b2;
+    border-radius: 4px;
+  }
+  
+  .list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .list-table th,
+  .list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .list-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
+  
+  .list-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .list-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .actions button {
+    margin-right: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+    border: 1px solid #999;
+    background: #fff;
+    border-radius: 3px;
+  }
+  
+  .actions button:hover {
+    background: #f0f0f0;
+  }
+  

@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0
+}
+
+h1 {
+    color: darkcyan;
+    padding: 20px;
+    text-transform: uppercase;
+
+}
+
+.top-menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1280px;
+        width: 100%;
+        padding: 0 30px;
+
+        .logo {
+            width: 400px;
+            font-weight: 900;
+            font-size: 20px;
+
+            a {
+                color: #2f2f2f
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            width: 450px;
+            list-style: none;
+            column-gap: 20px;
+
+            li {
+                padding: 0, 20px;
+
+                a {
+                    color: darkcyan;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 14px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 920px;
+        margin-top: 30px;
+        padding: 30px;
+        background-color: #FFFFFF;
+        box-shadow: darkcyan 0 5px 45px -5px;
+        row-gap: 10px;
+
+
+        button {
+            width: 150px;
+            margin-top: 5px;
+        }
+
+    }
+
+    .list-container {
+        display: flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 920px;
+        margin-top: 30px;
+        padding: 30px;
+        background-color: #FFFFFF;
+        box-shadow: darkcyan 0 5px 45px -5px;
+        row-gap: 10px;
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 550px;
+            column-gap: 20px;
+        }
+
+        .th {
+            font-weight: 700;
+            font-size: 16px;
+            color: black
+        }
+
+    }
+
+
+}
+
+button {
+    align-items: center;
+    background-image: linear-gradient(144deg, rgb(0, 139, 139), #5B42F3, darkcyan);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(0, 139, 139, 0.45) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &.read {
+        min-width: fit-content;
+        padding: 3px 10px;
+    }
+
+    &.delete {
+        min-width: fit-content;
+        padding: 3px 10px;
+    }
+}
+
+
+button:active,
+button:hover {
+    outline: 0;
+}
+
+button span {
+    background-color: rgb(5, 6, 45);
+    padding: 12px 16px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+button:hover span {
+    background: none;
+}
+
+// @media (min-width: 768px) {
+//     button {
+//         font-size: 16px;
+//         min-width: 140px;
+//     }
+// }
+
+.buttons {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.list {
+    display: flex;
+    column-gap: 5px;
+    justify-content: center;
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.beaver {
+    width: 0px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 3px;
+    top: -5px;
+
+}
+
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.message {
+    width: 200px;
+    background-color: teal;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

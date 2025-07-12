@@ -1,0 +1,22 @@
+.view-page {
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  
+  .view-buttons {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .view-buttons button {
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid #999;
+    background: #fff;
+    border-radius: 3px;
+  }
+  
+  .view-buttons button:hover {
+    background: #f0f0f0;
+  }
+  

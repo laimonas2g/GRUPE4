@@ -1,0 +1,169 @@
+.invoice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 920px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 35px;
+    background-color: #FFFFFF;
+    box-shadow: darkcyan 0 5px 45px -5px;
+
+
+    .invoice-details {
+        text-align: center;
+    }
+
+    h2 {
+        padding: 0;
+        margin: 5px 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        padding: 0;
+        margin: 10px 0 10px 0;
+    }
+
+    p {
+        margin: 5px 0;
+    }
+
+    .invoice-parties {
+        display: flex;
+        justify-content: space-between;
+        width: 850px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        margin-right: 12px;
+        margin-left: 12px;
+    }
+
+    #items {
+        width: 850px;
+        // border: 2px solid black;
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            font-size: 14px;
+            border-bottom: 1px solid #45454550;
+            padding: 3px 0 5px 0;
+
+
+            .th {
+                font-size: 14px;
+                font-weight: 700;
+                padding: 0;
+
+                .quantity {
+                    text-align: right;
+                }
+            }
+
+            .item-name {
+                width: 300px;
+                padding: 0 5px;
+            }
+
+            .price {
+                width: 140px;
+                text-align: right;
+                padding: 0 5px;
+            }
+
+            .quantity {
+                width: 90px;
+                text-align: center;
+                padding: 0 5px;
+
+            }
+
+            .discount {
+                width: 200px;
+                text-align: center;
+                padding: 0 5px;
+
+            }
+
+            .total-item {
+                width: 100px;
+                text-align: right;
+                padding: 0 5px;
+            }
+
+            .edit-qty {
+                width: 50px;
+                text-align: center;
+                padding: 0 3px;
+            }
+
+            .edit-disc {
+                width: 60px;
+                text-align: center;
+                padding: 0 3px;
+            }
+
+            .edit-name {
+                width: 350px;
+                text-align: left;
+                padding: 0 3px;
+            }
+
+            .edit-price {
+                width: 60px;
+                text-align: left;
+                padding: 0 3px;
+            }
+
+            .line-delete {
+                font-size: 20px;
+                color: crimson;
+                font-weight: 900;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .totals {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 850px;
+        row-gap: 10px;
+        margin-right: 12px;
+
+        .sum {
+            text-decoration: underline;
+        }
+
+        .data-sum {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .finalSum {
+            text-decoration: underline;
+        }
+
+        .shipping-input {
+            width: 50px;
+            padding: 1px 3px;
+            text-align: right;
+            font-size: 16px;
+        }
+    }
+}
+
+input {
+    padding: 5px;
+}
+
+;

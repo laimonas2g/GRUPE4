@@ -1,0 +1,27 @@
+Atlikta:
+✅ Serveris sujungtas, style ir app.js miksuoja ir saugo į public
+✅ Fetchina info iš serverio, jį saugo JSONe (dabar užkomentuota)
+✅ HTML suklijuoja iš dalių ir atvaizduoja
+✅ SF peržiūra (pagal query = SF:ID)
+✅ Atsivaizduoja sąrašas
+    ✅ Sąrašo elementus galima:
+        ✅peržiūrėti 
+        ✅redaguoti 
+        ✅trinti
+✅ Mygtuką paspaudus įsimeta nauja SF iš API
+    ✅ Perkelia į tos SF peržiūrą 
+    ✅Paspaudus išsaugoti, prisdeda JSONe
+
+Redaguotą elementą 
+    ✅ išsaugoti JSONE
+    ✅pridėti ATSTATYTI button
+
+    ✅ Alertai - messages
+
+    (optional)
+✅ Bebro hightlight
+
+Sekantys darbai:
+
+(optional)
+→ Custom create

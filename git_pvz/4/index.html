@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Meow+Script&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>VAT Invoice</title>
+</head>
+
+<body>
+    <section class="invoice">
+        <div class="header-section">
+            <div class="title-and-number">
+                <h1>VAT INVOICE</h1>
+                <p>Invoice No: <span id="invoiceNumber"></span></p>
+            </div>
+            <div class="invoice-dates">
+                <p>Invoice date: <span id="invoiceDate"></span></p>
+                <p><strong>Due date: <span id="dueDate"></span></strong></p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="seller-info">
+                <h2>SELLER:</h2>
+                <div>Company name: <span id="sellerName"></span></div>
+                <div>Address: <span id="sellerAddress"></span></div>
+                <div>Company code: <span id="sellerCode"></span></div>
+                <div>VAT number: <span id="sellerVat"></span></div>
+                <div>Phone number: <span id="sellerPhone"></span></div>
+                <div>Email address: <span id="sellerEmail"></span></div>
+            </div>
+
+            <div class="buyer-info">
+                <h2>BUYER:</h2>
+                <div>Company name: <span id="buyerName"></span></div>
+                <div>Address: <span id="buyerAddress"></span></div>
+                <div>Company code: <span id="buyerCode"></span></div>
+                <div>VAT number: <span id="buyerVat"></span></div>
+                <div>Phone number: <span id="buyerPhone"></span></div>
+                <div>Email address: <span id="buyerEmail"></span></div>
+            </div>
+        </div>
+
+        <div class="products">
+            <table>
+                <thead>
+                    <tr>
+                        <th>PRODUCT NAME</th>
+                        <th>QUANTITY</th>
+                        <th>UNIT PRICE</th>
+                        <th>DISCOUNT</th>
+                        <th>PRICE AFTER DISCOUNT</th>
+                    </tr>
+                </thead>
+                <tbody id="productList">
+                    <!-- Product list inserted dynamically via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="price-summary">
+            <p>Shipping cost (excl. VAT): <span id="shippingCost"></span></p>
+            <p>Total price (excl. VAT): <span id="totalPrice"></span></p>
+            <p>VAT amount: <span id="vatAmount"></span></p>
+            <br><br>
+            <p>Total price (incl. VAT): <span id="finalPrice"></span></p>
+        </div>
+    </section>
+</body>
+
+</html>

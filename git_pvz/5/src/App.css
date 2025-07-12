@@ -1,0 +1,49 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Remove bullet points and reset spacing */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4148a8;
+  /* Use inline-block so pseudo‑element can affect layout */
+  display: inline-block;
+  position: relative;
+  transition: font-weight 0.2s ease;
+}
+
+/* Hidden bold copy to reserve space */
+.nav-links a::before {
+  content: attr(data-text);
+  font-weight: bold;
+  visibility: hidden;
+  height: 0;
+  display: block;
+}
+
+/* On hover, bold font */
+.nav-links a:hover {
+  font-weight: bold;
+}
+
+/* When active (current page), use a darker color */
+.nav-links a.active {
+  /* color: #373d9e; */
+  font-weight: 400; 
+  
+}
+
+/* .nav-links a.active:hover {
+  font-weight: inherit;
+} */

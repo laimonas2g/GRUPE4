@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{URL}}style.css">
+    <link rel="stylesheet" href="{{URL}}invoiceStyle.css">
+    <script src="{{URL}}app.js" defer></script>
+    <title>{{pageTitle}}</title>
+
+
+</head>
+
+<body>
+    <header>
+        <section class="top-menu">
+            <nav>
+                <div class="logo">
+                    <a href="{{URL}}">
+                        <h4>SąskaitaFaktūra</h4>
+                    </a>
+
+                </div>
+                <div class="menu-items">
+                    <ul>
+                        <li><a href="{{URL}}">Pagrindinis</a></li>
+                        <li><a href="{{URL}}new">Įkelti SF</a></li>
+                        <li><a href="{{URL}}list">Peržiūrėti sąrašą</a></li>
+                        <li><a href="{{URL}}custom">Sukurti SF</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+    </header>
+    {{#if message}}
+    <div class="message-container" data-msg>
+        <div class="message">{{message.text}}
+        </div>
+    </div>
+    {{/if}}
