@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@codewith_muhilan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          :root {
+            --bg-clr: #000;
+          }
+          body {
+            min-height: 100svh;
+            display: grid;
+            place-content: center;
+            background-color: 
+            var(--bg-clr);
+          }
+
+          .carousel-wrapper {
+            --width: 100px;
+            --gap: 0;
+            --num-items: 10;
+            --ani-offset: 
+            calc(var(--width) * 
+            var(--num-items) * -1);
+            --ani-speed: 10s;
+            width: 400px;
+            overflow: hidden;
+            position: relative;
+          }
+
+          .carousel-wrapper::before,
+          .carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+          }
+          .carousel-wrapper::before {
+            left: 0;
+            background-image: 
+            linear-gradient(to 
+            right, var(--bg-clr) 
+            0%, transparent 50%);
+          }
+
+          .carousel-wrapper::after {
+            right: 0;
+            background-image: 
+            linear-gradient(to left,
+             var(--bg-clr) 0%, 
+             transparent 50%);
+          }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            animation: slide var(--ani-speed) linear infinite;
+        }
+
+        .item {
+            flex: 1 0 var(--width);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .item>img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            100% {
+                transform: translateX(var(--ani-offset));
+            }
+        }
+
+        
+        /* -- External Social Link CSS Styles -- */
+
+        #source-link {
+            top: 120px;
+        }
+
+        #source-link>i {
+            color: rgb(94, 106, 210);
+        }
+
+        #yt-link {
+            top: 65px;
+        }
+
+        #yt-link>i {
+            color: rgb(219, 31, 106);
+
+        }
+
+        #Fund-link {
+            top: 10px;
+        }
+
+        #Fund-link>i {
+            color: rgb(255, 251, 0);
+
+        }
+
+        .meta-link {
+            align-items: center;
+            backdrop-filter: blur(3px);
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: inline-flex;
+            gap: 5px;
+            left: 10px;
+            padding: 10px 20px;
+            position: fixed;
+            text-decoration: none;
+            transition: background-color 600ms, border-color 600ms;
+            z-index: 10000;
+        }
+
+        .meta-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .meta-link>i,
+        .meta-link>span {
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .meta-link>span {
+            color: white;
+            font-family: "Rubik", sans-serif;
+            transition: color 600ms;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <div class="item"><img src="https://logo.clearbit.com/apple.com" alt="apple"></div>
+            <div class="item"><img src="https://logo.clearbit.com/google.com" alt="Google"></div>
+            <div class="item"><img src="https://logo.clearbit.com/amazon.com" alt="Amazon"></div>
+            <div class="item"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft"></div>
+            <div class="item"><img src="https://logo.clearbit.com/facebook.com" alt="Facebook"></div>
+            <div class="item"><img src="https://logo.clearbit.com/netflix.com" alt="Netflix"></div>
+            <div class="item"><img src="https://logo.clearbit.com/tesla.com" alt="Testla"></div>
+            <div class="item"><img src="https://logo.clearbit.com/nike.com" alt="Nike"></div>
+            <div class="item"><img src="https://logo.clearbit.com/adidas.com" alt="Addidas"></div>
+            <div class="item"><img src="https://logo.clearbit.com/coca-cola.com" alt="Coca-Cola"></div>
+            <div class="item"><img src="https://logo.clearbit.com/apple.com" alt="apple"></div>
+            <div class="item"><img src="https://logo.clearbit.com/google.com" alt="Google"></div>
+            <div class="item"><img src="https://logo.clearbit.com/amazon.com" alt="Amazon"></div>
+            <div class="item"><img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft"></div>
+        </div>
+    </div>
+
+        <!--Social Liks codings below-->
+        <a id="source-link" class="meta-link" href="https://t.me/codewith_muhilan" target="_blank">
+            <i class="fas fa-link"></i>
+            <span class="roboto-mono">Join my Telegram</span>
+        </a>
+    
+        <a id="yt-link" class="meta-link" href="https://www.youtube.com/@codewith_muhilan?sub_confirmation=1"
+            target="_blank">
+            <i class="fab fa-youtube"></i>
+            <span> Subscribe my channel</span>
+        </a>
+    
+        <a id="Fund-link" class="meta-link" href="https://www.buymeacoffee.com/codewithmuhilan"
+            target="_blank">
+            <i class="fas fa-dollar-sign"></i>
+            <span> Show your Support..❤</span>
+        </a>
+</body>
+
+</html>

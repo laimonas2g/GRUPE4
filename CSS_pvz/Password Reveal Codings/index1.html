@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@codewith_muhilan</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+  <form action="">
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" required />
+      <button type="button" title="Reveal Password" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <mask id="eye-open">
+              <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12V20H12H1V12Z" fill="#D9D9D9" stroke="black"
+                stroke-width="1.5" stroke-linejoin="round" />
+            </mask>
+            <mask id="eye-closed">
+              <path d="M1 12C1 12 5 20 12 20C19 20 23 12 23 12V20H12H1V12Z" fill="#D9D9D9" />
+            </mask>
+          </defs>
+          <path class="lid lid--upper" d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path class="lid lid--lower" d="M1 12C1 12 5 20 12 20C19 20 23 12 23 12" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <g mask="url(#eye-open)">
+            <g class="eye">
+              <circle cy="12" cx="12" r="4" fill="currentColor" />
+              <circle cy="11" cx="13" r="1" fill="black" />
+            </g>
+          </g>
+        </svg>
+        <span class="sr-only">Reveal</span>
+      </button>
+    </div>
+  </form>
+
+
+      <!--Social Liks codings below-->
+      <a id="source-link" class="meta-link" href="https://t.me/codewith_muhilan" target="_blank">
+        <i class="fas fa-link"></i>
+        <span class="roboto-mono">Join my Telegram</span>
+    </a>
+
+    <a id="yt-link" class="meta-link" href="https://www.youtube.com/@codewith_muhilan?sub_confirmation=1"
+        target="_blank">
+        <i class="fab fa-youtube"></i>
+        <span> Subscribe my channel</span>
+    </a>
+
+    <a id="Fund-link" class="meta-link" href="https://www.buymeacoffee.com/codewithmuhilan"
+        target="_blank">
+        <i class="fas fa-dollar-sign"></i>
+        <span> Show your Support..❤</span>
+    </a>
+
+
+  <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
+  <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.11.0/dist/gsap.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
