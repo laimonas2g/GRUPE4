@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.pvm {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.pvm .container {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.pvm .container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.pvm .container span {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.pvm .container p {
+  margin: 5px 0;
+}
+.pvm .container .apmoketi {
+  font-weight: 600;
+}
+.pvm .container .rekvizitai {
+  margin-top: 60px;
+  width: 90%;
+  display: flex;
+}
+.pvm .container .rekvizitai h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.pvm .container .rekvizitai div {
+  margin: 5px 0;
+}
+.pvm .container .rekvizitai .atributes {
+  font-weight: 600;
+  margin-right: 2%;
+}
+.pvm .container .rekvizitai .seller {
+  padding-right: 10%;
+}
+.pvm .container .rekvizitai .seller h3 {
+  visibility: hidden;
+}
+.pvm .container .rekvizitai .buyer h3 {
+  visibility: hidden;
+}
+.pvm .container .saskaita {
+  width: 100%;
+  margin: 70px 0;
+}
+.pvm .container .saskaita table {
+  width: 100%;
+  margin-bottom: 50px;
+  border-spacing: 0;
+}
+.pvm .container .saskaita table tr td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1764705882);
+  padding: 4px;
+}
+.pvm .container .saskaita table tr .right {
+  text-align: end;
+}
+.pvm .container .saskaita table .first {
+  background-color: rgba(109, 51, 109, 0.2549019608);
+}
+.pvm .container .saskaita table .first td {
+  border: 0;
+  font-weight: 600;
+}
+.pvm .container .saskaita .total {
+  display: flex;
+  justify-content: space-between;
+}
+.pvm .container .saskaita .total .buha {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.pvm .container .saskaita .total .buha .sas {
+  font-weight: 600;
+}
+.pvm .container .saskaita .total .buha .bu {
+  margin-left: 50px;
+  border-bottom: 1px solid black;
+  padding: 0 20px;
+}
+.pvm .container .saskaita .total .sums div {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.pvm .container .saskaita .total .sums div .text {
+  width: 160px;
+  margin: 14px 10px 0 10px;
+  display: flex;
+  justify-content: start;
+}
+.pvm .container .saskaita .total .sums div .galutine {
+  font-weight: 600;
+}
+.pvm .container .saskaita .total .sums div .data {
+  width: 80px;
+  text-align: end;
+  margin-top: 14px;
+}
+.pvm .container .saskaita .total .sums div .viso {
+  font-weight: 600;
+}
+
+.bebras {
+  width: 20%;
+  position: absolute;
+  right: 100px;
+  top: 50px;
+  z-index: -1;
+}
+.bebras img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  width: 180px;
+}
+
+.thanks {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,284 @@
+
+* {
+    font-weight: lighter;
+    box-sizing: border-box;
+}
+
+h2,
+h3,
+h4,
+h5,
+ul,
+ol,
+li,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: large;
+    margin-top: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: medium;
+    font-weight: bold;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.bbr {
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+
+    div {
+        width: 1000px;
+        height: 300px;
+        object-fit: cover;
+        position: absolute;
+        top: -30px;
+    }
+}
+
+
+section#A4 {
+    height: 1100px;
+    width: 1000px;
+    border: 1px solid black;
+
+    div.container {
+        margin: 0 100px;
+
+        p {
+            text-align: center;
+        }
+
+        h2#invoicenr {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        div.dates {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+
+            div.invdate {
+                text-align: left;
+            }
+
+            div.duedate {
+                text-align: right;
+            }
+        }
+
+        div.details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            div.buyer {
+                div {
+                    padding: 5px 0;
+                }
+            }
+
+            div.seller {
+                div {
+                    padding: 5px 0;
+                }
+            }
+        }
+
+        div.dtl {
+            display: flex;
+
+            & div.dtl1 {
+                width: 600px;
+
+                h3 {
+                    border: 1px solid black;
+                    padding: 5px 30px;
+                }
+            }
+
+            & div.dtl2 {
+                width: 100px;
+                text-align: center;
+
+                h3 {
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    padding: 5px 0;
+                }
+            }
+
+            & div.dtl3 {
+                width: 200px;
+                text-align: center;
+
+                h3 {
+                    border-top: 1px solid black;
+                    border-bottom: 1px solid black;
+                    border-left: 1px solid black;
+                    padding: 5px 0;
+                }
+            }
+
+            & div.dtl4 {
+                width: 100px;
+                text-align: center;
+
+                h3 {
+                    border: 1px solid black;
+                    padding: 5px 0;
+                }
+            }
+        }
+
+        div.itemdetails {
+            display: flex;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+
+            & ol.item {
+                width: 600px;
+
+                li {
+                    position: relative;
+                    padding: 5px 0 5px 0;
+                    margin-left: 25px;
+                    height: 45px;
+                    align-items: start;
+                }
+
+                li:nth-child(odd) {
+                    background: #e3e3e3;
+                }
+            }
+
+            & div.quantity {
+                width: 100px;
+                text-align: center;
+
+                div {
+                    padding: 5px 0;
+                    height: 45px;
+                }
+
+                div:nth-child(odd) {
+                    background: #e3e3e3;
+                }
+            }
+
+            & div.discount {
+                width: 200px;
+                text-align: center;
+
+                div {
+                    height: 45px;
+                    padding: 5px 0;
+                }
+
+                div:nth-child(odd) {
+                    background: #e3e3e3;
+                }
+            }
+
+            & div.price {
+                width: 100px;
+                text-align: center;
+
+                div {
+                    padding: 5px 5px 5px 0;
+                    text-align: right;
+                    height: 45px;
+                }
+
+                div:nth-child(odd) {
+                    background: #e3e3e3;
+                }
+            }
+        }
+
+        div.earlyprice {
+            border: 1px solid black;
+            display: flex;
+            padding: 5px 0;
+            justify-content: right;
+            border-top: none;
+            height: 50px;
+            align-items: center;
+
+            div {
+                margin-right: 10px;
+            }
+        }
+
+        div.lastdetails {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            height: 30px;
+            border: 1px solid black;
+
+            div.transport {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 25%;
+                padding: 5px 0;
+            }
+
+            div.vat {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 25%;
+                padding: 5px 0;
+            }
+
+            div.total {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 25%;
+                padding: 5px 0;
+            }
+        }
+    }
+
+}
+
+#trcst {
+    font-weight: bold;
+}
+
+#vat {
+    font-weight: bold;
+}
+
+#ttsct {
+    font-weight: bold;
+}
+
+#tot {
+    font-weight: bold;
+    font-size: large;
+    padding-right: 28px;
+}

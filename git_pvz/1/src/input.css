@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-size: 1rem;
+}
+
+body {
+  top: 0px !important;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+img {
+  height: 5em;
+  width: 5em;
+
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 0%,
+    100% 80%,
+    80% 100%,
+    0% 100%,
+    0% 0%,
+    0% 0%
+  );
+}
+
+#itemsName > tr > td {
+  text-align: center;
+  padding: 5px;
+}
+
+#itemsName > tr > td:first-child {
+  text-align: left;
+  text-indent: 3px;
+  padding: 6px;
+}
+
+tr.tablePadding > * {
+  padding: 0.5rem 2rem;
+}
+
+span.arrowRight {
+  top: 3.5rem;
+  left: 8.5rem;
+  padding: 0 1em;
+}
+
+.allItemsValue {
+  padding: 1em;
+  text-indent: 3.5em;
+}
+
+#shippmentItemsResult {
+  color: green;
+}
+
+#VATItemsResult {
+  color: red;
+}
+
+.accentColor {
+  background-color: antiquewhite;
+}
+
+/* Modify Google translate default elements*/
+
+#\:0\.targetLanguage {
+  background-color: antiquewhite;
+  text-align: center;
+  width: fit-content;
+  padding: 0.4em 1em;
+  border-radius: 8px;
+}
+
+#googleTranslateElement > div {
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+#googleTranslateElement > div > span > a {
+  display: none;
+}
+
+#googleTranslateElement > div > span > a > img {
+  display: none;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  font-size: 0px !important;
+}
+
+/* LAPTOPS, DESKTOPS */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .itemsTable {
+    width: 960px;
+  }
+}
+
+/* TABLETS, IPADS */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .fixBorderAlignment {
+    padding: 2em;
+  }
+
+  .fixBorderAlignment > * {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .itemsTable {
+    width: 660px;
+  }
+}
+
+/* MOBILE */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logoTitle {
+    flex-direction: column;
+  }
+
+  .logoTitleLanguage {
+    flex-direction: column;
+  }
+
+  img {
+    height: 10em;
+    width: 10em;
+  }
+
+  #googleTranslateElement > div {
+    text-align: center;
+    margin-right: 5rem;
+  }
+
+  h1 {
+    padding-top: 1em;
+  }
+
+  .fixBorderAlignment {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .fixBorderAlignment > * {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .tableWrapper {
+    width: 400px;
+    height: 400px;
+    overflow: auto;
+  }
+}
