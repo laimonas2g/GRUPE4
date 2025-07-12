@@ -492,5 +492,29 @@ window.onload = () => {
     }
   `;
   document.head.appendChild(style);
+
+  
 })();
 
+//   // LANGUAGE TRANSLATE FUNCTIONALITY
+//   if (document.querySelector("#googleTranslateElement")) {
+//     const script = document.createElement("script");
+//     script.type = "text/javascript";
+//     script.src =
+//       "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+
+//     script.onload = () => {
+//       window.googleTranslateElementInit = () => {
+//         new google.translate.TranslateElement(
+//           {
+//             pageLanguage: "lt",
+//             includedLanguages: "lt,en,de,ru,lv,et,es,nl,ar,fr,pl",
+//           },
+//           "googleTranslateElement"
+//         );
+//       };
+//     };
+
+//     document.head.appendChild(script); // Adding the translation script to the DOM
+//   }
+// });
