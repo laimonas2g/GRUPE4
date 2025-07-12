@@ -1,0 +1,33 @@
+<script>
+
+    class Professor {
+        constructor(cpf, nome, aulaSemana, valorAula) {
+            this.cpf = cpf
+            this.nome = nome
+            this.aulaSemana = aulaSemana
+            this.valorAula = valorAula
+
+        }
+        calcularSalario() {
+            let SB = this.aulaSemana * 4.5 * this.valorAula
+            let HA = 0.05 * SB
+            let dsr = (SB + HA) / 6
+            let salarioMensal = SB + HA + dsr
+            return salarioMensal
+        }
+
+        retornaDados() {
+            let salarioMensal = this.calcularSalario()
+            return `Nome: ${this.nome}` + `\nCPF: ${this.cpf}` + `\nSalário: ${salarioMensal}`
+        }
+    }
+
+    let professor1 = new Professor("123456789", "Selmini", 20, 50.0)
+    console.log(professor1.calcularSalario())
+    /*console.log(professor1.nome)
+    console.log(professor1.cpf)
+    console.log(professor1.aulaSemana)
+    console.log()*/
+    console.log(professor1.retornaDados())
+
+</script>
