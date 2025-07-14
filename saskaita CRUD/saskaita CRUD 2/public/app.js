@@ -1,7 +1,7 @@
-import { Main } from '../src/Main.js';
-import { Create } from '../src/Create.js';
-import { View } from '../src/View.js';
-import { Update } from '../src/Update.js';
+import { Main } from '../nd/saskaita CRUD 2/src/Main.js';
+import { Create } from '../nd/saskaita CRUD 2/src/Create.js';
+import { View } from '../nd/saskaita CRUD 2/src/View.js';
+import { Update } from '../nd/saskaita CRUD 2/src/Update.js';
 import { LocalStorage } from './LocalStorage.js';
 import { LocalStorage } from './LocalStorage.js';
 import { LocalStorage } from './LocalStorage.js';
