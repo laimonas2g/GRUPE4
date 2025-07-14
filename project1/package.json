@@ -1,21 +1,22 @@
 {
-  "name": "project",
+  "name": "project1",
   "version": "1.0.0",
-  "description": "project about some nice things",
+  "description": "Project about some nice things",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx mix watch"
+  },
   "keywords": [
     "nice",
     "bebras",
     "cool"
   ],
-  "license": "ISC",
   "author": "Programer",
-  
-  "main": "index.js",
-  "scripts": {
-    "start": "npx mix watch"
-  },
+  "license": "ISC",
   "dependencies": {
-    "laravel-mix": "^6.0.49"
+    "bootstrap": "^5.3.7",
+    "laravel-mix": "^6.0.49",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "resolve-url-loader": "^5.0.0",

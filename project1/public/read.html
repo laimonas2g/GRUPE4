@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Project NiCe - All ART</title>
+</head>
+
+<body>
+
+    <div class="container" data-read>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h1>All ART</h1>
+                        <a href="create.html">Create new ART</a>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush" data-list>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <template>
+        <li class="list-group-item">
+            <div class="item">
+                <div class="data">
+                <div class="title" data-title></div>
+                <div class="frame" data-frame></div>
+                </div>
+                
+                <div class="buttons">
+                    <button data-edit class="btn btn-success">Edit</button>
+                    <button data-show class="btn btn-info">Show</button>
+                    <button data-delete class="btn btn-danger">delete</button>
+                </div>
+            </div>
+        </li>
+    </template>
+
+
+
+
+
+</body>
+
+</html>
