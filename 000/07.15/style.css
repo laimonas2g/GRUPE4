@@ -59,3 +59,7 @@ th {
 tbody tr:nth-child(even) td {
     background-color: #561c1c;
 }
+
+thead{
+    position: sticky;
+}
