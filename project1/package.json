@@ -1,20 +1,21 @@
 {
-  "name": "a",
+  "name": "project1",
   "version": "1.0.0",
-  "description": "CRUD saskaita",
+  "description": "CRUD project VAT Invoices from  API ",
   "keywords": [
     "CRUD",
-    "saskaita",
-    "cool"
+    "Invoices",
+    "fromAPI"
   ],
   "license": "ISC",
   "author": "Laimonas",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-     "start": "node --watch app.js"
+    "start": "node --watch app.js",
+    "front": "npx mix watch"
   },
   "dependencies": {
+    "axios": "^1.10.0",
     "express": "^5.1.0",
     "laravel-mix": "^6.0.49"
   },
