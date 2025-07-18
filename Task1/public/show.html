@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Invoice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Invoice Details</h1>
+  <div>
+   <label>Number: <span id="invoice-number"></span></label>
+   <!-- More fields -->
+  </div>
+  <a href="read.html">Back to List</a>
+  <script src="../src/Invoice.js"></script>
+  <script src="../src/InvoiceRepository.js"></script>
+  <script src="../src/ShowInvoicePage.js"></script>
+  <script>
+   const params = new URLSearchParams(window.location.search);
+   new ShowInvoicePage(params.get('id'));
+  </script>
+</body>
+</html>

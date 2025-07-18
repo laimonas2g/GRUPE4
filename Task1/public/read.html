@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoices List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>All VAT Invoices</h1>
+  <a href="create.html">Create New Invoice</a>
+  <table>
+   <thead>
+    <tr>
+      <th>Number</th>
+      <th>Date</th>
+      <th>Final Amount</th>
+      <th>Actions</th>
+    </tr>
+   </thead>
+   <tbody id="invoice-list"></tbody>
+  </table>
+  <script src="../src/Invoice.js"></script>
+  <script src="../src/InvoiceRepository.js"></script>
+  <script src="../src/ListInvoicesPage.js"></script>
+  <script>
+   new ListInvoicesPage();
+  </script>
+</body>
+</html>

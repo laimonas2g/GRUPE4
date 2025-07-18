@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Invoice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Create VAT Invoice</h1>
+  <div>
+   <label>Number: <span id="invoice-number"></span></label><br>
+   <label>Date: <span id="invoice-date"></span></label><br>
+   <!-- More fields here -->
+  </div>
+  <button id="save-btn">Save</button>
+  <button id="update-btn">Update</button>
+  <button id="cancel-btn">Cancel</button>
+  <script src="../src/Invoice.js"></script>
+  <script src="../src/InvoiceRepository.js"></script>
+  <script src="../src/invoiceApi.js"></script>
+  <script src="../src/CreateInvoicePage.js"></script>
+  <script>
+   new CreateInvoicePage();
+  </script>
+</body>
+</html>
