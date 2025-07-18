@@ -1,0 +1,68 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #f9f9f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #d6d6d6;
+  padding: 2rem 3rem;
+}
+h1 {
+  font-family: 'Garamond', serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+.classic-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.classic-table th, .classic-table td {
+  border: 1px solid #c0c0c0;
+  padding: 10px 14px;
+  text-align: left;
+}
+.classic-table th {
+  background: #eaeaea;
+  font-weight: bold;
+}
+.btn, button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background: #4b5d67;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn:hover, button:hover {
+  background: #222f3e;
+}
+.actions {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+input, select {
+  padding: 6px 10px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
