@@ -3,18 +3,17 @@
 <head>
   <title>Delete Invoice</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
 </head>
 <body>
   <h1>Delete Invoice</h1>
   <p>Are you sure you want to delete this invoice?</p>
   <button id="confirm-delete">Yes, Delete</button>
   <button id="cancel-delete">Cancel</button>
-  <script src="../src/Invoice.js"></script>
-  <script src="../src/InvoiceRepository.js"></script>
-  <script src="../src/DeleteInvoicePage.js"></script>
+  <script src="app.js"></script>
   <script>
-   const params = new URLSearchParams(window.location.search);
-   new DeleteInvoicePage(params.get('id'));
+    const params = new URLSearchParams(window.location.search);
+    new window.DeleteInvoicePage(params.get('id'));
   </script>
 </body>
 </html>

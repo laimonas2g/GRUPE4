@@ -3,20 +3,19 @@
 <head>
   <title>Edit Invoice</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
 </head>
 <body>
   <h1>Edit Invoice</h1>
   <form id="edit-form">
-   <!-- Dynamically filled with invoice data -->
-   <button type="submit">Save</button>
-   <a href="read.html">Cancel</a>
+    <!-- Dynamically filled with invoice data -->
+    <button type="submit">Save</button>
+    <a href="read.html">Cancel</a>
   </form>
-  <script src="../src/Invoice.js"></script>
-  <script src="../src/InvoiceRepository.js"></script>
-  <script src="../src/EditInvoicePage.js"></script>
+  <script src="app.js"></script>
   <script>
-   const params = new URLSearchParams(window.location.search);
-   new EditInvoicePage(params.get('id'));
+    const params = new URLSearchParams(window.location.search);
+    new window.EditInvoicePage(params.get('id'));
   </script>
 </body>
 </html>

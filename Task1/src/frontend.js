@@ -1,4 +1,3 @@
-// Entry point for frontend bundle
 import './Invoice.js';
 import './InvoiceRepository.js';
 import { fetchInvoiceFromApi } from './invoiceApi.js';

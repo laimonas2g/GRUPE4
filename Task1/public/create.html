@@ -3,23 +3,21 @@
 <head>
   <title>Create Invoice</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
 </head>
 <body>
   <h1>Create VAT Invoice</h1>
   <div>
-   <label>Number: <span id="invoice-number"></span></label><br>
-   <label>Date: <span id="invoice-date"></span></label><br>
-   <!-- More fields here -->
+    <label>Number: <span id="invoice-number"></span></label><br>
+    <label>Date: <span id="invoice-date"></span></label><br>
+    <!-- More fields here -->
   </div>
   <button id="save-btn">Save</button>
   <button id="update-btn">Update</button>
   <button id="cancel-btn">Cancel</button>
-  <script src="../src/Invoice.js"></script>
-  <script src="../src/InvoiceRepository.js"></script>
-  <script src="../src/invoiceApi.js"></script>
-  <script src="../src/CreateInvoicePage.js"></script>
+  <script src="app.js"></script>
   <script>
-   new CreateInvoicePage();
+    new window.CreateInvoicePage();
   </script>
 </body>
 </html>
