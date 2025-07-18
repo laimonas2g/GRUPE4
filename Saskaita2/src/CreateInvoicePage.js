@@ -18,7 +18,7 @@ export default class CreateInvoicePage {
         document.getElementById('invoice-due-date').textContent = this.invoice.due_date;
         document.getElementById('shipping').value = this.invoice.shippingPrice || 0;
 
-        // Render items as editable rows
+        // Render items as editable rows (no Add Item row/button in create page)
         const tbody = document.getElementById('products-body');
         tbody.innerHTML = '';
         this.invoice.items.forEach((item, idx) => {
@@ -34,16 +34,7 @@ export default class CreateInvoicePage {
             tbody.appendChild(tr);
         });
 
-        // Add item row at the end
-        const addTr = document.createElement('tr');
-        addTr.innerHTML = `
-            <td colspan="6">
-                <button type="button" id="add-item-btn" class="btn primary">Add Item</button>
-            </td>
-        `;
-        tbody.appendChild(addTr);
-
-        // Remove item handler
+        // Remove item handler (if there's at least one item)
         tbody.querySelectorAll('.remove-item-btn').forEach(btn => {
             btn.onclick = () => {
                 const idx = +btn.getAttribute('data-idx');
@@ -51,20 +42,6 @@ export default class CreateInvoicePage {
                 this.renderForm();
             };
         });
-
-        // Add item handler
-        const addBtn = document.getElementById('add-item-btn');
-        if (addBtn) {
-            addBtn.onclick = () => {
-                this.invoice.items.push({
-                    description: '',
-                    quantity: 1,
-                    price: 0,
-                    discount: 0
-                });
-                this.renderForm();
-            };
-        }
 
         this.updateTotals();
     }
@@ -74,14 +51,21 @@ export default class CreateInvoicePage {
         document.getElementById('cancel-btn').onclick = () => window.location.href = 'read.html';
         document.getElementById('shipping').oninput = () => this.updateTotals();
         document.getElementById('products-body').oninput = () => this.updateTotals();
-        document.getElementById('update-btn').onclick = () => this.saveInvoice();
+
+        // "Update" button now fetches new invoice from API and fills the form
+        document.getElementById('update-btn').onclick = async () => {
+            const res = await fetch('https://in3.dev/inv/');
+            const data = await res.json();
+            this.invoice = new Invoice(data);
+            this.renderForm();
+        };
     }
 
     saveInvoice() {
         // Collect items from table
         const rows = Array.from(document.querySelectorAll('#products-body tr'));
-        // Exclude the last row (add item)
-        this.invoice.items = rows.slice(0, -1).map((row, idx) => ({
+        // No Add Item row in create page, so use all rows
+        this.invoice.items = rows.map((row, idx) => ({
             description: row.querySelector(`[name="desc${idx}"]`).value,
             quantity: parseFloat(row.querySelector(`[name="qty${idx}"]`).value),
             price: parseFloat(row.querySelector(`[name="price${idx}"]`).value),
@@ -111,5 +95,4 @@ export default class CreateInvoicePage {
         el.textContent = msg;
         el.style.color = isError ? 'red' : 'green';
     }
-    
 }

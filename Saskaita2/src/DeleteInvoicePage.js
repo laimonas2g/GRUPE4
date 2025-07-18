@@ -27,14 +27,21 @@ export default class DeleteInvoicePage {
     }
 
     setupEventListeners() {
-        document.getElementById('confirm-delete-btn').onclick = () => this.handleDelete();
-        document.getElementById('cancel-delete-btn').onclick = () => window.location.href = 'read.html';
+        // Make sure buttons exist before adding listeners
+        const deleteBtn = document.getElementById('confirm-delete-btn');
+        const cancelBtn = document.getElementById('cancel-delete-btn');
+        if (deleteBtn) {
+            deleteBtn.onclick = () => this.handleDelete();
+        }
+        if (cancelBtn) {
+            cancelBtn.onclick = () => window.location.href = 'read.html';
+        }
     }
 
     handleDelete() {
         InvoiceRepository.delete(this.invoice.id);
         this.showMessage('Invoice deleted!');
-        setTimeout(() => window.location.href = 'read.html', 1000);
+        setTimeout(() => window.location.href = 'read.html', 500);
     }
 
     showMessage(msg, isError = false) {
@@ -43,4 +50,3 @@ export default class DeleteInvoicePage {
         el.style.color = isError ? 'red' : 'green';
     }
 }
-

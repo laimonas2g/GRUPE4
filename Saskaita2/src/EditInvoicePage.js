@@ -31,23 +31,23 @@ export default class EditInvoicePage {
         this.invoice.items.forEach((item, idx) => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-            <td><input type="text" name="desc${idx}" value="${item.description || ''}"></td>
-            <td><input type="number" min="1" name="qty${idx}" value="${item.quantity || 1}"></td>
-            <td><input type="number" min="0" step="0.01" name="price${idx}" value="${item.price || 0}"></td>
-            <td><input type="number" min="0" step="0.01" name="discount${idx}" value="${item.discount || 0}"></td>
-            <td>${(item.quantity * item.price - (item.discount || 0)).toFixed(2)}</td>
-            <td><button type="button" class="remove-item-btn" data-idx="${idx}">Remove</button></td>
-        `;
+                <td><input type="text" name="desc${idx}" value="${item.description || ''}"></td>
+                <td><input type="number" min="1" name="qty${idx}" value="${item.quantity || 1}"></td>
+                <td><input type="number" min="0" step="0.01" name="price${idx}" value="${item.price || 0}"></td>
+                <td><input type="number" min="0" step="0.01" name="discount${idx}" value="${item.discount || 0}"></td>
+                <td>${(item.quantity * item.price - (item.discount || 0)).toFixed(2)}</td>
+                <td><button type="button" class="remove-item-btn" data-idx="${idx}">Remove</button></td>
+            `;
             tbody.appendChild(tr);
         });
 
         // Add item row at the end
         const addTr = document.createElement('tr');
         addTr.innerHTML = `
-        <td colspan="6">
-            <button type="button" id="add-item-btn" class="btn primary">Add Item</button>
-        </td>
-    `;
+            <td colspan="6">
+                <button type="button" id="add-item-btn" class="btn primary">Add Item</button>
+            </td>
+        `;
         tbody.appendChild(addTr);
 
         // Remove item handler
@@ -87,10 +87,20 @@ export default class EditInvoicePage {
         // Live update totals when editing any item or shipping
         document.getElementById('shipping').oninput = () => this.updateTotals();
         document.getElementById('products-body').oninput = () => this.updateTotals();
+
+        // Add support for pressing "Update" button to re-render (simulate "refresh" of line editing)
+        const updateBtn = document.getElementById('update-btn');
+        if (updateBtn) {
+            updateBtn.onclick = (e) => {
+                e.preventDefault();
+                this.updateInvoiceFromForm();
+            };
+        }
     }
 
     updateInvoiceFromForm() {
         const rows = Array.from(document.querySelectorAll('#products-body tr'));
+        // Exclude the last row (add item)
         this.invoice.items = rows.slice(0, -1).map((row, idx) => ({
             description: row.querySelector(`[name="desc${idx}"]`).value,
             quantity: parseFloat(row.querySelector(`[name="qty${idx}"]`).value),
@@ -105,7 +115,9 @@ export default class EditInvoicePage {
         }
         InvoiceRepository.update(this.invoice);
         this.showMessage('Invoice updated!', false);
-        setTimeout(() => window.location.href = 'read.html', 600);
+        this.renderForm(); // re-render so you see the update
+        // Optionally, redirect to read.html after a delay:
+        // setTimeout(() => window.location.href = 'read.html', 600);
     }
 
     updateTotals() {
@@ -126,6 +138,4 @@ export default class EditInvoicePage {
         el.textContent = msg;
         el.style.color = isError ? 'red' : 'green';
     }
-
-
 }
