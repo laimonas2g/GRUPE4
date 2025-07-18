@@ -1,0 +1,174 @@
+/* =========================
+  style2.css (main.html)
+  Serious/Elegant & Dynamic
+  ========================= */
+
+/* Root variables for light/dark mode */
+:root {
+  --bg: #f6f7fa;
+  --fg: #23272f;
+  --primary: #2d7ff9;
+  --secondary: #e5e9f2;
+  --accent: #1e2532;
+  --border: #d1d5db;
+  --success: #2ecc40;
+  --error: #e74c3c;
+  --info: #3498db;
+  --table-row: #f3f4f6;
+  --table-row-alt: #e5e9f2;
+  --shadow: 0 2px 8px rgba(30,37,50,0.08);
+  --radius: 8px;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+}
+
+#main {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 36px 36px 36px;
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--primary);
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 20px;
+  font-size: 1rem;
+  margin: 0 6px 10px 0;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(30,37,50,0.04);
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+button:hover, button:focus {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(30,37,50,0.10);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0 16px 0;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+}
+
+th {
+  background: var(--secondary);
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+}
+
+tr:nth-child(even) {
+  background: var(--table-row-alt);
+}
+tr:nth-child(odd) {
+  background: var(--table-row);
+}
+
+input[type="number"], input[type="text"] {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: 80px;
+  background: #f9fafb;
+  color: var(--fg);
+  transition: border var(--transition), background var(--transition);
+}
+input[type="number"]:focus, input[type="text"]:focus {
+  border-color: var(--primary);
+  background: #fff;
+  outline: none;
+}
+
+.crud-message {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  min-width: 180px;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  background: var(--info);
+  color: #fff;
+  opacity: 0.97;
+  transition: opacity var(--transition);
+}
+.crud-message.success { background: var(--success); }
+.crud-message.error { background: var(--error); }
+.crud-message.info { background: var(--info); }
+
+@media (max-width: 700px) {
+  #main { padding: 16px 4vw; }
+  table, th, td { font-size: 0.97rem; }
+  th, td { padding: 8px 6px; }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --bg: #181c23;
+  --fg: #e5e9f2;
+  --primary: #4b8cff;
+  --secondary: #23272f;
+  --accent: #b3c6f7;
+  --border: #23272f;
+  --table-row: #23272f;
+  --table-row-alt: #1e222a;
+  background: var(--bg);
+  color: var(--fg);
+}
+body.dark-mode #main {
+  background: #23272f;
+  box-shadow: 0 2px 12px rgba(30,37,50,0.25);
+}
+body.dark-mode table {
+  background: #23272f;
+}
+body.dark-mode th {
+  background: #181c23;
+  color: var(--primary);
+  border-bottom: 2px solid #23272f;
+}
+body.dark-mode input[type="number"], 
+body.dark-mode input[type="text"] {
+  background: #23272f;
+  color: var(--fg);
+  border-color: #23272f;
+}
+body.dark-mode .crud-message {
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(30,37,50,0.25);
+}
+
