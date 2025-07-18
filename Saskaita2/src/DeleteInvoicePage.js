@@ -1,6 +1,3 @@
-// DeleteInvoicePage.js
-// Handles the delete confirmation page and logic
-
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class DeleteInvoicePage {
@@ -27,7 +24,6 @@ export default class DeleteInvoicePage {
     }
 
     setupEventListeners() {
-        // Make sure buttons exist before adding listeners
         const deleteBtn = document.getElementById('confirm-delete-btn');
         const cancelBtn = document.getElementById('cancel-delete-btn');
         if (deleteBtn) {

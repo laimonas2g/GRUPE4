@@ -22,7 +22,17 @@ export default class EditInvoicePage {
         document.getElementById('invoice-date').textContent = this.invoice.date;
         document.getElementById('invoice-due-date').textContent = this.invoice.due_date;
         document.getElementById('seller-name').textContent = this.invoice.company?.seller?.name || '';
+        document.getElementById('seller-address').textContent = this.invoice.company?.seller?.address || '';
+        document.getElementById('seller-code').textContent = this.invoice.company?.seller?.code || '';
+        document.getElementById('seller-vat').textContent = this.invoice.company?.seller?.vat || '';
+        document.getElementById('seller-phone').textContent = this.invoice.company?.seller?.phone || '';
+        document.getElementById('seller-email').textContent = this.invoice.company?.seller?.email || '';
         document.getElementById('buyer-name').textContent = this.invoice.company?.buyer?.name || '';
+        document.getElementById('buyer-address').textContent = this.invoice.company?.buyer?.address || '';
+        document.getElementById('buyer-code').textContent = this.invoice.company?.buyer?.code || '';
+        document.getElementById('buyer-vat').textContent = this.invoice.company?.buyer?.vat || '';
+        document.getElementById('buyer-phone').textContent = this.invoice.company?.buyer?.phone || '';
+        document.getElementById('buyer-email').textContent = this.invoice.company?.buyer?.email || '';
         document.getElementById('shipping').value = this.invoice.shippingPrice || 0;
 
         // Render items as editable rows
@@ -33,7 +43,7 @@ export default class EditInvoicePage {
             tr.innerHTML = `
                 <td><input type="text" name="desc${idx}" value="${item.description || ''}"></td>
                 <td><input type="number" min="1" name="qty${idx}" value="${item.quantity || 1}"></td>
-                <td><input type="number" min="0" step="0.01" name="price${idx}" value="${item.price || 0}"></td>
+                <td><input type="number" min="0" step="0.01" name="price${idx}" value="${item.price || 0}" readonly></td>
                 <td><input type="number" min="0" step="0.01" name="discount${idx}" value="${item.discount || 0}"></td>
                 <td>${(item.quantity * item.price - (item.discount || 0)).toFixed(2)}</td>
                 <td><button type="button" class="remove-item-btn" data-idx="${idx}">Remove</button></td>
@@ -84,18 +94,8 @@ export default class EditInvoicePage {
         document.getElementById('cancel-btn').onclick = () => {
             window.location.href = 'read.html';
         };
-        // Live update totals when editing any item or shipping
         document.getElementById('shipping').oninput = () => this.updateTotals();
         document.getElementById('products-body').oninput = () => this.updateTotals();
-
-        // Add support for pressing "Update" button to re-render (simulate "refresh" of line editing)
-        const updateBtn = document.getElementById('update-btn');
-        if (updateBtn) {
-            updateBtn.onclick = (e) => {
-                e.preventDefault();
-                this.updateInvoiceFromForm();
-            };
-        }
     }
 
     updateInvoiceFromForm() {
@@ -115,13 +115,10 @@ export default class EditInvoicePage {
         }
         InvoiceRepository.update(this.invoice);
         this.showMessage('Invoice updated!', false);
-        this.renderForm(); // re-render so you see the update
-        // Optionally, redirect to read.html after a delay:
-        // setTimeout(() => window.location.href = 'read.html', 600);
+        this.renderForm(); // Stay on edit page and show updated data
     }
 
     updateTotals() {
-        // Update subtotal, vat, discount, total in DOM
         const subtotalEl = document.getElementById('subtotal');
         const vatEl = document.getElementById('vat');
         const discountEl = document.getElementById('discount');

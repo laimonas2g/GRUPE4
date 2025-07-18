@@ -1,5 +1,3 @@
-// Handles all calculations and validation for an invoice object structure
-
 export default class Invoice {
     constructor(data) {
         this.id = data.id || Date.now();
@@ -7,7 +5,6 @@ export default class Invoice {
         this.date = data.date || '';
         this.due_date = data.due_date || '';
         this.company = data.company || {};
-        // Each item: { description, quantity, price, discount }
         this.items = Array.isArray(data.items) ? data.items.map(item => ({
             description: item.description || '',
             quantity: Number(item.quantity) || 1,
@@ -15,7 +12,7 @@ export default class Invoice {
             discount: Number(item.discount) || 0
         })) : [];
         this.shippingPrice = Number(data.shippingPrice) || 0;
-        this.vatRate = 0.21; // 21% VAT, adapt as needed
+        this.vatRate = 0.21;
     }
 
     getSubtotal() {

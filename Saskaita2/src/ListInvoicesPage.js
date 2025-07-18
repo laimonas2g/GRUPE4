@@ -1,6 +1,3 @@
-// ListInvoicesPage.js
-// Handles displaying all invoices with Edit, View, Delete buttons
-
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class ListInvoicesPage {
@@ -9,27 +6,33 @@ export default class ListInvoicesPage {
         this.renderList();
     }
 
-    // Render the invoice list table
     renderList() {
         const tbody = document.getElementById('invoice-list');
         tbody.innerHTML = '';
+        if (!this.invoices.length) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td colspan="4">No invoices found.</td>`;
+            tbody.appendChild(tr);
+            return;
+        }
         this.invoices.forEach(inv => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${inv.number}</td>
                 <td>${inv.date}</td>
-                <td>${inv.total.toFixed(2)}</td>
+                <td>${typeof inv.getTotal === 'function'
+                    ? inv.getTotal().toFixed(2)
+                    : (inv.total || 0).toFixed(2)}</td>
                 <td>
-                    <a href="edit.html?id=${inv.id}">Edit</a>
-                    <a href="show.html?id=${inv.id}">View</a>
-                    <a href="delete.html?id=${inv.id}">Delete</a>
+                    <a href="edit.html?id=${inv.id}" class="btn">Edit</a>
+                    <a href="show.html?id=${inv.id}" class="btn">View</a>
+                    <a href="delete.html?id=${inv.id}" class="btn danger">Delete</a>
                 </td>
             `;
             tbody.appendChild(tr);
         });
     }
 
-    // Optionally, show messages after actions
     showMessage(msg, isError = false) {
         const el = document.getElementById('message');
         el.textContent = msg;
