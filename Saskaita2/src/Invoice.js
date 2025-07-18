@@ -2,7 +2,7 @@
 
 export default class Invoice {
     constructor(data) {
-        this.id = data.id || Date.now();
+        this.id = data.id ?? (Date.now().toString() + Math.random().toString(16).slice(2));
         this.number = data.number || '';
         this.date = data.date || '';
         this.due_date = data.due_date || '';

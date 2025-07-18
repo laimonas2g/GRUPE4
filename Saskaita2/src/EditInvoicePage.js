@@ -1,62 +1,67 @@
-// EditInvoicePage.js
-// Handles editing an invoice's products and discounts
-
-import Invoice from './Invoice.js';
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class EditInvoicePage {
     constructor() {
-        this.invoice = null;
-        this.init();
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        this.invoice = InvoiceRepository.getById(id);
+
+        this.renderItemsTable();
+
+        // Save handler
+        document.getElementById('save-invoice-btn').addEventListener('click', () => {
+            this.updateItemsFromTable();
+            InvoiceRepository.save(this.invoice);
+            window.location.href = "read.html";
+        });
     }
 
-    // Initialize the page: load invoice by ID from URL, setup form
-    init() {
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
-        if (!id) return this.showMessage('No invoice ID provided', true);
-        this.invoice = InvoiceRepository.get(id);
-        if (!this.invoice) return this.showMessage('Invoice not found', true);
-        this.renderForm();
-        this.setupEventListeners();
+    renderItemsTable() {
+        const tbody = document.getElementById('items-tbody');
+        tbody.innerHTML = '';
+        this.invoice.items.forEach((item, idx) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>
+                    <input type="text" name="desc${idx}" value="${item.description || ''}">
+                </td>
+                <td>
+                    <input type="number" name="qty${idx}" value="${item.quantity || 1}" min="1">
+                </td>
+                <td>
+                    <input type="number" name="price${idx}" value="${item.price || 0}" min="0" step="0.01">
+                </td>
+                <td>
+                    <input type="number" name="discount${idx}" value="${item.discount || 0}" min="0" step="0.01">
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
     }
 
-    // Render form fields for product quantities, discounts, etc.
-    renderForm() {
-        // Populate the form with invoice data
-        // Example:
-        document.getElementById('discount').value = this.invoice.discount;
-        // Render editable product list...
-    }
-
-    // Setup form event listeners
-    setupEventListeners() {
-        document.getElementById('edit-form').onsubmit = e => {
-            e.preventDefault();
-            this.updateInvoiceFromForm();
-        };
-    }
-
-    // Read form and update invoice, then save
-    updateInvoiceFromForm() {
-        // Update invoice products and discount from form fields
-        this.invoice.discount = parseFloat(document.getElementById('discount').value) || 0;
-        // Update products...
-        this.invoice.calculateTotals();
-
-        if (!this.invoice.isValid()) {
-            this.showMessage('Invalid invoice data!', true);
-            return;
+    updateItemsFromTable() {
+        const tbody = document.getElementById('items-tbody');
+        const rows = tbody.getElementsByTagName('tr');
+        let newItems = [];
+        for (let i = 0; i < rows.length; i++) {
+            const desc = rows[i].querySelector(`input[name="desc${i}"]`).value;
+            const qty = parseFloat(rows[i].querySelector(`input[name="qty${i}"]`).value);
+            const price = parseFloat(rows[i].querySelector(`input[name="price${i}"]`).value);
+            const discount = parseFloat(rows[i].querySelector(`input[name="discount${i}"]`).value);
+            newItems.push({
+                description: desc,
+                quantity: qty,
+                price: price,
+                discount: discount
+            });
         }
-        InvoiceRepository.update(this.invoice);
-        this.showMessage('Invoice updated!', false);
-        // Stay on edit page, reload to show latest data
-        setTimeout(() => window.location.reload(), 1000);
-    }
-
-    showMessage(msg, isError = false) {
-        const el = document.getElementById('message');
-        el.textContent = msg;
-        el.style.color = isError ? 'red' : 'green';
+        this.invoice.items = newItems;
     }
 }
+
+// If you use a global app.js that initializes pages:
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.endsWith('edit.html')) {
+        new EditInvoicePage();
+    }
+});

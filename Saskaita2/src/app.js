@@ -2,6 +2,7 @@
 // Entry point: detects page and instantiates the appropriate class
 
 import CreateInvoicePage from './CreateInvoicePage.js';
+import ReadInvoicePage from './ReadInvoicePage.js';
 import EditInvoicePage from './EditInvoicePage.js';
 import ListInvoicesPage from './ListInvoicesPage.js';
 import ShowInvoicePage from './ShowInvoicePage.js';
@@ -9,6 +10,17 @@ import DeleteInvoicePage from './DeleteInvoicePage.js';
 
 // Detect page by file name and instantiate correct class
 const page = window.location.pathname.split('/').pop();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const path = window.location.pathname;
+    if (path.endsWith('create.html')) {
+        new CreateInvoicePage();
+    }
+    if (path.endsWith('read.html')) {
+        new ReadInvoicePage();
+    }
+});
 
 switch (page) {
     case 'create.html':

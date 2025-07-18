@@ -1,10 +1,12 @@
 import Invoice from './Invoice.js';
 import InvoiceRepository from './InvoiceRepository.js';
 import InvoiceApi from './invoiceApi.js';
+import { uuidv4 } from './uuid.js';
 
 export default class CreateInvoicePage {
     constructor() {
         this.invoice = null;
+        this.id = data.id || uuidv4();
         this.init();
     }
 
