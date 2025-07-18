@@ -1,15 +1,6 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/frontend.js":
-/*!*************************!*\
-  !*** ./src/frontend.js ***!
-  \*************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: 'import' and 'export' may appear only with 'sourceType: module' (1:0)\nFile was processed with these loaders:\n * ./node_modules/babel-loader/lib/index.js\nYou may need an additional loader to handle the result of these loaders.\n> import './Invoice.js';\n| import './InvoiceRepository.js';\n| import { fetchInvoiceFromApi } from './invoiceApi.js';");
-
-/***/ }),
 
 /***/ "./src/style.scss":
 /*!************************!*\
@@ -17,7 +8,6 @@ throw new Error("Module parse failed: 'import' and 'export' may appear only with
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -161,7 +151,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["public/styles"], () => (__webpack_require__("./src/frontend.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/styles"], () => (__webpack_require__("./src/style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
