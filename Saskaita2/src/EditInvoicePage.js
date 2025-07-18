@@ -45,7 +45,7 @@ export default class EditInvoicePage {
                 <td><input type="number" min="1" name="qty${idx}" value="${item.quantity || 1}"></td>
                 <td><input type="number" min="0" step="0.01" name="price${idx}" value="${item.price || 0}" readonly></td>
                 <td><input type="number" min="0" step="0.01" name="discount${idx}" value="${item.discount || 0}"></td>
-                <td>${(item.quantity * item.price - (item.discount || 0)).toFixed(2)}</td>
+                <td>${this.invoice.getLineTotal(item).toFixed(2)}</td>
                 <td><button type="button" class="remove-item-btn" data-idx="${idx}">Remove</button></td>
             `;
             tbody.appendChild(tr);

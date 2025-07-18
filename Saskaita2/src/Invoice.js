@@ -15,23 +15,29 @@ export default class Invoice {
         this.vatRate = 0.21;
     }
 
+    getLineTotal(item) {
+        // Discount is per line, not per unit!
+        return (item.quantity * item.price) - item.discount;
+    }
+
     getSubtotal() {
-        return this.items.reduce((acc, item) =>
-            acc + (item.price * item.quantity), 0);
+        // Subtotal is sum of line totals (before VAT)
+        return this.items.reduce((acc, item) => acc + this.getLineTotal(item), 0);
     }
 
     getTotalDiscount() {
-        return this.items.reduce((acc, item) =>
-            acc + (item.discount || 0), 0);
+        // Total discount is sum of discounts per line
+        return this.items.reduce((acc, item) => acc + (item.discount || 0), 0);
     }
 
     getVat() {
-        const taxable = this.getSubtotal() - this.getTotalDiscount() + this.shippingPrice;
+        // VAT is on (subtotal + shipping)
+        const taxable = this.getSubtotal() + this.shippingPrice;
         return taxable * this.vatRate;
     }
 
     getTotal() {
-        return this.getSubtotal() - this.getTotalDiscount() + this.shippingPrice + this.getVat();
+        return this.getSubtotal() + this.shippingPrice + this.getVat();
     }
 
     isValid() {

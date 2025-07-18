@@ -20,7 +20,6 @@ export default class CreateInvoicePage {
     }
 
     renderForm() {
-        // Render all fields as plain text (not editable)
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;
         document.getElementById('invoice-due-date').textContent = this.invoice.due_date;
@@ -37,7 +36,7 @@ export default class CreateInvoicePage {
         document.getElementById('buyer-phone').textContent = this.invoice.company?.buyer?.phone || '';
         document.getElementById('buyer-email').textContent = this.invoice.company?.buyer?.email || '';
 
-        // Items as readonly table
+        // Items table (readonly)
         const tbody = document.getElementById('products-body');
         tbody.innerHTML = '';
         this.invoice.items.forEach(item => {
@@ -47,7 +46,7 @@ export default class CreateInvoicePage {
                 <td>${item.quantity}</td>
                 <td>${item.price}</td>
                 <td>${item.discount}</td>
-                <td>${(item.quantity * item.price - (item.discount || 0)).toFixed(2)}</td>
+                <td>${this.invoice.getLineTotal(item).toFixed(2)}</td>
             `;
             tbody.appendChild(tr);
         });

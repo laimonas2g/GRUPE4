@@ -16,13 +16,15 @@ export default class ListInvoicesPage {
             return;
         }
         this.invoices.forEach(inv => {
+            // Ensure discount and total is calculated using Invoice model
+            const total = typeof inv.getTotal === 'function'
+                ? inv.getTotal().toFixed(2)
+                : (inv.total || 0).toFixed(2);
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${inv.number}</td>
                 <td>${inv.date}</td>
-                <td>${typeof inv.getTotal === 'function'
-                    ? inv.getTotal().toFixed(2)
-                    : (inv.total || 0).toFixed(2)}</td>
+                <td>${total}</td>
                 <td>
                     <a href="edit.html?id=${inv.id}" class="btn">Edit</a>
                     <a href="show.html?id=${inv.id}" class="btn">View</a>
