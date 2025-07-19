@@ -27,6 +27,10 @@ app.get('/api/invoices', (req, res) => {
     res.json(readInvoices());
 });
 
+app.get('/', (req, res) => {
+  res.redirect('/create.html');
+});
+
 // Get single invoice
 app.get('/api/invoices/:id', (req, res) => {
     const invoices = readInvoices();
