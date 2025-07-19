@@ -1,5 +1,6 @@
 import Invoice from './Invoice.js';
 import InvoiceRepository from './InvoiceRepository.js';
+import { uuidv4 } from './uuid.js';
 
 export default class CreateInvoicePage {
     constructor() {
@@ -76,6 +77,9 @@ export default class CreateInvoicePage {
     }
 
     async saveInvoice() {
+        if (!this.invoice.id) {
+            this.invoice.id = uuidv4();
+        }
         await InvoiceRepository.save(this.invoice);
         this.showMessage('Invoice saved!', false);
         setTimeout(() => window.location.href = 'read.html', 500);

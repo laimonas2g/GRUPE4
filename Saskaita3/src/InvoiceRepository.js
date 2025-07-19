@@ -3,13 +3,11 @@ import Invoice from './Invoice.js';
 const API = '/api/invoices';
 
 export default class InvoiceRepository {
-    static async save(invoice) {
-        const res = await fetch('/api/invoices', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(invoice)
-        });
-        return await res.json();
+    static async getAll() {
+        const res = await fetch(API);
+        if (!res.ok) return [];
+        const arr = await res.json();
+        return arr.map(inv => new Invoice(inv));
     }
 
     static async get(id) {
