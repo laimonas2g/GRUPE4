@@ -3,9 +3,13 @@ import Invoice from './Invoice.js';
 
 export default class ShowInvoicePage {
     constructor() {
+        this.init();
+    }
+
+    async init() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
-        const data = InvoiceRepository.get(id);
+        const data = await InvoiceRepository.get(id);
         this.invoice = data ? new Invoice(data) : null;
         if (!this.invoice) {
             document.getElementById('message').textContent = 'Invoice not found!';

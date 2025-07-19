@@ -1,33 +1,41 @@
 import Invoice from './Invoice.js';
 
-export default class InvoiceRepository {
-    static STORAGE_KEY = 'vat_invoices';
+const API = '/api/invoices';
 
-    static getAll() {
-        const data = localStorage.getItem(this.STORAGE_KEY);
-        const arr = data ? JSON.parse(data) : [];
+export default class InvoiceRepository {
+    static async getAll() {
+        const res = await fetch(API);
+        const arr = await res.json();
         return arr.map(inv => new Invoice(inv));
     }
 
-    static get(id) {
-        return this.getAll().find(inv => inv.id == id) || null;
+    static async get(id) {
+        const res = await fetch(`${API}/${id}`);
+        if (!res.ok) return null;
+        const data = await res.json();
+        return new Invoice(data);
     }
 
-    static save(invoice) {
-        const arr = this.getAll();
-        arr.push(invoice);
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(arr));
+    static async save(invoice) {
+        const res = await fetch(API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(invoice)
+        });
+        return await res.json();
     }
 
-    static update(updatedInvoice) {
-        let arr = this.getAll();
-        arr = arr.map(inv => inv.id == updatedInvoice.id ? updatedInvoice : inv);
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(arr));
+    static async update(invoice) {
+        const res = await fetch(`${API}/${invoice.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(invoice)
+        });
+        return await res.json();
     }
 
-    static delete(id) {
-        let arr = this.getAll();
-        arr = arr.filter(inv => inv.id != id);
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(arr));
+    static async delete(id) {
+        const res = await fetch(`${API}/${id}`, { method: 'DELETE' });
+        return await res.json();
     }
 }

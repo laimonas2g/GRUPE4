@@ -6,11 +6,11 @@ export default class DeleteInvoicePage {
         this.init();
     }
 
-    init() {
+    async init() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
         if (!id) return this.showMessage('No invoice ID provided', true);
-        this.invoice = InvoiceRepository.get(id);
+        this.invoice = await InvoiceRepository.get(id);
         if (!this.invoice) return this.showMessage('Invoice not found', true);
         this.renderConfirmation();
         this.setupEventListeners();
@@ -27,15 +27,15 @@ export default class DeleteInvoicePage {
         const deleteBtn = document.getElementById('confirm-delete-btn');
         const cancelBtn = document.getElementById('cancel-delete-btn');
         if (deleteBtn) {
-            deleteBtn.onclick = () => this.handleDelete();
+            deleteBtn.onclick = async () => await this.handleDelete();
         }
         if (cancelBtn) {
             cancelBtn.onclick = () => window.location.href = 'read.html';
         }
     }
 
-    handleDelete() {
-        InvoiceRepository.delete(this.invoice.id);
+    async handleDelete() {
+        await InvoiceRepository.delete(this.invoice.id);
         this.showMessage('Invoice deleted!');
         setTimeout(() => window.location.href = 'read.html', 500);
     }

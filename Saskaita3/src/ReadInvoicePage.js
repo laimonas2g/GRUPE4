@@ -5,8 +5,8 @@ export default class ReadInvoicePage {
         this.renderList();
     }
 
-    renderList() {
-        const invoices = InvoiceRepository.getAll();
+    async renderList() {
+        const invoices = await InvoiceRepository.getAll();
         const tbody = document.getElementById('invoice-list');
         tbody.innerHTML = '';
         invoices.forEach(inv => {

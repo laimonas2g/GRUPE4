@@ -66,15 +66,17 @@ export default class CreateInvoicePage {
     }
 
     setupEventListeners() {
-        document.getElementById('save-btn').onclick = () => this.saveInvoice();
+        document.getElementById('save-btn').onclick = async () => {
+            await this.saveInvoice();
+        };
         document.getElementById('update-btn').onclick = async () => {
             await this.loadInvoiceFromApi();
         };
         document.getElementById('cancel-btn').onclick = () => window.location.href = 'read.html';
     }
 
-    saveInvoice() {
-        InvoiceRepository.save(this.invoice);
+    async saveInvoice() {
+        await InvoiceRepository.save(this.invoice);
         this.showMessage('Invoice saved!', false);
         setTimeout(() => window.location.href = 'read.html', 500);
     }
