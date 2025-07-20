@@ -16,50 +16,50 @@
 </head>
 <body>
 <div class="container card">
-    <h1>VAT Invoice Details</h1>
+    <h1>PVM SĄSKAITA FAKTŪRA</h1>
     <div id="message"></div>
     <div class="invoice-fields">
         <div class="row">
-            <label>Invoice Number:</label>
+            <label>Sąskaitos Nr.:</label>
             <span id="invoice-number"></span>
         </div>
         <div class="row">
-            <label>Date:</label>
+            <label>Sąskaitos data:</label>
             <span id="invoice-date"></span>
         </div>
         <div class="row">
-            <label>Due Date:</label>
+            <label>Terminas:</label>
             <span id="invoice-due-date"></span>
         </div>
         <div class="row two-columns">
             <div>
-                <h3>Seller</h3>
+                <h3>Pardavėjas:</h3>
                 <div id="seller-name"></div>
                 <div id="seller-address"></div>
-                <div>Code: <span id="seller-code"></span></div>
-                <div>VAT: <span id="seller-vat"></span></div>
-                <div>Phone: <span id="seller-phone"></span></div>
+                <div>Įmonės kodas: <span id="seller-code"></span></div>
+                <div>PVM kodas: <span id="seller-vat"></span></div>
+                <div>Tel.: <span id="seller-phone"></span></div>
                 <div>Email: <span id="seller-email"></span></div>
             </div>
             <div>
-                <h3>Buyer</h3>
+                <h3>Pirkėjas:</h3>
                 <div id="buyer-name"></div>
                 <div id="buyer-address"></div>
-                <div>Code: <span id="buyer-code"></span></div>
-                <div>VAT: <span id="buyer-vat"></span></div>
-                <div>Phone: <span id="buyer-phone"></span></div>
+                <div>Įmonės kodas: <span id="buyer-code"></span></div>
+                <div>PVM kodas: <span id="buyer-vat"></span></div>
+                <div>Tel.: <span id="buyer-phone"></span></div>
                 <div>Email: <span id="buyer-email"></span></div>
             </div>
         </div>
-        <h3>Items</h3>
+        <h3>Išrašė sąskaitą: Laimonas Grebliauskas</h3>
         <table class="products-table">
             <thead>
                 <tr>
-                    <th>Description</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                    <th>Discount</th>
-                    <th>Line Total</th>
+                    <th>Prekė</th>
+                    <th>Kiekis</th>
+                    <th>Kaina (be PVM) (€)</th>
+                    <th>Nuolaida</th>
+                    <th>Suma (be PVM) (€)</th>
                 </tr>
             </thead>
             <tbody id="products-body">
@@ -67,22 +67,22 @@
             </tbody>
         </table>
         <div class="totals">
-            <div>Shipping: <span id="shipping"></span></div>
-            <div>Subtotal: <span id="subtotal"></span></div>
-            <div>VAT: <span id="vat"></span></div>
-            <div>Discount: <span id="discount"></span></div>
-            <div class="final-amount">Total: <span id="total"></span></div>
+            <div>Transportavimo išlaidos (€): <span id="shipping"></span></div>
+            <div>Suma be PVM (€): <span id="subtotal"></span></div>
+            <div>PVM (21%):	 <span id="vat"></span></div>
+            <div>Nuolaida (€): <span id="discount"></span></div>
+            <div class="final-amount">Galutinė suma su PVM (€): <span id="total"></span></div>
         </div>
     </div>
     <!-- Add .no-print to make this section hidden during printing -->
     <div class="actions no-print" id="actions-back">
-        <a href="read.html" class="btn">Back to List</a>
+        <a href="read.html" class="btn">Sąskaitų sąrašas</a>
     </div>
     <!-- Add .no-print to make this section hidden during printing -->
     <div class="actions no-print" id="actions-print">
         <button type="button" class="btn print-btn" id="printBtn">
             <img src="data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='5' y='2' width='10' height='5' rx='1' fill='%23749BC2'/><rect x='3' y='7' width='14' height='7' rx='2' fill='%2391C8E4' stroke='%234682A9' stroke-width='1.5'/><rect x='7' y='13' width='6' height='4' rx='1' fill='%234682A9'/><circle cx='15.5' cy='10.5' r='1' fill='%234682A9'/></svg>" alt="Print" class="print-icon" />
-            Print..<span class="ctrlp"></span>
+            Spausdinti..<span class="ctrlp"></span>
         </button>
     </div>
 </div>

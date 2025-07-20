@@ -24,7 +24,7 @@
     },
     "items": [
       {
-        "description": "Kavos staliukas \"Bananas\" su geltonu paviršium ir su padėklu",
+        "description": "Kavos ",
         "quantity": 3,
         "price": 300,
         "discount": {
@@ -33,7 +33,7 @@
         }
       },
       {
-        "description": "Rašomasis stalas \"Studentas\" su ąžuoliniu stalviršium",
+        "description": "Rašomasis stalas ",
         "quantity": 5,
         "price": 210,
         "discount": {
@@ -42,7 +42,7 @@
         }
       },
       {
-        "description": "Kavos staliukas \"Bananas\" su geltonu paviršium, su padėklu ir uždengimu",
+        "description": "Kavos staliukas ",
         "quantity": 9,
         "price": 330.95,
         "discount": {
@@ -51,7 +51,7 @@
         }
       },
       {
-        "description": "Stiklinis kavos staliukas \"Krištolas\" su padėklu",
+        "description": "Stiklinis kavos staliukas ",
         "quantity": 6,
         "price": 420,
         "discount": {
@@ -60,7 +60,7 @@
         }
       },
       {
-        "description": "Lova \"Spyruoklė-3\" su patalynės dėže",
+        "description": "Lova ",
         "quantity": 4,
         "price": 510.99,
         "discount": {
@@ -69,7 +69,7 @@
         }
       },
       {
-        "description": "TV staliukas \"Telebimbam\" raudonas",
+        "description": "TV staliukas ",
         "quantity": 2,
         "price": 180,
         "discount": {
@@ -78,7 +78,7 @@
         }
       },
       {
-        "description": "Spinta su stumdomomis durimis \"Afrikos drambliai\" žalia",
+        "description": "Spinta su stumdomomis durimis ",
         "quantity": 7,
         "price": 720,
         "discount": {
@@ -96,7 +96,7 @@
         }
       },
       {
-        "description": "Sofa-lova \"Studentas\" su patalynės dėže",
+        "description": "Sofa-lova ",
         "quantity": 1,
         "price": 270.99,
         "discount": {
@@ -105,7 +105,7 @@
         }
       },
       {
-        "description": "Stalas \"Violeta\"",
+        "description": "Stalas ",
         "quantity": 6,
         "price": 150,
         "discount": {
@@ -333,6 +333,124 @@
       }
     ],
     "shippingPrice": 65,
+    "vatRate": 0.21
+  },
+  {
+    "id": 1753028192052,
+    "number": "AB-56896810",
+    "date": "2025-07-19",
+    "due_date": "2025-07-30",
+    "company": {
+      "buyer": {
+        "name": "VŠĮ \"Žukauskas ir Baranauskas\"",
+        "address": "Liepų alėja 90-51, Kaunas",
+        "code": "61596488",
+        "vat": "LT634361149",
+        "phone": "(8 5) 084 3552",
+        "email": "tbutkute@yahoo.com"
+      },
+      "seller": {
+        "name": "AB \"Urbonas\"",
+        "address": "Kauno gatvė 57-34, Jonava",
+        "code": "00196464",
+        "vat": "LT128375260",
+        "phone": "+37065633415",
+        "email": "zukauskas.adolfas@gmail.com"
+      }
+    },
+    "items": [
+      {
+        "description": "Rašomasis stalas \"Studentas\" su stiklo plokšte",
+        "quantity": 8,
+        "price": 240,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Kavos staliukas \"Arbūzas\" su raudonu paviršium, apvalus, su padėklu ir uždengimu",
+        "quantity": 1,
+        "price": 390.95,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Komoda \"Malvina\"",
+        "quantity": 5,
+        "price": 150,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Baro kėdė \"Malvina\"",
+        "quantity": 6,
+        "price": 45.5,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Žalias odinis fotelis \"Krokodilas\" su pagalve",
+        "quantity": 5,
+        "price": 225.99,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Virtuvinis stalas \"Begemotas\"",
+        "quantity": 10,
+        "price": 120,
+        "discount": {
+          "type": "fixed",
+          "value": 57
+        }
+      },
+      {
+        "description": "Virtuvinis stalas \"Begemotas\" su stiklo plokšte",
+        "quantity": 7,
+        "price": 150,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Kampinė sofa \"Ganykla\" su patalynės dėže",
+        "quantity": 1,
+        "price": 630,
+        "discount": {
+          "type": "percentage",
+          "value": 7
+        }
+      },
+      {
+        "description": "Rašomasis stalas \"Mokinukas-2\"",
+        "quantity": 2,
+        "price": 150,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Spinta \"Arabika\"",
+        "quantity": 9,
+        "price": 300,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      }
+    ],
+    "shippingPrice": 39,
     "vatRate": 0.21
   }
 ]

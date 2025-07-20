@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Delete VAT Invoice</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
 </head>
+
 <body>
-<div class="container card">
-    <h1>Delete VAT Invoice</h1>
-    <div id="message"></div>
-    <p>Are you sure you want to delete this invoice?</p>
-    <div class="row">
-        <label>Invoice Number:</label>
-        <span id="invoice-number"></span>
+    <div class="container card">
+        <h1>Ištrinti PVM sąskaitą faktūrą</h1>
+        <div id="message"></div>
+        <p>
+            Ar tikrai norite ištrinti šią sąskaitą faktūrą?</p>
+        <div class="row">
+            <label>Sąskaitos Nr.:</label>
+            <span id="invoice-number"></span>
+        </div>
+        <div class="row">
+            <label>Sąskaitos data:</label>
+            <span id="invoice-date"></span>
+        </div>
+        <div class="row">
+            <label>Pirkėjas:</label>
+            <span id="buyer-name"></span>
+        </div>
+        <div class="row">
+            <label>Pardavėjas:</label>
+            <span id="seller-name"></span>
+        </div>
+        <div class="actions">
+            <button id="confirm-delete-btn" class="btn danger">Trinti</button>
+            <button id="cancel-delete-btn" class="btn">Atšaukti</button>
+        </div>
     </div>
-    <div class="row">
-        <label>Date:</label>
-        <span id="invoice-date"></span>
-    </div>
-    <div class="row">
-        <label>Buyer:</label>
-        <span id="buyer-name"></span>
-    </div>
-    <div class="row">
-        <label>Seller:</label>
-        <span id="seller-name"></span>
-    </div>
-    <div class="actions">
-        <button id="confirm-delete-btn" class="btn danger">Delete</button>
-        <button id="cancel-delete-btn" class="btn">Cancel</button>
-    </div>
-</div>
 </body>
+
 </html>
