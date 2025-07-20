@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>View VAT Invoice</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <style>
+        /* Hide .no-print elements when printing */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="container card">
@@ -66,15 +74,60 @@
             <div class="final-amount">Total: <span id="total"></span></div>
         </div>
     </div>
-    <div class="actions">
+    <!-- Add .no-print to make this section hidden during printing -->
+    <div class="actions no-print" id="actions-back">
         <a href="read.html" class="btn">Back to List</a>
     </div>
-        <div class="actions no-print">
-        <button type="button" class="btn print-btn" onclick="window.print()">
+    <!-- Add .no-print to make this section hidden during printing -->
+    <div class="actions no-print" id="actions-print">
+        <button type="button" class="btn print-btn" id="printBtn">
             <img src="data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='5' y='2' width='10' height='5' rx='1' fill='%23749BC2'/><rect x='3' y='7' width='14' height='7' rx='2' fill='%2391C8E4' stroke='%234682A9' stroke-width='1.5'/><rect x='7' y='13' width='6' height='4' rx='1' fill='%234682A9'/><circle cx='15.5' cy='10.5' r='1' fill='%234682A9'/></svg>" alt="Print" class="print-icon" />
             Print..<span class="ctrlp"></span>
         </button>
     </div>
 </div>
+<script>
+// --- Hide action buttons when printing using CSS media query (@media print) ---
+
+// --- Optionally, if you want to hide them BEFORE print dialog opens and restore after print (for extra safety in all browsers): ---
+
+/**
+ * Hide elements with 'no-print' class before print,
+ * and restore them after print dialog closes.
+ * This is helpful for browsers that might not fully support the CSS @media print hiding.
+ */
+function handleBeforePrint() {
+    // Hide all elements with .no-print class
+    document.querySelectorAll('.no-print').forEach(el => el.style.display = 'none');
+}
+
+function handleAfterPrint() {
+    // Restore all elements with .no-print class
+    document.querySelectorAll('.no-print').forEach(el => el.style.display = '');
+}
+
+// Attach print events for older and modern browsers
+if (window.matchMedia) {
+    // Modern browsers: listen for print media changes
+    window.matchMedia('print').addEventListener('change', function(e) {
+        if (e.matches) {
+            handleBeforePrint();
+        } else {
+            handleAfterPrint();
+        }
+    });
+}
+
+// Fallback for browsers supporting beforeprint/afterprint events
+window.onbeforeprint = handleBeforePrint;
+window.onafterprint = handleAfterPrint;
+
+// Intercept Print button to run print logic
+document.getElementById('printBtn').addEventListener('click', function() {
+    handleBeforePrint();
+    window.print();
+    // Note: afterprint event will restore the buttons
+});
+</script>
 </body>
 </html>
