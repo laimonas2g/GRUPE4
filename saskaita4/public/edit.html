@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit VAT Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container card">
+    <h1>Edit VAT Invoice</h1>
+    <div id="message"></div>
+    <form id="edit-form" autocomplete="off">
+        <div class="invoice-fields">
+            <div class="row">
+                <label>Invoice Number:</label>
+                <span id="invoice-number"></span>
+            </div>
+            <div class="row">
+                <label>Date:</label>
+                <span id="invoice-date"></span>
+            </div>
+            <div class="row">
+                <label>Due Date:</label>
+                <span id="invoice-due-date"></span>
+            </div>
+            <div class="row two-columns">
+                <div>
+                    <h3>Seller</h3>
+                    <div id="seller-name"></div>
+                    <div id="seller-address"></div>
+                    <div>Code: <span id="seller-code"></span></div>
+                    <div>VAT: <span id="seller-vat"></span></div>
+                    <div>Phone: <span id="seller-phone"></span></div>
+                    <div>Email: <span id="seller-email"></span></div>
+                </div>
+                <div>
+                    <h3>Buyer</h3>
+                    <div id="buyer-name"></div>
+                    <div id="buyer-address"></div>
+                    <div>Code: <span id="buyer-code"></span></div>
+                    <div>VAT: <span id="buyer-vat"></span></div>
+                    <div>Phone: <span id="buyer-phone"></span></div>
+                    <div>Email: <span id="buyer-email"></span></div>
+                </div>
+            </div>
+            <h3>Items</h3>
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Line Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="products-body">
+                    <!-- Dynamically rendered -->
+                </tbody>
+            </table>
+            <div class="row">
+                <label for="shipping">Shipping:</label>
+                <input type="number" id="shipping" name="shipping" min="0" step="0.01">
+            </div>
+            <div class="totals">
+                <div>Subtotal: <span id="subtotal"></span></div>
+                <div>VAT: <span id="vat"></span></div>
+                <div>Discount: <span id="discount"></span></div>
+                <div class="final-amount">Total: <span id="total"></span></div>
+            </div>
+        </div>
+        <div class="actions">
+            <button type="submit" class="btn primary">Save</button>
+            <button type="button" id="cancel-btn" class="btn danger">Cancel</button>
+        </div>
+    </form>
+</div>
+<script type="module" src="../src/app.js"></script>
+</body>
+</html>
