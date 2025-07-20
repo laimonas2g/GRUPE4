@@ -1,6 +1,6 @@
-
-// this class provides methods to interact with the server-side invoice storage via REST API.
-// all invoice data is persisted in a server-side file (e.g. data.json) through the backend API.
+// InvoiceRepository.js
+// This class provides methods to interact with the server-side invoice storage via REST API.
+// All invoice data is persisted in a server-side file (e.g. data.json) through the backend API.
 
 import Invoice from './Invoice.js';
 
@@ -8,7 +8,7 @@ import Invoice from './Invoice.js';
 const API = '/api/invoices';
 
 export default class InvoiceRepository {
-    // retrieve all invoices from the server.
+    // Retrieve all invoices from the server.
     static async getAll() {
         const res = await fetch(API); // GET /api/invoices
         if (!res.ok) return [];
@@ -17,7 +17,7 @@ export default class InvoiceRepository {
         return arr.map(inv => new Invoice(inv));
     }
 
-    // retrieve a specific invoice by ID from the server.
+    // Retrieve a specific invoice by ID from the server.
     static async get(id) {
         const res = await fetch(`${API}/${id}`); // GET /api/invoices/:id
         if (!res.ok) return null;
@@ -25,7 +25,7 @@ export default class InvoiceRepository {
         return new Invoice(data);
     }
 
-    // save a new invoice to the server.
+    // Save a new invoice to the server.
     static async save(invoice) {
         const res = await fetch(API, {
             method: 'POST', // POST /api/invoices
@@ -45,7 +45,7 @@ export default class InvoiceRepository {
         return await res.json();
     }
 
-    // delete an invoice from the server.
+    // Delete an invoice from the server.
     static async delete(id) {
         const res = await fetch(`${API}/${id}`, { method: 'DELETE' }); // DELETE /api/invoices/:id
         return await res.json();

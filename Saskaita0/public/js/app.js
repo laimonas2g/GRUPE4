@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
 /* harmony import */ var _uuid_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./uuid.js */ "./src/uuid.js");
-// handles displaying and saving a new invoice via the backend API
+// Handles displaying and saving a new invoice via the backend API
 
 
 
@@ -130,6 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ DeleteInvoicePage)
 /* harmony export */ });
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
+// DeleteInvoicePage.js
 // Handles showing a confirmation to delete an invoice and then deleting via the API
 
 
@@ -199,6 +200,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
+// EditInvoicePage.js
 // Handles displaying and updating an invoice via the backend API
 
 
@@ -336,7 +338,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Invoice)
 /* harmony export */ });
-// pure data model class for Invoice, provides calculations and validation
+// Invoice.js
+// Pure data model class for Invoice, provides calculations and validation
 
 class Invoice {
   constructor(data) {
@@ -382,7 +385,7 @@ class Invoice {
     };
   }
 
-  // calculate discount amount for a line item
+  // Calculate discount amount for a line item
   getLineDiscount(item) {
     if (!item.discount || !item.discount.type || !item.discount.value) return 0;
     if (item.discount.type === 'percentage') {
@@ -440,15 +443,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ InvoiceRepository)
 /* harmony export */ });
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
-// this class provides methods to interact with the server-side invoice storage via REST API.
-// all invoice data is persisted in a server-side file (e.g. data.json) through the backend API.
+// InvoiceRepository.js
+// This class provides methods to interact with the server-side invoice storage via REST API.
+// All invoice data is persisted in a server-side file (e.g. data.json) through the backend API.
 
 
 
 // The base API endpoint for invoice CRUD operations.
 const API = '/api/invoices';
 class InvoiceRepository {
-  // retrieve all invoices from the server.
+  // Retrieve all invoices from the server.
   static async getAll() {
     const res = await fetch(API); // GET /api/invoices
     if (!res.ok) return [];
@@ -457,7 +461,7 @@ class InvoiceRepository {
     return arr.map(inv => new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](inv));
   }
 
-  // retrieve a specific invoice by ID from the server.
+  // Retrieve a specific invoice by ID from the server.
   static async get(id) {
     const res = await fetch(`${API}/${id}`); // GET /api/invoices/:id
     if (!res.ok) return null;
@@ -465,7 +469,7 @@ class InvoiceRepository {
     return new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](data);
   }
 
-  // save a new invoice to the server.
+  // Save a new invoice to the server.
   static async save(invoice) {
     const res = await fetch(API, {
       method: 'POST',
@@ -491,7 +495,7 @@ class InvoiceRepository {
     return await res.json();
   }
 
-  // delete an invoice from the server.
+  // Delete an invoice from the server.
   static async delete(id) {
     const res = await fetch(`${API}/${id}`, {
       method: 'DELETE'
@@ -513,7 +517,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ListInvoicesPage)
 /* harmony export */ });
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
-// fetches and displays all invoices from the backend API in a table
+// Fetches and displays all invoices from the backend API in a table
 
 
 class ListInvoicesPage {
@@ -521,9 +525,9 @@ class ListInvoicesPage {
     this.renderList();
   }
 
-  // load and render all invoices
+  // Load and render all invoices
   async renderList() {
-    const invoices = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // fetch all invoices from API
+    const invoices = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // Fetch all invoices from API
     const tbody = document.getElementById('invoice-list');
     tbody.innerHTML = '';
     invoices.forEach(inv => {
@@ -606,6 +610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
+// ShowInvoicePage.js
 // Displays full details of a single invoice, fetched from the API
 
 
@@ -615,7 +620,7 @@ class ShowInvoicePage {
     this.init();
   }
 
-  // load invoice by ID and render fields
+  // Load invoice by ID and render fields
   async init() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -628,7 +633,7 @@ class ShowInvoicePage {
     this.renderFields();
   }
 
-  // render all invoice fields to the page
+  // Render all invoice fields to the page
   renderFields() {
     document.getElementById('invoice-number').textContent = this.invoice.number;
     document.getElementById('invoice-date').textContent = this.invoice.date;
@@ -687,7 +692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ListInvoicesPage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListInvoicesPage.js */ "./src/ListInvoicesPage.js");
 /* harmony import */ var _ShowInvoicePage_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ShowInvoicePage.js */ "./src/ShowInvoicePage.js");
 /* harmony import */ var _DeleteInvoicePage_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DeleteInvoicePage.js */ "./src/DeleteInvoicePage.js");
-// entry point: detects page and instantiates the appropriate class for each page
+// Entry point: detects page and instantiates the appropriate class for each page
 
 
 
@@ -699,7 +704,7 @@ __webpack_require__.r(__webpack_exports__);
 // Get the current HTML file name from the URL path
 const page = window.location.pathname.split('/').pop();
 
-// instantiate the corresponding page logic class based on the current HTML file
+// Instantiate the corresponding page logic class based on the current HTML file
 switch (page) {
   case 'create.html':
     new _CreateInvoicePage_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
@@ -745,7 +750,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   uuidv4: () => (/* binding */ uuidv4)
 /* harmony export */ });
-// utility for generating a RFC4122 version 4 compliant UUID
+// uuid.js
+// Utility for generating a RFC4122 version 4 compliant UUID
 
 function uuidv4() {
   // Generates a simple RFC4122 version 4 compliant UUID.

@@ -1,4 +1,4 @@
-
+// ShowInvoicePage.js
 // Displays full details of a single invoice, fetched from the API
 
 import InvoiceRepository from './InvoiceRepository.js';
@@ -9,7 +9,7 @@ export default class ShowInvoicePage {
         this.init();
     }
 
-    // load invoice by ID and render fields
+    // Load invoice by ID and render fields
     async init() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
@@ -22,7 +22,7 @@ export default class ShowInvoicePage {
         this.renderFields();
     }
 
-    // render all invoice fields to the page
+    // Render all invoice fields to the page
     renderFields() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;

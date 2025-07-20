@@ -1,5 +1,5 @@
-
-// utility for generating a RFC4122 version 4 compliant UUID
+// uuid.js
+// Utility for generating a RFC4122 version 4 compliant UUID
 
 export function uuidv4() {
     // Generates a simple RFC4122 version 4 compliant UUID.

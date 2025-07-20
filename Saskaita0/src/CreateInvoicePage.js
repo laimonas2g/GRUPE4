@@ -1,5 +1,5 @@
 
-// handles displaying and saving a new invoice via the backend API
+// Handles displaying and saving a new invoice via the backend API
 
 import Invoice from './Invoice.js';
 import InvoiceRepository from './InvoiceRepository.js';
@@ -90,7 +90,7 @@ export default class CreateInvoicePage {
             this.invoice.id = uuidv4(); // Ensure unique ID
         }
         await InvoiceRepository.save(this.invoice); // Save to backend
-        this.showMessage('Invoice saved!', false);
+        this.showMessage('Sąskaita išsaugota!', false);
         setTimeout(() => window.location.href = 'read.html', 500);
     }
 

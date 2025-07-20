@@ -1,5 +1,5 @@
 
-// pure data model class for Invoice, provides calculations and validation
+// Pure data model class for Invoice, provides calculations and validation
 
 export default class Invoice {
     constructor(data) {
@@ -33,7 +33,7 @@ export default class Invoice {
         return { type: 'none', value: 0 };
     }
 
-    // calculate discount amount for a line item
+    // Calculate discount amount for a line item
     getLineDiscount(item) {
         if (!item.discount || !item.discount.type || !item.discount.value) return 0;
         if (item.discount.type === 'percentage') {

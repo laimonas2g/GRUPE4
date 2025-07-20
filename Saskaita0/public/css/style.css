@@ -1,0 +1,224 @@
+body {
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  color: #113F67;
+}
+
+.container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 36px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(52, 105, 154, 0.08), 0 1.5px 6px rgba(17, 63, 103, 0.04);
+  border: 3px solid #FDF5AA;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  border-top: 5px solid #34699A;
+  background: #FDF5AA;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #113F67;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 6px rgba(253, 245, 170, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #34699A;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.two-columns {
+  display: flex;
+  gap: 36px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .two-columns {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+label {
+  min-width: 120px;
+  font-weight: 700;
+  color: #34699A;
+  font-size: 1.07rem;
+}
+
+input[type=number], input[type=text], input[type=email] {
+  width: 120px;
+  padding: 8px 12px;
+  border: 2px solid #58A0C8;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  background: #FDF5AA;
+  color: #113F67;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+input:focus {
+  border-color: #34699A;
+  background: #fff;
+}
+
+.invoice-fields {
+  margin-bottom: 30px;
+}
+
+.products-table, .list-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 18px;
+  background: #FDF5AA;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(88, 160, 200, 0.1333333333);
+  border: 2px solid #34699A;
+  position: relative;
+  z-index: 1;
+}
+
+.products-table th, .products-table td,
+.list-table th, .list-table td {
+  padding: 14px 10px;
+  border-bottom: 1.5px solid #58A0C8;
+  text-align: left;
+  font-size: 1.04rem;
+}
+
+.products-table th, .list-table th {
+  background: #34699A;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #58A0C8;
+}
+
+.products-table tr:last-child td,
+.list-table tr:last-child td {
+  border-bottom: none;
+}
+
+.totals {
+  padding: 16px 0 0 0;
+  margin-bottom: 12px;
+  font-size: 1.11rem;
+  color: #34699A;
+}
+
+.totals div {
+  margin-bottom: 6px;
+}
+
+.final-amount {
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #58A0C8;
+  border-radius: 8px;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  padding: 11px 24px;
+  font-size: 1.04rem;
+  border: none;
+  border-radius: 9px;
+  background: #34699A;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(17, 63, 103, 0.2);
+  border: 2px solid #58A0C8;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #113F67 60%, #34699A 100%);
+  color: #fff;
+  border: 2px solid #113F67;
+}
+
+.btn.danger {
+  background: linear-gradient(90deg, #58A0C8 60%, #34699A 100%);
+  color: #fff;
+  border: 2px solid #58A0C8;
+}
+
+.btn:hover, .btn:focus {
+  background: #58A0C8;
+  color: #113F67;
+  box-shadow: 0 2px 14px rgba(52, 105, 154, 0.2);
+}
+
+.btn.danger:hover, .btn.danger:focus {
+  background: #113F67;
+  color: #fff;
+  box-shadow: 0 2px 14px rgba(88, 160, 200, 0.2);
+}
+
+#message {
+  min-height: 27px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #113F67;
+  transition: color 0.2s;
+  font-size: 1.04rem;
+}
+
+.btn.danger {
+  color: rgb(211, 56, 56);
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 12px;
+  }
+  .products-table th, .products-table td,
+  .list-table th, .list-table td {
+    padding: 8px 3px;
+  }
+  .row, .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

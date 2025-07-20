@@ -1,5 +1,5 @@
 
-// entry point: detects page and instantiates the appropriate class for each page
+// Entry point: detects page and instantiates the appropriate class for each page
 
 import CreateInvoicePage from './CreateInvoicePage.js';
 import ReadInvoicePage from './ReadInvoicePage.js';
@@ -11,7 +11,7 @@ import DeleteInvoicePage from './DeleteInvoicePage.js';
 // Get the current HTML file name from the URL path
 const page = window.location.pathname.split('/').pop();
 
-// instantiate the corresponding page logic class based on the current HTML file
+// Instantiate the corresponding page logic class based on the current HTML file
 switch (page) {
     case 'create.html':
         new CreateInvoicePage();

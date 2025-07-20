@@ -1,5 +1,5 @@
 
-// fetches and displays all invoices from the backend API in a table
+// Fetches and displays all invoices from the backend API in a table
 
 import InvoiceRepository from './InvoiceRepository.js';
 
@@ -8,9 +8,9 @@ export default class ListInvoicesPage {
         this.renderList();
     }
 
-    // load and render all invoices
+    // Load and render all invoices
     async renderList() {
-        const invoices = await InvoiceRepository.getAll(); // fetch all invoices from API
+        const invoices = await InvoiceRepository.getAll(); // Fetch all invoices from API
         const tbody = document.getElementById('invoice-list');
         tbody.innerHTML = '';
         invoices.forEach(inv => {
