@@ -274,12 +274,34 @@ class EditInvoicePage {
   setupEventListeners() {
     document.getElementById('edit-form').onsubmit = async e => {
       e.preventDefault();
-      // ... gather updated invoice data from form fields here ...
-      await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__["default"].update(this.invoice); // Save changes to backend
+      this.updateInvoiceFromForm(); // <-- Add this line!
+      await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__["default"].update(this.invoice);
       this.showMessage('Invoice updated!');
       setTimeout(() => window.location.href = 'read.html', 500);
     };
     document.getElementById('cancel-btn').onclick = () => window.location.href = 'read.html';
+  }
+  updateInvoiceFromForm() {
+    // Update basic fields if editable (if not, skip)
+    // this.invoice.number = document.getElementById('invoice-number').textContent; // If editable
+
+    // Update shipping
+    this.invoice.shippingPrice = parseFloat(document.getElementById('shipping').value) || 0;
+
+    // Update items
+    const tbody = document.getElementById('products-body');
+    const rows = tbody.querySelectorAll('tr');
+    this.invoice.items = Array.from(rows).map((tr, idx) => {
+      return {
+        description: tr.querySelector(`[name=desc${idx}]`).value,
+        quantity: parseInt(tr.querySelector(`[name=qty${idx}]`).value, 10),
+        price: parseFloat(tr.querySelector(`[name=price${idx}]`).value),
+        discount: {
+          type: tr.querySelector(`[name=discountType${idx}]`).value,
+          value: parseFloat(tr.querySelector(`[name=discountValue${idx}]`).value) || 0
+        }
+      };
+    });
   }
 
   // Show a status message
@@ -830,7 +852,7 @@ function uuidv4() {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"public/css/style": 0
+/******/ 			"css/style": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -880,8 +902,8 @@ function uuidv4() {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["public/css/style"], () => (__webpack_require__("./src/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/css/style"], () => (__webpack_require__("./src/style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/style"], () => (__webpack_require__("./src/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/style"], () => (__webpack_require__("./src/style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

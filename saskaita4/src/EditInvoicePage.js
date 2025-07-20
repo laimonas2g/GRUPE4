@@ -72,12 +72,35 @@ export default class EditInvoicePage {
     setupEventListeners() {
         document.getElementById('edit-form').onsubmit = async (e) => {
             e.preventDefault();
-            // ... gather updated invoice data from form fields here ...
-            await InvoiceRepository.update(this.invoice); // Save changes to backend
+            this.updateInvoiceFromForm(); // <-- Add this line!
+            await InvoiceRepository.update(this.invoice);
             this.showMessage('Invoice updated!');
             setTimeout(() => window.location.href = 'read.html', 500);
         };
         document.getElementById('cancel-btn').onclick = () => window.location.href = 'read.html';
+    }
+
+    updateInvoiceFromForm() {
+        // Update basic fields if editable (if not, skip)
+        // this.invoice.number = document.getElementById('invoice-number').textContent; // If editable
+
+        // Update shipping
+        this.invoice.shippingPrice = parseFloat(document.getElementById('shipping').value) || 0;
+
+        // Update items
+        const tbody = document.getElementById('products-body');
+        const rows = tbody.querySelectorAll('tr');
+        this.invoice.items = Array.from(rows).map((tr, idx) => {
+            return {
+                description: tr.querySelector(`[name=desc${idx}]`).value,
+                quantity: parseInt(tr.querySelector(`[name=qty${idx}]`).value, 10),
+                price: parseFloat(tr.querySelector(`[name=price${idx}]`).value),
+                discount: {
+                    type: tr.querySelector(`[name=discountType${idx}]`).value,
+                    value: parseFloat(tr.querySelector(`[name=discountValue${idx}]`).value) || 0
+                }
+            };
+        });
     }
 
     // Show a status message
