@@ -1,3 +1,6 @@
+// Invoice.js
+// Pure data model class for Invoice, provides calculations and validation
+
 export default class Invoice {
     constructor(data) {
         this.id = data.id || Date.now();
@@ -5,7 +8,7 @@ export default class Invoice {
         this.date = data.date || '';
         this.due_date = data.due_date || '';
         this.company = data.company || {};
-        // Accept API discount as {type, value} or []
+        // Normalize items and discounts
         this.items = Array.isArray(data.items) ? data.items.map(item => ({
             description: item.description || '',
             quantity: Number(item.quantity) || 1,
@@ -13,11 +16,11 @@ export default class Invoice {
             discount: this.parseDiscount(item.discount)
         })) : [];
         this.shippingPrice = Number(data.shippingPrice) || 0;
-        this.vatRate = 0.21;
+        this.vatRate = 0.21; // VAT rate (21%)
     }
 
+    // Normalize discount input to standard object
     parseDiscount(discount) {
-        // Accept {type, value}, [], number, or null
         if (!discount || (Array.isArray(discount) && discount.length === 0)) {
             return { type: 'none', value: 0 };
         }
@@ -30,6 +33,7 @@ export default class Invoice {
         return { type: 'none', value: 0 };
     }
 
+    // Calculate discount amount for a line item
     getLineDiscount(item) {
         if (!item.discount || !item.discount.type || !item.discount.value) return 0;
         if (item.discount.type === 'percentage') {
@@ -42,31 +46,33 @@ export default class Invoice {
         return 0;
     }
 
+    // Calculate line total after discount
     getLineTotal(item) {
-        // Discount is subtracted
         return (item.price * item.quantity) - this.getLineDiscount(item);
     }
 
+    // Calculate subtotal (sum of all lines, after discount, before VAT)
     getSubtotal() {
-        // Sum of line totals (before VAT, after discount)
         return this.items.reduce((acc, item) => acc + this.getLineTotal(item), 0);
     }
 
+    // Calculate total discount for the invoice
     getTotalDiscount() {
-        // Total discount is sum of all line discounts
         return this.items.reduce((acc, item) => acc + this.getLineDiscount(item), 0);
     }
 
+    // Calculate VAT on subtotal + shipping
     getVat() {
-        // VAT is on (subtotal + shipping)
         const taxable = this.getSubtotal() + this.shippingPrice;
         return taxable * this.vatRate;
     }
 
+    // Calculate grand total
     getTotal() {
         return this.getSubtotal() + this.shippingPrice + this.getVat();
     }
 
+    // Check if invoice is valid (basic validation)
     isValid() {
         return (
             !isNaN(this.getTotal()) &&

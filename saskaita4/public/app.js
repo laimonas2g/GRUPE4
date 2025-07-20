@@ -7,7 +7,7 @@
   \********************/
 /***/ (() => {
 
-throw new Error("Module parse failed: 'import' and 'export' may appear only with 'sourceType: module' (4:0)\nFile was processed with these loaders:\n * ./node_modules/babel-loader/lib/index.js\nYou may need an additional loader to handle the result of these loaders.\n| // Entry point: detects page and instantiates the appropriate class\n| \n> import CreateInvoicePage from './CreateInvoicePage.js';\n| import ReadInvoicePage from './ReadInvoicePage.js';\n| import EditInvoicePage from './EditInvoicePage.js';");
+throw new Error("Module parse failed: 'import' and 'export' may appear only with 'sourceType: module' (4:0)\nFile was processed with these loaders:\n * ./node_modules/babel-loader/lib/index.js\nYou may need an additional loader to handle the result of these loaders.\n| // Entry point: detects page and instantiates the appropriate class for each page\n| \n> import CreateInvoicePage from './CreateInvoicePage.js';\n| import ReadInvoicePage from './ReadInvoicePage.js';\n| import EditInvoicePage from './EditInvoicePage.js';");
 
 /***/ }),
 

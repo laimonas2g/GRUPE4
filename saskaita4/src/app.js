@@ -1,5 +1,5 @@
 // app.js
-// Entry point: detects page and instantiates the appropriate class
+// Entry point: detects page and instantiates the appropriate class for each page
 
 import CreateInvoicePage from './CreateInvoicePage.js';
 import ReadInvoicePage from './ReadInvoicePage.js';
@@ -8,9 +8,10 @@ import ListInvoicesPage from './ListInvoicesPage.js';
 import ShowInvoicePage from './ShowInvoicePage.js';
 import DeleteInvoicePage from './DeleteInvoicePage.js';
 
-// Detect page by file name and instantiate correct class
+// Get the current HTML file name from the URL path
 const page = window.location.pathname.split('/').pop();
 
+// Instantiate the corresponding page logic class based on the current HTML file
 switch (page) {
     case 'create.html':
         new CreateInvoicePage();
@@ -28,6 +29,6 @@ switch (page) {
         new DeleteInvoicePage();
         break;
     default:
-        // Optionally, show an error or redirect
+        // Optionally, show an error or redirect if page is not recognized
         break;
 }

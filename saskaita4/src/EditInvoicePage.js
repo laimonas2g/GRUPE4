@@ -1,3 +1,6 @@
+// EditInvoicePage.js
+// Handles displaying and updating an invoice via the backend API
+
 import Invoice from './Invoice.js';
 import InvoiceRepository from './InvoiceRepository.js';
 
@@ -7,6 +10,7 @@ export default class EditInvoicePage {
         this.init();
     }
 
+    // Load the invoice to edit from the backend
     async init() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
@@ -17,6 +21,7 @@ export default class EditInvoicePage {
         this.setupEventListeners();
     }
 
+    // Render all invoice fields as editable form fields
     renderForm() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;
@@ -35,7 +40,7 @@ export default class EditInvoicePage {
         document.getElementById('buyer-email').textContent = this.invoice.company?.buyer?.email || '';
         document.getElementById('shipping').value = this.invoice.shippingPrice || 0;
 
-        // Render items as editable rows
+        // Render each invoice item as editable row
         const tbody = document.getElementById('products-body');
         tbody.innerHTML = '';
         this.invoice.items.forEach((item, idx) => {
@@ -60,23 +65,22 @@ export default class EditInvoicePage {
             tbody.appendChild(tr);
         });
 
-        // Add item row at the end
-        // ... (You can keep your logic for adding a new item row here)
+        // You can keep extra logic for adding/removing items if needed
     }
 
+    // Set up event listeners for saving or canceling
     setupEventListeners() {
-        // Add your event listeners for saving/updating invoice here
-        // For example:
         document.getElementById('edit-form').onsubmit = async (e) => {
             e.preventDefault();
-            // ... gather updated invoice data ...
-            await InvoiceRepository.update(this.invoice);
+            // ... gather updated invoice data from form fields here ...
+            await InvoiceRepository.update(this.invoice); // Save changes to backend
             this.showMessage('Invoice updated!');
             setTimeout(() => window.location.href = 'read.html', 500);
         };
         document.getElementById('cancel-btn').onclick = () => window.location.href = 'read.html';
     }
 
+    // Show a status message
     showMessage(msg, isError = false) {
         const el = document.getElementById('message');
         el.textContent = msg;

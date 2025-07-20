@@ -1,3 +1,6 @@
+// DeleteInvoicePage.js
+// Handles showing a confirmation to delete an invoice and then deleting via the API
+
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class DeleteInvoicePage {
@@ -6,6 +9,7 @@ export default class DeleteInvoicePage {
         this.init();
     }
 
+    // Initialize the page: load the invoice and prepare UI
     async init() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
@@ -16,6 +20,7 @@ export default class DeleteInvoicePage {
         this.setupEventListeners();
     }
 
+    // Display the invoice info for confirmation
     renderConfirmation() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;
@@ -23,6 +28,7 @@ export default class DeleteInvoicePage {
         document.getElementById('seller-name').textContent = this.invoice.company?.seller?.name || '';
     }
 
+    // Set up confirm and cancel buttons
     setupEventListeners() {
         const deleteBtn = document.getElementById('confirm-delete-btn');
         const cancelBtn = document.getElementById('cancel-delete-btn');
@@ -34,12 +40,14 @@ export default class DeleteInvoicePage {
         }
     }
 
+    // Perform the delete via backend API and show result
     async handleDelete() {
         await InvoiceRepository.delete(this.invoice.id);
         this.showMessage('Invoice deleted!');
         setTimeout(() => window.location.href = 'read.html', 500);
     }
 
+    // Show a user message
     showMessage(msg, isError = false) {
         const el = document.getElementById('message');
         el.textContent = msg;
