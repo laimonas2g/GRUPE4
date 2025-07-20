@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": 1753017265477,
+    "number": "AB-36868861",
+    "date": "2025-07-17",
+    "due_date": "2025-07-27",
+    "company": {
+      "buyer": {
+        "name": "VŠĮ Kazlauskas ir Jankauskas",
+        "address": "Kauno g. 34, Ukmergė",
+        "code": "47518916",
+        "vat": "LT356774382",
+        "phone": "+370 607 65 631",
+        "email": "liubove32@gmail.com"
+      },
+      "seller": {
+        "name": "MB \"Baranauskas ir Stankevičius\"",
+        "address": "Žalgirio gatvė 90-17, Ukmergė",
+        "code": "26907869",
+        "vat": "LT535741173",
+        "phone": "(8 46) 66 91 70",
+        "email": "virgilijus85@nemunas.lt"
+      }
+    },
+    "items": [
+      {
+        "description": "Kampinė odinė sofa \"Ganykla\" su patalynės dėže, ryškiai raudona",
+        "quantity": 6,
+        "price": 720,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Bebro iškamša 50cm",
+        "quantity": 9,
+        "price": 270,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Pufas \"Guzas\"",
+        "quantity": 1,
+        "price": 90.99,
+        "discount": {
+          "type": "percentage",
+          "value": 29
+        }
+      }
+    ],
+    "shippingPrice": 57,
+    "vatRate": 0.21
+  },
+  {
+    "id": 1753017269120,
+    "number": "AB-66845212",
+    "date": "2025-07-19",
+    "due_date": "2025-07-28",
+    "company": {
+      "buyer": {
+        "name": "AB \"Butkus ir Pocius\"",
+        "address": "Didžioji alėja 63, Kėdainiai LT-57566",
+        "code": "98625018",
+        "vat": "LT131166872",
+        "phone": "+370 5 808 8494",
+        "email": "hurboniene@rimvile.com"
+      },
+      "seller": {
+        "name": "UAB \"Kazlauskas ir Jankauskas\"",
+        "address": "Žalgirio alėja 94, Mažeikiai",
+        "code": "64798293",
+        "vat": "LT903297636",
+        "phone": "862838521",
+        "email": "ukazlauskiene@linda.org"
+      }
+    },
+    "items": [
+      {
+        "description": "Karališka lova \"Karalius\"",
+        "quantity": 8,
+        "price": 900.99,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Sofa dviguba \"Trys muškietininkai\" su patalynės dėže",
+        "quantity": 3,
+        "price": 480,
+        "discount": {
+          "type": "percentage",
+          "value": 14
+        }
+      },
+      {
+        "description": "Komoda žalia su 6 stalčiais",
+        "quantity": 6,
+        "price": 300,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      }
+    ],
+    "shippingPrice": 51,
+    "vatRate": 0.21
+  }
+]
