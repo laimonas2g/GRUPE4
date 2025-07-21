@@ -1,13 +1,13 @@
 
-// Handles displaying and updating an invoice via the backend API
+// displAY and update an invoice
 
-import Invoice from './Invoice.js';
+import Invoice from './Invoice.js'; 
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class EditInvoicePage {
     constructor() {
         this.invoice = null;
-        this.init();
+        this.init(); // iskviecia pradini metoda.
     }
 
     // Load the invoice to edit from the backend
@@ -16,12 +16,12 @@ export default class EditInvoicePage {
         const id = params.get('id');
         if (!id) return this.showMessage('No invoice ID provided', true);
         this.invoice = await InvoiceRepository.get(id);
-        if (!this.invoice) return this.showMessage('Invoice not found', true);
+        if (!this.invoice) return this.showMessage('Sąskaitos nera', true);
         this.renderForm();
         this.setupEventListeners();
     }
 
-    // Render all invoice fields as editable form fields
+    // atvaizduoja visus saskaitos laukus kaip redaguojamus formos laukus
     renderForm() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;
@@ -41,10 +41,11 @@ export default class EditInvoicePage {
         document.getElementById('shipping').value = this.invoice.shippingPrice || 0;
 
         // Render each invoice item as editable row
-        const tbody = document.getElementById('products-body');
+        const tbody = document.getElementById('products-body'); // Gauna prekių lenteles body
         tbody.innerHTML = '';
         this.invoice.items.forEach((item, idx) => {
             const discountType = item.discount?.type || 'none';
+            // Nuolaidos reiksme
             const discountValue = item.discount?.value || 0;
             const tr = document.createElement('tr');
             tr.innerHTML = `
@@ -65,7 +66,7 @@ export default class EditInvoicePage {
             tbody.appendChild(tr);
         });
 
-        // After rendering rows, attach remove handlers
+        //// Po eilučių atvaizdavimo priskiria trynimo mygtukų įvykius
         this.attachRemoveHandlers();
     }
 

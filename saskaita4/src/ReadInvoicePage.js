@@ -5,16 +5,19 @@ import InvoiceRepository from './InvoiceRepository.js';
 
 export default class ReadInvoicePage {
     constructor() {
+        // konstruktorius iskviečia saskaitu listo atvaizdavimo funkcija
         this.renderList();
     }
 
-    // Load and render all invoices
+    // load ir atvaizduoja visas sąskaitas
     async renderList() {
         const invoices = await InvoiceRepository.getAll(); // Fetch all invoices from API
         const tbody = document.getElementById('invoice-list');
         tbody.innerHTML = '';
+        // pereina per kiekviena saskaita ir sukuria naujalentelės eilute.
         invoices.forEach(inv => {
             const tr = document.createElement('tr');
+           /* Užpildo eilutę HTML su sąskaitos duomenimis */
             tr.innerHTML = `
                 <td>${inv.number}</td>
                 <td>${inv.date}</td>

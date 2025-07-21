@@ -1,5 +1,5 @@
 
-// entry point: detects page and instantiates the appropriate class for each page
+// // importuoja puslapiu klases, atsakingas uz skirtingu pusl.funkcionaluma
 
 import CreateInvoicePage from './CreateInvoicePage.js';
 import ReadInvoicePage from './ReadInvoicePage.js';
@@ -8,15 +8,16 @@ import ListInvoicesPage from './ListInvoicesPage.js';
 import ShowInvoicePage from './ShowInvoicePage.js';
 import DeleteInvoicePage from './DeleteInvoicePage.js';
 
-// Get the current HTML file name from the URL path
+// get the current HTML file name from the URL path
 const page = window.location.pathname.split('/').pop();
 
-// instantiate the corresponding page logic class based on the current HTML file
+// pagal puslapio pavadinima sukuria atitinkamos klases egzemplioriu
 switch (page) {
     case 'create.html':
         new CreateInvoicePage();
         break;
     case 'edit.html':
+        // jei atidarytas edit.html => EditInvoicePage klase
         new EditInvoicePage();
         break;
     case 'read.html':
@@ -29,6 +30,6 @@ switch (page) {
         new DeleteInvoicePage();
         break;
     default:
-        // Optionally, show an error or redirect if page is not recognized
+        // Jei puslapio pavadinimas neatpažintas, nieko nedaro
         break;
 }

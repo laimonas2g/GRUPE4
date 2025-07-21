@@ -1,5 +1,5 @@
 
-// Handles showing a confirmation to delete an invoice and then deleting via the API
+/* tvarko sąskaitos ištrynimo patvirtinimo rodymą ir trynimą per API */
 
 import InvoiceRepository from './InvoiceRepository.js';
 
@@ -12,26 +12,32 @@ export default class DeleteInvoicePage {
     // Initialize the page: load the invoice and prepare UI
     async init() {
         const params = new URLSearchParams(window.location.search);
+        // paimamas 'id' parametras is URL
         const id = params.get('id');
+
+        // Jei nėra id = rodo klaidos zinute ir nutraukia veikla
         if (!id) return this.showMessage('No invoice ID provided', true);
+        /* bando uzkrauti saskaita pagal id is API */
         this.invoice = await InvoiceRepository.get(id);
-        if (!this.invoice) return this.showMessage('Invoice not found', true);
+        if (!this.invoice) return this.showMessage('Saskaita nerasta', true);
         this.renderConfirmation();
         this.setupEventListeners();
     }
 
-    // Display the invoice info for confirmation
+    // saskaitos informacija patvirtinimui
     renderConfirmation() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;
+        //Parodo pirkėjo pavadinimą (jei yra)
         document.getElementById('buyer-name').textContent = this.invoice.company?.buyer?.name || '';
         document.getElementById('seller-name').textContent = this.invoice.company?.seller?.name || '';
     }
 
-    // Set up confirm and cancel buttons
+    // set up confirm and cancel buttons
     setupEventListeners() {
         const deleteBtn = document.getElementById('confirm-delete-btn');
         const cancelBtn = document.getElementById('cancel-delete-btn');
+        /* Jei yra trynimo mygtukas, priskiria jam paspaudimo įvykį */
         if (deleteBtn) {
             deleteBtn.onclick = async () => await this.handleDelete();
         }
@@ -47,7 +53,7 @@ export default class DeleteInvoicePage {
         setTimeout(() => window.location.href = 'read.html', 500);
     }
 
-    // Show a user message
+    // rodo vartotojui zinute
     showMessage(msg, isError = false) {
         const el = document.getElementById('message');
         el.textContent = msg;

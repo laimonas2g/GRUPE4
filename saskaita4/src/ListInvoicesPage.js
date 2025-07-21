@@ -1,20 +1,24 @@
 
-// fetches and displays all invoices from the backend API in a table
+// Fetches and displays all invoices from the backend API in a table
 
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class ListInvoicesPage {
     constructor() {
+        // Sukuriant objekta, iskart atvaizduojamas saskaitu sąrasas
         this.renderList();
     }
 
     // load and render all invoices
     async renderList() {
-        const invoices = await InvoiceRepository.getAll(); // fetch all invoices from API
+        /* Asinchroniškai gauna visas sąskaitas iš API per InvoiceRepository */
+        const invoices = await InvoiceRepository.getAll(); // Fetch all invoices from API
         const tbody = document.getElementById('invoice-list');
         tbody.innerHTML = '';
+        // forEach kiekviena sąskaita ir sukuria nauja lenteles eilute
         invoices.forEach(inv => {
             const tr = document.createElement('tr');
+            /* Užpildo eilutę sąskaitos duomenimis */
             tr.innerHTML = `
                 <td>${inv.number}</td>
                 <td>${inv.date}</td>

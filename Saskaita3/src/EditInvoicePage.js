@@ -61,7 +61,6 @@ export default class EditInvoicePage {
         });
 
         // Add item row at the end
-        // ... (You can keep your logic for adding a new item row here)
     }
 
     setupEventListeners() {

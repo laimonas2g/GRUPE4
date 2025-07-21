@@ -1,0 +1,66 @@
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+const bitGirls = ['Edita', 'Lina', 'Brigita', 'Deimantė', 'Justė'];
+const cats = ['Murka', 'Rainius', 'Meilutė', 'Bosas', 'Dičkis'];
+
+// 1.
+
+bitGirls.unshift('Nausėdą');
+console.log(bitGirls)
+
+// 2.
+const bitCats = [];
+for (let i = 0; i < cats.length; i++) {
+  const kName = cats[i];
+  let weight;
+  if (rand(0, 1) == 0) {
+    weight = 'storas'
+  } else {
+    weight = 'normalus';
+  }
+  bitCats.push([kName, weight]);
+}
+
+console.log(bitCats);
+
+// 3.
+const kiek3 = bitCats.reduce(
+  (acc, cat3) => {
+    if (cat3[1] == 'storas') acc.storas++;
+    else acc.normalus++;
+    return acc;
+  },
+
+  { storas: 0, normalus: 0 }
+);
+console.log('S:', kiek3.storas, 'N:', kiek3.normalus);
+
+// 4.
+
+bitCats.sort((a, b) => {
+  const a4 = a[0].length > 1 ? a[0][1] : 0;
+  const b4 = b[0].length > 1 ? b[0][1] : 0;
+  if (a4 < b4) return -1;
+  if (a4 > b4) return 1;
+  return 0;
+});
+console.log(bitCats);
+
+// 5.
+// const happyCats = bitGirls.map((g, i) => 
+
+const newCats5 = [];
+for (let i = 0; i < bitGirls.length; i++) {
+  let sujungiam = [];
+  if (i === 0) {
+    sujungiam = [bitGirls[i], 'Barsukas'];
+  } else {
+    sujungiam = [bitGirls[i], bitCats[i - 1][0]];
+  }
+  newCats5.push(sujungiam);
+} console.log(newCats5)
