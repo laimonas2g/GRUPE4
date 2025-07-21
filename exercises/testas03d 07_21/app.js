@@ -84,7 +84,7 @@ console.log(bitCats);
 const newCats5 = [];
 for (let i = 0; i < bitGirls.length; i++) {
   let sujungiam = [];
-  if (i === 0) {
+  if (i == 0) {
     sujungiam = [bitGirls[i], 'Barsukas'];
   } else {
     sujungiam = [bitGirls[i], bitCats[i - 1][0]];

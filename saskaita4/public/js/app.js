@@ -784,9 +784,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // utility for generating a RFC4122 version 4 compliant UUID
 
-// Eksportuoja funkciją uuidv4, kad ją būtų galima naudoti kituose failuose
+// eksportuoja funkcija uuidv4, kad ja butu galima naudoti kituose failuose
 function uuidv4() {
-  // Sugeneruoja paprastą RFC4122 4 versijos UUID
+  // sugeneruoja paprastą RFC4122 4 versijos UUID
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
   // Suranda visus simbolius 'x' ir 'y' šablone
   function (c) {
