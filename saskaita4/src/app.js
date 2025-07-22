@@ -1,23 +1,19 @@
 
-// // importuoja puslapiu klases, atsakingas uz skirtingu pusl.funkcionaluma
-
 import CreateInvoicePage from './CreateInvoicePage.js';
-import ReadInvoicePage from './ReadInvoicePage.js';
+import ReadInvoicePage from '../../ReadInvoicePage.js';
 import EditInvoicePage from './EditInvoicePage.js';
 import ListInvoicesPage from './ListInvoicesPage.js';
 import ShowInvoicePage from './ShowInvoicePage.js';
 import DeleteInvoicePage from './DeleteInvoicePage.js';
 
-// get the current HTML file name from the URL path
-const page = window.location.pathname.split('/').pop();
+const page = window.location.pathname.split('/').pop(); // get the current HTML file name from the URL path
 
-// pagal puslapio pavadinima sukuria atitinkamos klases egzemplioriu
-switch (page) {
-    case 'create.html':
+switch (page) {  // pagal puslapio pavadinima sukuria atitinkamos klases egzemplioriu
+
+    case 'create.html': // jei atidarytas create.html => CreateInvoicePage klase
         new CreateInvoicePage();
         break;
     case 'edit.html':
-        // jei atidarytas edit.html => EditInvoicePage klase
         new EditInvoicePage();
         break;
     case 'read.html':
@@ -30,6 +26,5 @@ switch (page) {
         new DeleteInvoicePage();
         break;
     default:
-        // Jei puslapio pavadinimas neatpažintas, nieko nedaro
-        break;
+        break;  // jei puslapio pavadinimas neatpazintas = nieko nedaro
 }

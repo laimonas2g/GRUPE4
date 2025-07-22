@@ -1,21 +1,21 @@
 
-// displAY and update an invoice
-
 import Invoice from './Invoice.js'; 
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class EditInvoicePage {
+
     constructor() {
         this.invoice = null;
-        this.init(); // iskviecia pradini metoda.
+        this.init();  /// iskviecia pradini metoda.
     }
 
-    // Load the invoice to edit from the backend
+    // load the invoice to edit from backend
     async init() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
         if (!id) return this.showMessage('No invoice ID provided', true);
         this.invoice = await InvoiceRepository.get(id);
+        // console.log('Loaded invoice payload:', this.invoice); // payload
         if (!this.invoice) return this.showMessage('Sąskaitos nera', true);
         this.renderForm();
         this.setupEventListeners();
@@ -24,6 +24,7 @@ export default class EditInvoicePage {
     // atvaizduoja visus saskaitos laukus kaip redaguojamus formos laukus
     renderForm() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
+        console.log(this.invoice.number);
         document.getElementById('invoice-date').textContent = this.invoice.date;
         document.getElementById('invoice-due-date').textContent = this.invoice.due_date;
         document.getElementById('seller-name').textContent = this.invoice.company?.seller?.name || '';
@@ -41,11 +42,12 @@ export default class EditInvoicePage {
         document.getElementById('shipping').value = this.invoice.shippingPrice || 0;
 
         // Render each invoice item as editable row
-        const tbody = document.getElementById('products-body'); // Gauna prekių lenteles body
+        const tbody = document.getElementById('products-body'); // Gauna prekių lenteles body.
         tbody.innerHTML = '';
         this.invoice.items.forEach((item, idx) => {
             const discountType = item.discount?.type || 'none';
-            // Nuolaidos reiksme
+            console.log(item.discount);
+            // nuolaidos reiksme
             const discountValue = item.discount?.value || 0;
             const tr = document.createElement('tr');
             tr.innerHTML = `
@@ -66,11 +68,11 @@ export default class EditInvoicePage {
             tbody.appendChild(tr);
         });
 
-        //// Po eilučių atvaizdavimo priskiria trynimo mygtukų įvykius
+        //// Po eiluciu atvaizdavimo priskiriam trynimo mygtuku ivykius
         this.attachRemoveHandlers();
     }
 
-    // Set up event listeners for saving or canceling
+    // setup event listeners for saving || canceling
     setupEventListeners() {
         document.getElementById('edit-form').onsubmit = async (e) => {
             e.preventDefault();
@@ -100,10 +102,10 @@ export default class EditInvoicePage {
     }
 
     updateInvoiceFromForm() {
-        // Update shipping
+        // upd. shipping
         this.invoice.shippingPrice = parseFloat(document.getElementById('shipping').value) || 0;
 
-        // Update items
+        // upd. items
         const tbody = document.getElementById('products-body');
         const rows = tbody.querySelectorAll('tr');
         this.invoice.items = Array.from(rows).map((tr, idx) => {
@@ -119,7 +121,7 @@ export default class EditInvoicePage {
         });
     }
 
-    // Show a status message
+    // status message
     showMessage(msg, isError = false) {
         const el = document.getElementById('message');
         el.textContent = msg;

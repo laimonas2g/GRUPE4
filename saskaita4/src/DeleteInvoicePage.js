@@ -1,9 +1,8 @@
 
-/* tvarko sąskaitos ištrynimo patvirtinimo rodymą ir trynimą per API */
-
 import InvoiceRepository from './InvoiceRepository.js';
 
 export default class DeleteInvoicePage {
+
     constructor() {
         this.invoice = null;
         this.init();
@@ -15,7 +14,7 @@ export default class DeleteInvoicePage {
         // paimamas 'id' parametras is URL
         const id = params.get('id');
 
-        // Jei nėra id = rodo klaidos zinute ir nutraukia veikla
+        // Jei nėra id = rodo klaidos zinute ir nutraukia veikla.
         if (!id) return this.showMessage('No invoice ID provided', true);
         /* bando uzkrauti saskaita pagal id is API */
         this.invoice = await InvoiceRepository.get(id);

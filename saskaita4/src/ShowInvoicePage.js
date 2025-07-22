@@ -1,13 +1,11 @@
 
-/* Displays full details of a single invoice, fetched from the API */
-
 import InvoiceRepository from './InvoiceRepository.js';
 import Invoice from './Invoice.js';
 
 export default class ShowInvoicePage {
+
     constructor() {
-        // Inicializuoja puslapi is karto sukurus objekta
-        this.init();
+        this.init();  // inicializuoja puslapi iskarto sukurus objekta
     }
 
     // load invoice by ID and render viska
@@ -26,7 +24,7 @@ export default class ShowInvoicePage {
         this.renderFields();
     }
 
-    // Atvaizduoja visus sąskaitos laukus puslapyje
+    // Atvaizduoja visus sąskaitos laukus puslapyje.
     renderFields() {
         document.getElementById('invoice-number').textContent = this.invoice.number;
         document.getElementById('invoice-date').textContent = this.invoice.date;

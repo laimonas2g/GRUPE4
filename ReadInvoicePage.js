@@ -1,12 +1,10 @@
 
-// Fetches all invoices and displays them in a table (similar to ListInvoicesPage)
-
-import InvoiceRepository from './InvoiceRepository.js';
+import InvoiceRepository from './saskaita4/src/InvoiceRepository.js';
 
 export default class ReadInvoicePage {
     constructor() {
-        // konstruktorius iskviečia saskaitu listo atvaizdavimo funkcija
-        this.renderList();
+        
+        this.renderList(); // konstruktorius iskviecia saskaitu listo atvaizdavimo funkcija
     }
 
     // load ir atvaizduoja visas sąskaitas
@@ -14,10 +12,10 @@ export default class ReadInvoicePage {
         const invoices = await InvoiceRepository.getAll(); // Fetch all invoices from API
         const tbody = document.getElementById('invoice-list');
         tbody.innerHTML = '';
-        // pereina per kiekviena saskaita ir sukuria naujalentelės eilute.
+        // forEach per kiekviena saskaita ir sukuria nauja lenteles eilute
         invoices.forEach(inv => {
             const tr = document.createElement('tr');
-           /* Užpildo eilutę HTML su sąskaitos duomenimis */
+           /* uzpildo eilute saskaitos duomenimis */
             tr.innerHTML = `
                 <td>${inv.number}</td>
                 <td>${inv.date}</td>

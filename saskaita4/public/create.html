@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Create VAT Invoice</title>
     <link rel="stylesheet" href="css/style.css">
-<script src="js/app.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
+
 <body>
-<div class="container card">
-    <h1>PVM SĄSKAITA FAKTŪRA</h1>
-    <div id="googleTranslateElement"></div>
-    <div id="message"></div>
-    <div class="invoice-fields">
-        <div class="row">
-            <label>Sąskaitos Nr.:</label>
-            <span id="invoice-number"></span>
-        </div>
-        <div class="row">
-            <label>Sąskaitos data:</label>
-            <span id="invoice-date"></span>
-        </div>
-        <div class="row">
-            <label>Terminas:</label>
-            <span id="invoice-due-date"></span>
-        </div>
-        <div class="row two-columns">
-            <div>
-                <h3>Pardavėjas:</h3>
-                <div id="seller-name"></div>
-                <div id="seller-address"></div>
-                <div>Įmonės kodas: <span id="seller-code"></span></div>
-                <div>PVM kodas: <span id="seller-vat"></span></div>
-                <div>Tel.: <span id="seller-phone"></span></div>
-                <div>Email: <span id="seller-email"></span></div>
+    <div class="container card">
+        <h1>PVM SĄSKAITA FAKTŪRA</h1>
+        <div id="googleTranslateElement"></div>
+        <div id="message"></div>
+        <div class="invoice-fields">
+            <div class="row">
+                <label>Sąskaitos Nr.:</label>
+                <span id="invoice-number"></span>
             </div>
-            <div>
-                <h3>Pirkėjas:</h3>
-                <div id="buyer-name"></div>
-                <div id="buyer-address"></div>
-                <div>Įmonės kodas: <span id="buyer-code"></span></div>
-                <div>PVM kodas: <span id="buyer-vat"></span></div>
-                <div>Tel.: <span id="buyer-phone"></span></div>
-                <div>Email: <span id="buyer-email"></span></div>
+            <div class="row">
+                <label>Sąskaitos data:</label>
+                <span id="invoice-date"></span>
+            </div>
+            <div class="row">
+                <label>Terminas:</label>
+                <span id="invoice-due-date"></span>
+            </div>
+            <div class="row two-columns">
+                <div>
+                    <h3>Pardavėjas:</h3>
+                    <div id="seller-name"></div>
+                    <div id="seller-address"></div>
+                    <div>Įmonės kodas: <span id="seller-code"></span></div>
+                    <div>PVM kodas: <span id="seller-vat"></span></div>
+                    <div>Tel.: <span id="seller-phone"></span></div>
+                    <div>Email: <span id="seller-email"></span></div>
+                </div>
+                <div>
+                    <h3>Pirkėjas:</h3>
+                    <div id="buyer-name"></div>
+                    <div id="buyer-address"></div>
+                    <div>Įmonės kodas: <span id="buyer-code"></span></div>
+                    <div>PVM kodas: <span id="buyer-vat"></span></div>
+                    <div>Tel.: <span id="buyer-phone"></span></div>
+                    <div>Email: <span id="buyer-email"></span></div>
+                </div>
+            </div>
+            <h3>Išrašė sąskaitą: Laimonas Grebliauskas</h3>
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Prekė</th>
+                        <th>Kiekis</th>
+                        <th>Kaina (be PVM) (€)</th>
+                        <th>Nuolaida</th>
+                        <th>Suma (be PVM) (€)</th>
+                    </tr>
+                </thead>
+                <tbody id="products-body">
+                    <!-- Cia bus ideti duomenys -->
+                </tbody>
+            </table>
+            <div class="totals">
+                <div>Transportavimo išlaidos (€): <span id="shipping"></span></div>
+                <div>Suma be PVM (€): <span id="subtotal"></span></div>
+                <div>PVM (21%): <span id="vat"></span></div>
+                <div>Nuolaida (€): <span id="discount"></span></div>
+                <div class="final-amount">Galutinė suma su PVM (€): <span id="total"></span></div>
             </div>
         </div>
-        <h3>Išrašė sąskaitą: Laimonas Grebliauskas</h3>
-        <table class="products-table">
-            <thead>
-                <tr>
-                    <th>Prekė</th>
-                    <th>Kiekis</th>
-                    <th >Kaina (be PVM) (€)</th>
-                    <th>Nuolaida</th>
-                    <th>Suma (be PVM) (€)</th>
-                </tr>
-            </thead>
-            <tbody id="products-body">
-                <!-- Cia bus ideti duomenys -->
-            </tbody>
-        </table>
-        <div class="totals">
-            <div>Transportavimo išlaidos (€): <span id="shipping"></span></div>
-            <div>Suma be PVM (€):  <span id="subtotal"></span></div>
-            <div>PVM (21%): <span id="vat"></span></div>
-            <div>Nuolaida (€): <span id="discount"></span></div>
-            <div class="final-amount">Galutinė suma su PVM (€): <span id="total"></span></div>
+        <div class="actions">
+            <button id="save-btn" class="btn primary">Išsaugoti</button>
+            <button id="update-btn" class="btn">Atnaujinti</button>
+            <button id="cancel-btn" class="btn danger">Atšaukti</button>
         </div>
     </div>
-    <div class="actions">
-        <button id="save-btn" class="btn primary">Išsaugoti</button>
-        <button id="update-btn" class="btn">Atnaujinti</button>
-        <button id="cancel-btn" class="btn danger">Atšaukti</button>
-    </div>
-</div>
 
 </body>
+
 </html>

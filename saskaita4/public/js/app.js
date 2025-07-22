@@ -2,6 +2,52 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "../ReadInvoicePage.js":
+/*!*****************************!*\
+  !*** ../ReadInvoicePage.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ReadInvoicePage)
+/* harmony export */ });
+/* harmony import */ var _saskaita4_src_InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./saskaita4/src/InvoiceRepository.js */ "./src/InvoiceRepository.js");
+
+class ReadInvoicePage {
+  constructor() {
+    this.renderList(); // konstruktorius iskviecia saskaitu listo atvaizdavimo funkcija
+  }
+
+  // load ir atvaizduoja visas sąskaitas
+  async renderList() {
+    const invoices = await _saskaita4_src_InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // Fetch all invoices from API
+    const tbody = document.getElementById('invoice-list');
+    tbody.innerHTML = '';
+    // forEach per kiekviena saskaita ir sukuria nauja lenteles eilute
+    invoices.forEach(inv => {
+      const tr = document.createElement('tr');
+      /* uzpildo eilute saskaitos duomenimis */
+      tr.innerHTML = `
+                <td>${inv.number}</td>
+                <td>${inv.date}</td>
+                <td>${inv.due_date}</td>
+                <td>${inv.company?.buyer?.name || ''}</td>
+                <td>${inv.company?.seller?.name || ''}</td>
+                <td>${inv.getTotal ? inv.getTotal().toFixed(2) : ''}</td>
+                <td>
+                    <a href="show.html?id=${inv.id}" class="btn">View</a>
+                    <a href="edit.html?id=${inv.id}" class="btn primary">Edit</a>
+                    <a href="delete.html?id=${inv.id}" class="btn danger">Delete</a>
+                </td>
+            `;
+      tbody.appendChild(tr);
+    });
+  }
+}
+
+/***/ }),
+
 /***/ "./src/CreateInvoicePage.js":
 /*!**********************************!*\
   !*** ./src/CreateInvoicePage.js ***!
@@ -15,21 +61,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
 /* harmony import */ var _uuid_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./uuid.js */ "./src/uuid.js");
-/* displaying and saving a new invoice via the backend API */
-
-/* Importuoja puslapių logikos klases */
 
 
 
-
-// eksportuoja CreateInvoicePage klase
 class CreateInvoicePage {
   constructor() {
     this.invoice = null;
-    this.loadInvoiceFromApi(); // load a fresh invoice template from the API
+    this.loadInvoiceFromApi(); // load fresh invoice template from the API
 
     if (document.querySelector("#googleTranslateElement")) {
-      // LANGUAGE TRANSLATE FUNCTIONALITY
+      // LANGUAGE Translate
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
@@ -37,7 +78,7 @@ class CreateInvoicePage {
         window.googleTranslateElementInit = () => {
           new google.translate.TranslateElement({
             pageLanguage: "lt",
-            includedLanguages: "lt,en,de,it,ru,be,lv,et,es,nl,ar,fr,pl"
+            includedLanguages: "lt,en,de,it,ru,be,lv,et,es,nl,fr,pl"
           }, "googleTranslateElement");
         };
       };
@@ -49,7 +90,7 @@ class CreateInvoicePage {
   async loadInvoiceFromApi() {
     try {
       const res = await fetch('https://in3.dev/inv/'); // atlieka HTTP uzklausa i API
-      const data = await res.json(); // gauta atsakyma konvertuoja i JSON objekta
+      const data = await res.json(); // gauta atsakyma konvertuoja i JSON objekta.
       this.invoice = new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](data); // Wrap Invoice klase, kad butu galima naudoti jos metodus
       this.renderForm();
       this.setupEventListeners();
@@ -92,7 +133,7 @@ class CreateInvoicePage {
       tbody.appendChild(tr); // Prideda eilutę prie lentelės
     });
 
-    // atvaizduoja pristatymo kainą
+    /// atvaizduoja pristatymo kaina
     document.getElementById('shipping').textContent = this.invoice.shippingPrice?.toFixed(2) || '0.00';
     document.getElementById('subtotal').textContent = this.invoice.getSubtotal().toFixed(2);
     document.getElementById('vat').textContent = this.invoice.getVat().toFixed(2);
@@ -153,8 +194,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ DeleteInvoicePage)
 /* harmony export */ });
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
-/* tvarko sąskaitos ištrynimo patvirtinimo rodymą ir trynimą per API */
-
 
 class DeleteInvoicePage {
   constructor() {
@@ -168,7 +207,7 @@ class DeleteInvoicePage {
     // paimamas 'id' parametras is URL
     const id = params.get('id');
 
-    // Jei nėra id = rodo klaidos zinute ir nutraukia veikla
+    // Jei nėra id = rodo klaidos zinute ir nutraukia veikla.
     if (!id) return this.showMessage('No invoice ID provided', true);
     /* bando uzkrauti saskaita pagal id is API */
     this.invoice = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].get(id);
@@ -228,22 +267,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
-// displAY and update an invoice
-
 
 
 class EditInvoicePage {
   constructor() {
     this.invoice = null;
-    this.init(); // iskviecia pradini metoda.
+    this.init(); /// iskviecia pradini metoda.
   }
 
-  // Load the invoice to edit from the backend
+  // load the invoice to edit from backend
   async init() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     if (!id) return this.showMessage('No invoice ID provided', true);
     this.invoice = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__["default"].get(id);
+    // console.log('Loaded invoice payload:', this.invoice); // payload
     if (!this.invoice) return this.showMessage('Sąskaitos nera', true);
     this.renderForm();
     this.setupEventListeners();
@@ -252,6 +290,7 @@ class EditInvoicePage {
   // atvaizduoja visus saskaitos laukus kaip redaguojamus formos laukus
   renderForm() {
     document.getElementById('invoice-number').textContent = this.invoice.number;
+    console.log(this.invoice.number);
     document.getElementById('invoice-date').textContent = this.invoice.date;
     document.getElementById('invoice-due-date').textContent = this.invoice.due_date;
     document.getElementById('seller-name').textContent = this.invoice.company?.seller?.name || '';
@@ -269,11 +308,12 @@ class EditInvoicePage {
     document.getElementById('shipping').value = this.invoice.shippingPrice || 0;
 
     // Render each invoice item as editable row
-    const tbody = document.getElementById('products-body'); // Gauna prekių lenteles body
+    const tbody = document.getElementById('products-body'); // Gauna prekių lenteles body.
     tbody.innerHTML = '';
     this.invoice.items.forEach((item, idx) => {
       const discountType = item.discount?.type || 'none';
-      // Nuolaidos reiksme
+      console.log(item.discount);
+      // nuolaidos reiksme
       const discountValue = item.discount?.value || 0;
       const tr = document.createElement('tr');
       tr.innerHTML = `
@@ -294,11 +334,11 @@ class EditInvoicePage {
       tbody.appendChild(tr);
     });
 
-    //// Po eilučių atvaizdavimo priskiria trynimo mygtukų įvykius
+    //// Po eiluciu atvaizdavimo priskiriam trynimo mygtuku ivykius
     this.attachRemoveHandlers();
   }
 
-  // Set up event listeners for saving or canceling
+  // setup event listeners for saving || canceling
   setupEventListeners() {
     document.getElementById('edit-form').onsubmit = async e => {
       e.preventDefault();
@@ -327,10 +367,10 @@ class EditInvoicePage {
     });
   }
   updateInvoiceFromForm() {
-    // Update shipping
+    // upd. shipping
     this.invoice.shippingPrice = parseFloat(document.getElementById('shipping').value) || 0;
 
-    // Update items
+    // upd. items
     const tbody = document.getElementById('products-body');
     const rows = tbody.querySelectorAll('tr');
     this.invoice.items = Array.from(rows).map((tr, idx) => {
@@ -346,7 +386,7 @@ class EditInvoicePage {
     });
   }
 
-  // Show a status message
+  // status message
   showMessage(msg, isError = false) {
     const el = document.getElementById('message');
     el.textContent = msg;
@@ -366,23 +406,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Invoice)
 /* harmony export */ });
-// Pure data model class for Invoice, provides calculations and validation
-
 class Invoice {
-  // konstruktorius inicializuoja Invoice objekt su perduotais duomenimis
   constructor(data) {
-    /* Priskiria sąskaitos ID arba sugeneruoja naują pagal laiką */
-    this.id = data.id || Date.now();
+    this.id = data.id || Date.now(); /* priskiria saskaitos ID arba sugeneruoja nauja pagal laika */
+    console.log(data.id);
     this.number = data.number || '';
     this.date = data.date || '';
     this.due_date = data.due_date || '';
     this.company = data.company || {};
-    // normalize items and discounts
+    // normalizuoja items and discounts
     this.items = Array.isArray(data.items) ? data.items.map(item => ({
       description: item.description || '',
       quantity: Number(item.quantity) || 1,
       price: Number(item.price) || 0,
-      // normalizuoja nuolaidą naudojant parseDiscount metodą
+      // normalizuoja nuolaida naudojant parseDiscount metoda
       discount: this.parseDiscount(item.discount)
     })) : [];
     this.shippingPrice = Number(data.shippingPrice) || 0;
@@ -398,6 +435,7 @@ class Invoice {
         value: 0
       };
     }
+    console.log(discount);
     if (typeof discount === 'number') {
       return {
         type: 'fixed',
@@ -417,14 +455,15 @@ class Invoice {
     };
   }
 
-  // Calculate discount amount for a line item
+  // calculate discount amount for a line item
   getLineDiscount(item) {
     if (!item.discount || !item.discount.type || !item.discount.value) return 0;
     if (item.discount.type === 'percentage') {
       // percent of price * qty
       return item.price * item.quantity * (item.discount.value / 100);
     }
-    // Jei nuolaida fiksuota suma, grąžina jos vertę
+    console.log(item);
+    // jei nuolaida fiksuota suma, grazina jos verte.
     if (item.discount.type === 'fixed') {
       return item.discount.value;
     }
@@ -474,37 +513,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ InvoiceRepository)
 /* harmony export */ });
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
-// This class provides methods to interact with the server-side invoice storage via REST API.
-// All invoice data is persisted in a server-side file (e.g. data.json) through the backend API.
 
-
-
-// The base API endpoint for invoice CRUD operations.
 const API = '/api/invoices';
-// eksportuojam InvoiceRepository klase, skirta darbui su saskaitomis per REST API
 class InvoiceRepository {
-  // Retrieve all invoices from the server.
   static async getAll() {
+    // Retrieve all invoices from the server
     const res = await fetch(API); // GET /api/invoices
     if (!res.ok) return [];
     const arr = await res.json();
-    // // Kiekvienas objektas paverčiamas Invoice klasės egzemplioriumi.
+    // // kiekvienas objektas paverciamas Invoice klases egzemplioriumi
     return arr.map(inv => new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](inv));
   }
 
-  // Retrieve a specific invoice by ID from the server.
+  // Retrieve a specific invoice by ID from the server
   static async get(id) {
     // Siunčiamas GET užklausimas į /api/invoices/:id.
     const res = await fetch(`${API}/${id}`); // GET /api/invoices/:id
     if (!res.ok) return null;
     const data = await res.json();
-    // Objektas paverčiamas Invoice klasės egzemplioriumi.
+    // objektas paverciamas Invoice klases egzemplioriumi
     return new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](data);
   }
 
   // Save a new invoice to the server.
   static async save(invoice) {
-    /* Siunčiamas POST užklausimas su sąskaitos duomenimis į /api/invoices. */
+    /* Siunčiamas POST užklausimas su sąskaitos duomenimis į /api/invoices */
     const res = await fetch(API, {
       method: 'POST',
       // POST /api/invoices
@@ -518,7 +551,7 @@ class InvoiceRepository {
 
   // Update an existing invoice on the server.
   static async update(invoice) {
-    // Siunčiamas PUT užklausimas su atnaujintais duomenimis į /api/invoices/:id.
+    // Siunčiamas PUT užklausimas su atnaujintais duomenimis į /api/invoices/:id
     const res = await fetch(`${API}/${invoice.id}`, {
       method: 'PUT',
       // PUT /api/invoices/:id
@@ -554,25 +587,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ListInvoicesPage)
 /* harmony export */ });
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
-// Fetches and displays all invoices from the backend API in a table
-
 
 class ListInvoicesPage {
   constructor() {
-    // Sukuriant objekta, iskart atvaizduojamas saskaitu sąrasas
-    this.renderList();
+    this.renderList(); // konstruktorius iskviecia saskaitu listo atvaizdavimo funkcija
   }
 
-  // load and render all invoices
+  // load and atvaizduoja all invoices
   async renderList() {
-    /* Asinchroniškai gauna visas sąskaitas iš API per InvoiceRepository */
-    const invoices = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // Fetch all invoices from API
+    /* asinchroniskai gauna visas saskaitas is API per InvoiceRepository */
+    const invoices = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // Fetch all invoices from API.
     const tbody = document.getElementById('invoice-list');
     tbody.innerHTML = '';
-    // forEach kiekviena sąskaita ir sukuria nauja lenteles eilute
+    // forEach kiekviena saskaita ir sukuria nauja lenteles eilute
     invoices.forEach(inv => {
       const tr = document.createElement('tr');
-      /* Užpildo eilutę sąskaitos duomenimis */
+      /* uzpildo eilute saskaitos duomenimis */
       tr.innerHTML = `
                 <td>${inv.number}</td>
                 <td>${inv.date}</td>
@@ -584,55 +614,6 @@ class ListInvoicesPage {
                     <a href="show.html?id=${inv.id}" class="btn">Žiūrėti</a>
                     <a href="edit.html?id=${inv.id}" class="btn primary">Redaguoti</a>
                     <a href="delete.html?id=${inv.id}" class="btn danger">Trinti</a>
-                </td>
-            `;
-      tbody.appendChild(tr);
-    });
-  }
-}
-
-/***/ }),
-
-/***/ "./src/ReadInvoicePage.js":
-/*!********************************!*\
-  !*** ./src/ReadInvoicePage.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ReadInvoicePage)
-/* harmony export */ });
-/* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
-// Fetches all invoices and displays them in a table (similar to ListInvoicesPage)
-
-
-class ReadInvoicePage {
-  constructor() {
-    // konstruktorius iskviečia saskaitu listo atvaizdavimo funkcija
-    this.renderList();
-  }
-
-  // load ir atvaizduoja visas sąskaitas
-  async renderList() {
-    const invoices = await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // Fetch all invoices from API
-    const tbody = document.getElementById('invoice-list');
-    tbody.innerHTML = '';
-    // pereina per kiekviena saskaita ir sukuria naujalentelės eilute.
-    invoices.forEach(inv => {
-      const tr = document.createElement('tr');
-      /* Užpildo eilutę HTML su sąskaitos duomenimis */
-      tr.innerHTML = `
-                <td>${inv.number}</td>
-                <td>${inv.date}</td>
-                <td>${inv.due_date}</td>
-                <td>${inv.company?.buyer?.name || ''}</td>
-                <td>${inv.company?.seller?.name || ''}</td>
-                <td>${inv.getTotal ? inv.getTotal().toFixed(2) : ''}</td>
-                <td>
-                    <a href="show.html?id=${inv.id}" class="btn">View</a>
-                    <a href="edit.html?id=${inv.id}" class="btn primary">Edit</a>
-                    <a href="delete.html?id=${inv.id}" class="btn danger">Delete</a>
                 </td>
             `;
       tbody.appendChild(tr);
@@ -654,14 +635,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InvoiceRepository.js */ "./src/InvoiceRepository.js");
 /* harmony import */ var _Invoice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Invoice.js */ "./src/Invoice.js");
-/* Displays full details of a single invoice, fetched from the API */
-
 
 
 class ShowInvoicePage {
   constructor() {
-    // Inicializuoja puslapi is karto sukurus objekta
-    this.init();
+    this.init(); // inicializuoja puslapi iskarto sukurus objekta
   }
 
   // load invoice by ID and render viska
@@ -680,7 +658,7 @@ class ShowInvoicePage {
     this.renderFields();
   }
 
-  // Atvaizduoja visus sąskaitos laukus puslapyje
+  // Atvaizduoja visus sąskaitos laukus puslapyje.
   renderFields() {
     document.getElementById('invoice-number').textContent = this.invoice.number;
     document.getElementById('invoice-date').textContent = this.invoice.date;
@@ -737,30 +715,27 @@ class ShowInvoicePage {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateInvoicePage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateInvoicePage.js */ "./src/CreateInvoicePage.js");
-/* harmony import */ var _ReadInvoicePage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReadInvoicePage.js */ "./src/ReadInvoicePage.js");
+/* harmony import */ var _ReadInvoicePage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ReadInvoicePage.js */ "../ReadInvoicePage.js");
 /* harmony import */ var _EditInvoicePage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EditInvoicePage.js */ "./src/EditInvoicePage.js");
 /* harmony import */ var _ListInvoicesPage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListInvoicesPage.js */ "./src/ListInvoicesPage.js");
 /* harmony import */ var _ShowInvoicePage_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ShowInvoicePage.js */ "./src/ShowInvoicePage.js");
 /* harmony import */ var _DeleteInvoicePage_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DeleteInvoicePage.js */ "./src/DeleteInvoicePage.js");
-// // importuoja puslapiu klases, atsakingas uz skirtingu pusl.funkcionaluma
 
 
 
 
 
 
+const page = window.location.pathname.split('/').pop(); // get the current HTML file name from the URL path
 
-
-// get the current HTML file name from the URL path
-const page = window.location.pathname.split('/').pop();
-
-// pagal puslapio pavadinima sukuria atitinkamos klases egzemplioriu
 switch (page) {
+  // pagal puslapio pavadinima sukuria atitinkamos klases egzemplioriu
+
   case 'create.html':
+    // jei atidarytas create.html => CreateInvoicePage klase
     new _CreateInvoicePage_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
     break;
   case 'edit.html':
-    // jei atidarytas edit.html => EditInvoicePage klase
     new _EditInvoicePage_js__WEBPACK_IMPORTED_MODULE_2__["default"]();
     break;
   case 'read.html':
@@ -773,8 +748,8 @@ switch (page) {
     new _DeleteInvoicePage_js__WEBPACK_IMPORTED_MODULE_5__["default"]();
     break;
   default:
-    // Jei puslapio pavadinimas neatpažintas, nieko nedaro
     break;
+  // jei puslapio pavadinimas neatpazintas = nieko nedaro
 }
 
 /***/ }),
@@ -801,20 +776,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   uuidv4: () => (/* binding */ uuidv4)
 /* harmony export */ });
-// utility for generating a RFC4122 version 4 compliant UUID
-
-// eksportuoja funkcija uuidv4, kad ja butu galima naudoti kituose failuose
 function uuidv4() {
-  // sugeneruoja paprastą RFC4122 4 versijos UUID
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-  // Suranda visus simbolius 'x' ir 'y' šablone
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+  // sugeneruoja RFC4122 4 versijos UUID
+  /[xy]/g,
+  // suranda visus simbolius 'x' ir 'y' shablone
   function (c) {
-    // Sugeneruoja atsitiktinį skaičių nuo 0 iki 15
+    // sugeneruoja atsitiktini skaiciu nuo 0 iki 15
     const r = Math.random() * 16 | 0,
-      // Jei simbolis 'x', naudoja r; jei 'y', užtikrina, kad pirmi bitai būtų 8, 9, A arba B
+      // jei simbolis 'x', naudoja r; jei 'y', uztikrina, kad pirmi bitai būtų 8, 9, A arba B
       v = c === 'x' ? r : r & 0x3 | 8;
-    // Konvertuoja skaičių į šešioliktainį simbolį
-    return v.toString(16);
+    return v.toString(16); // konvertuoja skaiciu i sesioliktaini simboli
   });
 }
 

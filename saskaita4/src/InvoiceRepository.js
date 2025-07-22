@@ -1,35 +1,31 @@
 
-// This class provides methods to interact with the server-side invoice storage via REST API.
-// All invoice data is persisted in a server-side file (e.g. data.json) through the backend API.
-
 import Invoice from './Invoice.js';
 
-// The base API endpoint for invoice CRUD operations.
 const API = '/api/invoices';
-// eksportuojam InvoiceRepository klase, skirta darbui su saskaitomis per REST API
+
 export default class InvoiceRepository {
-    // Retrieve all invoices from the server.
-    static async getAll() {
+    
+    static async getAll() { // Retrieve all invoices from the server
         const res = await fetch(API); // GET /api/invoices
         if (!res.ok) return [];
         const arr = await res.json();
-        // // Kiekvienas objektas paverčiamas Invoice klasės egzemplioriumi.
+        // // kiekvienas objektas paverciamas Invoice klases egzemplioriumi
         return arr.map(inv => new Invoice(inv));
     }
 
-    // Retrieve a specific invoice by ID from the server.
+    // Retrieve a specific invoice by ID from the server
     static async get(id) {
         // Siunčiamas GET užklausimas į /api/invoices/:id.
         const res = await fetch(`${API}/${id}`); // GET /api/invoices/:id
         if (!res.ok) return null;
         const data = await res.json();
-        // Objektas paverčiamas Invoice klasės egzemplioriumi.
+        // objektas paverciamas Invoice klases egzemplioriumi
         return new Invoice(data);
     }
 
     // Save a new invoice to the server.
     static async save(invoice) {
-        /* Siunčiamas POST užklausimas su sąskaitos duomenimis į /api/invoices. */
+        /* Siunčiamas POST užklausimas su sąskaitos duomenimis į /api/invoices */
         const res = await fetch(API, {
             method: 'POST', // POST /api/invoices
             headers: { 'Content-Type': 'application/json' },
@@ -40,7 +36,7 @@ export default class InvoiceRepository {
 
     // Update an existing invoice on the server.
     static async update(invoice) {
-         // Siunčiamas PUT užklausimas su atnaujintais duomenimis į /api/invoices/:id.
+         // Siunčiamas PUT užklausimas su atnaujintais duomenimis į /api/invoices/:id
         const res = await fetch(`${API}/${invoice.id}`, {
             method: 'PUT', // PUT /api/invoices/:id
             headers: { 'Content-Type': 'application/json' },

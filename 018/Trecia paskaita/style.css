@@ -1,0 +1,60 @@
+/* <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Light mode</title>
+</head>
+
+<body>
+
+  <button class="dark-mode">mode</button>
+
+  <ul></ul>
+
+
+    <li>
+      <h2 class="name"></h2>
+      <i>email: <span class="email"></span></i>
+      <div>from: <span class="city"></span></div>
+    </li>
+
+
+
+
+
+</body>
+
+</html> */
+
+body {
+    background: #fff;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background: #222;
+    color: #fff;
+}
+
+button.mode-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5em 1em;
+    background: #eee;
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode button.mode-toggle {
+    background: #333;
+    color: #fff;
+}

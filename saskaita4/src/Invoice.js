@@ -1,21 +1,20 @@
 
-// Pure data model class for Invoice, provides calculations and validation
-
 export default class Invoice {
-    // konstruktorius inicializuoja Invoice objekt su perduotais duomenimis
+    
     constructor(data) {
-        /* Priskiria sąskaitos ID arba sugeneruoja naują pagal laiką */
-        this.id = data.id || Date.now();
+        
+        this.id = data.id || Date.now(); /* priskiria saskaitos ID arba sugeneruoja nauja pagal laika */
+        console.log(data.id);
         this.number = data.number || '';
         this.date = data.date || '';
         this.due_date = data.due_date || '';
         this.company = data.company || {};
-        // normalize items and discounts
+        // normalizuoja items and discounts
         this.items = Array.isArray(data.items) ? data.items.map(item => ({
             description: item.description || '',
             quantity: Number(item.quantity) || 1,
             price: Number(item.price) || 0,
-             // normalizuoja nuolaidą naudojant parseDiscount metodą
+             // normalizuoja nuolaida naudojant parseDiscount metoda
             discount: this.parseDiscount(item.discount)
         })) : [];
         this.shippingPrice = Number(data.shippingPrice) || 0;
@@ -27,25 +26,25 @@ export default class Invoice {
         // Jei nuolaidos nėra arba ji tuščia, grąžina 'none' tipo nuolaidą su 0 verte
         if (!discount || (Array.isArray(discount) && discount.length === 0)) {
             return { type: 'none', value: 0 };
-        }
+        } console.log(discount);
         if (typeof discount === 'number') {
             return { type: 'fixed', value: discount };
         }
          // Jei nuolaida yra objektas su 'type' ir 'value', normalizuoja vertę
         if (typeof discount === 'object' && 'type' in discount && 'value' in discount) {
             return { type: discount.type, value: Number(discount.value) || 0 };
-        }
+        } 
         return { type: 'none', value: 0 };
-    }
+    }   
 
-    // Calculate discount amount for a line item
+    // calculate discount amount for a line item
     getLineDiscount(item) {
         if (!item.discount || !item.discount.type || !item.discount.value) return 0;
         if (item.discount.type === 'percentage') {
             // percent of price * qty
             return (item.price * item.quantity) * (item.discount.value / 100);
-        }
-          // Jei nuolaida fiksuota suma, grąžina jos vertę
+        } console.log(item);
+          // jei nuolaida fiksuota suma, grazina jos verte.
         if (item.discount.type === 'fixed') {
             return item.discount.value;
         }
@@ -55,13 +54,14 @@ export default class Invoice {
     // Apskaičiuoja eilutės sumą po nuolaidos
     getLineTotal(item) {
         return (item.price * item.quantity) - this.getLineDiscount(item);
-    }
+        
+    }   
 
     // Calculate subtotal (sum of all lines, after discount, before VAT)
     getSubtotal() {
         return this.items.reduce((acc, item) => acc + this.getLineTotal(item), 0);
     }
-
+    
     // Apskaiciuoja bendranuolaidu suma
     getTotalDiscount() {
         return this.items.reduce((acc, item) => acc + this.getLineDiscount(item), 0);
@@ -70,7 +70,7 @@ export default class Invoice {
   
     getVat() {
         const taxable = this.getSubtotal() + this.shippingPrice;
-        return taxable * this.vatRate;
+        return taxable * this.vatRate; 
     }
 
     //  totalas

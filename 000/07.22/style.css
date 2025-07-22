@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Horror";
+  src: url(./SfBalloons.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: Horror;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: crimson;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem;
+}
+
+/* TABLE */
+
+table {
+  border-spacing: 0;
+  margin: 0 20px;
+}
+
+th,
+td {
+  background-color: #333;
+  color: #fff;
+  border-top: 1px solid #555;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+  border-left: 1px solid #555;
+
+  transition: all 200ms;
+}
+
+td {
+  padding: 10px 15px;
+}
+td:nth-child(3) {
+  text-align: right;
+}
+th {
+  background-color: #222;
+  padding: 5px;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: #561c1c;
+}
+
+tbody tr:hover td {
+  background-color: #dd5555;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+/* STICKY HEADERS */
+thead {
+  position: sticky;
+  top: 0;
+}
+
+/* LOADER */
+#loading {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10rem 2rem;
+}
+.hide {
+  display: none;
+}
+
+#villains-row td {
+  background-color: #000;
+  cursor: default;
+}

@@ -1,18 +1,15 @@
 
-/* displaying and saving a new invoice via the backend API */
-
-/* Importuoja puslapių logikos klases */
 import Invoice from './Invoice.js';
 import InvoiceRepository from './InvoiceRepository.js';
 import { uuidv4 } from './uuid.js';
 
-// eksportuoja CreateInvoicePage klase
 export default class CreateInvoicePage {
+
     constructor() {
         this.invoice = null;
-        this.loadInvoiceFromApi(); // load a fresh invoice template from the API
+        this.loadInvoiceFromApi(); // load fresh invoice template from the API
 
-        if (document.querySelector("#googleTranslateElement")) {  // LANGUAGE TRANSLATE FUNCTIONALITY
+        if (document.querySelector("#googleTranslateElement")) {  // LANGUAGE Translate
             const script = document.createElement("script");
             script.type = "text/javascript";
             script.src =
@@ -23,7 +20,7 @@ export default class CreateInvoicePage {
                     new google.translate.TranslateElement(
                         {
                             pageLanguage: "lt",
-                            includedLanguages: "lt,en,de,it,ru,be,lv,et,es,nl,ar,fr,pl",
+                            includedLanguages: "lt,en,de,it,ru,be,lv,et,es,nl,fr,pl",
                         },
                         "googleTranslateElement"
                     );
@@ -37,7 +34,7 @@ export default class CreateInvoicePage {
     async loadInvoiceFromApi() {
         try {
             const res = await fetch('https://in3.dev/inv/'); // atlieka HTTP uzklausa i API
-            const data = await res.json(); // gauta atsakyma konvertuoja i JSON objekta
+            const data = await res.json(); // gauta atsakyma konvertuoja i JSON objekta.
             this.invoice = new Invoice(data); // Wrap Invoice klase, kad butu galima naudoti jos metodus
             this.renderForm();
             this.setupEventListeners();
@@ -80,7 +77,7 @@ export default class CreateInvoicePage {
             tbody.appendChild(tr);// Prideda eilutę prie lentelės
         });
 
-        // atvaizduoja pristatymo kainą
+        /// atvaizduoja pristatymo kaina
         document.getElementById('shipping').textContent = this.invoice.shippingPrice?.toFixed(2) || '0.00';
         document.getElementById('subtotal').textContent = this.invoice.getSubtotal().toFixed(2);
         document.getElementById('vat').textContent = this.invoice.getVat().toFixed(2);

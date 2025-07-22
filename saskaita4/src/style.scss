@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
     background: #fff; // White for printing
@@ -21,6 +22,7 @@ body {
 .card {
     border-top: 5px solid #34699A;
     background: #FDF5AA;
+
 }
 
 h1 {
@@ -57,11 +59,15 @@ h3 {
     position: relative;
     z-index: 1;
 }
+
+
 @media (max-width: 700px) {
     .two-columns {
+
         flex-direction: column;
         gap: 12px;
     }
+    
 }
 
 label {
