@@ -1,5 +1,5 @@
 
-import InvoiceRepository from './saskaita4/src/InvoiceRepository.js';
+import InvoiceRepository from '../../saskaita4/src/InvoiceRepository.js';
 
 export default class ReadInvoicePage {
     constructor() {

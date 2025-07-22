@@ -2,7 +2,7 @@ const express = require('express'); // express Biblioteka
 const fs = require('fs'); // Įtraukiame failų sistemos modulį darbui su failais
 const path = require('path'); // Įtraukiame path modulį darbui su file path
 const app = express(); // Sukuriame Express programos objektą
-const PORT = 80;
+const PORT = 3000;
 
 app.use(express.json()); // Leidžiame apdoroti JSON formato užklausų body
 app.use(express.static(path.join(__dirname, 'public'))); // Nustatome statinių failų katalogą (public)

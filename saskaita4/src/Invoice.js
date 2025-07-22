@@ -4,7 +4,7 @@ export default class Invoice {
     constructor(data) {
         
         this.id = data.id || Date.now(); /* priskiria saskaitos ID arba sugeneruoja nauja pagal laika */
-        console.log(data.id);
+        // console.log(data.id);
         this.number = data.number || '';
         this.date = data.date || '';
         this.due_date = data.due_date || '';
@@ -23,7 +23,7 @@ export default class Invoice {
 
     // Normalize discount input to standard object
     parseDiscount(discount) {
-        // Jei nuolaidos nėra arba ji tuščia, grąžina 'none' tipo nuolaidą su 0 verte
+        // Jei nuolaidos nėra arba ji tuščia, grąžina 'none' tipo nuolaidą su 0 vertę
         if (!discount || (Array.isArray(discount) && discount.length === 0)) {
             return { type: 'none', value: 0 };
         } console.log(discount);

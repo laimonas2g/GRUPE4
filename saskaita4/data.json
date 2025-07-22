@@ -1,139 +1,57 @@
 [
   {
-    "id": 1753167882568,
-    "number": "AB-94095349",
+    "id": 1753173605266,
+    "number": "AB-48871391",
     "date": "2025-07-18",
-    "due_date": "2025-07-28",
-    "company": {
-      "buyer": {
-        "name": "UAB Kavaliauskas ir Urbonas",
-        "address": "Klaipėdos prospektas 68, Panevėžys LT-22731",
-        "code": "42495371",
-        "vat": "LT049885579",
-        "phone": "(8 5) 434 3315",
-        "email": "sakalauskas.aras@nika.com"
-      },
-      "seller": {
-        "name": "MB Baranauskas",
-        "address": "Saltoniškių g. 53, Telšiai LT-23406",
-        "code": "57323416",
-        "vat": "LT160242228",
-        "phone": "+370 46 48 05 97",
-        "email": "mpociute@gmail.com"
-      }
-    },
-    "items": [
-      {
-        "description": "Kėdė virtuvinė geltona",
-        "quantity": 4,
-        "price": 15,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Pufas \"Pūkas\"",
-        "quantity": 1,
-        "price": 60,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Virtuvinis stalas \"Begemotas\" su stiklo plokšte ir uždengimu",
-        "quantity": 6,
-        "price": 180,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Fotelis \"Minkštuolis\" su pagalve",
-        "quantity": 9,
-        "price": 150,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Fotelis \"Pūkas\" su uždengimu ir pagalve",
-        "quantity": 2,
-        "price": 150,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Fotelis su dėžėmis \"Dramblys\" su pagalve",
-        "quantity": 1,
-        "price": 195.99,
-        "discount": {
-          "type": "fixed",
-          "value": 35
-        }
-      }
-    ],
-    "shippingPrice": 32,
-    "vatRate": 0.21
-  },
-  {
-    "id": 1753171620550,
-    "number": "AB-17866223",
-    "date": "2025-07-20",
     "due_date": "2025-07-31",
     "company": {
       "buyer": {
-        "name": "IĮ Vasiliauskas",
-        "address": "Saltoniškių alėja 94, Telšiai",
-        "code": "78852903",
-        "vat": "LT523275136",
-        "phone": "+370 691 76 270",
-        "email": "akazlauskiene@redas.com"
+        "name": "UAB Kavaliauskas ir Jankauskas",
+        "address": "Laisvės prospektas 55, Kėdainiai LT-73137",
+        "code": "42658397",
+        "vat": "LT347206189",
+        "phone": "+370 46 33 32 54",
+        "email": "pkateiva@yahoo.com"
       },
       "seller": {
-        "name": "AB \"Butkus\"",
-        "address": "Laisvės alėja 19-79, Mažeikiai",
-        "code": "88846875",
-        "vat": "LT245049426",
-        "phone": "8 622 16012",
-        "email": "ikazlauskas@irta.com"
+        "name": "MB \"Butkus ir Baranauskas\"",
+        "address": "Žalgirio gatvė 89, Panevėžys",
+        "code": "58710653",
+        "vat": "LT853755433",
+        "phone": "866133872",
+        "email": "medeja57@skaidre.lt"
       }
     },
     "items": [
       {
-        "description": "Rašomasis stalas \"Mokinukas\"",
-        "quantity": 5,
-        "price": 120.99,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Sofa \"Violeta\"",
-        "quantity": 5,
-        "price": 300,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Virtuvinis stalas \"Begeležis\" su stiklo plokšte",
+        "description": "Sofa-lova \"Studentas\"",
         "quantity": 4,
-        "price": 150.97,
+        "price": 240.5,
+        "discount": {
+          "type": "percentage",
+          "value": 29
+        }
+      },
+      {
+        "description": "Mėlynas odinis fotelis \"Smurf\" su pagalve",
+        "quantity": 6,
+        "price": 225.99,
         "discount": {
           "type": "none",
           "value": 0
+        }
+      },
+      {
+        "description": "Pufas \"Miglė\"",
+        "quantity": 2,
+        "price": 90,
+        "discount": {
+          "type": "percentage",
+          "value": 43
         }
       }
     ],
-    "shippingPrice": 35,
+    "shippingPrice": 16,
     "vatRate": 0.21
   }
 ]
