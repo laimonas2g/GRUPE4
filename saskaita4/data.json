@@ -1,323 +1,32 @@
 [
   {
-    "id": 1753086964663,
-    "number": "AB-49447083",
-    "date": "2025-07-19",
-    "due_date": "2025-07-28",
+    "id": 1753144784481,
+    "number": "AB-44209103",
+    "date": "2025-07-21",
+    "due_date": "2025-07-31",
     "company": {
       "buyer": {
-        "name": "VŠĮ Kazlauskas ir Jankauskas",
-        "address": "Vilniaus gatvė 48, Visaginas LT-29641",
-        "code": "25801035",
-        "vat": "LT438081403",
-        "phone": "+370 5 693 9117",
-        "email": "jkateiva@hotmail.com"
+        "name": "MB \"Kazlauskas ir Baranauskas\"",
+        "address": "Kauno gatvė 69-21, Visaginas",
+        "code": "28087415",
+        "vat": "LT219277764",
+        "phone": "+370 46 39 81 99",
+        "email": "kazlauskaite.una@benjaminas.net"
       },
       "seller": {
-        "name": "VŠĮ \"Vasiliauskas ir Baranauskas\"",
-        "address": "Klaipėdos gatvė 52-50, Visaginas",
-        "code": "84490805",
-        "vat": "LT402833908",
-        "phone": "+370 675 08 774",
-        "email": "jankauskaite.ksavera@apolinaras.com"
+        "name": "VŠĮ \"Kavaliauskas\"",
+        "address": "Kauno prospektas 18-60, Ukmergė",
+        "code": "13818228",
+        "vat": "LT537600264",
+        "phone": "+37064243045",
+        "email": "urbonas.rytas@hotmail.com"
       }
     },
     "items": [
       {
-        "description": "Kėdė virtuvinė mėlyna",
-        "quantity": 101,
-        "price": 15,
-        "discount": {
-          "type": "percentage",
-          "value": 36
-        }
-      },
-      {
-        "description": "Kavos staliukas ",
-        "quantity": 9,
-        "price": 360.99,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Veidrodžių komplektas ",
-        "quantity": 2,
-        "price": 180,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Baro kėdė ",
-        "quantity": 5,
-        "price": 75.99,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Fotelis ",
-        "quantity": 8,
-        "price": 90,
-        "discount": {
-          "type": "percentage",
-          "value": 3
-        }
-      },
-      {
-        "description": "Marmurinis kavos staliukas ",
-        "quantity": 4,
-        "price": 780,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Sofa ",
-        "quantity": 101,
-        "price": 300.99,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Fotelis ",
-        "quantity": 7,
-        "price": 150.99,
-        "discount": {
-          "type": "fixed",
-          "value": 63
-        }
-      },
-      {
-        "description": "Lova ",
-        "quantity": 10,
-        "price": 420,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      }
-    ],
-    "shippingPrice": 31.99,
-    "vatRate": 0.21
-  },
-  {
-    "id": 1753090203423,
-    "number": "AB-80603007",
-    "date": "2025-07-17",
-    "due_date": "2025-07-29",
-    "company": {
-      "buyer": {
-        "name": "MB \"Sakalauskas\"",
-        "address": "Žalgirio prospektas 12-19, Alytus",
-        "code": "96719983",
-        "vat": "LT231590879",
-        "phone": "+370 46 37 02 43",
-        "email": "zukauskas.serapinas@jorunas.com"
-      },
-      "seller": {
-        "name": "UAB \"Paulauskas ir Kateiva\"",
-        "address": "Klaipėdos alėja 76, Visaginas LT-91051",
-        "code": "72723492",
-        "vat": "LT351576833",
-        "phone": "+370 5 147 6388",
-        "email": "rpocius@gmail.com"
-      }
-    },
-    "items": [
-      {
-        "description": "Komoda ąžuolinė dažyta",
-        "quantity": 4,
+        "description": "Spinta su stumdomomis durimis \"Afrikos drambliai\"",
+        "quantity": 3,
         "price": 690,
-        "discount": {
-          "type": "percentage",
-          "value": 4
-        }
-      },
-      {
-        "description": "Virtuvinis stalas paprastas baltas",
-        "quantity": 4,
-        "price": 90.97,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Metalinis kavos staliukas \"Sunkus metalas\"",
-        "quantity": 6,
-        "price": 450,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Metalinis kavos staliukas \"Sunkus metalas\" varinis",
-        "quantity": 7,
-        "price": 510.97,
-        "discount": {
-          "type": "fixed",
-          "value": 69
-        }
-      },
-      {
-        "description": "Stiklinis kavos staliukas \"Krištolas\" su padėklu",
-        "quantity": 2,
-        "price": 420.97,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Rašomasis stalas \"Lilija\"",
-        "quantity": 5,
-        "price": 180,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Kavos staliukas \"Arbūzas\" su raudonu paviršium, apvalus ir su padėklu",
-        "quantity": 4,
-        "price": 360.97,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Stalas \"Malvina\" apvalus",
-        "quantity": 1,
-        "price": 210.5,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Mėlynas odinis fotelis \"Smurf\"",
-        "quantity": 10,
-        "price": 210.5,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      }
-    ],
-    "shippingPrice": 42.95,
-    "vatRate": 0.21
-  },
-  {
-    "id": 1753093366169,
-    "number": "AB-66509650",
-    "date": "2025-07-18",
-    "due_date": "2025-07-28",
-    "company": {
-      "buyer": {
-        "name": "MB \"Paulauskas\"",
-        "address": "Liepų alėja 39, Visaginas LT-00459",
-        "code": "80561550",
-        "vat": "LT924380273",
-        "phone": "+370 5 377 2755",
-        "email": "cbaranauskas@yahoo.com"
-      },
-      "seller": {
-        "name": "UAB Petrauskas ir Baranauskas",
-        "address": "Saltoniškių g. 32-76, Tauragė",
-        "code": "54441746",
-        "vat": "LT820770703",
-        "phone": "+370 686 16 871",
-        "email": "nela89@drasutis.lt"
-      }
-    },
-    "items": [
-      {
-        "description": "Spinta \"Afrika\"",
-        "quantity": 10,
-        "price": 360,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Odinis fotelis \"Zebras\" su pagalve",
-        "quantity": 1,
-        "price": 225,
-        "discount": {
-          "type": "fixed",
-          "value": 99
-        }
-      },
-      {
-        "description": "Sulakstoma kėdė \"Barbaras\"",
-        "quantity": 10,
-        "price": 60.99,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Sudedama lova \"Studentas-mikro\" su patalynės dėže",
-        "quantity": 10,
-        "price": 180,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Rašomasis stalas \"Studentas\" su stiklo plokšte ir lakuotu stalviršium",
-        "quantity": 4,
-        "price": 270.99,
-        "discount": {
-          "type": "fixed",
-          "value": 96
-        }
-      }
-    ],
-    "shippingPrice": 48.95,
-    "vatRate": 0.21
-  },
-  {
-    "id": 1753094765395,
-    "number": "AB-08287095",
-    "date": "2025-07-20",
-    "due_date": "2025-07-27",
-    "company": {
-      "buyer": {
-        "name": "AB \"Baranauskas\"",
-        "address": "Saltoniškių g. 62, Alytus",
-        "code": "98906933",
-        "vat": "LT579826060",
-        "phone": "(8 46) 62 79 51",
-        "email": "tkavaliauskas@jurga.org"
-      },
-      "seller": {
-        "name": "AB Pocius ir Paulauskas",
-        "address": "Laisvės prospektas 78-36, Visaginas",
-        "code": "42601486",
-        "vat": "LT231343591",
-        "phone": "+370 5 377 6738",
-        "email": "kateiva.jurijus@yahoo.com"
-      }
-    },
-    "items": [
-      {
-        "description": "Veidrodis 70X100",
-        "quantity": 6,
-        "price": 135.97,
         "discount": {
           "type": "none",
           "value": 0
@@ -325,15 +34,24 @@
       },
       {
         "description": "Rašomasis stalas \"Profesorius\"",
-        "quantity": 9,
+        "quantity": 8,
         "price": 900,
         "discount": {
-          "type": "fixed",
-          "value": 392
+          "type": "none",
+          "value": 0
         }
       },
       {
-        "description": "Sudedama lova \"Studentas-mikro\" su patalynės dėže",
+        "description": "Spinta su stumdomomis durimis \"Afrikos drambliai\" raudona",
+        "quantity": 7,
+        "price": 720,
+        "discount": {
+          "type": "fixed",
+          "value": 322
+        }
+      },
+      {
+        "description": "Rašomasis stalas \"Lilija\"",
         "quantity": 5,
         "price": 180.99,
         "discount": {
@@ -342,34 +60,43 @@
         }
       },
       {
-        "description": "Stalas \"Malvina\"",
-        "quantity": 2,
-        "price": 150,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Komoda \"Lilija\"",
-        "quantity": 10,
-        "price": 150,
-        "discount": {
-          "type": "none",
-          "value": 0
-        }
-      },
-      {
-        "description": "Odinis pufas \"Krokodilas\"",
+        "description": "Sulakstoma kėdė \"Barbaras\"",
         "quantity": 3,
-        "price": 120,
+        "price": 60,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Stiklinis kavos staliukas \"Krištolas\" su padėklu",
+        "quantity": 5,
+        "price": 420.95,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "Lova \"Spyruoklė-2\" su patalynės dėže",
+        "quantity": 8,
+        "price": 480,
+        "discount": {
+          "type": "none",
+          "value": 0
+        }
+      },
+      {
+        "description": "4 durų spinta \"Afrika\" su stiklo durimis",
+        "quantity": 9,
+        "price": 450.99,
         "discount": {
           "type": "none",
           "value": 0
         }
       }
     ],
-    "shippingPrice": 54,
+    "shippingPrice": 65,
     "vatRate": 0.21
   }
 ]

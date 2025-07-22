@@ -27,14 +27,30 @@ class CreateInvoicePage {
   constructor() {
     this.invoice = null;
     this.loadInvoiceFromApi(); // load a fresh invoice template from the API
+
+    if (document.querySelector("#googleTranslateElement")) {
+      // LANGUAGE TRANSLATE FUNCTIONALITY
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.onload = () => {
+        window.googleTranslateElementInit = () => {
+          new google.translate.TranslateElement({
+            pageLanguage: "lt",
+            includedLanguages: "lt,en,de,it,ru,be,lv,et,es,nl,ar,fr,pl"
+          }, "googleTranslateElement");
+        };
+      };
+      document.head.appendChild(script); // adding the translation script to the DOM
+    }
   }
 
   // Fetch a template invoice from external API (for populating form with example data)
   async loadInvoiceFromApi() {
     try {
-      const res = await fetch('https://in3.dev/inv/');
-      const data = await res.json();
-      this.invoice = new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](data); // Wrap Invoice klase, kad būtų galima naudoti jos metodus
+      const res = await fetch('https://in3.dev/inv/'); // atlieka HTTP uzklausa i API
+      const data = await res.json(); // gauta atsakyma konvertuoja i JSON objekta
+      this.invoice = new _Invoice_js__WEBPACK_IMPORTED_MODULE_0__["default"](data); // Wrap Invoice klase, kad butu galima naudoti jos metodus
       this.renderForm();
       this.setupEventListeners();
     } catch (e) {
@@ -42,7 +58,7 @@ class CreateInvoicePage {
     }
   }
 
-  // // metodas, kuris atvaizduoja sąskaitos laukus formoje (tik skaitymui)
+  // // metodas, kuris atvaizduoja saskaitos laukus formoje (read only)
   renderForm() {
     document.getElementById('invoice-number').textContent = this.invoice.number;
     document.getElementById('invoice-date').textContent = this.invoice.date;
@@ -73,7 +89,7 @@ class CreateInvoicePage {
                 <td>${this.renderDiscountCell(item.discount)}</td>
                 <td>${this.invoice.getLineTotal(item).toFixed(2)}</td>
             `;
-      tbody.appendChild(tr);
+      tbody.appendChild(tr); // Prideda eilutę prie lentelės
     });
 
     // atvaizduoja pristatymo kainą
@@ -84,9 +100,10 @@ class CreateInvoicePage {
     document.getElementById('total').textContent = this.invoice.getTotal().toFixed(2);
   }
 
-  // Format the discount cell for display
+  // Metodas, kuris suformatuoja nuolaidos langelį rodymui
   renderDiscountCell(discount) {
-    if (!discount || discount.type === 'none' || discount.value === 0) return '';
+    // Jei nuolaidos nėra arba ji lygi 0, grąžina tuščią tekstą
+    if (!discount || discount.type === 'none' || discount.value === 0) return ''; // Jei nuolaida procentinė, grąžina procentus
     if (discount.type === 'percentage') return discount.value + '%';
     if (discount.type === 'fixed') return discount.value + ' €';
     return '';
@@ -95,29 +112,31 @@ class CreateInvoicePage {
   // Hook up button event listeners for saving, refreshing, and canceling
   setupEventListeners() {
     document.getElementById('save-btn').onclick = async () => {
+      // Priskiria išsaugojimo mygtuko paspaudimo įvykį
       await this.saveInvoice();
     };
     document.getElementById('update-btn').onclick = async () => {
       await this.loadInvoiceFromApi();
-    };
+    }; // Priskiria atšaukimo mygtuko paspaudimo įvykį
     document.getElementById('cancel-btn').onclick = () => window.location.href = 'read.html';
   }
 
-  // Save the invoice via POST to the backend API
+  // Asinchroninis metodas, kuris išsaugo sąskaitą per POST užklausą į backend API
   async saveInvoice() {
     if (!this.invoice.id) {
+      // Jei sąskaita neturi ID, sugeneruoja naują unikalų ID
       this.invoice.id = (0,_uuid_js__WEBPACK_IMPORTED_MODULE_2__.uuidv4)(); // Ensure unique ID
-    }
+    } // Išsaugo sąskaitą per InvoiceRepository
     await _InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_1__["default"].save(this.invoice); // Save to backend
     this.showMessage('Invoice saved!', false);
-    setTimeout(() => window.location.href = 'read.html', 500);
+    setTimeout(() => window.location.href = 'read.html', 500); // Po trumpo laiko nukreipia į sąskaitų peržiūros puslapį
   }
 
   // Display a user message on the page
   showMessage(msg, isError = false) {
     const el = document.getElementById('message');
     el.textContent = msg;
-    el.style.color = isError ? 'red' : 'green';
+    el.style.color = isError ? 'red' : 'green'; // Nustato žinutės spalvą pagal klaidos tipą
   }
 }
 

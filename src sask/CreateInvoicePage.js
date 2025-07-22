@@ -1,3 +1,11 @@
+
+/* displaying and saving a new invoice via the backend API */
+
+/* Importuoja puslapių logikos klases */
+import Invoice from './Invoice.js';
+import InvoiceRepository from './InvoiceRepository.js';
+import { uuidv4 } from './uuid.js';
+
 // Eksportuoja CreateInvoicePage klasę kaip numatytąjį modulį
 export default class CreateInvoicePage {
     // Konstruktorius, kuris inicijuoja klasės objektą

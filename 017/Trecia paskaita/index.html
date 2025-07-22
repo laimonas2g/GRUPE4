@@ -1,17 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PVM sąskaitos išrašas </title>
+    <link rel="icon" type="image/x-icon" href="./assets/icon.svg" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container flex flex-col justify-center items-center min-h-screen">
+      <header>
+        <div class="logoTitleLanguage flex justify-between test">
+          <div class="logoTitle flex justify-center items-center gap-7 mt-14">
+            <div class="VATLogo">
+              <img src="./assets/icon.svg" id="vatIcon" />
+            </div>
+            <div class="headerTitle font-mono">
+              <h1 class="text-3xl text-center">PVM sąskaitos išrašas</h1>
+            </div>
+          </div>
+          <div class="flex justify-center  ml-20 mt-20">
+            <div id="googleTranslateElement"></div>
+         </div>
+        </div>
+        <div class="mb-4 mt-10">
+          <h2 class="text-center overline">
+            Numeris: <span class="font-bold" id="VATNumber"></span>
+          </h2>
+        </div>
+      </header>
+      <body class="drop-shadow-md">
+        <div class="flex justify-center">
+          <table
+            class="border-slate-700 mb-10 font-mono border-separate border-spacing-1 gap-x-80 gap-y-11"
+          >
+            <thead>
+              <tr>
+                <th
+                  class=" border-gray-600 text-center leading-10 text-xl"
+                  colspan="2"
+                >
+                  PVM periodas
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  class="tablePadding flex justify-center items-center">
+                <div>
+                  <td class="border-gray-600 text-center" id="date">Data:</td>
+                </div>
+                <div class="arrowRightWrapper relative">
+                  <span class="arrowRight absolute">&#8674;</span>
+                </div>
+                <div>
+                  <td class="border-gray-600 text-center" id="dueDate">Terminas:</td>
+              </div>
+              </tr>
+              <tr>
+                <td class="border-gray-600 text-center" id="date"></td>
+                <td class="border-gray-600 text-center" id="dueDate">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="fixBorderAlignment flex justify-center items-center gap-x-4">
+          <table
+            class="border-2 border-slate-700 mb-10 font-mono border-separate border-spacing-1 table-fixed px-4 py-2"
+          >
+            <thead>
+              <tr>
+                <th
+                  class="text-left border-b-2 border-gray-600"
+                  id="sellerName"
+                >
+                  Pardavėjas -
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="sellerAddress">Adresas: </td>
+              </tr>
+              <tr>
+                <td id="sellerCode">Kodas: </td>
+              </tr>
+              <tr>
+                <td id="sellerVAT">PVM: </td>
+              </tr>
+              <tr>
+                <td id="sellerPhone">Telefonas: </td>
+              </tr>
+              <tr>
+                <td id="sellerEmail">Elektroninis paštas: </td>
+              </tr>
+            </tbody>
+          </table>
+          <table
+            class="border-2 border-slate-700 mb-10 font-mono border-separate border-spacing-1 table-auto px-4 py-2"
+          >
+            <thead class="text-left border-b-2 border-gray-600">
+              <tr>
+                <th class="border-b-2 border-gray-600" id="buyerName">
+                  Pirkėjas -
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="buyerAddress">Adresas: </td>
+              </tr>
+              <tr>
+                <td id="buyerCode">Kodas: </td>
+              </tr>
+              <tr>
+                <td id="buyerVAT">PVM: </td>
+              </tr>
+              <tr>
+                <td id="buyerPhone">Telefonas: </td>
+              </tr>
+              <tr>
+                <td id="buyerEmail">Elektroninis paštas: </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tableWrapper">
+          <table class="itemsTable table-auto border-2 border-slate-700">
+          <thead>
+            <tr class="border-b-2 border-gray-600">
+              <th class="px-4 py-2">Prekės</th>
+              <th class="px-4 py-2">Kaina už prekę</th>
+              <th class="px-4 py-2">Kaina už prekę (€)</th>
+              <th class="px-4 py-2">Visa kaina(€)</th>
+              <th class="px-4 py-2">Nuolaida vienai prekei</th>
+              <th class="px-4 py-2">Taikyta nuolaidos vertė  (€)</th>
+              <th class="px-4 py-2">Kaina su nuolaida  (€)</th>
+            </tr>
+          </thead>
+          <tbody id="itemsName" class="px-6 py-6"></tbody>
+          <thead class>
+            <tr
+              id="itemsTotal"
+              class="border-b-2 border-gray-600 border-t-2 text-center"
+            >
+              <th class="px-4 py-2">Siuntimas</th>
+              <th class="px-4 py-2">Kaina (€)</th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2">Visos prekės iš viso: (€)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="shippmentPrice" class="text-center">
+              <td>Įtrauktas ✅</td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr class="border-b-2 border-gray-600 border-t-2 text-center" >
+              <th class="px-4 py-2" colspan="2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2">Siuntimas + Prekės (€):</th>
+              <th id="shippmentItemsResult" class="px-4 py-2"></th>
+            </tr>
+            <tbody>
+            </tbody>
+            <tr class="border-b-2 border-gray-600 border-t-2 text-center ">
+              <th class="px-4 py-2" colspan="2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2">VAT (18%):</th>
+              <th id="VATItemsResult" class="px-4 py-2"></th>
+            </tr>
+            <tr class="border-b-2 border-gray-600 border-t-2 text-center accentColor">
+              <th class="px-4 py-2" colspan="2"></th>
+              <th class="px-4 py-2" rowspan="1"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2"></th>
+              <th class="px-4 py-2">Bendra kaina:</th>
+              <th id="VATtotalCost" class="px-4 py-2"></th>
+            </tr>
+          </thead>
+        </table></div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="app.js" defer></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-
-</head>
-
-<body>
-
-</body>
-
-</html>F
+      </body>
+      <footer>
+        <div class="flex flex-col pt-5 pb-10">
+          <div class="footerReference">
+            <p>
+              API Copyright reference &copy; 
+              <a href="https://in3.dev/inv/" target="_blank" class="accentColor">
+               <span>&#8674;</span>
+          https://in3.dev/inv/</a
+        >
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    </main>
+  </body>
+</html>
