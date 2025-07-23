@@ -2,52 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "../ReadInvoicePage.js":
-/*!*****************************!*\
-  !*** ../ReadInvoicePage.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ReadInvoicePage)
-/* harmony export */ });
-/* harmony import */ var _saskaita4_src_InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./saskaita4/src/InvoiceRepository.js */ "./src/InvoiceRepository.js");
-
-class ReadInvoicePage {
-  constructor() {
-    this.renderList(); // konstruktorius iskviecia saskaitu listo atvaizdavimo funkcija
-  }
-
-  // load ir atvaizduoja visas sąskaitas
-  async renderList() {
-    const invoices = await _saskaita4_src_InvoiceRepository_js__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(); // Fetch all invoices from API
-    const tbody = document.getElementById('invoice-list');
-    tbody.innerHTML = '';
-    // forEach per kiekviena saskaita ir sukuria nauja lenteles eilute
-    invoices.forEach(inv => {
-      const tr = document.createElement('tr');
-      /* uzpildo eilute saskaitos duomenimis */
-      tr.innerHTML = `
-                <td>${inv.number}</td>
-                <td>${inv.date}</td>
-                <td>${inv.due_date}</td>
-                <td>${inv.company?.buyer?.name || ''}</td>
-                <td>${inv.company?.seller?.name || ''}</td>
-                <td>${inv.getTotal ? inv.getTotal().toFixed(2) : ''}</td>
-                <td>
-                    <a href="show.html?id=${inv.id}" class="btn">View</a>
-                    <a href="edit.html?id=${inv.id}" class="btn primary">Edit</a>
-                    <a href="delete.html?id=${inv.id}" class="btn danger">Delete</a>
-                </td>
-            `;
-      tbody.appendChild(tr);
-    });
-  }
-}
-
-/***/ }),
-
 /***/ "./src/CreateInvoicePage.js":
 /*!**********************************!*\
   !*** ./src/CreateInvoicePage.js ***!
@@ -715,7 +669,7 @@ class ShowInvoicePage {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateInvoicePage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateInvoicePage.js */ "./src/CreateInvoicePage.js");
-/* harmony import */ var _ReadInvoicePage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ReadInvoicePage.js */ "../ReadInvoicePage.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../ReadInvoicePage.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _EditInvoicePage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EditInvoicePage.js */ "./src/EditInvoicePage.js");
 /* harmony import */ var _ListInvoicesPage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ListInvoicesPage.js */ "./src/ListInvoicesPage.js");
 /* harmony import */ var _ShowInvoicePage_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ShowInvoicePage.js */ "./src/ShowInvoicePage.js");
