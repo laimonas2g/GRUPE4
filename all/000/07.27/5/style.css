@@ -1,0 +1,4 @@
+#sentence { font-size: 1.5em; margin: 1em 0; }
+.correct { color: green; }
+.incorrect { color: red; }
+#stats { margin-top: 1em; font-size: 1.1em; }

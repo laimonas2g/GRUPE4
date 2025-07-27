@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; margin: 2em; }
+.done { text-decoration: line-through; color: gray; }
+li { margin-bottom: 0.5em; }
+.remove-btn { margin-left: 1em; color: red; cursor: pointer; }
+.auto-remove-msg { color: orange; font-size: 0.9em; margin-left: 1em; }

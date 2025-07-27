@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  <title>Dynamic Table Row Adder</title>
+</head>
+
+<body>
+  <h1>Dynamic Table</h1>
+  <form id="row-form">
+    <input type="text" id="name" placeholder="Name..." required>
+    <input type="number" id="age" placeholder="Age..." min="0" required>
+    <button type="submit">Add Row</button>
+  </form>
+  <table id="data-table" border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+#chat-window {
+  border: 1px solid #ccc;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  background: #f9f9f9;
+}
+.message {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+}
+.message.even { background: #e0f7fa; }
+.message.odd { background: #ffe0b2; }

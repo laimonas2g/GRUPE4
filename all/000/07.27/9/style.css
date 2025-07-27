@@ -1,0 +1,13 @@
+.quiz-card {
+  border: 1px solid #bbb;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  background: #f5f5f5;
+}
+.quiz-answer {
+  display: none;
+  color: green;
+  margin-top: 0.7em;
+}
+.show { display: block; }

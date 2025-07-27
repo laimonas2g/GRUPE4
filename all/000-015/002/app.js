@@ -1,20 +1,57 @@
+console.log(false);
 
+let num = 10;
+num++;
+console.log(num);
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-  .then(response => response.json()) // kai sulaukiam atsakyma paverciam objektu
-  .then(json => {
-    console.log(json);
-    printTitles(json); // sukurtas variable ateityje, 34 eilute
-  }) // atspausdinam konsoleje
+let val = 5 * 5 === 10;
+console.log(val);
 
-console.log('kodas po fetch');  // nelaukia response ir spausdina
+let name = null;
 
-const printTitles = obj => { 
-  const ul = document.querySelector('ul');
+console.log(name);
 
-  obj.forEach(p => {
-    const li = document.createElement('li');
-    li.innerText = p.userId;
-    ul.appendChild(li);
-  });
+//whitespace - don't do anything, just readable code
+
+let num1 = 5 * 2;
+console.log(num1)
+
+//controlflow, order that code will be exceuted, what code will be executed
+
+let isSignedIn = true;
+
+if (isSignedIn) { //if condition is true, run
+  console.log('Welcome!');
 }
+
+console.log(isSignedIn);
+console.log('-----------------')
+
+let isSignedIn1 = true;
+
+if (isSignedIn1) { //if condition is true, run
+  console.log('Welcome!');
+
+} else if (1) {
+  console.log('else if')
+} else {
+  console.log('You need to sign in!')
+}
+
+console.log('-----------------')
+/// equality operator
+let val1 = undefined;
+
+if (val1 == null){
+console.log('it was null')
+} else {
+  console.log('it was NOT null')
+}
+console.log('-----------------')
+
+// catch both null and undefined?
+
+// YT: 00:36:11
+
+
+
