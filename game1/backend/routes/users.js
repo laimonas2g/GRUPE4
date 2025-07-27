@@ -5,7 +5,7 @@ const JWT_SECRET = 'your_jwt_secret';
 
 const router = express.Router();
 
-// GET /api/users - list all users (id, username)
+/// GET /api/users - list all users (id, username)
 router.get('/', async (req, res) => {
   try {
     const users = await User.getAll();

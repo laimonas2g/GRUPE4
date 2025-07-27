@@ -7,7 +7,7 @@ async function test() {
       user: 'root',
       password: '',
       database: 'firstdb',
-      port: 3306 // or your port
+      port: 3306
     });
     console.log('Connected!');
     await conn.end();
