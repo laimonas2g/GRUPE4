@@ -198,8 +198,9 @@ console.log(suma(5, 6))
 // console.log(isEven(3));
 
 
-You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+// You will be given an array a and a value x. All you need to do is check whether the provided 
+// array contains the value.
 
-a can contain numbers or strings. x can be either.
+// a can contain numbers or strings. x can be either.
 
-Return true if the array contains the value, false if not.
+// Return true if the array contains the value, false if not.

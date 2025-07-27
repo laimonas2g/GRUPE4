@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <h1>Welcome to the Quiz Game!</h1>
+  <div id="clock">
+    <h2>Current Time</h2>
+    <div>
+      <label for="timezone">Select Timezone:</label>
+      <select id="timezone">
+        <option value="UTC">UTC</option>
+        <option value="Europe/London">London</option>
+        <option value="Europe/Vilnius">Vilnius</option>
+        <option value="America/New_York">New York</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+      </select>
+    </div>
+    <div id="time-display"></div>
+  </div>
+  <div id="quiz"></div>
+
+</body>
+
+</html>

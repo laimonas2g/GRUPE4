@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+}
+
+#demo-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-top: 20px;
+}
+
+.example-class {
+  margin-bottom: 5px;
+  padding: 5px;
+  background: #e3f2fd;
+  border-radius: 3px;
+}
+
+ul#my-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+button {
+  margin: 4px 2px;
+  padding: 6px 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1565c0;
+}
+
+#hover-div {
+  background: #ffe082;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#hidden-text {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+#parent {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f8bbd0;
+  border-radius: 4px;
+}
+#child {
+  background: #b2dfdb;
+  margin-top: 5px;
+  padding: 5px;
+}
+#sibling {
+  background: #ffe0b2;
+  margin-top: 5px;
+  padding: 5px;
+}

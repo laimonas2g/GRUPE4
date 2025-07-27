@@ -1,0 +1,4 @@
+body { font-family: sans-serif; background: #f2f2f2; }
+#clock { margin-bottom: 2em; padding: 1em; background: #fff; border-radius: 8px; width: fit-content;}
+#quiz { margin-top: 2em; }
+input, button, select { font-size: 1em; }
