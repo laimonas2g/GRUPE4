@@ -1,0 +1,17 @@
+{
+  "name": "narrative-game-backend",
+  "version": "1.0.0",
+  "description": "Backend for Narrative Choice Game with MariaDB, Express, MD5",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "seed": "node db/seedUsers.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "mariadb": "^3.1.4",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

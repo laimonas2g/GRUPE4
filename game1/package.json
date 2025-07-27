@@ -1,0 +1,44 @@
+{
+  "name": "game1",
+  "version": "1.0.0",
+  "description": "A choice-based HTML game where players make decisions that shape the story. Includes user login and authentication, with player progress and data securely stored in a MariaDB database.",
+  "keywords": [
+    "game",
+    "interactive",
+    "narrative",
+    "choice-based",
+    "html",
+    "javascript",
+    "auth",
+    "authentication",
+    "mariadb",
+    "database",
+    "adventure",
+    "story",
+    "web",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/laimonas2g/game1#readme",
+  "bugs": {
+    "url": "https://github.com/laimonas2g/game1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laimonas2g/game1.git"
+  },
+  "license": "ISC",
+  "author": "laimonas2g",
+  "type": "module",
+  "main": "main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mariadb": "^3.4.5",
+    "md5": "^2.3.0"
+  }
+}
