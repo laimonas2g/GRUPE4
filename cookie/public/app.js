@@ -7149,10 +7149,22 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log('Cookies');
 var loginForm = document.querySelector('[data-login]');
+var logoutForm = document.querySelector('[data-logout]');
+if (logoutForm) {
+  var logoutButton = logoutForm.querySelector('button');
+  logoutButton.addEventListener('click', function (_) {
+    axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('http://localhost:3000/logout', {}, {
+      withCredentials: true
+    }).then(function (res) {
+      window.location.href = 'http://localhost:3000';
+    });
+  });
+}
 if (loginForm) {
   var emailInput = loginForm.querySelector('[name="email"]');
   var pswInput = loginForm.querySelector('[name="password"]');
   var loginButton = loginForm.querySelector('button');
+  var responseDiv = document.querySelector('[data-response]');
   loginButton.addEventListener('click', function (_) {
     axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('http://localhost:3000/login', {
       email: emailInput.value,
@@ -7161,6 +7173,14 @@ if (loginForm) {
       withCredentials: true
     }).then(function (res) {
       console.log(res.data);
+      if (!res.data.success) {
+        responseDiv.innerText = res.data.message;
+      } else {
+        responseDiv.innerText = res.data.message;
+        setTimeout(function (_) {
+          window.location.href = 'http://localhost:3000';
+        }, 1000);
+      }
     });
   });
 }
