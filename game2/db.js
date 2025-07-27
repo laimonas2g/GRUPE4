@@ -3,7 +3,7 @@ const pool = mariadb.createPool({
   host: 'localhost',
   user: 'root',
   password: 'yourpassword',
-  database: 'quizdb' // <--- This is your current database
+  database: 'seconddb'
 });
 
 module.exports = pool;

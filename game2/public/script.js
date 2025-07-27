@@ -20,7 +20,7 @@ timezoneSelect.addEventListener('change', updateClock);
 // Initial clock display
 updateClock();
 
-// --- Quiz logic below (as before) ---
+// --- Quiz logic below  ---
 fetch('/question/easy')
   .then(res => res.json())
   .then(q => {
