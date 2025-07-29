@@ -16,10 +16,38 @@
             <ul data-tree-list></ul>
         </section>
         <section class="edit"></section>
-        <section class="add"></section>
-        <section class="delete"></section>
+        <section class="plant">
+            <h2>Plant a Tree</h2>
+            <form data-plant-form>
+                <input type="text" placeholder="Tree Name" required>
+                <select required>
+                    <option value="" disabled selected>Select Tree Type</option>
+                    <option value="Lapuotis">Lapuotis</option>
+                    <option value="Spygliuotis">Spygliuotis</option>
+                    <option value="Palmė">Palmė</option>
+                </select>
+                <input type="number" placeholder="Tree Height (m)" required>
+                <button type="button">Plant Tree</button>
+            </form>
+        </section>
+        <section class="cut">
+            <h2>Cut a Tree</h2>
+            <form data-cut-form>
+                <input type="text" placeholder="Tree ID" required>
+                <button type="button">Cut Tree</button>
+            </form>
+        </section>
     </div>
 
+
+    <template data-tree-item-template>
+        <li>
+            <span class="tree-id"></span>
+            <span class="tree-name"></span>
+            <span class="tree-type"></span>
+            <span class="tree-height"></span>
+        </li>
+    </template>
 
 </body>
 

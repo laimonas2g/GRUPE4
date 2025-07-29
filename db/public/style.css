@@ -1,1 +1,125 @@
+body {
+  font-family: monospace, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+}
+
+section.view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 25%;
+}
+section.view ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+section.view ul li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.view ul li .tree-id,
+section.view ul li .tree-name,
+section.view ul li .tree-type,
+section.view ul li .tree-height {
+  margin-right: 10px;
+  font-weight: bold;
+}
+section.view ul li .tree-id {
+  color: #007bff;
+}
+section.view ul li .tree-name {
+  color: #28a745;
+}
+section.view ul li .tree-type {
+  color: #dc3545;
+}
+section.view ul li .tree-height {
+  color: #ffc107;
+}
+
+section.plant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 25%;
+}
+section.plant form {
+  display: flex;
+  flex-direction: column;
+}
+section.plant form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+section.plant form select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+section.plant form button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section.plant form button:hover {
+  background-color: #218838;
+}
+
+section.cut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 25%;
+}
+section.cut form {
+  display: flex;
+  flex-direction: column;
+}
+section.cut form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+section.cut form button {
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section.cut form button:hover {
+  background-color: #c82333;
+}

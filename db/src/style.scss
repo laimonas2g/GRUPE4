@@ -1,0 +1,124 @@
+body {
+    font-family: monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+}
+
+section.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 25%;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .tree-id, .tree-name, .tree-type, .tree-height {
+                margin-right: 10px;
+                font-weight: bold;
+            }
+            .tree-id {
+                color: #007bff;
+            }
+            .tree-name {
+                color: #28a745;
+            }
+            .tree-type {
+                color: #dc3545;
+            }
+            .tree-height {
+                color: #ffc107;
+            }
+        }
+    }
+}
+
+section.plant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 25%;
+    form {
+        display: flex;
+        flex-direction: column;
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        select {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #218838;
+            }
+        }
+    }
+}
+
+section.cut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 25%;
+    form {
+        display: flex;
+        flex-direction: column;
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #c82333;
+            }
+        }
+    }
+}
