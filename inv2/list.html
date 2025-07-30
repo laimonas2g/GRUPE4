@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Sąskaitų sąrašas</title>
+</head>
+
+<body data-list>
+    <div class="container mt-5">
+        <h1 class="mb-4">Sąskaitų sąrašas</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nr.</th>
+                        <th>Data</th>
+                        <th>Klientas</th>
+                        <th>Suma be PVM</th>
+                        <th>Veiksmai</th>
+                    </tr>
+                </thead>
+                <tbody data-invoices-list>
+                    <!-- Čia bus dinamiškai generuojami sąskaitų įrašai -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

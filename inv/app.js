@@ -7079,79 +7079,53 @@ process.umask = function() { return 0; };
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 
-var listTemplate = document.querySelector('[data-tree-item-template]');
-var listEl = document.querySelector('[data-tree-list]');
-var plantForm = document.querySelector('[data-plant-form]');
-var plantButton = plantForm.querySelector('button');
-var cutForm = document.querySelector('[data-cut-form]');
-var cutButton = cutForm.querySelector('button');
-var growForm = document.querySelector('[data-grow-form]');
-var growButton = growForm.querySelector('button');
-plantButton.addEventListener('click', function (_) {
-  return plantTree();
-});
-cutButton.addEventListener('click', function (_) {
-  return cutTree();
-});
-growButton.addEventListener('click ', function (_) {
-  return growTree();
-});
-var getList = function getList(_) {
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3000/all-trees').then(function (res) {
-    return renderTree(res.data);
+var apiUrl = 'https://in3.dev/inv/';
+function renderInvoice() {
+  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(apiUrl).then(function (res) {
+    var invoice = res.data;
+    function formatDiscount(discount) {
+      if (!discount || Array.isArray(discount)) return '-';
+      if (discount.type === 'fixed') return discount.value.toFixed(2);
+      if (discount.type === 'percentage') return discount.value + '%';
+      return '-';
+    }
+    function calcItemTotal(item) {
+      var price = item.price * item.quantity;
+      if (item.discount && !Array.isArray(item.discount)) {
+        if (item.discount.type === 'fixed') price -= item.discount.value;
+        if (item.discount.type === 'percentage') price -= price * (item.discount.value / 100);
+      }
+      return price;
+    }
+    var itemsHtml = invoice.items.map(function (item, i) {
+      return "\n            <tr>\n                <td>".concat(i + 1, "</td>\n                <td>").concat(item.description, "</td>\n                <td>").concat(item.quantity, "</td>\n                <td>").concat(item.price, "</td>\n                <td>").concat(formatDiscount(item.discount), "</td>\n                <td>").concat(calcItemTotal(item).toLocaleString('lt-LT', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }), "</td>\n            </tr>\n        ");
+    }).join('');
+    var itemsTotal = invoice.items.reduce(function (sum, item) {
+      return sum + calcItemTotal(item);
+    }, 0);
+    var withShippingTotal = itemsTotal + (invoice.shippingPrice || 0);
+    var vat = withShippingTotal * 0.21;
+    var grandTotal = withShippingTotal + vat;
+    var html = "\n            <div class=\"container my-5\">\n                <div class=\"row mb-4\">\n                    <div class=\"col-md-12 text-md-start mb-3\">\n                        <h2>S\u0105skaita fakt\u016Bra</h2>\n                        <p class=\"mb-0\"><strong>Nr.:</strong> ".concat(invoice.number, "</p>\n                        <p class=\"mb-0\"><strong>Data:</strong> ").concat(invoice.date, "</p>\n                        <p class=\"mb-0\"><strong>Apmok\u0117ti iki:</strong> ").concat(invoice.due_date, "</p>\n                    </div>\n                    <div class=\"col-md-6 text-md-start\">\n                        <h5>Pardav\u0117jas</h5>\n                        <p><strong>").concat(invoice.company.seller.name, "</strong><br>\n                            ").concat(invoice.company.seller.address, "<br>\n                            \u012Emon\u0117s kodas: ").concat(invoice.company.seller.code, "<br>\n                            PVM kodas: ").concat(invoice.company.seller.vat, "<br>\n                            Tel.: ").concat(invoice.company.seller.phone, "<br>\n                            El. pa\u0161tas: ").concat(invoice.company.seller.email, "\n                        </p>\n                    </div>\n                    <div class=\"col-md-6 text-md-start\">\n                        <h5>Pirk\u0117jas</h5>\n                        <p><strong>").concat(invoice.company.buyer.name, "</strong><br>\n                            ").concat(invoice.company.buyer.address, "<br>\n                            \u012Emon\u0117s kodas: ").concat(invoice.company.buyer.code, "<br>\n                            PVM kodas: ").concat(invoice.company.buyer.vat, "<br>\n                            Tel.: ").concat(invoice.company.buyer.phone, "<br>\n                            El. pa\u0161tas: ").concat(invoice.company.buyer.email, "\n                        </p>\n                    </div>\n                </div>\n                <div class=\"table-responsive mb-4\">\n                    <table class=\"table table-bordered align-middle\">\n                        <thead class=\"table-light\">\n                            <tr>\n                                <th>#</th>\n                                <th>Prek\u0117s apra\u0161ymas</th>\n                                <th>Kiekis</th>\n                                <th>Kaina (\u20AC)</th>\n                                <th>Nuolaida</th>\n                                <th>Suma (\u20AC)</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            ").concat(itemsHtml, "\n                        </tbody>\n                        <tfoot>\n                            <tr>\n                                <td colspan=\"5\" class=\"text-end\">Pristatymas</td>\n                                <td>").concat((invoice.shippingPrice || 0).toLocaleString('lt-LT', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }), "</td>\n                            </tr>\n                            <tr>\n                                <td colspan=\"5\" class=\"text-end\">PVM (21%)</td>\n                                <td>").concat(vat.toLocaleString('lt-LT', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }), "</td>\n                            </tr>\n                            <tr>\n                                <td colspan=\"5\" class=\"text-end fw-bold\">I\u0161 viso</td>\n                                <td class=\"fw-bold\">").concat(grandTotal.toLocaleString('lt-LT', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }), "</td>\n                            </tr>\n                        </tfoot>\n                    </table>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                        <p><strong>Pastabos:</strong> Pra\u0161ome apmok\u0117ti iki nurodytos datos.</p>\n                    </div>\n                </div>\n            </div>\n        ");
+    document.body.innerHTML = html;
+  })["catch"](function (error) {
+    console.error('Klaida gaunant duomenis:', error);
+    document.body.innerHTML = "<div class=\"container my-5\"><div class=\"alert alert-danger\">Nepavyko gauti duomen\u0173.</div></div>";
   });
-};
-var growTree = function growTree(_) {
-  var heightEl = growForm.querySelector('[type="number"]');
-  var idEl = growForm.querySelector('[type="text"]');
-  var id = idEl.value;
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].put('http://localhost:3000/tree/' + id, {
-    height: parseFloat(heightEl.value)
-  }).then(function (_) {
-    getList();
-    heightEl.value = '';
-    idEl.value = '';
-  });
-};
-var cutTree = function cutTree(_) {
-  var idEl = cutForm.querySelector('[type="text"]');
-  var id = idEl.value;
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]('http://localhost:3000/tree/' + id).then(function (_) {
-    getList();
-    idEl.value = '';
-  });
-};
-var plantTree = function plantTree(_) {
-  var nameEl = plantForm.querySelector('[type="text"]');
-  var typeEl = plantForm.querySelector('select');
-  var heightEl = plantForm.querySelector('[type="number"]');
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('http://localhost:3000/tree', {
-    name: nameEl.value,
-    type: typeEl.value,
-    height: parseFloat(heightEl.value)
-  }).then(function (_) {
-    getList();
-    nameEl.value = '';
-    typeEl.value = '';
-    heightEl.value = '';
-  });
-};
-var renderTree = function renderTree(trees) {
-  listEl.innerHTML = '';
-  trees.forEach(function (tree) {
-    var clone = listTemplate.content.cloneNode(true);
-    var id = clone.querySelector('.tree-id');
-    var name = clone.querySelector('.tree-name');
-    var type = clone.querySelector('.tree-type');
-    var height = clone.querySelector('.tree-height');
-    id.innerText = tree.id;
-    name.innerText = tree.name;
-    type.innerText = tree.type;
-    height.innerText = tree.height;
-    listEl.appendChild(clone);
-  });
-};
-getList();
+}
+renderInvoice();
 
 /***/ }),
 
@@ -7278,8 +7252,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/public/app": 0,
-/******/ 			"public/style": 0
+/******/ 			"/app": 0,
+/******/ 			"style": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -7319,7 +7293,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkserver"] = self["webpackChunkserver"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkinv"] = self["webpackChunkinv"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
@@ -7329,8 +7303,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["public/style"], () => (__webpack_require__("./src/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/style"], () => (__webpack_require__("./src/style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["style"], () => (__webpack_require__("./src/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["style"], () => (__webpack_require__("./src/style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

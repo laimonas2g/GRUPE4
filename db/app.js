@@ -30,7 +30,7 @@ app.get('/all-trees', (req, res) => {
   SELECT id, name, height, type
   FROM trees
   -- WHERE name LIKE '%a_'
-  ORDER BY type DESC, name
+  ORDER BY height
   `;
 
 
@@ -83,6 +83,30 @@ app.delete('/tree/:id', (req, res) => {
   });
 
 });
+
+
+app.put('/tree/:id', (req, res) => {
+  const id = req.params.id;
+  const height = req.body.height;
+
+
+  // UPDATE table_name
+  // SET column1 = value1, column2 = value2, ...
+  // WHERE condition;
+
+  const sql = `
+  UPDATE trees
+  SET height = ?
+  WHERE id = ?
+`;
+
+  con.query(sql, [height, id], (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+
+});
+
 
 
 app.listen(port, () => {
