@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
-    <title>Nauja Sąskaita</title>
+    <title>Sąskaitos Redagavimas</title>
 </head>
 
-<body data-new>
+<body data-edit>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="collapse navbar-collapse">
@@ -18,19 +18,18 @@
                         <a class="nav-link" aria-current="page" href="list.html">Sąrašas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="new.html">Pridėti sąskaitą</a>
+                        <a class="nav-link" href="new.html">Pridėti sąskaitą</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <section data-invoice></section>
-    <section data-create-button>
+    <section data-update-button>
         <div class="container mt-4">
             <div class="row justify-content-end">
-                <div class="col-auto">
-                    <button data-save class="btn btn-primary">Išsaugoti</button>
-                    <a href="http://127.0.0.1:5500/inv/new.html" class="btn btn-secondary">Atnaujinti</a>
+                <div class="col-auto mb-5">
+                    <button class="btn btn-primary">Atnaujinti sąskaitą</button>
                 </div>
             </div>
         </div>

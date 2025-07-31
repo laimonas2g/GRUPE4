@@ -19,7 +19,7 @@ function newInvoice() {
         })
 }
 
-function renderInvoice(data) {
+function renderInvoice(data, editMode = false) {
     const invoice = data;
 
     function formatDiscount(discount) {
@@ -42,17 +42,44 @@ function renderInvoice(data) {
             <tr>
                 <td>${i + 1}</td>
                 <td>${item.description}</td>
-                <td>${item.quantity}</td>
-                <td>${item.price}</td>
-                <td>${formatDiscount(item.discount)}</td>
-                <td>${calcItemTotal(item).toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                <td>${editMode ? `<input data-quantity type="number" value="${item.quantity}" class="form-control form-control-sm width-70" />` : item.quantity}</td>
+                <td>${editMode ? `<input data-price type="number" value="${item.price}" class="form-control form-control-sm width-100" />` : item.price}</td>
+                <td>${editMode ? `
+                    <input data-discount type="text" value="${item.discount?.value ?? 0}" class="form-control form-control-sm width-70" />
+                    <input type="radio" name="discount-type-${i}" value="fixed" ${item.discount?.type === 'fixed' ? 'checked' : ''}> EUR
+                    <input type="radio" name="discount-type-${i}" value="percentage" ${item.discount?.type === 'percentage' ? 'checked' : ''}> %
+                ` : item.discount ? formatDiscount(item.discount)
+                    : formatDiscount(item.discount)}</td>
+                <td data-item-total="${i}">${calcItemTotal(item).toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
             </tr>
         `).join('');
 
-    const itemsTotal = invoice.items.reduce((sum, item) => sum + calcItemTotal(item), 0);
-    const withShippingTotal = itemsTotal + (invoice.shippingPrice || 0);
-    const vat = withShippingTotal * 0.21;
-    const grandTotal = withShippingTotal + vat;
+    let itemsTotal = 0;
+    let withShippingTotal = 0;
+    let vat = 0;
+    let grandTotal = 0;
+
+    const calcTotals = _ => {
+        itemsTotal = invoice.items.reduce((sum, item) => sum + calcItemTotal(item), 0);
+        withShippingTotal = itemsTotal + (invoice.shippingPrice || 0);
+        vat = withShippingTotal * 0.21;
+        grandTotal = withShippingTotal + vat;
+    }
+
+    function updateTotals() {
+        const vatElement = document.querySelector('[data-vat]');
+        const grandTotalElement = document.querySelector('[data-total]');
+        vatElement.textContent = vat.toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        grandTotalElement.textContent = grandTotal.toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function updateItemTotal(index) {
+        const itemTotalElement = document.querySelector(`[data-item-total="${index}"]`);
+        const item = invoice.items[index];
+        itemTotalElement.textContent = calcItemTotal(item).toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    calcTotals();
 
     const html = `
         <div class="container my-5">
@@ -106,11 +133,11 @@ function renderInvoice(data) {
                         </tr>
                         <tr>
                             <td colspan="5" class="text-end">PVM (21%)</td>
-                            <td>${vat.toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                            <td data-vat>${vat.toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                         </tr>
                         <tr>
                             <td colspan="5" class="text-end fw-bold">Iš viso</td>
-                            <td class="fw-bold">${grandTotal.toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                            <td data-total class="fw-bold">${grandTotal.toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -124,6 +151,81 @@ function renderInvoice(data) {
     `;
     const invoiceSection = document.querySelector('[data-invoice]');
     invoiceSection.innerHTML = html;
+
+    if (editMode) {
+        const allQuantities = invoiceSection.querySelectorAll('[data-quantity]');
+        allQuantities.forEach((input, i) => {
+            input.addEventListener('change', _ => {
+                const newQuantity = parseFloat(input.value);
+                if (isNaN(newQuantity) || newQuantity < 0) {
+                    input.value = invoice.items[i].quantity; // Reset to original if invalid
+                    return;
+                }
+                invoice.items[i].quantity = newQuantity;
+                updateItemTotal(i);
+                calcTotals();
+                updateTotals();
+            });
+        });
+        const allPrices = invoiceSection.querySelectorAll('[data-price]');
+        allPrices.forEach((input, i) => {
+            input.addEventListener('change', _ => {
+                const newPrice = parseFloat(input.value);
+                if (isNaN(newPrice) || newPrice < 0) {
+                    input.value = invoice.items[i].price; // Reset to original if invalid
+                    return;
+                }
+                invoice.items[i].price = newPrice;
+                updateItemTotal(i);
+                calcTotals();
+                updateTotals();
+            });
+        });
+        const allDiscounts = invoiceSection.querySelectorAll('[data-discount]');
+        allDiscounts.forEach((input, i) => {
+            input.addEventListener('change', _ => {
+                const newDiscountValue = parseFloat(input.value);
+                if (isNaN(newDiscountValue) || newDiscountValue < 0) {
+                    input.value = invoice.items[i].discount?.value || 0; // Reset to original if invalid
+                    return;
+                }
+                const discountType = document.querySelector(`input[name="discount-type-${i}"]:checked`);
+                if (!discountType) {
+                    const fixedRadio = invoiceSection.querySelector(`input[name="discount-type-${i}"][value="fixed"]`);
+                    fixedRadio.checked = true;
+                }
+                invoice.items[i].discount = {
+                    value: newDiscountValue,
+                    type: discountType ? discountType.value : 'fixed'
+                };
+                updateItemTotal(i);
+                calcTotals();
+                updateTotals();
+            });
+        });
+        const allDiscountTypes = invoiceSection.querySelectorAll('input[type="radio"]');
+        allDiscountTypes.forEach(radio => {
+            radio.addEventListener('change', _ => {
+                const index = parseInt(radio.name.split('-')[2]);
+                invoice.items[index].discount = {
+                    value: invoice.items[index].discount?.value || 0,
+                    type: radio.value
+                };
+                console.log(`Radio changed for item ${index}: ${radio.value}`, invoice.items[index].discount);
+                updateItemTotal(index);
+                calcTotals();
+                updateTotals();
+            });
+        });
+
+        const updateButtonSection = document.querySelector('[data-update-button]');
+        if (updateButtonSection) {
+            const updateButton = updateButtonSection.querySelector('button');
+            updateButton.addEventListener('click', _ => {
+                updateInvoice(invoice);
+            });
+        }
+    }
 }
 
 function createInvoice(data) {
@@ -132,6 +234,18 @@ function createInvoice(data) {
     const invoiceToSave = { id: invoiceId, ...data };
     storedInvoices.push(invoiceToSave);
     localStorage.setItem(localStorageKey, JSON.stringify(storedInvoices));
+}
+
+function updateInvoice(data) {
+    const invoiceId = data.id;
+    const storedInvoices = JSON.parse(localStorage.getItem(localStorageKey)) || [];
+    const invoicesToSave = storedInvoices.map(inv => {
+        if (inv.id === invoiceId) {
+            return { ...inv, ...data };
+        }
+        return inv;
+    });
+    localStorage.setItem(localStorageKey, JSON.stringify(invoicesToSave));
 }
 
 function invoicesList() {
@@ -161,6 +275,7 @@ function invoicesList() {
                 ).toLocaleString('lt-LT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                 <td>
                     <a href="http://127.0.0.1:5500/inv/view.html#${invoice.id}" class="btn btn-primary btn-sm">Peržiūrėti</a>
+                    <a href="http://127.0.0.1:5500/inv/edit.html#${invoice.id}" class="btn btn-secondary btn-sm">Redaguoti</a>
                 </td>
             </tr>
         `).join('')}
@@ -168,7 +283,7 @@ function invoicesList() {
     invoiceListSection.innerHTML = html;
 }
 
-function viewInvoice() {
+function viewInvoice(editMode = false) {
     const invoiceId = window.location.hash.slice(1);
     const storedInvoices = JSON.parse(localStorage.getItem(localStorageKey)) || [];
     const invoice = storedInvoices.find(inv => inv.id === invoiceId);
@@ -177,7 +292,7 @@ function viewInvoice() {
         invoiceSection.innerHTML = `<div class="alert alert-danger">Sąskaita faktūra nerasta.</div>`;
         return;
     }
-    renderInvoice(invoice);
+    renderInvoice(invoice, editMode);
 }
 
 if (document.body.dataset.hasOwnProperty('new')) {
@@ -192,6 +307,9 @@ if (document.body.dataset.hasOwnProperty('view')) {
     viewInvoice();
 }
 
+if (document.body.dataset.hasOwnProperty('edit')) {
+    viewInvoice(true);
+}
 
 const createButtonSection = document.querySelector('[data-create-button]');
 if (createButtonSection) {
