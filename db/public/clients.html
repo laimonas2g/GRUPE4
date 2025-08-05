@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app1.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Clients</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="view">
+            <h2>View Clients INNER</h2>
+            <ul data-client-list></ul>
+        </section>
+        <section class="view">
+            <h2>View Clients LEFT</h2>
+            <ul data-client-list-left></ul>
+        </section>
+        <section class="view">
+            <h2>View Clients RIGHT</h2>
+            <ul data-client-list-right></ul>
+        </section>
+    </div>
+
+    <template data-client-item-template>
+        <li>
+            <span class="client-id"></span>
+            <span class="client-name"></span>
+            <span class="phone-id"></span>
+            <span class="client-phone"></span>
+            <span class="client-cid"></span>
+        </li>
+    </template>
+
+</body>
+
+</html>

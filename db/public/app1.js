@@ -7067,114 +7067,6 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 
-/***/ }),
-
-/***/ "./src/app.js":
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
-
-var listTemplate = document.querySelector('[data-tree-item-template]');
-var listEl = document.querySelector('[data-tree-list]');
-var plantForm = document.querySelector('[data-plant-form]');
-var plantButton = plantForm.querySelector('button');
-var cutForm = document.querySelector('[data-cut-form]');
-var cutButton = cutForm.querySelector('button');
-var growForm = document.querySelector('[data-grow-form]');
-var growButton = growForm.querySelector('button');
-var sortButtons = document.querySelectorAll('.view button');
-sortButtons.forEach(function (button) {
-  button.addEventListener('click', function (_) {
-    var sortBy = button.dataset.sortByBa;
-    axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("http://localhost:3000/all-trees?sort=".concat(sortBy)).then(function (res) {
-      return renderTree(res.data);
-    });
-  });
-});
-plantButton.addEventListener('click', function (_) {
-  return plantTree();
-});
-cutButton.addEventListener('click', function (_) {
-  return cutTree();
-});
-growButton.addEventListener('click', function (_) {
-  return growTree();
-});
-var getList = function getList(_) {
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3000/all-trees').then(function (res) {
-    return renderTree(res.data);
-  });
-};
-var growTree = function growTree(_) {
-  var heightEl = growForm.querySelector('[type="number"]');
-  var idEl = growForm.querySelector('[type="text"]');
-  var id = idEl.value;
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].put('http://localhost:3000/tree/' + id, {
-    height: parseFloat(heightEl.value)
-  }).then(function (_) {
-    getList();
-    heightEl.value = '';
-    idEl.value = '';
-  });
-};
-var cutTree = function cutTree(_) {
-  var idEl = cutForm.querySelector('[type="text"]');
-  var id = idEl.value;
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]('http://localhost:3000/tree/' + id).then(function (_) {
-    getList();
-    idEl.value = '';
-  });
-};
-var plantTree = function plantTree(_) {
-  var nameEl = plantForm.querySelector('[type="text"]');
-  var typeEl = plantForm.querySelector('select');
-  var heightEl = plantForm.querySelector('[type="number"]');
-  axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('http://localhost:3000/tree', {
-    name: nameEl.value,
-    type: typeEl.value,
-    height: parseFloat(heightEl.value)
-  }).then(function (_) {
-    getList();
-    nameEl.value = '';
-    typeEl.value = '';
-    heightEl.value = '';
-  });
-};
-var renderTree = function renderTree(trees) {
-  listEl.innerHTML = '';
-  trees.forEach(function (tree) {
-    var clone = listTemplate.content.cloneNode(true);
-    var id = clone.querySelector('.tree-id');
-    var name = clone.querySelector('.tree-name');
-    var type = clone.querySelector('.tree-type');
-    var height = clone.querySelector('.tree-height');
-    id.innerText = tree.id;
-    name.innerText = tree.name;
-    type.innerText = tree.type;
-    height.innerText = tree.height;
-    listEl.appendChild(clone);
-  });
-};
-getList();
-
-/***/ }),
-
-/***/ "./src/style.scss":
-/*!************************!*\
-  !*** ./src/style.scss ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
 /***/ })
 
 /******/ 	});
@@ -7203,42 +7095,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -7279,68 +7136,52 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"/public/app": 0,
-/******/ 			"public/style": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkserver"] = self["webpackChunkserver"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["public/style"], () => (__webpack_require__("./src/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/style"], () => (__webpack_require__("./src/style.scss")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+(() => {
+"use strict";
+/*!*********************!*\
+  !*** ./src/app1.js ***!
+  \*********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+
+var listTemplate = document.querySelector('[data-client-item-template]');
+var listEl = document.querySelector('[data-client-list]');
+var listElLeft = document.querySelector('[data-client-list-left]');
+var listElRight = document.querySelector('[data-client-list-right]');
+var getList = function getList(_) {
+  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3000/all-clients').then(function (res) {
+    return renderClientList(res.data, listEl);
+  });
+};
+var getListLeft = function getListLeft(_) {
+  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3000/all-clients-left').then(function (res) {
+    return renderClientList(res.data, listElLeft);
+  });
+};
+var getListRight = function getListRight(_) {
+  axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('http://localhost:3000/all-clients-right').then(function (res) {
+    return renderClientList(res.data, listElRight);
+  });
+};
+var renderClientList = function renderClientList(clients, el) {
+  el.innerHTML = '';
+  clients.forEach(function (client) {
+    var item = listTemplate.content.cloneNode(true);
+    item.querySelector('.client-id').textContent = client.id;
+    item.querySelector('.client-name').textContent = client.name;
+    item.querySelector('.phone-id').textContent = client.pid;
+    item.querySelector('.client-phone').textContent = client.number;
+    item.querySelector('.client-cid').textContent = client.client_id;
+    el.appendChild(item);
+  });
+};
+getList();
+getListLeft();
+getListRight();
+})();
+
 /******/ })()
 ;

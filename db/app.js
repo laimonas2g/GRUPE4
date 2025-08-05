@@ -19,6 +19,68 @@ con.connect(err => {
   console.log('Connected!');
 });
 
+app.get('/all-clients', (req, res) => {
+
+  // SELECT column_name(s)
+  // FROM table1
+  // INNER JOIN table2
+  // ON table1.column_name = table2.column_name;
+
+  const sql = `
+  SELECT c.id, name, p.id AS pid, number, client_id
+  FROM clients AS c
+  INNER JOIN phones AS p
+  ON c.id = p.client_id
+`;
+
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+
+});
+
+app.get('/all-clients-left', (req, res) => {
+
+  // SELECT column_name(s)
+  // FROM table1
+  // LEFT JOIN table2
+  // ON table1.column_name = table2.column_name;
+
+  const sql = `
+  SELECT c.id, name, p.id AS pid, number, client_id
+  FROM clients AS c
+  LEFT JOIN phones AS p
+  ON c.id = p.client_id
+`;
+
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+
+});
+
+app.get('/all-clients-right', (req, res) => {
+
+  // SELECT column_name(s)
+  // FROM table1
+  // RIGHT JOIN table2
+  // ON table1.column_name = table2.column_name;
+
+  const sql = `
+  SELECT c.id, name, p.id AS pid, number, client_id
+  FROM clients AS c
+  RIGHT JOIN phones AS p
+  ON c.id = p.client_id
+`;
+
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+
+});
 
 
 app.get('/all-trees', (req, res) => {
@@ -108,11 +170,11 @@ app.put('/tree/:id', (req, res) => {
   const id = req.params.id;
   const height = req.body.height;
 
-// UPDATE table_name
-// SET column1 = value1, column2 = value2, ...
-// WHERE condition;
+  // UPDATE table_name
+  // SET column1 = value1, column2 = value2, ...
+  // WHERE condition;
 
-const sql = `
+  const sql = `
     UPDATE trees
     SET height = ?
     WHERE id = ?

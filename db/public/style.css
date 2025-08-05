@@ -2,7 +2,6 @@ body {
   font-family: monospace, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: darkgray;
 }
 
 * {
@@ -20,7 +19,7 @@ section.view {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: darkgray;
   width: 25%;
 }
 section.view ul {
@@ -38,7 +37,7 @@ section.view ul li {
   justify-content: space-between;
   align-items: center;
 }
-section.view ul li .tree-id, section.view ul li .tree-name, section.view ul li .tree-type, section.view ul li .tree-height {
+section.view ul li .tree-id, section.view ul li .tree-name, section.view ul li .tree-type, section.view ul li .tree-height, section.view ul li .client-id, section.view ul li .client-name, section.view ul li .phone-id, section.view ul li .client-phone, section.view ul li .client-cid {
   margin-right: 10px;
   font-weight: bold;
 }
@@ -54,13 +53,40 @@ section.view ul li .tree-type {
 section.view ul li .tree-height {
   color: #ffc107;
 }
+section.view ul li .client-id {
+  color: #2883d3;
+}
+section.view ul li .client-name {
+  color: #a81a95;
+}
+section.view ul li .phone-id {
+  color: #17a2b8;
+}
+section.view ul li .client-phone {
+  color: #a8cd12;
+}
+section.view ul li .client-cid {
+  color: #4eac1f;
+}
+section.view button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section.view button:hover {
+  background-color: #0056b3;
+}
 
 section.plant {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: darkgrey;
+  background-color: darkgray;
   width: 25%;
 }
 section.plant form {
@@ -96,7 +122,7 @@ section.cut {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: darkgray;
   width: 25%;
 }
 section.cut form {
