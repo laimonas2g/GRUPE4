@@ -28,3 +28,10 @@ switch (page) {  // pagal puslapio pavadinima sukuria atitinkamos klases egzempl
     default:
         break;  // jei puslapio pavadinimas neatpazintas = nieko nedaro
 }
+
+$koks = match (true) {
+    $skaicius < 10 => function(){return '<h3> Maziau nei 10</h3>';}
+    default => function(){return '<h3> Daugiau nei 10</h3>';}
+}
+
+echo $fun();
