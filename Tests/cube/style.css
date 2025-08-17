@@ -1,0 +1,89 @@
+/* create 3d enviroment */
+
+.scene {
+    width: 200px;
+    height: 200px;
+    margin: 30px auto;
+    perspective: 1100px; /* for 3d viewing distance */
+}
+
+/* set up main 3d object */
+.cube {
+    margin-top: 200px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* CRITICAL */
+    transform-style: preserve-3d; /* it makes children exist in 3d space */
+}
+
+/* Styling for all faces */
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    text-align: center;
+    
+}
+
+.cube:hover {
+    transform: scaleZ(3) rotateX(45deg) rotateY(25deg);
+}
+
+/* position of each face in 3d */
+
+.front {
+    transform: translateZ(100px);
+    background-color: purple;
+}
+
+.back {
+    transform: translateZ(-100px) rotateY(180deg);
+    background-color: pink;
+}
+
+.left {
+    transform: translateX(-100px) rotateY(-90deg);
+    background-color: blue;
+}
+
+.right {
+    transform: translateX(100px) rotateY(90deg);
+    background-color: orange;
+}
+
+.top {
+    transform: translateY(-100px) rotateX(90deg);
+    background-color: red;
+}
+
+.bottom {
+    transform: translateY(100px) rotateX(-90deg);
+    background-color: gray;
+}
+
+/* transition, gradiens, blurs left to do*/
+/* Add transitions for smooth transform effects */
+.cube {
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Add gradients, blur, and transparency for futuristic look */
+.face {
+    /* Make faces half transparent and add blur */
+    background: linear-gradient(135deg, rgba(0,255,255,0.3) 0%, rgba(255,0,255,0.3) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0.5;
+    box-shadow: 0 0 40px 10px rgba(0,255,255,0.2);
+    transition: background 0.5s, opacity 0.5s;
+}
+
+/* Optional: On hover, faces become more opaque and glow */
+.cube:hover .face {
+    opacity: 0.8;
+    background: linear-gradient(135deg, rgba(0,255,255,0.5) 0%, rgba(255,0,255,0.5) 100%);
+}
+
