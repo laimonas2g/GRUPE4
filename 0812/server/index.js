@@ -1,4 +1,6 @@
 import express from 'express';
+import Joi from 'joi';
+import { getBooks, getBook, addBook, editBook, removeBook } from "./db.js";
 
 const app = express();
 
@@ -59,44 +61,108 @@ app.use(express.json());
 
 // --------------------------------
 
-app.get('/api/books', (req, res) => {
+// app.get('/api/books', (req, res) => {
+//     res.send(books);
+// })
+
+app.get('/api/books', async (req, res) => {
+    const books = await getBooks();
     res.send(books);
 })
 
-app.get('/api/books/:id', (req, res) => {
+// app.get('/api/books/:id', (req, res) => {
+//     const id = req.params.id;
+//     const book = books.find(book => book.id === parseInt(id));
+//     if (!book) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
+//     res.send([book]);
+// })
+
+app.get('/api/books/:id', async (req, res) => {
     const id = req.params.id;
-    const book = books.find(book => book.id === parseInt(id));
-    if (!book) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
-    res.send([book]);
+    const book = await getBook(id)
+    if (book.length === 0) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
+    res.send(book);
 })
 
-app.post('/api/books', (req, res) => {
-    const newBook = {
-        id: books.length + 1,
-        author: req.body.author,
-        title: req.body.title
-    };
-    books.push(newBook);
+// app.post('/api/books', (req, res) => {
+//     const newBook = {
+//         id: books.length + 1,
+//         author: req.body.author,
+//         title: req.body.title
+//     };
+//     books.push(newBook);
+//     res.send(books);
+// });
+
+// // POST su duomenu verifikavimu (be Joi)
+// app.post('/api/books', (req, res) => {
+//     if (!req.body.author || !req.body.title || req.body.author.length < 5 || req.body.title.length <1) {
+//         res.status(400).send('Autorius turi tureti bent 5 simbolius ir pavadinimas turi tureti bent 1 simboli');
+//         return;
+//     }
+//     const newBook = {
+//         id: books.length + 1,
+//         author: req.body.author,
+//         title: req.body.title
+//     };
+//     books.push(newBook);
+//     res.send(books);
+// });
+
+// // POST su Joi duomenu verifikavimu
+// app.post('/api/books', (req, res) => {
+//     const valid = validateBook(req.body);
+
+//         if(valid.error) {
+//         res.status(400).send(valid.error.details[0].message);
+//         return;
+//     }
+
+//     const newBook = {
+//         id: books.length + 1,
+//         author: req.body.author,
+//         title: req.body.title
+//     };
+//     books.push(newBook);
+//     res.send(books);
+// });
+
+// POST su Joi duomenu verifikavimu
+app.post('/api/books', async (req, res) => {
+    const valid = validateBook(req.body);
+
+        if(valid.error) {
+        res.status(400).send(valid.error.details[0].message);
+        return;
+    }
+
+    const books = await addBook(req.body.author, req.body.title)
     res.send(books);
 });
 
-app.put('/api/books/:id', (req, res) => {
+app.put('/api/books/:id', async (req, res) => {
     const id = req.params.id;
-    const book = books.find(book => book.id === parseInt(id));
-    if (!book) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
+    // const book = books.find(book => book.id === parseInt(id));
+    // if (!book) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
 
-    book.author = req.body.author;
-    book.title = req.body.title;
-    res.send(books);
+    const valid = validateBook(req, res);
+
+    if (valid.error) {
+        res.status(400).send(valid.error.details[0].message);
+    }
+
+    const book = await editBook(id, req.body.author, req.body.title)
+    res.send(book);
 })
 
-app.delete('/api/books/:id', (req, res) => {
+app.delete('/api/books/:id', async (req, res) => {
     const id = req.params.id;
-    const book = books.find(book => book.id === parseInt(id));
-    if (!book) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
+    // const book = books.find(book => book.id === parseInt(id));
+    // if (!book) return res.status(404).send('Knyga su tokiu id neegzistuoja.');
 
-    const index = books.indexOf(book);
-    books.splice(index, 1);
+    // const index = books.indexOf(book);
+    // books.splice(index, 1);
+    const books = await removeBook(req.params.id)
     res.send(books);
 })
 
@@ -107,3 +173,10 @@ app.listen(3000, () => {
     console.log('Listening on Port: 3000...')
 });
 
+function validateBook(data) {
+        const schema = Joi.object({
+        author: Joi.string().min(5).required(),
+        title: Joi.string().min(1).required()
+    })
+    return schema.validate(data);
+}
